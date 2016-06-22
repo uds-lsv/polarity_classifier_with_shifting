@@ -1,0 +1,1746 @@
+abandon[g][p][n]{02232813,00614907,02232523,00615748,02080923}  (leave, give up, desert)
+abase
+abate[n][a][n]{00245945}
+abate[n][p][n]{00246175}
+abbreviate[g][a][n]{00244786,00244635}
+abdicate[g][p][n]{02384340}
+abduct
+aberrate[p][p"from"][n]{02668154,02667847}
+abjure[n][p][n]{00800379}
+ablate[g][p][a]{00276265}	(abtragen)  [m?]
+abnegate[n][p][n]{02217856}
+abnegate[p][p][n]{01118693,00760087}
+abolish[g][p][n]{02432181}
+abort[g][p][a]{00354493}
+abort[g][a][a]{00059834}
+about-face[g][][n]{01913035,00690810}
+abrade[g][p][a]{01256577}	(abtragen)  [m?]
+abrase[g][p][n]{01256577}	(abschürfen)  [m?]
+abridge[g][p][n]{00244786,00237729} 
+abrogate[g][p][n]{02484173}
+abscond  [p?]
+abseil
+absent[g][p"from"][n]{00422488}
+absolve[n][p"from"][n]{00905665,00904187}
+absquatulate
+abstain[g][p"from"][a]{01198570}  (eschew)
+abstract	(entwenden, wegnehmen)
+acquit[n][p"of"][a]{00905999}
+addle[g][a][a]{00211073}
+adjourn[g][?][a]{00364950}
+adulterate
+affect 	(schaden, neg. beeinflussen)
+alight	(aussteigen)
+allay[g][p][n]{01819152,01206641}
+alleviate[n][p][a]{00063866}
+alloy	(abate, trüben)
+ameliorate[n][p][n]{00206293}
+ameliorate[n][a][n]{00205454}
+amend[n][p][a]{00206293,00200276}
+amputate[g][p][n]{01257256}
+annihilate[g][p][n]{00471632}
+annul[g][p][n]{02483482}
+annul[n][p][n]{00801460}
+antagonise[g][p][a]{02570756}	(jmdn. zum Feind machen)
+antagonize[g][p][a]{02570756}
+apostatise
+apostatize
+appease[n][p][a*]{01196647}
+arbitrage
+arbitrate[n][p][n]{00763001}
+arrest[g][p][a]{01863572}	(to stop a process)
+arrest[n][p][a]{01133899}  (hold back)
+ash	(in Schutt und Asche legen)  [m?]
+asperse[p][p][n]{00848188}
+asphyxiate  [m?]
+assuage[n][p][a]{00063866}
+assuage[g][p][a]{01206641}
+atomise
+atomize
+atone[n][p"*/for"][a]{02526175}
+atrophy[g][a][n]{00093733}  [m?]
+attack[g][p][a*]{00019785}  (cause damage)  [p?]
+attenuate[g][p][a]{00221127}
+avert[n][p][a]{02458770}
+avoid[n][p][n]{00813037,02458770,01192356} 
+avoid[g][p][n]{02483482}  (nullify)
+avoid[n][m,p"from"][n]{02468933}
+axe[g][p][a]{00354971}
+ax[g][p][a]{00354971}
+back[g][a][a*]{00561705}  (move backwards, make move backwards)  [p?]
+back_away[g][p"from"][n]{00801045}
+back_down[g][p"from/on"][n]{02001712}  (Rückzieher machen, zurücktreten)
+back_down[n][?][n]{02386122}
+backfire (fehlschlagen)
+background (herunterspielen)
+back_off[g][p"from"][n]{02001712} (stocken, sich zurückziehen)
+back_off[n][?][n]{02386122}
+back_out[g][p"from/of"][a]{00801045}  (zurücktreten, Rückzieher machen)
+backpedal[g][p"on"][a*]{00690702} (Rückzieher machen)
+backslide
+backspace  [m?]
+backtrack
+back_up[g][p][a]{01481233}  (become or cause to become obstructed, slowed down or stopped working)
+back_up[g][?][a]{02001712}  (move backwards from a certain position)  [m?]
+baffle[g][p][a]{02563998,00235689}
+bag[g][p][a*]{01482504} (zur Strecke bringen, erlegen)  [m?]
+bail_out (leave a project, situation, or relationship)
+bail (verschwinden)
+balance (neutralize)
+bale_out (leave a project, situation, or relationship)
+balk[n][p"at"][n]{02589630} (vor etwas zurückschrecken, aufhalten, hemmen, vereiteln)
+ball_up[p][p][n]{02533317}  (ruin, spoil)
+bang_up[g][p][a]{01569486}(ruinieren, damage)  [p?]
+banish[n][p][n]{02007373,02509666,02509929,02509452}
+ban[n][m,p][n]{02499315,00798054,02509929,02509666}
+bar[n][p][a]{00798250,02509452,01480632}  [p?] 
+barricade[g][p][n]{01129641,01129501}  [m?]
+barricade[n][p][n]{01480632}  (render unsuitable for passage)
+basset (ausgehen)
+bate[g][p][a]{02516741}  (schwächen)
+batter  (damage)
+battle[n][p"*/against"][n]{01094777}  (bekämpfen)
+baulk[n][p"at"][n]{02589630}
+bear_off
+bear_down (niederdrücken, brechen, überwinden)
+beat_back[n][p][n]{01508789} (abwehren)
+beat_down (unterdrücken)
+becalm[n][?][n]{00417496}  (calm down)  [p?]
+becloud[g][p][n]{02162161}  (trüben)
+bedim[g][p][n]{00314513,00314661} (trüben)
+beetle_off (verschwinden)  [p?]
+beggar[g][p][a]{02322950}  (ruinieren)  [p?]
+belie[g][p][a]{02669219} (widerlegen)
+belittle[p][p][a*]{00442836}  (schmälern)
+benumb[g][p][n]{02119756} (lähmen)
+bereave (berauben)
+better[n][p][a]{00206293}  (improve)
+better[n][a][a]{00205454}  (improve)
+beware
+bin (wegwerfen)  [m?]
+biodegrade[g][a][n]{00191552} (sich biolog. abbauen)   [m?]
+blackball[n][p][n]{02478854,02509666} (ablehnen)  [p?]
+blacken
+blacklist[n][p][n]{02478566}
+black_out[g][p][a]{02768257,00202270}
+black (boykottieren)
+blank (löschen)
+blank_out[n][p][n]{00202453}
+blank_out[g][p][n]{00610654}
+blast[g][p][a*]{00336968} (shatter, sprengen)
+blast[g][a][a*]{00242810}
+bleach_out (ausbleichen)  [m?]
+bleach (ausbleichen)  [m?]
+blight
+blockade[n][p][n]{01480632}
+blockade[g][p][n]{02563025,01129387,01129272}
+block_off[g][p][n]{01129387,01480024}
+block_off[n][p][n]{01480632}
+block_out[n][p][a*]{01480168}
+block_up[n][p][n]{01480632}
+block[g][p][a]{02563025,02565578,01058906,01481963,01479113,01149526,00270309,00610654}
+block[n][p][a]{01480632}  (render unsuitable for passage)
+blot_out  (erase)
+blot  [m?]
+blow_off[g][p][n]{01293548} (verschwinden lassen)
+blow_out[g][a][a]{00436247}  (verlöschen)
+blow_out[g][p][a]{02767855} 
+blow_over[g][a][n]{00422644} (vorübergehen, fade)
+blow_up[g][p][a*]{00307505} (explodieren, sprengen)
+blow_up[g][a][a*]{00307079}
+blow[p][p][a*]{02533317} (vermasseln, vertun, zerstören)
+blow[g][a,p][a*]{00310937}
+blow[g][a][a*]{00436247}
+blow[g][a,p][a*]{00310937}
+blunt[g][p][n]{00228445,02119756,01249008,00228339,00192383} (abschwächen)
+bobble[p][p][n]{02533317} (ruin, spoil)
+bodge[p][p][n]{02533317} (vermasseln)
+bog_down[g][p][n]{01839045,00364569}
+bog_down[g][a][n]{00364395,01838838} 
+bog[g][p][n]{00364569}
+bog[g][a][n]{00364395}
+bollix[p][p][n]{02533317} 
+bollix_up[p][p][n]{02533317} 
+bollocks[p][p][n]{02533317} 
+bollocks_up[p][p][n]{02533317} 
+bolt_out (aussperren) [m?]
+bolt (verschließen,abriegeln) [m?]
+bomb (daneben gehen, scheitern)
+boot_out[n][p][n]{02406951,01471205} 
+botch_up[p][p][n]{02533317} (verpfuschen)
+botch[p][p][n]{02533317}
+bottleneck[p][p][a]{02563728} (Hindernis sein)
+bottle_up[n][p][n]{02428558} (unterdrücken)
+bounce_back[n][a][n]{00268897} (recover)  [m?]
+bow_out[n][p"of"][a]{02386122}
+boycott[n][p][n]{02470917}  [p?]
+bracket_out  [p?]
+brake (bremsen, Einhalt gebieten)  [m?]
+breach[p][p][a]{02572443} (brechen)
+break[g][p][a]{00364717,00363001,02674312,00390886,02752324,00335806,02752324,00780790,00781106} 
+break[p][p][a]{00259551,01372423,02572443,02565221,02484058,00030456,01613367}
+break[g][a][a]{00334996,00435327,02752492,01993067,00154854,00107408,02077161,02034609,02436167,01372011,00337070}
+break[n][p"with"][a]{02541382}
+break[n][p"of"][a]{02687449}
+break[g][m,p][a]{02687334}
+break_apart[g][p][n]{01661660,01564843,00369315}
+break_down[g][p][a]{01106247,01372791,00209582} 
+break_down[g][a][a]{00435327,02045722,00030640}
+break_off[g][p][a]{00363458,00363001}
+break_away[g][p"from"][a]{02541382} (sich lossagen von)
+break_away[g][a][a]{02077161,02541123}
+break_in (interrupt)
+break_out[g][a][a*]{02077161}  (escape)  [p?]
+break_through (etwas durchbrechen im Sinne von stoppen)
+break_up[g][a][a]{02033508,00356457,02436167}
+break_up[g][p][a]{01564843,00780320,01661660,00356609,00209582} (beenden, unterbrechen)
+break_up[g][p][a]{01613367,02034269,01563766}
+break_up[g][a,p][a]{00338881}
+break_up[g][?][a]{00364950}
+bring_down[g][p][a]{02407551,00430013} (senken, zu Fall bringen)
+bruise[g][p][a]{01797206,00260446} (to harm someone's reputation or confidence)
+brush_aside[g][p][n]{00802592}
+brush_off[g][p][n]{00802592}
+buckle[g][a][a*]{01281789}  (collapse)  [p?]
+budge
+buffer[n][p][a]{01579748}  (cushion)
+bugger_off (leave)  [p?]
+bugger	(ruin)
+bug_out	(leave)
+bulldoze (clear, tear down)  [m?]
+bumble[p][p][a]{02533317}  (spoil)
+bump_off[p][p][n]{02488014} 
+bump[g][p][a*]{01530296} (dislodge, verdrängen, streichen) 
+bundle_off[n][p][n]{01958868} (wegschaffen)
+bungle[p][p][n]{02533317,00013165} (vermasseln)
+bunk_off  (sich verkrümeln)  [p?]
+burke[g][p][n]{00463807,02488373} (get rid of)
+burn[g][p][a*]{00379335,00196708,01207620}
+burn_down[g][a][n]{00378022}
+burn_down[g][p][n]{00379335}
+burn_out[g][a][n]{00436247}
+burn_off[g][p][n]{01207620,00196596}  [m?]
+burn_up[g][p][a]{01207620}
+burn_up[g][a][a]{00378022}
+burst[g][p][a*]{01993576}  (collapse)
+burst[g][a][a*]{00334404}  (break apart)
+bury[n][p][a*]{00611721} (dismiss from the mind; abandon)
+bust_up[g][p][n]{01568966} (put an end to, destroy)
+bust[g][p][a]{01372423} (ruin)
+bust[g][a][a]{01372011,00334404}  (break)
+butcher (ruin)
+buzz_off  (den Abflug machen)  [p?]
+bypass[n][p][n]{00812833}  (avoid)
+cabbage (steal)
+call_off[g][p][a]{02483178}
+calm_down[g][a][n]{01767681,00559138}
+calm_down[n][p][n]{01768652} 
+calm[n][p][n]{01768652,00417496,00022309}
+calm[g][a][n]{01767681}
+cancel_out[g][p][n]{00472127}  (wipe out)
+cancel[g][p][n]{02483178,02723706,02482757,01551969,00802122}
+canker (verderben)
+can[g][p][a]{02407967}
+capsize (scheitern lassen)
+cark  (break down)
+cashier[g][p][a]{02432443} (put away or discard)
+cast_aside[n][p][n]{02227100}   (loswerden, get rid of)
+cast_away[n][p][n]{02227100}  (discard)
+cast_off[n][p][a]{01516062}  (ablegen, get rid of)
+cast_out[n][p][n]{02509666,02227100}  (vertreiben)
+cast[n][p][a*]{01516062}  (get rid of)
+castrate[p][p][a*]{00543033}  (weaken)
+cave_in[g][a][n]{01993067}  (collapse)
+cease[g][m,p][n]{02686624}  (put an end to)
+cease[g][a][n]{02615799}  (have an end)
+cede[p][p][a]{02240011}
+censor[n][p][a]{02499315}
+chase_away[n][p][n]{02006752}  (vertreiben)  [p?]
+chase  (vertreiben)  [p?]
+checkmate[g][p][n]{01116893}  (zunichtemachen)
+check[g][p][a*]{00441241,00355288}  (prevent)
+check[n][p][a*]{01133899,01142182}
+check[g][a][a*]{00337070}
+cheese[n][p][a]{02686501}  (stop, desist)
+chew_up  (destroy)
+chicken_out[n][p"of"][n]{02386122}
+chill_out[g][a][n]{01767681}
+chip_away  (verringern)
+chip_off (abblättern, abstoßen)  [m?]
+chip  (break)
+choke_back[g][p][n]{00392119}  (suppress)
+choke_down[g][p][n]{00392119}  (suppress (feelings))
+choke_off[g][p][n]{00392119}  (suppress, stop from developing)
+choke_off[g][a,p][n]{01481233}
+choke[g][p][a]{02428846,00391723}  (stop from developing)
+choke[p][][a]{02535335}  (fail to achieve)
+choke[g][a,p][a]{01481233}
+choke[g][a][a]{00359085,00391905}  [m?]
+chop_down[g][p][n]{01260071}   (fällen)  [m?]
+chop_off[g][p][n]{01301854}
+chop  (reduce, cut)
+chuck_out[n][p][n]{02227100,01471205}  (throw out, get rid of)
+circumscribe  (limit)
+circumvent[n][p][a]{00811316,01107263}   (avoid, beat)
+clean_out[n][p][a]{02408550}  (remove)
+clear_away[g][p][n]{00181704}  (außer Sichtweite schaffen)
+clear_up[n][p][a]{00941888}  (solve a problem, become cured)
+clear_up[g][p][a]{00485823} (finish a task completely)
+clear_off[g][p][n]{00181704} (außer Sichtweite schaffen, abhauen)  [p?]
+clear_out
+clear[n][p"of"][a]{00181809,00451818,00451520,02355436,00905999}  (rid of obstructions)
+clear[g][p][a]{00195686}  (remove)
+clear[n][p][a]{00763499,00451646}
+clear[g][a][a]{02161274}  (disappear)
+clip[g][p][a]{01459092,00293639}  (trim)
+clog[g][a,p][n]{01481233}  (hinder, impede)
+clog[g][p][n]{01303864,00441962}
+close_down[g][a,p][n]{02431242}  (stop)
+close_off[g][p][a]{01480024}  (abriegeln, absperren)  [m?]
+close_off[g][p"from"][a]{02035671}  (von etw. isolieren)
+close_out[g][p][n]{02635471,02357534,00352373} 
+close_up[g][a,p][a]{02431242}  (shut) [m?]
+close_up[g][p][a]{01479113} 
+close[g][a,p][a]{02431242}  (cease or cause to cease operating)
+close[g][p][a]{02430760,01481053,02145254}  (end)
+close[g][a][a]{02616663}
+closure[g][p][n]{00528114}  (schließen, verschließen)  [m?]
+cloud_over  (sich verdüstern)
+cloud_up  (sich bewölken)  [m?]
+cloud[g][p][a]{02162161,00589133}  (trüben, verdüstern)
+cloud[p][p][a]{01540747}
+cock_up  (verpfuschen)
+coldcock  [p?]
+collapse[g][a][a]{01993067,00030640,02045722,00224886}
+collapse[g][p][a]{01993576}
+combat[n][p][n]{01094777}
+come_apart[g][a][n]{00334996} 
+come_away[g][a][a]{01302344}  [m?]
+come_down[g][a][a*]{01974840} (collapse, be removed)
+come_off[g][a][a]{01302344}  (fall, become detached)
+come_out[g][a][a*]{02102203}  [m?]
+commutate  (reverse the direcion of (an electric current))  [m?]
+compensate[n][p][a]{02678329,02525657}   (wettmachen)
+compensate[n][p"*/for"][a]{02255433,02678648}
+compost  [m?]
+compromise  (weaken, impair)
+conclude[g][a][a]{02616663}  (finish, end)
+conclude[g][p][a]{00716979}
+confound  (zunichte machen, über den Haufen werfen)
+confute[g][p][n]{00669342} (prove wrong; put an end to)
+conk_out[g][a][n]{00435327,00099271}  (fail, stop working)  [p?]
+conk[g][a][a]{01866326,00359085}   (die)  [m?]
+conquer[n][p][a]{00463047,01116721}  (overcome)
+constrain  (restrict)
+constrict  (limit, restrict)
+consume[g][p][a*]{01568702,01159815}  (destroy)    [p?]
+contract[g][p][a*]{01282077}  (make smaller)
+contract[g][a][a*]{00241457}  (become smaller)
+contravene[p][p"*/against"][n]{02573062,00825097}  (infringe)  [p?]
+controvert[g][p][n]{00669665}  (deny)
+controvert[n][p][n]{00778104}  (be resistant to)
+convalesce[n][p"from"][n]{00092442}  (recover)
+cool_down[g][a][a]{00370779}  (lose intensity)
+cool_off[g][a][n]{00370779,01781624,01767681}
+cool[g][a][a]{00370779}  (lose intensity)
+cop_out[g][p"of"][n]{00681634}
+cork_up  (unterdrücken, restrain)
+cork  (restrain)
+correct[n][p][a]{00200023,02525657,02678329}
+correct[n][p"for"][a]{00079223}
+corrode[g][p][n]{00275082}  [m?]
+corrode[g][a][n]{00274762}  [m?]
+corrupt[p][p][a]{02585532,01540747}  (damage, spoil)
+corset  [m?]
+cost[p][p][a]{02635042}  (cause loss of)
+counteract[n][p][a]{02549571}
+counteract[g][p][a]{02570756}
+counteract[p][p][a]{02549304}
+counterbalance[n][p][a]{02678329,02549571}  (ausgleichen)
+countermand[n][p][n]{00801460}  (rückgängig machen)
+countermine[p][p][a]{02549304} (unterminieren)
+countervail[n][p][n]{02723890,02549571}
+counter  (to take action in order to oppose or stop something or reduce its negative effects)
+crack[g][a][a*]{00337875,00337070}  (break down, fail)
+cramp[p][p"*/in"][a*]{00237139}   (hinder)
+crash[g][a][a]{01564601,01564843,00584141,00435872}  (collaps)
+crash[g][p][a]{01564990,02023134}
+crawfish_out[g][p"from"][n]{00801045}
+crawfish[g][?][n]{00801045}
+cremate[g][p][n]{00379825} (einäschern)  [m?]
+crimp  (inhibit, hinder)
+cringe[n][?][a]{02064997}  (draw back)
+cripple[p][p][a]{00226258}  (damage severely)
+croak[g][a][a]{00359085}  [m?]
+crock  (collapse)
+cross_off[g][p][n]{00802412}  (cancel, delete)  [m?]
+cross_out[g][p][n]{00802412}  (cancel, delete)  [m?]
+crumble[g][a][n]{02045722,00398311,00209244}  (zerfallen)
+crumple[g][a][a]{02045722,01281789}  (collapse)
+crush_out[g][p][n]{00479613}  (vernichten)
+crush[g][p][a]{00339895,01106247,02429499}  (damage, destroy)
+crush[g][a][a]{00560467}
+cumber[g][p][n]{01303637}  (hinder)
+curb[n][p][a]{00237442}  (limit, restrain)
+cure[n][p][a*]{00081478}
+curtail[n][p][n]{00237442} 
+curtail[g][p][n]{00293639}
+cushion[n][p][n]{01579748}
+cut_away[g][p][a]{01556769}
+cut_back[n][p][a]{00237442}
+cut_back[g][p][a]{00430013}
+cut_down[g][p][a]{00430013,01325339,01322222,01260866,01242426}  (reduce)  [p?{01242426}]
+cut_off[g][p][a]{00780320,00293269,01301854,01443265,01257256}
+cut_out[g][p][a]{00473602,01443265,01552501}
+cut_out[g][a][a]{00352964}
+cut[g][p][a]{00430013,02427383,00293269,00244786,01513208}
+cut[g][p"into"][a]{00430921}
+cut[n][p][a]{00474253,01061436,02619895}
+damage[g][p][n]{00259743}
+damage[g][a][n]{00589255}
+dampen[g][p][a]{00391513,00391231,00391130,00390886,02195757,00392255}  (suppress)
+damp[g][p][n]{00574162,00391231,00390886,02195757}
+dam_up[g][p][n]{01479854}  (suppress, hold back)  [m?]
+dam[g][p][n]{01479854}  [m?]
+darken[p][p][a]{01540617}  [m?]
+dash[g][p][a]{02564529,00336733}  (destroy)
+deactivate[n][p][n]{00192060}
+deactivate[g][p][n]{00191849}
+deaden[g][p][a]{00391231,00192383}  (diminish)
+deaden[g][a][a]{00193672}
+debar[n][p][n]{02507686,02458770,00798250}  (exclude)  [p?]
+debase[p][p][a]{02585532}  (reduce, adulterate)
+debauch[p][p][n]{02585532}
+debilitate[g][p][n]{00390309}  (weaken)
+debunk[g][p][n]{00854877}  (widerlegen, als falsch entlarven)
+decamp  (leave, abscond)
+decay[g][a][n]{00399980,00209244,00553892}
+decease[g][a][n]{00359085}  (die)  [p?]
+decelerate[g][a][n]{00440913}  [m?]
+decelerate[g][p][n]{00439450}
+decimate[g][p][a]{00471632}
+decline[g][p][a]{02242120} 
+decline[n][m][a]{00799092} 
+decline[g][a][a]{00432779,02043721}  (become less, diminish)
+decline[p][a][a]{00204228}  (grow worse)
+decommission[g][p][n]{02317722}
+decompose[g][p][n]{00209582}
+decompose[g][a][n]{00399980,00210263}  [m?]
+decrease[g][a][n]{00151509}
+decrease[g][p][n]{00442400} 
+deep-six[g][p][a]{02227776}  (dispose, destroy)
+de-escalate[n][a][n]{00291745}  (reduce level or intensity)
+de-escalate[g][p][n]{00291502}
+defang[n][p][n]{00197466}   (weaken)
+defeat[n][p][n]{01110559,02479111}  (overcome, annul)
+defer[g][p][a]{02648898}  (postpone)
+defile[p][p][n]{01540747,01540197,00493346}  (taint, corrupt)
+deflate[g][p][a]{00857916,00563380}  (zunichtemachen, reduce)
+deflect[n][p][n]{02458770}
+deflect[g][p][n]{01149526}
+deflect[g][p"from"][a]{02037650,01795785}
+deflower[p][p][a]{00478872}  
+defuse[g][p][n]{01140122}  (entschärfen)
+defy[g][p][a]{02713660}
+defy[n][p][a]{02712676}
+degenerate[p][a][n]{00092045}
+degrade[g][p][a]{00208136,01310556}  (worsen, destroy)
+delay[g][p][n]{00460731,02648041,00461855,00441241}  (postpone)
+delete[g][p][n]{01551969,01001860,00201227}
+dematerialise[g][a][n]{00345146}  (disappear, vanish)
+dematerialize[g][a][n]{00345146}  (disappear, vanish)
+demolish[g][p][n]{01660001,01660252}   (destroy, defeat)
+demoralise[p][p][a]{02585532}
+demoralize[p][p][a]{02585532}
+demur[n][p"at"][a]{00809603}  (refuse)
+denudate
+denude
+deny[n][m][n]{00818217} 
+deny[n][p][n]{00818664,02217856}
+deny[g][p][n]{02218972,01070402,00818828}  (refuse to grant/recognize)
+deny[p][p][n]{02217607}
+depart[g][p"*/from"][n]{01852660,02018017,02012411,02388582,02070232}  (leave)
+depart[g][p"from"][n]{02667330}   (abweichen)
+deplete[g][p][n]{01159815}    [p?]
+deport[n][p][a]{02504961}  (banish, expel)  [p?] 
+depose[g][p][a]{02410394} 
+deprave[p][p][n]{02585532}
+depress[g][p][a]{01977946,01577754,00225864}  (reduce the value of prices or wages)  [m?]
+deprive[g][p"of"][a]{02318230}
+deracinate[g][p][a]{01569697}  (extirpate, remove)  [m?]
+derail  (scheitern lassen)
+derange[p][p][a]{00277400}  (perturb)
+derate  [m?]
+descend[g][a][a*]{01974840}  (fall, go down)  [p?]
+desecrate[p][p[a]{02573980}   (violate the sacred character of a place or language) 
+desert[g][p][n]{00615748,02590182,01846309}   (leave, fail)
+desist[g][p"from"][n]{01198570}
+desolate[g][p][a]{00615748,00389306}  (abandon, devastate)
+despatch  (get rid of)
+despoil
+destabilise[g][a][n]{00272976}
+destabilise[g][p][n]{00272510}
+destabilize[g][a][n]{00272976}
+destabilize[g][p][n]{00272510}
+destroy[g][p][a]{01622948,01566925,01329210}
+destruct[g][p][n]{01623725,01622948}
+detach[g][p][a]{01301254}
+detach[g][a][a]{01302344}
+detain[g][p][a]{00461855,00460731}  (stop, hold back, delay)  [p?]
+deteriorate[p][a][n]{00208905,00092045}
+deter[n][p][n]{00910052}  (prevent)
+deter[n][p"from"][n]{00772186}
+detract[g][p"from"][n]{00533195}   (diminish)
+devastate[g][p][n]{00389306,00261197} 
+deviate[g][p"from"][a]{02068815,02667330}
+devitalize[g][p][n]{00166760} 
+devour[g][p][a*]{01568141}  (destroy completely)
+dice  (reject, abandon)
+die_away[g][a][n]{00245945}
+die_back[g][a][n]{00242912}  [m?]
+die_down[g][a][n]{00242912,00224594}
+die_out[g][a][a]{00428636}  [m?]
+die_off[g][a][n]{00428636}  [m?]
+die[g][a][a]{00359085,00435327,00355499} 
+dilapidate[g][p][n]{01666329}
+dilapidate[g][a][n]{00209244} 
+dilly-dally[n][p][n]{02648322} 
+dillydally[n][p][n]{02648322} 
+dilute  (make less strong/effective)
+diminish[g][a][n]{00151509}
+diminish[p][p][n]{00442836}
+dim[g][a][n]{00311895,00314386}  (schwinden)
+dim[g][p][n]{02166741,00314265,00313060}
+dip[g][a][a]{00433014,02041990}  (become less)
+dip[g][p][a]{02166741,02044954}
+disable[g][p][n]{00513267,00091720}
+disallow[n][m,p][n]{00797525}
+disappear[g][a][n]{00427911,02160976,00428350,00224354}
+disarm[n][p][n]{01090246,01834387,01090416}   (weaken)
+disarticulate[g][p][n]{01297235} (Stück für Stück auseinandernehmen)
+disassemble[g][p][n]{01661660}  (take apart, zerlegen)
+disband[g][p][n]{02034812}
+disband[g][a][n]{02033789}
+disburden[n][p"from"/"of"][n]{01490553}  [m?]
+discard[n][p][n]{02227100}
+discharge[n][p"from"][a]{02427126} 
+discharge[n][p"of"][a]{00905999}
+discharge[g][p][a]{00104622} 
+discharge[n][p][a]{01100154}
+disclaim  (renounce)
+disconnect[g][p][n]{01424071,01358741}
+discontinue[g][m,p][n]{02686624,00363001}
+discontinue[g][a][n]{02689663}
+discount[g][p][a]{00802592}  (disregard)
+discourage[n][p][a]{00910052}  (inhibit, prevent)
+disdain[p][p][a]{00798638}  (refuse)
+disembarrass[n][p"of"][n]{02355171}  (free oneself of)
+disenable[g][p][n]{00513267}  (prevent)
+disencumber[n][p"of"][n]{01588680} 
+disengage[g][p"*/from"][a]{01514012}
+disentangle[n][p"from"][a]{01588680,02683880}  (get away)
+dish  (ruin)
+disintegrate[g][a][n]{00398482,00399980} 
+disintegrate[g][p][n]{00400274} 
+disjoint[g][p"from"][n]{02435427}  
+disjoint[g][p][n]{01297235,01296999}  (zerlegen, disunite, end the unity of...)
+disjoint[g][a][n]{01296785}
+disjoin[g][p][n]{01296999}  (disconnect, separate)
+disjoin[g][a][n]{01296785}
+dislocate  (disrupt, USUALLY PASSIVE)
+dislodge[g][p][a]{01531310,01530296}  [m?]
+dismantle[g][p][n]{01665698,01661660}  (demolish, end)
+dismantle[g][p"of"][n]{00194878}
+dismember[g][p][a]{01575341} (zerstückeln, zerlegen)
+dismiss[g][p][n]{00802592,00803288,02471362,02407967,00902491,00339369} 
+disown[g][p][a]{00759589}
+dispatch[g][p][a]{02488014,01327810}
+dispel[n][p][n]{02006752}
+dispel[g][p][n]{02034269}
+displace[g][p][a]{02411141,02407967}
+dispose_of  (get rid of)
+disprove[g][p][n]{00669342} (widerlegen)
+disqualify[n][p][n]{00302119,00974640}  [p?]
+disregard[g][p][n]{00802592,00618547}
+disregard[n][p][n]{01061436}
+disrupt[g][p][a]{00780320,00521437}
+dissipate[g][p][a*]{02034269}
+dissolve[g][a][a]{00448726,00356457,02033789}   (stop existing, become weaker)
+dissolve[g][p][a]{00448905,00356609,00339369}  (cause to fade away)
+dissuade[n][p"from"][n]{00772186}
+disturb[g][p][a]{00260641,00521099,00260641}  (interrupt, damage)
+ditch[g][p][a]{02233050,02232144,02229727}  (discard)
+diverge[g][p"from"][a*]{02667330}
+divert[g][p"from"][a*]{02068815}
+divest[p][p"of"][a]{02390514}   (give away)
+divest[g][p][a]{02318886}
+dodge[n][p][a]{02100772,00811316}  (avoid)
+do_in[n][p][n]{01329983}  (kill)  [m?]
+douse[g][p][a*]{02766453}  (extinguish, put out)  [m?]
+downsize[g][p][a]{02408915,00587808}
+down[g][p][a]{01105747,01242426}  [p?{01242426}]
+dowse  (put out)  [m?]
+drag_down
+drain[p][p"of"][a]{01160320}  (deplete, vanish gradually)
+drain[g][p][a]{00390309}  (make weak)
+draw_back[n][p"from"][a]{01998474} 
+draw_out[g][p][a*]{01353852}
+drift_away
+drift[p][p"from"][a*]{01929647}
+drive_away[n][p][n]{02006752}  (expel, dispel)
+drive_back[n][p][n]{01133623}
+drive_off[n][p][n]{02006752}  (repel)  [m?]
+drive_out[n][p][a]{02006752}   (verdrängen, austreiben)
+drive[n][p][a*]{01508789} 
+drop_away[p][a][n]{00204753}  (become lower/weaker/smaller, decrease)
+drop_back  (fall)
+drop_down[g][a][n]{01989937}  [m?]
+drop_off[g][a][a]{00152707,01116231}  (become weaker/smaller)
+drop_off[p][a][a]{00204753}
+drop_out   (give up)
+drop[g][a][a]{01989937,00092045}  (lower, abandon, give up)
+drop[g][p][a]{02409062,00363763,02471362,00617306,00616690}
+drop[n][p][a]{01516062}
+drub  (defeat)
+drum_out[n][p][n]{02406951}
+dry_out
+dry_up  (run out)
+duck[n][p][a*]{00811316}  (avoid)
+dull[g][p][a]{02195757,00392374,01248885,01249008}   (lessen)  
+dull[g][a][a]{00392673}
+dump[n][p][a]{02229986}  (throw away, abandon)
+dump[g][a][a]{01981094}  (fall abruptly)  [p?]
+dwindle_away[g][a][n]{00268567}
+dwindle_down[g][a][n]{00268567}
+dwindle[g][a][n]{00268567}
+ease_off[g][a][n]{00156293}
+ease_off[g][p][n]{00156084}
+ease[n][p][a]{00082061} 
+ease[g][p][a]{01819152}
+ease_up[g][a][a]{00156293}  (abate)
+ease_up[g][p][n]{00156084}
+eat_away[g][p][n]{00275523,00275432}  (ruin)
+eat_up[g][p][a]{01159815}  (use up)    [p?]
+eat[g][p][a]{01159815,00275082}  (use up, cause to deteriorate)  [p?]
+ebb_away  (lessen)
+ebb[g][a][a]{00571984}  (lessen)
+edit_out  [m?]
+efface[g][p][a]{00312120,01551500}  (erase)
+eject[g][p][a]{00104622}  
+eject[n][p][a]{01471205}  (expel) [p?]
+elide[g][p][n]{00617112}  (annulieren)
+eliminate[g][p][n]{00472642,02635337,00471632,00687320,00072742,01105250,00576638}
+elude[g][a,p][a]{02078305}  
+elude[n][p][a]{00811316}  (avoid)
+emasculate[p][p][a]{00543033}   (weaken)
+empty[g][p][a]{02080923,01490942}  (move out of, remove)  [p?]
+encroach[p][p"on/upon"][a]{02575705}
+encumber[g][p][n]{01303637}  (impede)
+endanger[p][p][n]{02702962,01038191}
+end[g][a][a]{02615799}
+end[g][p][a]{00353480,01623891}
+enfeeble[g][p][n]{00390309}  (make weak)
+enhance  (improve)
+eradicate[g][p][n]{00471632,01666012}
+erase[g][p][n]{00480322,01551500,01001860}
+erode[g][a][n]{00276052} 
+erode[g][p][n]{00275523}
+err[p][p"from"][a]{01929647}  [m?]
+escape[n][p"from"][a]{02078906,02077473}
+escape[g][p][a]{00812219}
+eschew[n][p][n]{00813811}
+etiolate[g][p][a]{00226116}  (weaken)
+evade[n][p][n]{00811316,02374810,00812701}
+evade[g][a,p][a]{02078305}  
+evanesce[g][a][n]{00422644}
+evaporate[g][a][a]{00224354,00576797}  (disappear)
+evaporate[g][p][a]{00577047}  [m?]
+even_off[n][p][n]{02678329} 
+even_out[n][p][a*]{02678329} 
+even_up[n][p][a]{02678329} 
+exchange[g][p][a*]{02262575}
+except[n][p"at"][n]{00809603}
+except[g][p][n]{00617464}
+excise[g][p][a]{01552202,00473802}  (remove)  [m?]
+exclude[g][p][n]{00617464,02454205,02639795}
+exclude[n][p][n]{00798250,01471205}
+excrete[g][p][n]{00072742}  [m?]
+exempt[n][p"from"][n]{02570061,00895399}
+exhaust[g][p][a]{01159815,02285714,00451952,00104622}  (use up, deplete)  [p?]
+exit[g][p][n]{02019450}  (leave)
+exit[p][p][n]{01081082}
+exit[g][a][n]{00359085}  (die)
+exonerate[n][p"of"][n]
+exorcise[n][p][n]{01530665}  [m?]
+exorcize[n][p][n]{01530665}  [m?]
+expel[n][p][n]{02507387,02406951,01111362}  [p?]
+expel[g][p][n]{00104622}
+expend[g][p][a]{01160888}  (use up)  [p?]
+expire[g][a][a]{02690607,00359085}
+explode[g][p][a]{00307505,01568576,00667253}  (destroy)
+explode[g][a][a]{00307079}
+expose[p][p][a*]{01038191}
+expropriate  (deprive)
+expunge[g][p][n]{01552202}  [m?]
+expurgate  (amend)
+extenuate[n][p][n]{00907990}
+exterminate[g][p][n]{01330264,01666012}
+extinguish[g][p][n]{00479613,00479148,02767855,00472642,00471632}  (stop a feeling or idea from continuing to exist)
+extirpate[g][p][n]{01666012,01569697,00176337}
+extract[g][p][a*]{01353852}  (withdraw, remove)
+extricate[n][p"from"][n]{01588680}
+factor_out
+fade_away[g][a][n]{00448726}  (disappear slowly)
+fade_out[g][a][n]{00448726}   (gradually disappear)  
+fade[g][a][a]{00225077,00422644}  (gradually disappear)
+fade[p][a][a]{00422870}  (lose vitality)
+fail[g][m][a]{02534950,02605525} 
+fail[g][a][a]{01803246,00435327,00561324}
+fail[p][a][a]{02534046,00172922}  (be unsuccessful, get worse) 
+fail[p][p"*/in"][a]{02527985}  (fall short in what is expected)
+fail[n][p][a]{02529450} 
+fall_apart[g][a][a]{01372011,00398311,00334996}  (break)
+fall_away[g][a][n]{00148292}
+fall_away[p][a][n]{00204753}
+fall_back[g][a][a]{02001894,01116231}  (become lower in amount)
+fall_back[g][?][a]{01908113}
+fall_down  (collapse, fail)
+fall_in[g][a][a]{01993067}  (collapse)
+fall_off[g][a][n]{00433792,01302626}  (decrease)
+fall_out[g][a][a*]{02102203}  [m?]
+fall_over  (collaps to the ground)  [m?]
+fall_through[g][a][n]{02535669}  (fail)
+fall[g][a][a*]{02534651,02626293,00151509,02390295,00342969}  (become lower in amount, suffer failure)
+falter[g][a][a*]{02746079} 
+fend_off[n][p][n]{02458770}  (abwehren, turn aside)
+ferment[p][a][a*]{00459426}  [m?]
+fester  (become rotten, decay)  [m?]
+fettle[g][p][n]{02370585}  (repair, mend)  [m?]
+fiddle[n][p][a*]{02469127}
+fight_back[n][?][n]{01094695} 
+fight_back[n][p][n]{01093838}
+fight_down[n][p][n]{01093838}
+fight_off[n][p][n]{01133623}
+fight[n][p][a*]{01093838}
+figure_out[n][p][n]{00636568}  (solve)
+filter_out[g][p][n]{01461293}
+finish_off[g][p][n]{00485823}   (end, destroy)
+finish[g][p][a]{00485097}  (stop, destroy)
+finish[g][a][a]{02615799}  (end)
+finish[g][p"with"][a]{00352617}
+fire[g][p][a*]{02407967,00379335}
+fizzle_out[g][a][n]{02689494}  
+fizzle[g][a][n]{02689494}
+flag[g][a][a*]{00156293}  (become weak)
+flatten  (destroy, subdue)
+flee
+flinch[n][p"from"][n]{02064997}  (draw back, avoid)
+fling_off  (remove, disregard)
+flop[g][a][a]{02535669,01976767}  (fail, fall suddenly)
+flout[g][p][a]{00803444}
+flub[p][p][n]{02533317}  (ruin, spoil)
+fluff[p][p][a]{02533317}  (ruin, spoil)
+fly[g][a][a*]{00152881}
+foil[g][p][a]{02563998}  (hinder)
+fold_up  (fail, collapse) 
+fold[g][a,p][a*]{02431242}  (fail, collapse) 
+forbear[n][p][n]{02731919}
+forbear[n][m,p"from"][n]{02731589}
+forbid[n][m,p][n]{00797525}
+forbid[g][p][n]{02458316}
+force_back[n][p][n]{01508789}
+force_out[g][p][a]{02407967,02410394,01470687}
+foreclose[g][p][a]{02458316}  (hinder, rule out)
+forefend[n][p][n]{02458770}
+forego[g][p][a]{02539728}
+forego[p][p][a]{02308311}
+forestall[g][p][a]{02458316}
+foreswear[g][p][n]{02539728}
+foreswear[n][p][n]{02232269}  (turn away from; give up)
+forfeit[p][p][n]{02308311}
+forfend[n][p][n]{02458770}
+forgo[g][p][a]{02539728}
+forgo[p][p][a]{02308311}
+forget[n][p][n]{00611721}  (give up, disregard)
+forget[g][m][n]{00616520} 
+forget[g][p][n]{00614532,00610654}
+forsake[g][p][n]{00615748}  (stop doing/having sth)
+forswear[n][p][n]{00800379}
+foul_up[p][p][n]{02533317}  (ruin, spoil)
+founder[g][a][a]{02535669,01993067}  (fail, collapse)
+fracture[g][p][a]{01624121}  (auflösen, destroy)
+fracture[g][a][a]{00336176}  (break into pieces)
+fragmentize[g][a,p][n]{00338881}  (break up)  [p?]
+fragment[g][a,p][n]{00338881}  (break up)  [p?]
+free[n][p"of"][a]{02355171}  (rid, von etw. befreien)
+free[g][p][a]{01531310}
+free[n][p"from"][a]{02570061,00904187}
+free[n][?][a]{02427126}
+free[p][p][a]{02321284}
+freeze_off[p][p][n]{00798638} 
+freeze[g][a][a]{01838672}  (stop, prohibit)
+freeze[g][p][a]{00364146,00270309}  (suspend)
+frustrate[g][p][a]{02563998}  (prevent sth from succeeding)
+fuck_up[p][p][n]{02533317}  (destroy)
+fudge[n][p][a]{00811316}  (avoid)
+fumble[p][p][a*]{02533317}  (spoil)
+funk[n][?][n]{02064997}  (draw back)
+get_around[n][p][a]{00812833}  (circumvent, overcome)
+get_away[n][p"from"][a]{02078906}  (leave, escape)  [p?]
+get_off[n][?][a*]{02417219}  (take off, remove)
+get_out[g][p][a*]{02019450}  (avoid)
+give_away  (lose)
+give_out[g][a][a]{00561324,00435327}  (run out)
+give_up[p][p][a]{02308311,02321284,02240011}  (quit, stop doing sth)
+give_up[n][m,p][a]{01199057}  (stop consuming) 
+give_up[g][p][a]{02232523,02372031,00614907}
+give_up[g][m,p][a]{02686624}
+give[p][p][a*]{02348591}  (sacrifice)
+give[g][a][a*]{01993067}
+gnaw[g][a][a]{00276052}
+goldbrick[n][p][a]{02469127}  (meiden, shirk)  [p?]
+go_around[n][p][a*]{00812833}
+go_away[g][p"from"][n]{01852660,02013448}  
+go_away[g][a][n]{02160976,00427911}  (vanish, stop existing)
+go_down[g][a][a]{01974840,01993887,00432779,01102277,00435872}  (be defeatet, stop operating)  [m?{01993887}]
+go_off[g][a][a*]{01529580}  (leave, stop, worsen)
+go_out[g][p"of"][a]{02019450}   (leave)
+go_out[g][a][a]{00353073}  (cease)  [p?]
+go[g][p"from"][a*]{01852660}   (leave)
+go[g][a][a*]{00360569,01195306,00359085,00435327}  (disappear, die)
+halt[g][p][n]{01863572,02565578,00355106}  [m?]
+halt[g][a][n]{01864781}
+halve
+hamper[p][p][n]{00237139,01087885}
+hamstring[p][p][a]{01803640}  (ruin, prevent)
+handicap[g][p][a]{00091720,{00091720}}  (to be a hindrance or disadvantage to)
+hang_up  (give up)
+harm[g][p][n]{00102340} 
+hazard[p][p][a]{02550969}  (endanger)
+head_off[n][p][n]{02458770}  (avoid, leave)
+heal[n][p][n]{00081478}
+heal[n][a][n]{00098938,00271360}
+hedge_in  (hinder, restrict)
+hedge[n][p][a]{00811316,00429020,01618094}  (hinder, avoid)
+help[n][m][a]{02732039}   (abstain from doing)
+help[n][p][a]{00207406}   (alleviate)
+hemorrhage  (diminish)
+hinder[g][p][n]{02456614,02563025,01087885}
+hit[g][p][a*]{02488014}  (kill)
+hobble[g][p][a]{02457671}  (hinder, restrict)
+hog-tie[g][p][n]{01290532}  (impede, hinder)  [m?]
+hold_back[n][p][a]{01133899,02151220,00233707}
+hold_back[n][p"*/from"][a]{02731919}
+hold_back[g][m][a]{02647547}
+hold_down[g][p][a]{00236613}  (prevent)
+hold_in[n][p][a]{02151220}
+hold_off[g][p][n]{01119743} 
+hold_off[g][m][n]{02647547}  (delay, stop)
+hold_out[n][p][a*]{01119003}  (resist)
+hold_over[g][p][a*]{02648898}  (postpone)
+hold_up[g][p][a*]{00460731}  (hinder, delay)  [p?]
+hold_up[n][p][a*]{02712676}  (resist)
+hold[g][p][a*]{02649658,01863572}
+hold[n][p][a*]{02712676}
+hopple  (behindern, lahm legen)  [p?]
+humify[g][p][n]{00115887}  (vermodern lassen)  [m?]
+hurt[g][p][a*]{00261356}  (harm)
+hush_up[n][p][a]{00462448}  [m?]
+hush[g][a][a]{02194634}  [m?]
+hush[n][p][a]{00462448}  [m?]
+ignore[g][p][a]{00802592,02123706,00618547}  (disregard)
+ignore[n][p][a]{01061436}
+immobilise[g][p][a]{01209769,00270309,00270026}   (make/become immobile)
+immobilize[g][p][a]{01209769,00270309,00270026}   (make/become immobile)
+impair[p][p][n]{00478872}  (weaken, damage)
+impair[g][p][n]{00263767}
+impede[g][p][n]{02456614,01479113}
+imperil[p][p][n]{02702962}
+impinge[p][p"on/upon"][n]{02575705,01997384}
+implode  (collapse)
+impoverish[g][p][a]{00172745}  (deplete, diminish quality)
+improve[n][p][n]{00206293}  
+improve[n][a][n]{00205454}
+inactivate[g][p][a]{00191849}  (wirkungslos machen)
+incapacitate[g][p][n]{00513267,00091720}  (disable)
+incinerate[g][a][a]{00379032}  (become reduced to ashes)  [m?]
+incommode  [p?]
+indemnify[n][p"for"][a]{02255433}  (compensate)
+infringe[p][p][n]{02573062}  (go against (rules)) 
+infringe[p][p"*/on/upon"][n]{01997384}
+inhibit[n][p"*/from"][a]{00463563}
+inhibit[n][p][a]{02428558}
+inhibit[g][p][a]{02456941}
+injure[g][p][a]{01797206,00261356}  (hurt, damage)
+insulate  (shield)
+insure  (protect)
+intercept  (prevent from proceeding)  [m?]
+interchange[g][p][a*]{02262575}
+interdict[g][p][n]{01624455}
+interdict[n][p"*/from"][n]{00797525}
+interfere[g][p"with"][a]{02457343}  (hinder)
+intermit[g][p][n]{00781106}  (suspend, aussetzen)
+interrupt[g][p][n]{00780320,00521437,00364717}    
+interrupt[p][p][n]{00521099}
+intervene  (disturb/hinder a course of action)  [p?]
+intoxicate  [p?]
+invalidate[g][p][n]{02483482,00802122,00669020,00449395}
+invert (reverse)
+iron_out[n][p][a]{00208463}  (remove)
+jam[g][p][a]{01058906,01479113}  (block)  [p?]
+jam[g][a][a]{01527965}
+jeopardise[p][p][n]{02702962}
+jeopardize[p][p][n]{02702962}
+jettison[n][p][a]{02227918}  (abandon, get rid of)
+jib[n][p"at"][a]{02589630}  (hold back, be reluctant)
+jump[g][p][a*]{00618188}
+junk[n][p][n]{02228020}  (scrap, wegwerfen)
+keel_over  (break down, stop working correctly)  [p?]
+keep_away[n][p"from"][n]  
+keep_down[n][p][a]{02428975}
+keep_in (restrain)
+keep_off[n][p][a]{01192356}  (meiden)
+keep_out[g][p][a]{02454205}  (sich von etwas fernhalten, avoid)
+kibosh[g][p][n]{02565578}  (stop) 
+kick_out[n][p][n]{02507387,02406951}  (dismiss)
+kick[n][m,p][a*]{01199057}  (stop doing something)
+kill_off[g][p][n]{01330264}  (exterminate, destroy)
+kill[g][p][a]{01326622,00355692,01328456,01328218,00479761,00356019}  (destroy, stop something from continuing)
+kill[p][p][a]{00355831}
+kill[n][p][a]{02479111}
+knock_back  (reject, refuse)
+knock_down[g][p][a]{01242426,00336968}  (demolish)  [p?{01242426}]
+knock_off[g][p][a]{00363763}  (stop, reduce)
+knock_off[n][p][a]{01329983} (get rid of by killing)
+knock_out[g][p][a]{00473357,00180747}  (destroy, stop)
+lack[g][p"*/for/in"][n]{02638434}
+lag  (verzögern)
+lame  (lähmen)  [m?]
+languish  (grow weak)
+lapse[g][a][a]{00352478}  (end)
+lapse[g][p][a]{02308741}  (let slip)
+lay_aside  (stop, abandon)
+lay_off[g][m,p][n]{02686624}  (stop)
+lay_off[g][p][n]{02408679}  (dismiss)
+leash  (restrain)
+leave_behind[g][p][a]{02085825}
+leave_off[g][m][n]{02689901}  (stop)
+leave_off[g][p][n]{00617464,00573738}
+leave_out[g][p][n]{00617464,00616690} 
+leave[g][p][a]{02013448,00615374,02019450,02388582,00614532}  (go away)
+lessen[g][a][n]{00151509,00233328}
+lessen[g][p][n]{00442400} 
+let_up[g][a][n]{00245945}  (decrease)
+let_up[g][p][n]{00156084}
+level[g][p][a*]{01665698}  [m?]
+liberate  (free)  [p?]
+lick[n][p][a*]{00636568}  (solve)
+lift[g][p][a*]{00178766,00354849}  (cancel, end, take away)
+lift[n][p][a*]{00801460}  (annul)
+lighten[n][p][a*]{00199442}  (mitigate, alleviate)
+liquidate[n][p][a*]{01329983}
+lock_away  [p?]
+lock_out  [p?]
+lock_up  (shut)  [p?]
+loosen[n][p][a]{02607993,00420328,01287511}   (make weaker) 
+loosen[n][a][a*]{02607805,00420090}  (become less severe)
+loose[n][p][a]{00420328}  [m?]
+loose[n][a][a]{00420090}  [m?]
+lop_off[g][p][n]{01301854}  (remove, reduce)
+lop  (eliminate)
+lose[p][p][a]{02292634,01799093,02292463,02293733,02293000}
+lose[g][p][a]{02132318}  (fail to perceive or to catch with the senses or the mind)
+lour[g][p][a]{00532569,00268741}
+louse_up[p][p][n]{02533317}  (ruin)
+lower[g][p][a]{00532569,00268741,01577754}   (reduce, decrease)
+lull[n][a][a]{00559138}   (sich legen)
+lull[n][p][a]{01768652}
+maim  (ruin)
+make_up[n][p][a*]{02678329} 
+make_off  (leave)
+malfunction[g][a][n]{01528083}
+mangle[g][p][a]{00293434,01234662}  (damage, ruin)
+mark_down[g][p][n]{02325058}  (reduce)
+mar[p][p][n]{00478872}  (spoil)
+mask  
+master[n][p][a*]{01111038}  (overcome)
+maul[g][p][a]{01234662}   (beschädigen, demolieren)  [p?]
+meliorate[n][p][n]{00206293}   (= ameliorate)
+meliorate[n][a][n]{00205454}
+melt_off[g][a,p][n]{00045548}
+melt[g][a][a]{00225077,00224354}   (disappear)
+menace[p][p][a]{02702962}  (endanger)
+mend[n][a][n]{00271360}  (heal)
+mess_up[p][p][a]{02533317}  (damage, spoil)
+mince[n][p][a]{01059908}
+minimise[g][p][a]{00428755}  (reduce)
+minimize[g][p][a]{00428755}  (reduce)
+miscarry[g][a][a]{02534046}  (fail)
+misdirect[p][p][a]{02585532}
+mishandle[p][p][a]{02533317}  (ruin, spoil)
+miss[g][p][a]{02132318,02619707,00616690,02026505,01240465,00812219}  (be unsuccessful, be absent, avoid)
+miss[g][a][a]{02638919,02638434}
+mitigate[n][p][n]{00907990,00199225}
+moderate[g][p][a]{00199085}  (to become or cause to become less extreme)
+moderate[n][p][a]{01059908,00295646,00935528}
+molder[g][a][n]{00210263}  (crumble)
+mollify[n][p][a]{00295646,00256913}  (reduce)
+mop_up[g][p][n]{00485823}  (finish)
+mop  (remove)
+mortify[g][a][a*]{00097148}  (abtöten, absterben lassen)  [m?]
+mothball  (put in disuse, postpone)
+moulder[g][a][n]{00210263}   (crumble)
+move_back[n][p"from"][n]{01998474}   (put back, withdraw)
+move_out[g][p][a]{02410046}
+muck_up[p][p][a]{02533317}  (ruin, spoil)
+muffle[n][p][n]{01571411}
+muffle[g][p][n]{02195757}  [m?]
+muff[p][p][a]{02533317}  (spoil)
+murder[g][p][a]{02488014}  (destroy, ruin)
+mute[g][p][n]{02195757}  [m?]
+mutilate[g][p][a]{00293434,00090460}  (damage)
+muzzle[n][p][a]{02195389}
+narrow_down  (limit)
+narrow  (limit) 
+negate[g][p][n]{02669219,00825097,00668804,00471015}  (nullify, invalidate)
+negative[n][p][n]{02478854}  (negate, disprove)
+neglect[g][p][a]{00616690,00618547}  (omit, disregard)
+neglect[g][m][a]{02534950}
+negotiate   (surmount)
+neuter  (make ineffective)
+neutralise[g][p][a]{00471015}  (nullify)
+neutralise[n][p][a]{01329983}  (get rid of by killing)
+neutralize[g][p][a]{00471015}   (nullify)
+neutralize[n][p][a]{02549571,01329983}  (mitigate, get rid of by killing)
+nix[n][p][n]{00797525}  (reject, forbid)
+nosedive  (drop)
+nullify[g][p][n]{02483482,00669020,00471015}
+numb[g][p][n]{02119756}
+object[g][m][a]{00809123} (ablehnen)
+obliterate[g][p][a]{00479761,00312120,00473161}   (destroy, get rid of)
+obstruct[g][p][a]{02563025,01479113}  (block)
+obviate[g][p][n]{02635337}  (eliminate)
+obviate[n][p][n]{02458770}  (avoid)
+occlude[g][p][n]{01479113}  (obstruct)  [m?]
+off[g][p][n]{02488014}  (kill)  [p?]
+offend[p][p][a]{02572443}  (infringe, to break a law or rule, or to do something against your principles)  [p?]
+offend[g][p][a]{01797206}
+offload  (get rid of)
+offset[n][p][a]{02723890,02723706}  (ausgleichen)
+omit[g][p][n]{00617464,00616690}
+oppose[n][p][a]{01093838,00778104}  (disagree)
+opt_out[g][p"of"][n]{00681634}
+ostracise[n][p][n]{02509666,02471081}  (banish)  [p?]
+ostracize[n][p][n]{02509666,02471081} (banish)  [p?]
+oust[n][p][n]{02406951}  [p?]
+oust[g][p][n]{02411579} 
+outgrow[g][p][a]{00544825}  (leave behind)
+outlaw  (ban)
+outrage[p][p][a]{02573980}
+outweigh  (wettmachen, entschädigen)
+overcome[n][p][a]{01110559,01111038}
+overlay  (überlagern)
+overlie  (überlagern)
+overlook[g][p][a]{02170805,00616690}  (ignore, fail to do/see)
+overpower[g][p][a]{01112928}  (overcome by superior force) 
+override[n][p][a]{00718035}  (rule against)
+override[g][p][a]{02650706,02549888}  (prevail over)
+overrule[n][p][n]{00718035}  [p?]
+overthrow[n][p][n]{00718035}  (rule against)
+overthrow[g][p][n]{02407551}  (stürzen)
+overturn[n][p][a]{00718035,00801460}
+overturn[g][p][a]{02407551}  (reverse, destroy, invalidate)
+overwrite[g][p][n]{01001124}   [m?]
+palliate[n][p][n]{00907990}  (alleviate)
+palsy[g][p][n]{00269566}  (paralyze)  [m?]
+paralyse[g][p][a]{00269682}  (bring to halt)
+paralyze[g][p][a]{00269682}  (bring to halt)
+pare_down[g][p][n]{00233461}
+pare[g][p][a*]{00233461}  (reduce, pare down)
+parry[g][p][n]{01149526}   (abwehren, avert)
+parry[n][p][n]{00811316}  (avoid)
+part[g][a][a*]{02436167}
+pass_away[g][a][n]{00359085,00352230}  (fade)
+pass_over[g][p][a*]{00618188}  (disregard, bypass)
+pass_up[g][p][n]{02242120}  (let go by, ignore)
+pass_up[g][p][n]{02123818}
+pass[g][a][a*]{00422644,00359085}  (go away, come to an end)
+pass[g][p][a*]{00072742}  [m?]
+patch_up[n][p][a]{00263589}  (mend, repair)  [p?]  
+patch[n][p][a*]{00263589}  [p?]
+peril[p][p][n]{02702962,01038191}
+perish[g][a][n]{00359085}  (stop existing/happening, deteriorate)
+perturb[p][p][a*]{00277400}   (stören)
+pervert[p][p][a]{02585532}  (corrupt)
+peter_out[g][a][n]{02689494,00099271}  [p?{00099271}]
+phase_out[g][p][n]{01646362}  (gradually stop)
+placate  [p?]
+play_out[g][p][a]{02285714} 
+play_out[g][a][a]{00573865}
+play_up  (malfunction)  [p?]
+plummet[g][a][n]{01982213}  (be reduced)
+plump[g][a][a*]{01982213}  (drop sharply)
+plunge[g][a][a*]{01971380,01981094}  (decrease dramatically, fall abruptly)  [p?{01981094}]
+poison[p][p][a]{02586763}  (spoil)  [m?]
+poison[g][p][a]{01326002}  (kill)
+polish_off[g][p][a]{02488014}
+pooh-pooh[p][p][a]{00798638}  (reject with contempt)
+postpone[g][p][n]{02648898}
+preclude[g][p][n]{02458316,02635471}
+preempt[g][p][a*]{02411141}  (take the place of, displace)
+prejudice  (harm)
+prevent[g][p][n]{02458316}
+prevent[g][p"from"][n]{02455370}
+privilege  (free, exempt)
+procrastinate[n][p][n]{02648322,02648694}
+profane[p][p][n]{02585532,02573980}
+prohibit[n][p"*/from"][n]{00797525}
+propitiate  (appease)  [p?]
+prorogue[g][p][n]{02648898,02433618}
+proscribe[n][p][n]{00797525}  (prohibit)
+protect[n][p"from"][a]{01130619}
+prune[n][p][a]{00474253}   (get rid of, remove)
+pull_away[n][p"from"][n]{01998474}  (leave behind)
+pull_back[g][p"from"][a]{00801045}  (recoil, back out)
+pull_back[n][p"from"][a]{01998474}
+pull_down[g][p][n]{01242426,01665698}  (destroy, demolish)  [m?]
+pull_out[g][p][a]{01353852}   (take out)
+pull_out[n][p"of"][a]{02386122}  (withdraw)
+pull_up[g][p][a*]{01353852}  (stop)  [p?]
+pull[g][p][a*]{01353852,00572673}
+pulp  [p?]
+pulverise[g][p][a]{01660001}  (destroy completely)
+pulverize[g][p][a]{01660001}  (destroy completely)
+puncture[g][p][a*]{00857916}   (make collapse, depreciate)
+purge[g][p][a]{02571005}  (oust politically)
+purge[n][p"of"][a]{00476578}  (rid of impurities)
+push_aside[g][p][a]{00802592}  (reject)
+push_back[n][p][n]{01508789}  (delay, ignore)
+push_down[g][p][n]   [p?]
+put_aside[g][p][n]{01618895,00780930}  
+put_away[g][p][a]{01618895,00780930,01329815}
+put_away[n][p][a]{02227100}
+put_back  (postpone)
+put_down[g][p][a*]{01329210}  (put to death)
+put_off[g][p][a]{02648898}  (delay)
+put_off[n][p][a]{00811316}  (avoid performing duties)
+put_out[g][p][a*]{02766453,01156848}  [p?]
+putrefy[p][a][n]{00400459}  (decay)  [m?]
+puzzle_out[n][p][n]{00636568}
+quail[n][?][n]{02064997}  (draw back)
+quash[n][p][n]{02428975}
+quash[g][p][n]{02483482}
+queer[g][p][n]{02563998}  (ruin, thwart)
+queer[p][p][n]{01038191}  (endanger)
+quell[n][p][n]{00464147,01196647}   (suppress, overcome)
+quench[g][p][a]{01206641,02767855}  (put out)
+quench[n][p][a]{00464147}  (suppress)
+quiet_down[g][a][n]{02194634}  (calm down)  [m?]
+quieten[g][a][n]{02194634}  (allay, make/become calm)  [m?]
+quieten[n][p][n]{01768652,00462448}
+quiet[g][a][n]{02194634}  (allay,  make/become calm)
+quiet[n][p][n]{01768652}  (make calm) 
+quit[g][m,p][a]{02686624} 
+quit[g][p][a]{02012411} 
+quit[n][p][a]{02232269}  (turn away from; give up)
+rally  (recover)  [p?]
+rappel  (abseil)  [p?]
+rarefy (become/make rarer)
+rase[g][p][n]{01665698}  (demolish completely, erase)  [m?]
+ratchet_down  (fall)
+rat  (let down, abandon)
+ravage[g][p][a]{00389306}   (destroy)
+ravel_out[g][p][n]{01524000}  (disentangle)
+ravel[g][p][a]{01524000}  (disentangle)
+raze[g][p][n]{01665698}  (demolish completely, erase)  [m?]
+reabsorb
+rebuff[n][p][n]{00800201,01133623}  (refuse, reject)
+rebut[g][p][n]{00816512,00669665}   (refute)
+recall  (revoke, take back)
+recant[n][p][n]{00800379}   (withdraw)
+recede[n][p"from"][n]{01998474}
+recede[g][a][n]{01116231,00571771}
+recess[g][?][a]{00364950}  (suspend)
+reclaim[n][p][a*]{00385291}
+recoil[n][p"from"][a*]{02064997}   (draw back)
+recompense[n][p"for"][a]{02255433} 
+reconcile  (settle; schlichten)
+recoup[n][p"for"][a]{02254399}
+recoup[n][p][a]{02254246}
+recover[n][p"from"][a]{00092442}  (sich erholen)
+recover[n][p][a]{02254246} 
+rectify[n][p][a]{00200276,00200023,00385291} 
+recuperate[n][p"from"][a]{00092442}  (recover)
+recuperate[n][p][a]{02254246} 
+redeem (compensate)
+redress[n][p][n]{02525657}
+reduce[g][p][a*]{00430013,02322816}  (make less/smaller)
+reduce[n][p][a*]{02428975}
+reduce[g][a,p][a*]{00045548}
+reform[n][p][a]{00385291,00266559}  (to change your own or someone else’s behaviour, so that it is no longer illegal or harmful)
+refrain[n][p"from"][n]{02731589}
+refrain[g][p"from"][n]{01198570}
+refuse[g][m][a]{00799092}
+refuse[p][p][a]{02217607} 
+refuse[g][p][a]{02713660,02242120,02508565}
+refute[g][p][n]{00816512,00669665}
+regenerate[n][p][a*]{00385291}
+regress  (zurückgehen) 
+rehabilitate
+reimburse[n][p"for"][a]{02254399}  (compensate)
+rein_in  (hold back, restrain)
+rein  (hold back, restrain)
+reject[g][p][a]{00687584,02242120,02508565,00687320}  (refuse)
+reject[p][p][a]{00798638}
+relativise
+relativize
+relax[n][p][a]{02607993}  (make less strict, become diminished)
+relax[n][a][a]{02607805,00420090}  (become less severe)
+relax[g][p][a]{00442167}
+release[g][p][a]{01477180,00104622}  (eliminate)  [m?{01477180} ]
+release[p][p][a]{02321284}  (give up)
+relegate[n][p][a*]{02509452}  (banish)  [p?]
+relent  (slacken)
+relieve[n][p][a]{00063866,00082316,00199442}
+relieve[g][p"of"][a]{02417305}
+relieve[n][p"from"][a]{02570061,00895399} 
+relieve[g][p][a]{01819152}
+relieve[n][p"of"][a]{02317976}
+relinquish[p][p][n]{02321284}  (abandon, lose)
+relinquish[g][p][n]{02539728,01477180}
+relinquish[n][p][n]{02232269}  (turn away from; give up)
+remediate[n][p][n]{00200276}  (repair)
+remedy[n][p][n]{00200276,00082316}  (correct, provide relief for) 
+remove[g][p][a]{00173351,02488014,00572138,02410046}  (take away)
+remove[n][p][a]{02409366,02228837}  (get rid of)
+remove[g][p"from"][a]{00422488}
+renege_on[p][p][n]{00801904}   (fail to fulfill)
+renege[p][p"on"][n]{00801904}  (fail to fulfill)
+renew  (replace something that is old or damaged)
+renounce[g][p][n]{02384340,02372031,00759589}  (formally give up)
+renounce[n][p][n]{02232269}  (turn away from; give up)
+repair[n][p][a]{02255433,00200276}
+repel[n][p][a]{01508789,01133623,00800201}  (ward off, repulse)
+repeal[n][p][n]{00801460}  (annul)
+replace[n][p][a]{00162496}   (substitute)
+replace[g][p][a]{024105320,02262575}
+repress[n][p][a]{02428975,01571411}  (suppress, restrain)
+repress[g][p][a]{02457192,00587675}
+reprieve[n][p][a]{02557087}  (stop, delay)
+repudiate[g][p][n]{00759589}  (cast off)
+repudiate[n][p][n]{00687940,00913870,00818489}  (refuse, reject)
+repulse[n][p][a]{01133623,01508789}   (force back)
+rescind[n][p][n]{00801460}  (annul)
+resign[g][p][a]{02372031}  (give up)
+resign[p][p][a]{02321284}
+resile[g][p"from"][a]{02386369}
+resile[g][p][a]{00800379}
+resist[n][p][a]{02589630,01119003}  (refuse)
+resolve[n][p][a*]{00735067}  (solve)
+restrain[g][p][a]{01303637}  (hold back, restrict)
+restrain[n][p][a]{00233707}
+restrain[n][p"from"][a]{02456292} 
+restrict[n][m,p][a]{00237442}
+restrict[n][p][a]{02455890}
+retard[g][?][a]{02758442}
+retard[g][p][a]{00441241}  (delay)
+retard[g][a][a]{00440913}  (slow down)
+retire[g][p"from"][a]{02385151}  (withdraw)
+retire[n][p"from"][a]{01998474}  (pull back)
+retire[n][p][a]{02385393,02230124,01156641} (make retire, dispose of)
+retract[n][p][a]{00800379}  (withdraw)
+retract[n][p"from"][a]{02065294}  (pull away from a source of disgust)
+retreat[g][p"from"][a]{00801045}  (withdraw, move back)
+retreat[n][p"from"][a]{01998474}  (withdraw, move back)
+retrench[g][p][a]{00431052}  (make a reduction)
+retrograde  (regress)
+retrogress  (recede, degenerate)
+reverse[n][p][a]{00718035,00801460}  (rule against, cancel)
+revoke[p][?][n]{01076750} 
+revoke[n][p][n]{00801460} (cancel, rescind)
+ride_out  (überstehen, durchstehen)
+rid[n][p"of"][n]{02355171}
+right[n][p][a]{02525657,00200023}  (rectify, correct)
+rinse_off  [m?]
+rip_out[g][p][a]{01353852}
+rip_off[g][p][n]{00179012}  [m?]
+rise  (adjourn)  [p?]
+risk[p][p][a]{02551275}   (hazard)
+rob  (deprive)
+root_out[g][p][n]{01569697,01666012}  (eliminate, get rid of)
+rope_down  (sich abseilen)
+rot[g][a][a]{00210263}  (decay, cause to decay, deteriorate)
+round_off  (finish)  [p?]
+rout_out[n][p][a]{01111362}  [p?]
+rout[n][p][a*]{01111362}  (defeat)  [p?]
+rub_down[g][p][a]{01256577}  (wear away)  [m?]
+rub_off[g][p][n]{01256577}  (wear away)  [m?]
+rub_out[g][p][n]{01551500}  (erase)  [m?]
+ruin[g][p][a]{01566925,02564777}
+ruin[g][a][a]{00580070}  [p?]
+rule_out[g][p][a]{02635471,00687320}
+run_along  (go away)
+run_away
+run_down[g][a][a]{00099271}  [p?{00099271}]
+run_down[g][p][a]{02285714}
+run_off[n][p][a*]{02006752}  (force to go away)  
+run_out[g][a][a]{00562648,02690607,00561324,00099271}
+run_out[g][p"of"][a]{00562791}
+run_through[g][p][a]{01159815}  [p?]
+rupture  (break)
+rush_away
+rust[g][a][a]{00274762}  [m?]
+rust[g][p][a]{00275082}  [m?]
+saber  [m?]
+sabre  [m?]
+sabotage[p][p][n]{02549304}
+sack[g][p][a*]{02407967}
+sacrifice[p][p][a]{02348591,02330554}  (give up)
+sacrifice[g][p][a]{01328775}
+sag  (weaken, decline)
+salve[n][p][a]{02556565}  (soothe, lindern)
+sap[g][p][a]{02285714}   (drain)
+sate  (satisfy a disire or appetite fully)
+satiate  (satisfy a need or desire completely)
+satisfy  (fulfil the desires or needs of, dispel)
+scale_down[g][p][a]{00241017} (reduce)
+scare_away  (verscheuchen) [p?]
+scare_off  (verscheuchen) [p?]
+scarper
+scat  (go away)
+scoot  (leave, abhauen)
+scorch[g][p][a]{00583604}  (destroy)  [m?]
+score_out[g][p][n]{01551500}  [m?]
+scorn[p][p][a]{00798638}  (refuse)
+scotch[g][p][a]{02563998}
+scour  (erode, remove)  [p?]
+scourge[g][p][a]{00389306}
+scram  (abhauen)
+scrap[n][p][a]{02228020,00570947}  (decide not to continue, get rid of)
+scratch[g][p][a*]{02483178,01552202}  (remove, cancel)  [m?]
+scratch_out[g][p][n]{01552501}  (durchstreichen) [m?]
+scratch_off  (ausstreichen)  [m?]
+screen_out
+screen[n][p"from"][a]{01132595}
+screen[n][?][a]{01480168}
+screw_up[p][p][a*]{02533317}  (ruin)
+scrub[g][p][a]{02483178}  (postpone)
+scupper[p][p][a]{01038191} (thwart, spoil)
+scuttle  (put an end to)
+seal_off
+seal  (block access to)  [?]
+season[n][p][a]{00295646}
+secede[g][a][n]{02541123}
+seclude[g][p"from"][n]{00496934}  [p?]
+sedate[n][p][n]{00022309}  [m?]
+self-destroy[g][a][n]{01623473}
+self-destruct[g][a][n]{01623473} 
+send_away[g][p][n]{02471362,02407967}  [p?]
+send_back  [p?]
+send_off  (cause to depart)  [p?]
+senesce  (deteriorate with age)
+separate[g][a][a*]{02436167,00334996}  (to put or force or be put or forced apart)  [p?]
+sequester[g][p"from"][a*]{00496934}
+sequestrate[g][p"from"][a]{00496934}
+set_aside[g][p][a]{00543748,02483910}   (stop, annul)
+set_back[g][p][a]{02648898,02457523}
+settle_down[g][a][a]{01767681}  (calm down) [p?]
+settle[g][a][a*]{01993887}  (calm down)  [m?]
+sever[g][p][a]{01563766}  (dissolve)
+shackle  (restrict)
+shake_off[n][p][n]{02077473}  (get rid of something bad)
+shake_off[n][p][n]{01516062}
+shake[n][p][a*]{02077473}  (get rid of something bad, make less strong)
+shank  (zum Scheitern bringen)
+shatter[g][a][n]{00334568}  [m?]
+shatter[g][p][n]{00334860,00334717}  (destroy, seriosly damage)  [m?{00334717}]  
+shave  (reduce, decrease)
+shed[n][p][a*]{01516062}  (get rid of)
+sheer  (avoid)
+shelter  (protect from difficult/unpleasant experiences)
+shelve[g][p][a]{02648898}  (postpone)
+shield[n][p"from"][a]{01132595}  (protect from something unpleasant)
+shift  (get rid of)
+shipwreck[p][p][a]{02565439}  (ruin)
+shipwreck[p][a][a]{02534828}  (suffer failure)
+shirk[n][p][n]{02469127,00813543}  (avoid)
+shoo_away[n][p][n]{02007494}  (verscheuchen)
+shoo_off[n][p][n]{02007494}  (verscheuchen)
+shoo[n][p][n]{02007494}  (verscheuchen) 
+shoot_down[n][p][a]{02479111}  (refuse, refute)
+shoot_up  (destroy)
+short-circuit[g][p][a]{02564637}  (impede)
+short-circuit[n][p][a]{00812833}  (avoid something unpleasant)
+shorten  (vermindern)
+shove_off  (go away)
+shrink_back[n][p"from"][n]{02065294}  (zurückweichen)
+shrink[n][p"from"][a]{02064997}  (draw back)
+shrink[g][p][a]{00241924}  (reduce in size)
+shrink[g][a][a]{00241457,00152378}  (become smaller, decrease in size)
+shrivel_up  (become weaker/smaller)
+shrivel[g][a][a]{00152378}  (become weaker/smaller)
+shrug_off  (get rid of)
+shunt  (get rid of)  [p?]
+shun[n][p][n]{00813811,02509666}  (avoid)
+shut_down[g][a,p][n]{02431242}  (stop, turn off, close)
+shut_off[g][p][a]{01480024}   (block off)  [p?]
+shut_off[g][p"from"][a]{02035671}
+shut_out[g][p][n]{02454205}  (block out, exclude)
+shut_up[n][p][a]{00462448}  [m?] 
+shut_up[g][a][a]{01042933}  [m?]
+shut[g][p][a]{02454205}  (prevent from entering)
+sidestep[n][p][n]{00811316}  (avoid something difficult or unpleasant)
+sidetrack[g][p"from"][n]{02070232}  (put on ice)
+sign_away[g][p][n]{02348812}  (verzichten)
+sign_off  (end)  [p?]
+silence[n][p][a]{00462448}
+simmer_down[g][a][n]{01767681}  (calm down)  [p?]
+sink[g][a][a]{01989937,01993887,00433792,01992900}  (fall or descent, decline)  [m?]
+siphon_off  (remove)  [m?]
+sit_out[g][p][a]{02732418}  (not participate)  [p?]
+skate_over  (avoid)
+skedaddle  (run off hastily)
+skip_over[g][p][n]{00618188}  (überspringen)
+skip[g][p][a]{00618188}  (leave out)
+skip[n][p][a]{02619895}  (intentionally fail to attend)
+skirt[n][p][a*]{00811316}   (avoid)
+skive  (to evade (work or responsibility))
+skunk[n][p][n]{01106104}  (defeat)  [m?]
+slacken_off[g][a][n]{00156293}  (become less intense) 
+slacken[g][a][a]{00441535}  (become slower)
+slacken[g][p][a]{00442167}  (make less active)
+slack_off[g][a][n]{00245945}  (slow down, become less)
+slack_up[g][p][n]{00442167}
+slack[g][p][a]{00618051,00442167}  (neglect, make less active)
+slack[g][a][a]{00441535,00245945}  (become slower/less)
+slack[n][p][a]{00246175}
+slake[g][p][a]{01206641}  (befriedigen, stillen, dämpfen)
+slake[n][p][a]{00246175}
+slash[g][p][a*]{00431214}  (reduce)
+slaughter  (defeat)  [p?]
+slenderize[g][a,p][a]{00045548}  (reduce, take off weight)  [m?]
+slide  (decline)
+slim_down[g][a,p][n]{00045548}  (reduce, take off weight)
+slim[g][a,p][n]{00045548}  (reduce, take off weight)
+slip_away  (leave, elude)
+slip[p][a][a*]{00204753}  (get worse)
+slough_off[g][p][a]{02227628}  (get rid of)
+slow_down[g][a][a]{00440913,00441535}  (nachlassen)
+slow_down[g][p][a]{00441741,00439450}  (hemmen)
+slow_up[g][a][n]{00441535,00440913}  
+slow_up[g][p][n]{00441741}
+slow[g][a][n]{00440913,00441535}
+slow[g][p][n]{00441741}
+slump[g][a][a]{01992900,00433792}  (fall)
+smash_up[g][p][n]{01569486}  (destroy completely)
+smash[g][p][a]{00336733,01569486}  (completely destroy/defeat)  [m?{00336733}]
+smash[n][p][a]{01085987}  (overthrow or destroy (something considered evil or harmful)) 
+smash[g][a][a]{00335459}  [m?]
+smooth_out[n][p][n]{02318078}  (ausbügeln)
+smooth_over  (make a problem less serious)
+smooth[n][p][a]{02318078}  (ausbügeln)
+smother[n][p][a*]{01571411}  (suppress)
+snag  (hinder, impede)
+sneak_away  (sich davonstehlen)
+sneak_off  (sich davonstehlen)
+snooker  (thwart)
+snub[n][p][n]{01061436,00800201}
+snuff_out[g][p][n]{00479148,02767855}  (put an end to)
+soften[g][p][a]{00390886}  (alleviate) 
+soften[n][p][a]{01579748,01059908}
+solace  (alleviate)
+solve[n][p][n]{00636568,00735067,00763499}  (find a solution to something that is causing difficulties)
+soothe[n][p][a]{00063687}  (relieve, calm)
+sort_out
+sour[p][a][a]{00459426}  (trüben, sich verschlechtern)  [m?]
+spare[n][p"*/from"][a*]{02570589}  (save from, avoid)
+spike  (reject)
+spirit_away[g][p][n]{01437633,01435547}  (verschwinden lassen)
+spirit_off[g][p][n]{01437633}  (verschwinden lassen)
+splinter[g][a][a]{02541123}  (break away)
+split_up[g][a][a]{02436167,00334996}  (break up)  [p?]
+split[g][a][a*]{02436167}  (break up)  [p?]
+spoil[p][p][a]{02533317,00478872}  (ruin)
+spoil[g][p][a]{02563998}  (hinder, prevent)
+sponge_down  [p?] 
+spurn[p][p][n]{00798638}  (reject)
+squash  (suppress, overcome, end)
+squeeze_out[g][p][a*]{02409218}  (force out)
+squelch[n][p][a*]{00464147}  (suppress)
+squinch[n][?][a]{02064997}   (draw back) 
+stagnate[p][a][a]{02731161}  (stand still)
+stagnate[p][p][a]{02730942}  (stop developing)
+stalemate[p][p][n]{01079596}  (bring to deadlock)
+stall[n][p][a]{02648322,00461510}  (delay)
+stall[g][a][a]{01866326} (come to stop)
+stall[g][p][a]{01866482}  (cause an engine to stop)  [m?]
+stamp_down[n][p][n]{00463047}  (unterdrücken, niederschlagen)
+stamp_out[n][p][n]{00355692}  (eradicate, end something bad or unpleasant)
+stanch[g][p][n]{00355106}  (stop flow)  [m?]
+stand_back[g][p"from"][a]{02661794}  (not get involved)
+stand_out  (oppose, refuse to agree)
+stand_up  (resist, withstand)
+starve[p][p"of"][a*]{01190481}  (deprive, be deprived)
+staunch[g][p][n]{00355106}  (stop flow)  [m?]
+stave_off[n][p][n]{02458770}  (stop from happening, prevent)
+stay_away[g][p"from"][n]{02661794}  (avoid)
+stay_off  (avoid, not attend, hold off)
+steal_away  (sich davonstehlen)
+steamroller[g][p][a*]{01113072}  (defeat an opponent, crush opposition)  [p?]
+steamroll[g][p][a*]{01113072}  (defeat an opponent, crush opposition)  [p?]
+stem[g][p][a]{00355106}  (stop)  [m?]
+step_down[g][p][a]{00291502}  (resign, reduce)
+step_out  (bow out, withdraw from involvement) [p?]
+sterilise  [p?]
+sterilize  [p?]
+stick  (to be unable to move/continue/leave, be reluctant)
+stifle[n][p][a]{01571411}  (stop from developing/doing something)
+stifle[g][p][a]{00391513}
+still[n][p][n]{01768652,00462448,01819152}  (calm)
+still[g][p][n]{00584982}  [m?]
+stonewall[n][p][n]{01036804,00461087}
+stop[g][a][a]{01864781,02615799}  (prevent, no longer do something/move/work, block)
+stop[g][m,p][a]{02686624} 
+stop[g][p][a]{02565578,00363001,01863207}  [m?{01863207}]
+stop[n][p][a]{01133899,01480632}
+straighten_out[n][p][a*]{00208463}  (aus der Welt schaffen, bereinigen)
+straighten_up  (clean up)  [p?]
+strangle[n][p][a]{01571411}  (suppress)
+strangle[p][p][a]{00237139}  (prevent progress)
+strangulate  (strangle)
+stray[p][p"from"][a*]{01929647}  (abweichen)  [m?]
+strike_down[g][p][n]{02482757,01328616,01260866}  (knock down)  [p?]
+strike_off[g][p][n]{00802412}  (remove from list)  [m?]
+strike_out[g][p][a]{00802412}  (remove words from a document)  [m?]
+strike_out[n][p][a]{01156641}
+strike_out[g][?][a]{02534499}
+strike[g][p][a*]{01552202}  (streichen)  [m?]
+strip[g][p"of"][a*]{00194878}  (remove)
+stub_out[g][p][n]{00479613}  [m?]
+stultify[p][p][a]{00226258}  (paralyse)
+stunt  (prevent/impede the growth or development)
+stymie[g][p][n]{02563025}  (hinder, thwart)
+stymy[g][p][n]{02563025}  (hinder, thwart)
+subdue[n][p][a]{02428975,00463047,01111038}  (suppress, repress)
+subjugate[n][p][a]{02428975}
+submerge  (suppress)
+submerse  (suppress)
+subside[g][a][a]{00233328,01990381}  (abate)
+substitute[g][p][n]{02262575,02263424}  (ersetzen)
+substitute[g][p"for"][n]{02399804}  (ersetzen)
+sub[g][p"for"][n]{02399804}  (substitute)
+subvert[g][p][n]{02407551,01567809}  (bring about the complete downfall/ruin, corrupt)
+subvert[p][p][n]{02585532,02549304}
+suffer  (become worse/less successful)  [p?]
+suffocate[g][a][a*]{00391905}  (suppress)  [p?]
+suffocate[p][p][a*]{00391723}  [p?]
+sunder[p][p][n]{00336624}  (to break or separate something completely and violently)
+supercede  (ersetzen)
+supersede[g][p][n]{02410532}  (ersetzen)
+supplant[g][p][n]{02410532}  (verdrängen, ersetzen)
+suppress[n][p][a]{00463047,02428558}  (put an end to, restrain)
+suppress[g][p][a]{02429499,00153784}
+surmount[n][p][a*]{01111038}  (overcome)
+surrender  (relinquish, give up)
+suspend[g][p][a]{00364146,00543748,02649824}  (stop for a short time)
+suspend[n][p][a]{02507686}
+swallow_up  (destroy completely, make something disappear)
+swallow[n][p][a*]{00800738,00739357}
+swear_off[n][p][n]{00886335}  (abschwören)
+sweep_away[g][p][a]{01624256}  (remove, destroy)
+sweep_up  [m?]
+switch_off[g][p][n]{01513208}  [m?]
+switch  (substitute)
+taboo[n][p][n]{02514626}
+tackle  (lösen, bewältigen)
+take_away[g][p][a]{00173351,00572138}  (remove, reduce positive effect)
+take_away[g][p"from"][a]{02210501,00533195}
+take_back[n][p][a*]{00800738}  (retract, etwas Gesagtes zurücknehmen)
+take_down[g][p][a*]{01665698}  (lower or reduce in power/arrogance etc)
+take_off[g][p][a*]{00179205}  (remove, stop, leave) 
+take_out[g][p][a*]{02410046,01353852,00617464}  (destroy, remove)  [p?]
+talk_down  (dissuade)
+tame[n][p][a*]{00935528}  (curb)
+tank  (fail)
+taper_off[g][a][n]{02689494,00306198}  (decrease)
+taper[g][a][a]{00152582}  (decrease)
+tear_apart  (damage, destroy)
+tear_away[g][p][n]{00179012}  (remove)  [m?]
+tear_down[g][p][n]{01665698}  (destroy, demolish) 
+tear_off[g][p][n]{00179012}  (remove)  [m?]
+tear_out[g][p][n]{01353852}  
+tear_up  (destroy, annul, refuse to accept)
+temper[n][p][a*]{00295646}  (mitigate)
+temporise  (delay)
+temporize  (delay)
+tergiversate  (von etwas abwenden)
+terminate[g][p][a]{00353480,02407967}
+terminate[g][a][a]{02615799}
+thin_out  (verringern, weniger werden)
+thin[g][a][a*]{00045548}  (verringern, weniger werden)
+threaten[p][p][a]{02702962}  (gefährden)
+throttle  (stop, hinder)
+throw_away[n][p][n]{02227100,01516062}  (discard, get rid of)
+throw_off[n][p][n]{01516062,02077473}  (get rid of)
+throw_out[n][p][a]{02507387,02406951,02227100}  (get rid of)
+throw_out[g][p][a]{00803288}
+throw_up  (give up)
+thwart[g][p][n]{02563998}  (vereiteln)
+tide_over  (über etwas hinweghelfen)
+tie_up[g][p][a*]{01479644}  (restrain from moving or operating normally)  [p?]
+tone_down[n][p][n]{00935528}  (make less severe, lessen)
+tone_down[g][p][n]{02195757}
+topple[g][a][n]{01980502}  [m?]
+topple[g][p][n]{02101325}  [m?]
+top_off  (finish, complete)  [p?]
+torpedo  (destroy)
+toss_away[n][p][n]{02227100}  (wegwerfen)
+toss_out[n][p][n]{02227100}  (get rid of)
+toss[n][p][a*]{02227100}  (get rid of)
+total[g][p][a]{00260268}  (damage)  [p?]
+trammel  (hinder, restrain)
+tramp_down[g][p][n]{01871490}  (niedertrampeln)  [m?]
+trample[g][p][a]{01871490,00070210}  (zertrampeln)  [m?]
+tranquilize[n][p][n]{01768652,00022309}  (make or become calmer)  [m?]
+tranquillise[n][p][n]{01768652,00022309}  (make or become calmer)  [m?]
+tranquillize[n][p][n]{01768652,00022309}  (make or become calmer)  [m?]
+transcend  (become free of negative attitudes etc. that limit what you can achieve)
+transgress[p][p][a*]{02572443}  [p?]
+trash[n][p][a]{02228020}  (get rid of, destroy)
+tread_down[g][p][a*]{01597585}  (niedertreten)  [m?]
+trim_back[g][p][n]{00430013}
+trim_down[g][p][n]{00430013}
+trim[g][p][a*]{00430013}  (reduce)
+trip_up  (foil)
+troubleshoot[n][p][n]{00263435}
+trounce  (thrash, defeat)  [p?]
+truncate  (shorten)
+tumble[g][a][a]{01980502,02045722,00204643}  (fall down)  [m?]
+tumble[g][p][a]{02101325}  [m?]
+turn_away[g][p][a*]{02508565}  (auf etwas verzichten)
+turn_back[n][p][a]{02006752,01133899} 
+turn_down[g][p][n]{02242120,02508565,00574017,00268741}  (reject, reduce level)
+turn_down[p][p][n]{00798638}
+unburden 
+turn_off[g][p][a]{01513208}  (stop)
+turn_out[g][p][a*]{01513208}  (cause to stop operating)  [m?]
+turn_out[n][p][a*]{01471205}  (expel)
+turn[p][a][a*]{00459426}
+unburden[n][p"from"/"of"][n]{02365170,01490553}  (relieve, make free of)
+undercut  (undermine, lessen)
+undermine[p][p][a]{02549304}  (destroy, hinder normal operations)
+underquote  (undermine)
+undershoot[p][p][a]{01154998}  (verfehlen)
+understate  (mildern, abschwächen)
+undo[g][p][a]{01622250,02565025}  (ruin)
+undo[n][p][a]{01522610,01287511}  (cancel, cause to become loose)
+unfrock  (deprive of)
+unhand[g][p][n]{01477847}  (loslassen)  [m?]
+unhorse  (dislodge)  [p?]
+unlearn[g][p][a]{00599897}  (ablegen, abgewöhnen)
+unload  (get rid of)
+unmake[g][p][n]{01622250}  (undo, deprive of)
+unpick  (reverse)
+unplug[g][p][n]{01424071}  [m?]
+unravel[g][p][a]{01524000}  (disentangle)
+unsay[n][p][n]{00800738}  (retract, withdraw)
+unsettle  (stören)
+untangle[n][p"from"][a]{01588680}  (solve)
+uproot[g][p][a]{01666012,01569697}  (eradicate)
+upset[p][p][a*]{00522376}  (disturb, overturn)
+use_up[g][p][a]{01159815}  (deplete)
+usher_out[g][p][n]{00902491}  (cause to leave)  [p?]
+vacate[g][p][n]{02372031,02080923}  (annul)
+vacate[n][p][n]{00801460}  (annul) 
+vamoose  (abhauen)  [p?]
+vandalise[p][p][n]{01523087}  (destroy, damage)
+vandalize[p][p][n]{01523087}  (destroy, damage)
+vanish[g][a][a]{00427911,02160976,00428350,00152881}  (disappear, stop existing)
+vanquish  (defeat something, conquer)
+vaporise[g][a][a]{00576797}  [m?]
+vaporise[g][p][a]{00577047}  [m?]
+vaporize[g][p][a]{01327970}  [p?]
+vaporize[g][a][a]{00152881}
+veto[n][p][n]{02478854,00797525}  (refuse, forbid)
+violate[g][p][a]{02674312,01210308}  (fail to agree with, destroy)
+violate[p][p][a]{02572443,02573980}  (disregard)
+vitiate[p][p][n]{02585532,00478872}  (corrupt)
+vitiate[g][p][n]{00449395}  (destroy the force or legal effect of)
+void[g][p][a]{00449395,02483482}  (declare invalid)  
+void[g][p"of"][a]{00451258}
+volatilize[g][p][n]{00553330}  (etwas verflüchtigen lassen)  [m?]
+vote_down[n][p][n]{02479111,02467453}
+vote_out[n][p][n]{02479111}
+wait[g][m][a*]{02647547}  (delay temporarily)
+waive[g][p][n]{02539728}
+waive[p][p][n]{02308311}
+walk_away[n][p"from"][n]{02014079}  (go away from)
+walk_off[n][p"from"][a]{02014079}  (go away from)
+walk_out[n][p"of"][a]{02014252,00616355} (leave)  [p?]
+walk  (disappear, go missing)
+wallop  (defeat)
+wane[g][a][a]{00432779,00434886}  (grow/become smaller)
+want[p][p][a*]{02638648}  (be lacking, to be absent)
+ward_off[n][p][n]{02458770,01132017}  (fend off)
+wash_away[g][p][n]{00572350,00558763}  (eliminate, remove by water)
+wash_off[g][p][n]{00558763}  (remove)
+wash_out[g][p][a*]{00558763,01608772}  (remove, abandon, destroy)
+waste[p][p][a]{02273196}  (throw away)
+waste[g][p][a]{02228261,00389306}  (get rid of, ruin)
+waste[n][p][a]{01329983}  (liquidate)
+water_down[g][p][a]{00489237}
+wave_off  (zum Abschied nachwinken) [m?]
+weaken[g][a][a]{00223926}  (become less strong)
+weaken[p][p][a]{02549304}  (hinder normal operations)
+weaken[g][p][a]{00291502,00390886}  (lessen, reduce intensity)
+wear_away[g][p][a]{01256888}  (diminish, become deteriorate)  [m?]
+wear_away[g][a][a]{00276052}
+wear_down[g][p][a]{00470295}  (deteriorate through use)  [m?]
+wear_off[g][p][n]{00470295,01256888}  (diminish, deteriorate through use)  [m?]
+wear_out[g][a][a]{01372011}  (go to pieces)
+wear_out[g][p][a]{00470295}  (deteriorate through use)  [m?]
+weed_out[n][p][n]{02228412}  (remove)
+welch  (fail to fulfil an obligation; sich etwas enziehen)
+welsh  (fail to fulfil an obligation; sich etwas enziehen))
+whap  (defeat)  [p?]
+whisk_away  (brush/sweep/wipe off)  [m?]
+whisk_off[g][p][a]{01437887}  (brush/sweep/wipe off)  [m?]
+white_out  [m?]
+whittle_away  (gradually decrease, reduce)
+whittle_down  (reduce)
+whomp  (defeat)  [p?]
+whop  (defeat)  [p?] 
+widow  (deprive of something valued or desirable)
+wilt  (lose/cause to lose strength)
+wince[n][p"from"][a]{02064997}  (draw back)
+wind_up  (bring to an end)
+winkle_out[n][p][n]{02409764}  (force from a place/position)
+winkle_out[g][p][n]{01354857}  (remove)
+winkle[g][p][a]{01354857}  (remove)
+winnow_out[g][p][n]{00687320}  (separate, remove)
+wipe_away[g][p][n]{01395572}  [m?]
+wipe_off[g][p][n]{01395572,01551500}  (erase, destroy)  [m?]
+wipe_out[g][p][n]{01159815,00471632,01624256,00480322,00479761,00472127}  (destroy, eradicate)
+wipe  (eradicate, cancel, abandon, reject)
+withdraw[g][p"from"][a]{02385151,01514012,00496934,00801045}  (remove, cancel, take back, stop taking part in)
+withdraw[n][p][a]{00800738}  (pull back)
+withdraw[n][p"from"][a]{01998474}
+withdraw[g][p][a]{00173351}  (remove)
+wither[p][a][a]{00422870}  (lose vigor, or vitality)
+withhold  (restrain)
+withstand[n][p][n]{02712676,01119003}   (resist)
+work_off[n][p][n]{02228640}  (get rid of)
+work_out[n][p][a*]{00636568} (solve)
+work_through  (resolve a problem)
+work[n][p][a*]{00636568}  (solve)
+work[p][a][a*]{00459426}  (spoil)  [m?]
+worsen[p][a][a]{00204228}  (grow worse)
+worst  (defeat)  [p?]
+wrack[g][p][n]{01568966}
+wrap_up  (conclude, finish)
+wreck[g][p][n]{01568966}
+write_off[g][p][a*]{02483078}  (cancel)  [p?]
+write_out  (remove a character from a television series, remove sb out of one's will)
+yield_up[p][p][n]{02240331}  (aufgeben, auf etwas verzichten)
+yield  (be replaced by)
+zap[g][p][a*]{01327970}  (vaporize)
