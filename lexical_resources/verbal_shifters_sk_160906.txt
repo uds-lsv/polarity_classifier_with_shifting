@@ -749,7 +749,7 @@ lock_away
 lock_out aussperren
 lock_up
 loose loslassen,lösen,befreien
-loosen lösen,loslassen,befreien
+loosen lösen,loslassen,befreien,lockern
 lop streichen,kürzen
 lop_off kürzen
 lose verlieren,einbüßen,ablegen,versäumen,loswerden
@@ -955,7 +955,7 @@ rein_in
 reject ablehnen,verwerfen,verweigern,abweisen,zurückweisen,aufgeben,entsagen,verlassen
 relativise
 relativize
-relax nachlassen,mildern
+relax nachlassen,mildern,lockern
 release loslassen,losmachen,lösen,erlösen,befreien,entbinden,aufgeben,verzichten
 relegate verbannen,verdrängen
 relent nachlassen,aufgeben
@@ -1125,10 +1125,10 @@ skip_over übergehen,überspringen
 skirt umgehen,entgehen
 skive schwänzen,sich_drücken
 skunk besiegen
-slack nachlassen,löschen
+slack nachlassen,löschen,lockern
 slack_off lösen,nachlassen,abflauen,reduzieren,drosseln
 slack_up
-slacken vermindern,nachlassen,abflauen
+slacken vermindern,nachlassen,abflauen,lockern
 slacken_off reduzieren,drosseln,abnehmen,nachlassen
 slake stillen,dämpfen,mildern,lindern,unterdrücken,nachlassen,zerfallen
 slash kürzen,senken,verringern,reduzieren
