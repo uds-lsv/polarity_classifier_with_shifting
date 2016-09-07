@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>Examples</name>
+  <description/>
+  <version>${version}</version>
+  <vendor>Ubiquitous Knowledge Processing (UKP) Lab, Technische Universität Darmstadt</vendor>
+  <types>
+    <typeDescription>
+      <name>bachelor.polarity.types.PolarExpression</name>
+      <description>A polar expression.
+E.g. "mögen, hassen, gut, schlecht, ..."</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>value</name>
+          <description>The numeric value of the polar expression.
+Positive: 1.0
+Neutral: 0
+Negative: -1.0</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>pos</name>
+          <description>Part of speech tag.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>category</name>
+          <description>Category is the second token of a line in the lexicon input.
+Possible categories:
+NEG, POS, INT, SHI
+
+Example:
+"fehlschlagen NEG=0.7 verben "
+category= NEG</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>bachelor.polarity.types.SentimentExpression</name>
+      <description>A sentiment expression made up of a polar expression and possibly a shifter.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  <typeDescription>
+      <name>bachelor.polarity.types.Shifter</name>
+      <description>A shifter "shifts" sentiments.
+Examples:
+"kein, weniger, nicht, ..."</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
