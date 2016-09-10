@@ -59,8 +59,8 @@ public class AnnotationPipeline
         
         //PolarExpression annotator
         AnalysisEngineDescription polarExpressionFinder = createEngineDescription(
-            LexiconAnnotator.class,
-            LexiconAnnotator.PARAM_MODEL_LOCATION,
+            SentimentLexiconAnnotator.class,
+            SentimentLexiconAnnotator.PARAM_MODEL_LOCATION,
             "src/main/resources/dictionaries/germanlex.txt");
         
         /*

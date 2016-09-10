@@ -70,7 +70,7 @@ import de.tudarmstadt.ukp.dkpro.core.dictionaryannotator.PhraseTree;
  */
 @TypeCapability(inputs = { "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
 		"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence" })
-public class LexiconAnnotator extends JCasAnnotator_ImplBase {
+public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 	/**
 	 * The file must contain one phrase per line - phrases will be split at " "
 	 */
@@ -147,12 +147,12 @@ public class LexiconAnnotator extends JCasAnnotator_ImplBase {
 
 							lexiconEntries.put(wordFromInput, catValuePosList);
 						} else {
-							System.out.println("Lexicon entry for " + wordFromInput + " is incomplete!");
+							System.err.println("Lexicon entry for " + wordFromInput + " is incomplete!");
 						}
 
 					} else {
-						System.out.println("Line with wrong format in Lexicon, will be ignored: ");
-						System.out.println("\"" + inputLine + "\"");
+						System.err.println("Line with wrong format in Lexicon, will be ignored: ");
+						System.err.println("\"" + inputLine + "\"");
 					}
 				}
 			}
@@ -206,10 +206,14 @@ public class LexiconAnnotator extends JCasAnnotator_ImplBase {
 
 						jcas.getCas().addFsToIndexes(newFound);
 					} else {
+						// Case of shifter in the sentiment lex --> ignore those lines because
+						// shifters are read in from seperate file.
+						/*
 						Type type = getType(jcas.getCas(), Shifter.class.getName());
 
 						AnnotationFS newFound = jcas.getCas().createAnnotation(type, beginToken.getBegin(), endToken.getEnd());
 						jcas.getCas().addFsToIndexes(newFound);
+						*/
 					}
 				}
 			}
