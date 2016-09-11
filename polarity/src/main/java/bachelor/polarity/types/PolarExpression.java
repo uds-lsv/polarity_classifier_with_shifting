@@ -12,8 +12,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 /** A polar expression.
 E.g. "mögen, hassen, gut, schlecht, ..."
- * Updated by JCasGen Tue Aug 30 19:23:33 CEST 2016
- * XML source: C:/Users/m_s_w_000/workspace/polarity/src/main/resources/desc/type/typeSystemDescriptor.xml
+ * Updated by JCasGen Sun Sep 11 15:00:25 CEST 2016
+ * XML source: C:/Users/m_s_w_000/Desktop/BachelorSystem/bachelor_sentiment_german/polarity/src/main/resources/desc/type/typeSystemDescriptor.xml
  * @generated */
 public class PolarExpression extends Annotation {
   /** @generated
@@ -159,6 +159,28 @@ category= NEG
     if (PolarExpression_Type.featOkTst && ((PolarExpression_Type)jcasType).casFeat_category == null)
       jcasType.jcas.throwFeatMissing("category", "bachelor.polarity.types.PolarExpression");
     jcasType.ll_cas.ll_setStringValue(addr, ((PolarExpression_Type)jcasType).casFeatCode_category, v);}    
+   
+    
+  //*--------------*
+  //* Feature: mwe
+
+  /** getter for mwe - gets True if the expression is a multi word expression, false otherwise.
+   * @generated
+   * @return value of the feature 
+   */
+  public boolean getMwe() {
+    if (PolarExpression_Type.featOkTst && ((PolarExpression_Type)jcasType).casFeat_mwe == null)
+      jcasType.jcas.throwFeatMissing("mwe", "bachelor.polarity.types.PolarExpression");
+    return jcasType.ll_cas.ll_getBooleanValue(addr, ((PolarExpression_Type)jcasType).casFeatCode_mwe);}
+    
+  /** setter for mwe - sets True if the expression is a multi word expression, false otherwise. 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setMwe(boolean v) {
+    if (PolarExpression_Type.featOkTst && ((PolarExpression_Type)jcasType).casFeat_mwe == null)
+      jcasType.jcas.throwFeatMissing("mwe", "bachelor.polarity.types.PolarExpression");
+    jcasType.ll_cas.ll_setBooleanValue(addr, ((PolarExpression_Type)jcasType).casFeatCode_mwe, v);}    
   }
 
     

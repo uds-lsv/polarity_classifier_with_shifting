@@ -12,7 +12,7 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** A sentiment expression made up of a polar expression and possibly a shifter.
- * Updated by JCasGen Tue Aug 30 19:23:33 CEST 2016
+ * Updated by JCasGen Sun Sep 11 15:00:25 CEST 2016
  * @generated */
 public class SentimentExpression_Type extends Annotation_Type {
   /** @generated 

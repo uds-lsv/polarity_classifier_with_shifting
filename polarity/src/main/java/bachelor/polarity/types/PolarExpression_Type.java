@@ -15,7 +15,7 @@ import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** A polar expression.
 E.g. "mögen, hassen, gut, schlecht, ..."
- * Updated by JCasGen Tue Aug 30 19:23:33 CEST 2016
+ * Updated by JCasGen Sun Sep 11 15:00:25 CEST 2016
  * @generated */
 public class PolarExpression_Type extends Annotation_Type {
   /** @generated 
@@ -118,6 +118,30 @@ public class PolarExpression_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_category, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_mwe;
+  /** @generated */
+  final int     casFeatCode_mwe;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public boolean getMwe(int addr) {
+        if (featOkTst && casFeat_mwe == null)
+      jcas.throwFeatMissing("mwe", "bachelor.polarity.types.PolarExpression");
+    return ll_cas.ll_getBooleanValue(addr, casFeatCode_mwe);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setMwe(int addr, boolean v) {
+        if (featOkTst && casFeat_mwe == null)
+      jcas.throwFeatMissing("mwe", "bachelor.polarity.types.PolarExpression");
+    ll_cas.ll_setBooleanValue(addr, casFeatCode_mwe, v);}
+    
+  
 
 
 
@@ -141,6 +165,10 @@ public class PolarExpression_Type extends Annotation_Type {
  
     casFeat_category = jcas.getRequiredFeatureDE(casType, "category", "uima.cas.String", featOkTst);
     casFeatCode_category  = (null == casFeat_category) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_category).getCode();
+
+ 
+    casFeat_mwe = jcas.getRequiredFeatureDE(casType, "mwe", "uima.cas.Boolean", featOkTst);
+    casFeatCode_mwe  = (null == casFeat_mwe) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_mwe).getCode();
 
   }
 }

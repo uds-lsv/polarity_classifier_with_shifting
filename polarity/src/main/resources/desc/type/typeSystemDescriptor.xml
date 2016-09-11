@@ -35,6 +35,11 @@ Example:
 category= NEG</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>mwe</name>
+          <description>True if the expression is a multi word expression, false otherwise.</description>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
@@ -48,6 +53,42 @@ category= NEG</description>
 Examples:
 "kein, weniger, nicht, ..."</description>
       <supertypeName>uima.tcas.Annotation</supertypeName>
+    <features>
+        <featureDescription>
+          <name>shifter_type</name>
+          <description>The shifter type.
+There are three different types:
+g -- general shifter
+p -- positive shifter
+n -- negative shifter 
+Examples:
+beenden [g]
+vermasseln [p]
+leugnen [n]</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>shifter_scope</name>
+          <description>Specifies the scope of the shifter, determined by its pos tag.
+The scope is listed as dependency relations.
+Examples:
+&lt;shifterVerb&gt; [&lt;type&gt;][&lt;scope&gt;] &lt;pos&gt;
+beenden [g][objd,obja,objc,obji,s,obj] verben
+korrigierbar [g][subj] adj
+kein [g][attr-rev] adj</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+          </featureDescription>
+        <featureDescription>
+          <name>shifter_pos</name>
+          <description>The pos tag of the shifter.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>mwe</name>
+          <description>True if the shifter is a multi word expression (mwe), false otherwise.</description>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      </features>
     </typeDescription>
   </types>
 </typeSystemDescription>

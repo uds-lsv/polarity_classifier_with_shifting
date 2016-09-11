@@ -63,6 +63,12 @@ public class AnnotationPipeline
             SentimentLexiconAnnotator.PARAM_MODEL_LOCATION,
             "src/main/resources/dictionaries/germanlex.txt");
         
+      //Shifter annotator
+        AnalysisEngineDescription shifterFinder = createEngineDescription(
+            ShifterLexiconAnnotator.class,
+            ShifterLexiconAnnotator.PARAM_MODEL_LOCATION,
+            "src/main/resources/dictionaries/shifter_lex_german.txt");
+        
         /*
         AnalysisEngineDescription writer = createEngineDescription(
                 CasDumpWriter.class,
@@ -72,6 +78,6 @@ public class AnnotationPipeline
         AnalysisEngineDescription xmiWriter = createEngineDescription(
         		XmiWriter.class, XmiWriter.PARAM_OUTPUT_DIRECTORY, "target");
 
-        SimplePipeline.runPipeline(reader, tokenizer, polarExpressionFinder, xmiWriter);
+        SimplePipeline.runPipeline(reader, tokenizer, polarExpressionFinder, shifterFinder, xmiWriter);
     }
 }

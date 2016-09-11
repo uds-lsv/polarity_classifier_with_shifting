@@ -36,6 +36,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.Feature;
+import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.Type;
 import org.apache.uima.cas.text.AnnotationFS;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
@@ -43,6 +44,7 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.util.Level;
 
 import bachelor.polarity.types.PolarExpression;
 import bachelor.polarity.types.Shifter;
@@ -68,9 +70,14 @@ import de.tudarmstadt.ukp.dkpro.core.dictionaryannotator.PhraseTree;
  * </pre>
  *
  */
+
+
 @TypeCapability(inputs = { "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
 		"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence" })
 public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
+	
+	
+	
 	/**
 	 * The file must contain one phrase per line - phrases will be split at " "
 	 */
@@ -91,6 +98,7 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void initialize(UimaContext aContext) throws ResourceInitializationException {
+		
 		super.initialize(aContext);
 
 		phrases = new PhraseTree();
@@ -100,29 +108,30 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 		String category = new String();
 		Double value = 0.0;
 		String pos = new String();
+		String mwe = "false";
 
 		// Read the lexicon.
 		try {
 			URL phraseFileUrl = ResourceUtils.resolveLocation(phraseFile, aContext);
 			is = phraseFileUrl.openStream();
 			for (String inputLine : IOUtils.readLines(is, modelEncoding)) {
-				List<String> catValuePosList = new ArrayList<String>();
+				List<String> catValuePosMweList = new ArrayList<String>();
 
 				// Ignore lines starting with "%%" (comments).
 				if (!(inputLine.startsWith("%%"))) {
 
 					// Ignore lines without the correct form.
 					// Correct form example: fehlschlagen NEG=0.7 verben
-					if (inputLine.matches("[\\w+[-äöüÄÖÜß]*\\w*]+\\s\\w\\w\\w=\\d.?\\d?\\s\\w+")) {
+					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\w\\w=\\d.?\\d?\\s\\w+")) {
 
 						// The relevant part for phrases is part 0, the word itself.
 						wordFromInput = inputLine.substring(0, inputLine.indexOf(" "));
 						String[] phraseSplit = wordFromInput.split(" ");
 						phrases.addPhrase(phraseSplit);
-						System.out.println("word: " + wordFromInput);
+//						System.out.println("word: " + wordFromInput);
 
 						category = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf("="));
-						System.out.println("category: " + category);
+//						System.out.println("category: " + category);
 
 						// TODO make this work for "0.7" as well as "0,7".
 						// Locale original = Locale.getDefault();
@@ -130,7 +139,7 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 						Scanner doubleScanner = new Scanner(inputLine.substring(inputLine.indexOf("=") + 1).replace('.', ','));
 						if (doubleScanner.hasNextDouble()) {
 							value = doubleScanner.nextDouble();
-							System.out.println("valueToSetFeatureTo: " + value);
+//							System.out.println("valueToSetFeatureTo: " + value);
 						} else {
 							System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
 						}
@@ -138,21 +147,26 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 						// Locale.setDefault(original);
 
 						pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
-						System.out.println("pos: " + pos);
+//						System.out.println("pos: " + pos);
+						
+						mwe = String.valueOf(wordFromInput.contains("_"));
 
 						if (category != null && value != null && pos != null) {
-							catValuePosList.add(category);
-							catValuePosList.add(value.toString());
-							catValuePosList.add(pos);
+							catValuePosMweList.add(category);
+							catValuePosMweList.add(value.toString());
+							catValuePosMweList.add(pos);
+							catValuePosMweList.add(mwe.toString());
+							
 
-							lexiconEntries.put(wordFromInput, catValuePosList);
+							lexiconEntries.put(wordFromInput, catValuePosMweList);
 						} else {
-							System.err.println("Lexicon entry for " + wordFromInput + " is incomplete!");
+							System.err.println("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");
 						}
 
 					} else {
-						System.err.println("Line with wrong format in Lexicon, will be ignored: ");
+						System.err.println("Line with wrong format in Sentiment-Lexicon, will be ignored: ");
 						System.err.println("\"" + inputLine + "\"");
+//						getContext().getLogger().log(Level.WARNING, "Found: " + inputLine);
 					}
 				}
 			}
@@ -182,7 +196,7 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 				String[] longestMatch = phrases.getLongestMatch(sentenceToEnd);
 
 				if (longestMatch != null) {
-					System.out.println("match: " + longestMatch[0]);
+//					System.out.println("match: " + longestMatch[0]);
 
 					Token beginToken = tokens.get(i);
 					Token endToken = tokens.get(i + longestMatch.length - 1);
@@ -190,6 +204,7 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 					String cat = lexiconEntries.get(longestMatch[0]).get(0);
 					String value = lexiconEntries.get(longestMatch[0]).get(1);
 					String pos = lexiconEntries.get(longestMatch[0]).get(2);
+					String mwe = lexiconEntries.get(longestMatch[0]).get(3);
 
 					if (!cat.equals("SHI")) {
 						Type type = getType(jcas.getCas(), PolarExpression.class.getName());
@@ -197,12 +212,14 @@ public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
 						Feature featurePos = type.getFeatureByBaseName("pos");
 						Feature featureValue = type.getFeatureByBaseName("value");
 						Feature featureCategory = type.getFeatureByBaseName("category");
+						Feature featureMwe = type.getFeatureByBaseName("mwe");
 
 						AnnotationFS newFound = jcas.getCas().createAnnotation(type, beginToken.getBegin(), endToken.getEnd());
 
 						newFound.setFeatureValueFromString(featureCategory, cat);
 						newFound.setFeatureValueFromString(featureValue, value);
 						newFound.setFeatureValueFromString(featurePos, pos);
+						newFound.setFeatureValueFromString(featureMwe, mwe);
 
 						jcas.getCas().addFsToIndexes(newFound);
 					} else {
