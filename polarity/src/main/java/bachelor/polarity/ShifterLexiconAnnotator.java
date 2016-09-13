@@ -120,16 +120,16 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 						shifterStr = inputLine.substring(0, inputLine.indexOf(" "));
 						String[] phraseSplit = shifterStr.split(" ");
 						phrases.addPhrase(phraseSplit);
-						System.out.println("shifter: " + shifterStr);
+//						System.out.println("shifter: " + shifterStr);
 
 						shifter_type = inputLine.substring(inputLine.indexOf("[") + 1, inputLine.indexOf("]"));
-						System.out.println("shifter_type: " + shifter_type);
+//						System.out.println("shifter_type: " + shifter_type);
 
 						shifter_scope = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]"));
-						System.out.println("shifter_scope: " + shifter_scope);
+//						System.out.println("shifter_scope: " + shifter_scope);
 
 						shifter_pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
-						System.out.println("shifter_pos: " + shifter_pos);
+//						System.out.println("shifter_pos: " + shifter_pos);
 
 						mwe = String.valueOf(shifterStr.contains("_"));
 
@@ -176,7 +176,7 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 				String[] longestMatch = phrases.getLongestMatch(sentenceToEnd);
 
 				if (longestMatch != null) {
-					System.out.println("match: " + longestMatch[0]);
+//					System.out.println("match: " + longestMatch[0]);
 
 					Token beginToken = tokens.get(i);
 					Token endToken = tokens.get(i + longestMatch.length - 1);

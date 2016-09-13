@@ -50,7 +50,9 @@ public class AnnotationPipeline
         CollectionReaderDescription reader = createReaderDescription(
                 TextReader.class,
                 TextReader.PARAM_SOURCE_LOCATION, "src/main/resources/textInput",
-                TextReader.PARAM_PATTERNS, "[+]*.txt");
+                TextReader.PARAM_PATTERNS, "steps2016-testdaten.raw.txt"
+//                TextReader.PARAM_PATTERNS, "[+]*.txt"
+                );
 
         //Tokenizer
         AnalysisEngineDescription tokenizer = createEngineDescription(
