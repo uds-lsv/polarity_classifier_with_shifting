@@ -1,420 +1,433 @@
-%% <shifterVerb> [<type>][<scope>] <pos>
-nachlassen [n][objd,obja,objc,obji,s,obj] verb
-dämpfen [n][objd,obja,objc,obji,s,obj] verb
-kürzen [g][objd,obja,objc,obji,s,obj] verb
-aufgeben [g][objd,obja,objc,obji,s,obj] verb
-verzichten [g][objd,obja,objc,obji,s,obj] verb
-abweichen [p][objd,obja,objc,obji,s,obj,"von"] verb
-entsagen [n][objd,obja,objc,obji,s,obj] verb
-abschwören [n][objd,obja,objc,obji,s,obj] verb
-abtragen [g][objd,obja,objc,obji,s,obj] verb
-leugnen [n][objd,obja,objc,obji,s,obj] verb
-abschaffen [g][objd,obja,objc,obji,s,obj] verb
-aufheben [g][objd,obja,objc,obji,s,obj] verb
-abbrechen [g][objd,obja,objc,obji,s,obj] verb
-kehrtmachen [g][objd,obja,objc,obji,s,obj] verb
-abschürfen [g][objd,obja,objc,obji,s,obj] verb
-einschränken [g][objd,obja,objc,obji,s,obj] verb
-verlassen [g][objd,obja,objc,obji,s,obj,"von"] verb
-lossprechen [n][objd,obja,objc,obji,s,obj,"von"] verb
-sich_enthalten [g][objd,obja,objc,obji,s,obj,"von"] verb
-freisprechen [n][objd,obja,objc,obji,s,obj,"von"] verb
-verderben [g][objd,obja,objc,obji,s,obj] verb
-aussetzen [g][objd,obja,objc,obji,s,obj] verb
-zerstreuen [g][objd,obja,objc,obji,s,obj] verb
-stillen [g][objd,obja,objc,obji,s,obj] verb
-beheben [n][objd,obja,objc,obji,s,obj] verb
-lindern [n][objd,obja,objc,obji,s,obj] verb
-revidieren [n][objd,obja,objc,obji,s,obj] verb
-amputieren [g][objd,obja,objc,obji,s,obj] verb
-vernichten [g][objd,obja,objc,obji,s,obj] verb
-zerstören [g][objd,obja,objc,obji,s,obj] verb
-entgegenwirken [g][objd,obja,objc,obji,s,obj] verb
-beilegen [n][objd,obja,objc,obji,s,obj] verb
-anhalten [g][objd,obja,objc,obji,s,obj] verb
-aufhalten [g][objd,obja,objc,obji,s,obj] verb
-angreifen [g][objd,obja,objc,obji,s,obj] verb
-mildern [g][objd,obja,objc,obji,s,obj] verb
-verhindern [n][objd,obja,objc,obji,s,obj] verb
-verhüten [n][objd,obja,objc,obji,s,obj] verb
-vermeiden [n][objd,obja,objc,obji,s,obj] verb
-entgehen [n][objd,obja,objc,obji,s,obj] verb
-streichen [g][objd,obja,objc,obji,s,obj] verb
-umkehren [g][objd,obja,objc,obji,s,obj] verb
-zurückweichen [g][objd,obja,objc,obji,s,obj,"von"] verb
-sich_zurückziehen [g][objd,obja,objc,obji,s,obj,"von"] verb
-zurückziehen [g][objd,obja,objc,obji,s,obj,"von"] verb
-zurücktreten [g][objd,obja,objc,obji,s,obj,"von"] verb
-aussteigen [g][objd,obja,objc,obji,s,obj,"von"] verb
-vereiteln [g][objd,obja,objc,obji,s,obj] verb
-erlegen [g][objd,obja,objc,obji,s,obj] verb
-zurückschrecken [n][objd,obja,objc,obji,s,obj,"von"] verb
-ruinieren [g][objd,obja,objc,obji,s,obj] verb
-verbannen [n][objd,obja,objc,obji,s,obj] verb
-blockieren [n][objd,obja,objc,obji,s,obj] verb
-verbieten [n][objd,obja,objc,obji,s,obj] verb
-versperren [g][objd,obja,objc,obji,s,obj] verb
-verringern [g][objd,obja,objc,obji,s,obj] verb
-bekämpfen [n][objd,obja,objc,obji,s,obj,"von"] verb
-hindern [n][objd,obja,objc,obji,s,obj,"von"] verb
-durchkreuzen [n][objd,obja,objc,obji,s,obj,"von"] verb
-abwehren [n][objd,obja,objc,obji,s,obj] verb
-trüben [g][objd,obja,objc,obji,s,obj] verb
-widerlegen [g][objd,obja,objc,obji,s,obj] verb
-schmälern [p][objd,obja,objc,obji,s,obj] verb
-betäuben [g][objd,obja,objc,obji,s,obj] verb
-sich_zersetzen [g][objd,obja,objc,obji,s,obj] verb
-ausschließen [n][objd,obja,objc,obji,s,obj] verb
-unterdrücken [g][objd,obja,objc,obji,s,obj] verb
-auslöschen [n][objd,obja,objc,obji,s,obj] verb
-ausstreichen [n][objd,obja,objc,obji,s,obj] verb
-sprengen [g][objd,obja,objc,obji,s,obj] verb
-ausschalten [n][objd,obja,objc,obji,s,obj] verb
-abhalten [n][objd,obja,objc,obji,s,obj] verb
-sperren [n][objd,obja,objc,obji,s,obj] verb
-verweigern [g][objd,obja,objc,obji,s,obj] verb
-wegreißen [g][objd,obja,objc,obji,s,obj] verb
-verlöschen [g][objd,obja,objc,obji,s,obj] verb
-umstürzen [g][objd,obja,objc,obji,s,obj] verb
-vorbeigehen [g][objd,obja,objc,obji,s,obj] verb
-explodieren [g][objd,obja,objc,obji,s,obj] verb
-verpfuschen [p][objd,obja,objc,obji,s,obj] verb
-vermasseln [p][objd,obja,objc,obji,s,obj] verb
-hinauswerfen [n][objd,obja,objc,obji,s,obj] verb
-sich_erholen [n][objd,obja,objc,obji,s,obj] verb
-boykottieren [n][objd,obja,objc,obji,s,obj] verb
-verletzen [p][objd,obja,objc,obji,s,obj] verb
-unterbrechen [g][objd,obja,objc,obji,s,obj] verb
-brechen [g][objd,obja,objc,obji,s,obj] verb
-durchbrechen [g][objd,obja,objc,obji,s,obj] verb
-zerbrechen [g][objd,obja,objc,obji,s,obj] verb
-scheitern [g][objd,obja,objc,obji,s,obj] verb
-beenden [g][objd,obja,objc,obji,s,obj] verb
-aufkündigen [g][objd,obja,objc,obji,s,obj] verb
-sich_lossagen [g][objd,obja,objc,obji,s,obj,"von"] verb
-ausbrechen [g][objd,obja,objc,obji,s,obj] verb
-auflösen [g][objd,obja,objc,obji,s,obj] verb
-senken [g][objd,obja,objc,obji,s,obj] verb
-entkräften [g][objd,obja,objc,obji,s,obj] verb
-ignorieren [g][objd,obja,objc,obji,s,obj] verb
-zurückweisen [g][objd,obja,objc,obji,s,obj] verb
-verscheuchen [g][objd,obja,objc,obji,s,obj] verb
-loswerden [g][objd,obja,objc,obji,s,obj] verb
-bewahren [n][objd,obja,objc,obji,s,obj] verb
-auffangen [n][objd,obja,objc,obji,s,obj] verb
-abservieren [p][objd,obja,objc,obji,s,obj] verb
-rausschmeißen [g][objd,obja,objc,obji,s,obj] verb
-wegschaffen [n][objd,obja,objc,obji,s,obj] verb
-niederbrennen [g][objd,obja,objc,obji,s,obj] verb
-verbrennen [g][objd,obja,objc,obji,s,obj] verb
-abfackeln [g][objd,obja,objc,obji,s,obj] verb
-platzen [g][objd,obja,objc,obji,s,obj] verb
-krepieren [g][objd,obja,objc,obji,s,obj] verb
-begraben [n][objd,obja,objc,obji,s,obj] verb
-kaputtmachen [g][objd,obja,objc,obji,s,obj] verb
-absagen [g][objd,obja,objc,obji,s,obj] verb
-lösen [g][objd,obja,objc,obji,s,obj] verb
-beruhigen [g][objd,obja,objc,obji,s,obj] verb
-zunichtemachen [g][objd,obja,objc,obji,s,obj] verb
-annullieren [g][objd,obja,objc,obji,s,obj] verb
-widerrufen [g][objd,obja,objc,obji,s,obj] verb
-aufhören [g][objd,obja,objc,obji,s,obj] verb
-ablehnen [g][objd,obja,objc,obji,s,obj] verb
-verwerfen [g][objd,obja,objc,obji,s,obj] verb
-abstreifen [n][objd,obja,objc,obji,s,obj] verb
-vertreiben [n][objd,obja,objc,obji,s,obj] verb
-schwächen [p][objd,obja,objc,obji,s,obj] verb
-einstürzen [g][objd,obja,objc,obji,s,obj] verb
-zusammenbrechen [g][objd,obja,objc,obji,s,obj] verb
-enden [g][objd,obja,objc,obji,s,obj] verb
-einstellen [g][objd,obja,objc,obji,s,obj] verb
-weichen [p][objd,obja,objc,obji,s,obj] verb
-kneifen [n][objd,obja,objc,obji,s,obj,"von"] verb
-sich_abseilen [n][objd,obja,objc,obji,s,obj,"von"] verb
-sich_beruhigen [g][objd,obja,objc,obji,s,obj] verb
-ersticken [g][objd,obja,objc,obji,s,obj] verb
-stoppen [g][objd,obja,objc,obji,s,obj] verb
-hemmen [g][objd,obja,objc,obji,s,obj] verb
-fällen [g][objd,obja,objc,obji,s,obj] verb
-wegwerfen [n][objd,obja,objc,obji,s,obj] verb
-ausweichen [n][objd,obja,objc,obji,s,obj] verb
-umgehen [n][objd,obja,objc,obji,s,obj] verb
-verschwinden [g][objd,obja,objc,obji,s,obj] verb
-löschen [n][objd,obja,objc,obji,s,obj,"von"] verb
-beseitigen [n][objd,obja,objc,obji,s,obj,"von"] verb
-entfernen [n][objd,obja,objc,obji,s,obj,"von"] verb
-verkürzen [g][objd,obja,objc,obji,s,obj] verb
-aussperren [g][objd,obja,objc,obji,s,obj] verb
-schließen [g][objd,obja,objc,obji,s,obj] verb
-abschließen [g][objd,obja,objc,obji,s,obj] verb
-stilllegen [g][objd,obja,objc,obji,s,obj] verb
-verschleiern [g][objd,obja,objc,obji,s,obj] verb
-auseinanderfallen [g][objd,obja,objc,obji,s,obj] verb
-loskommen [g][objd,obja,objc,obji,s,obj] verb
-abgehen [g][objd,obja,objc,obji,s,obj] verb
-herausgehen [g][objd,obja,objc,obji,s,obj] verb
-kompensieren [n][objd,obja,objc,obji,s,obj] verb
-überwinden [n][objd,obja,objc,obji,s,obj] verb
-verbrauchen [g][objd,obja,objc,obji,s,obj] verb
-verstoßen [p][objd,obja,objc,obji,s,obj,"gegen"] verb
-anfechten [g][objd,obja,objc,obji,s,obj] verb
-berichtigen [n][objd,obja,objc,obji,s,obj] verb
-abstellen [n][objd,obja,objc,obji,s,obj] verb
-ausgleichen [n][objd,obja,objc,obji,s,obj] verb
-neutralisieren [n][objd,obja,objc,obji,s,obj] verb
-unterminieren [p][objd,obja,objc,obji,s,obj] verb
-zerplatzen [g][objd,obja,objc,obji,s,obj] verb
-kaputtgehen [g][objd,obja,objc,obji,s,obj] verb
-lähmen [p][objd,obja,objc,obji,s,obj] verb
-sterben [g][objd,obja,objc,obji,s,obj] verb
-zerfallen [g][objd,obja,objc,obji,s,obj] verb
-zugrundegehen [g][objd,obja,objc,obji,s,obj] verb
-zerschmettern [g][objd,obja,objc,obji,s,obj] verb
-zügeln [n][objd,obja,objc,obji,s,obj] verb
-besiegen [n][objd,obja,objc,obji,s,obj] verb
-abschwächen [n][objd,obja,objc,obji,s,obj] verb
-reduzieren [n][objd,obja,objc,obji,s,obj] verb
-unterbinden [g][objd,obja,objc,obji,s,obj] verb
-unterlassen [g][objd,obja,objc,obji,s,obj] verb
-fernhalten [g][objd,obja,objc,obji,s,obj] verb
-ausfallen [g][objd,obja,objc,obji,s,obj] verb
-auslassen [g][objd,obja,objc,obji,s,obj] verb
-schaden [g][objd,obja,objc,obji,s,obj] verb
-abschalten [n][objd,obja,objc,obji,s,obj] verb
-töten [g][objd,obja,objc,obji,s,obj] verb
-vermindern [g][objd,obja,objc,obji,s,obj] verb
-versagen [n][objd,obja,objc,obji,s,obj] verb
-mindern [p][objd,obja,objc,obji,s,obj] verb
-verfallen [g][objd,obja,objc,obji,s,obj] verb
-abnehmen [g][objd,obja,objc,obji,s,obj] verb
-sinken [g][objd,obja,objc,obji,s,obj] verb
-absterben [g][objd,obja,objc,obji,s,obj] verb
-bremsen [g][objd,obja,objc,obji,s,obj] verb
-dezimieren [g][objd,obja,objc,obji,s,obj] verb
-sich_auflösen [g][objd,obja,objc,obji,s,obj] verb
-zurückgehen [g][objd,obja,objc,obji,s,obj] verb
-drosseln [g][objd,obja,objc,obji,s,obj] verb
-zerschlagen [n][objd,obja,objc,obji,s,obj] verb
-abweisen [n][objd,obja,objc,obji,s,obj] verb
-verschieben [g][objd,obja,objc,obji,s,obj] verb
-entweihen [p][objd,obja,objc,obji,s,obj] verb
-abbringen [n][objd,obja,objc,obji,s,obj] verb
-abwenden [n][objd,obja,objc,obji,s,obj] verb
-berauben [p][objd,obja,objc,obji,s,obj] verb
-sich_entziehen [g][objd,obja,objc,obji,s,obj] verb
-verkümmern [p][objd,obja,objc,obji,s,obj] verb
-abbauen [g][objd,obja,objc,obji,s,obj] verb
-aufschieben [g][objd,obja,objc,obji,s,obj] verb
-stunden [g][objd,obja,objc,obji,s,obj] verb
-behindern [g][objd,obja,objc,obji,s,obj] verb
-niederreißen [g][objd,obja,objc,obji,s,obj] verb
-negieren [n][objd,obja,objc,obji,s,obj] verb
-abschlagen [n][objd,obja,objc,obji,s,obj] verb
-widerstehen [n][objd,obja,objc,obji,s,obj] verb
-ablassen [g][objd,obja,objc,obji,s,obj,"von"] verb
-absetzen [g][objd,obja,objc,obji,s,obj] verb
-abflauen [g][objd,obja,objc,obji,s,obj] verb
-enziehen [g][objd,obja,objc,obji,s,obj,"von"] verb
-ausrotten [g][objd,obja,objc,obji,s,obj] verb
-losmachen [g][objd,obja,objc,obji,s,obj] verb
-abtrennen [g][objd,obja,objc,obji,s,obj] verb
-schwinden [g][objd,obja,objc,obji,s,obj] verb
-abklingen [g][objd,obja,objc,obji,s,obj] verb
-aussterben [g][objd,obja,objc,obji,s,obj] verb
-vergehen [g][objd,obja,objc,obji,s,obj] verb
-eingehen [g][objd,obja,objc,obji,s,obj] verb
-erlöschen [g][objd,obja,objc,obji,s,obj] verb
-deaktivieren [n][objd,obja,objc,obji,s,obj] verb
-befreien [n][objd,obja,objc,obji,s,obj,"von"] verb
-ablegen [n][objd,obja,objc,obji,s,obj] verb
-entbinden [n][objd,obja,objc,obji,s,obj,"von"] verb
-entlassen [n][objd,obja,objc,obji,s,obj,"von"] verb
-tilgen [n][objd,obja,objc,obji,s,obj,"von"] verb
-verschmähen [p][objd,obja,objc,obji,s,obj] verb
-entlasten [g][objd,obja,objc,obji,s,obj,"von"] verb
-zerlegen [g][objd,obja,objc,obji,s,obj,"von"] verb
-sich_loslösen [g][objd,obja,objc,obji,s,obj] verb
-wegschicken [g][objd,obja,objc,obji,s,obj] verb
-entheben [g][objd,obja,objc,obji,s,obj] verb
-verdrängen [g][objd,obja,objc,obji,s,obj] verb
-abraten [n][objd,obja,objc,obji,s,obj,"von"] verb
-entledigen [p][objd,obja,objc,obji,s,obj,"von"] verb
-ausscheiden [p][objd,obja,objc,obji,s,obj,"von"] verb
-ausmachen [g][objd,obja,objc,obji,s,obj] verb
-niederlegen [g][objd,obja,objc,obji,s,obj] verb
-verjagen [n][objd,obja,objc,obji,s,obj] verb
-zurückdrängen [n][objd,obja,objc,obji,s,obj] verb
-sich_verringern [p][objd,obja,objc,obji,s,obj] verb
-fallen [g][objd,obja,objc,obji,s,obj] verb
-ausstoßen [n][objd,obja,objc,obji,s,obj] verb
-lassen [n][objd,obja,objc,obji,s,obj] verb
-erlösen [n][objd,obja,objc,obji,s,obj] verb
-zersetzen [g][objd,obja,objc,obji,s,obj] verb
-zerfressen [g][objd,obja,objc,obji,s,obj] verb
-auffressen [g][objd,obja,objc,obji,s,obj] verb
-aufbrauchen [g][objd,obja,objc,obji,s,obj] verb
-fressen [g][objd,obja,objc,obji,s,obj] verb
-versiegen [g][objd,obja,objc,obji,s,obj] verb
-übergehen [g][objd,obja,objc,obji,s,obj] verb
-eliminieren [g][objd,obja,objc,obji,s,obj] verb
-ausmerzen [g][objd,obja,objc,obji,s,obj] verb
-weglassen [g][objd,obja,objc,obji,s,obj] verb
-gefährden [p][objd,obja,objc,obji,s,obj] verb
-beendigen [g][objd,obja,objc,obji,s,obj] verb
-entfliehen [n][objd,obja,objc,obji,s,obj,"von"] verb
-entrinnen [n][objd,obja,objc,obji,s,obj,"von"] verb
-meiden [n][objd,obja,objc,obji,s,obj] verb
-austreiben [n][objd,obja,objc,obji,s,obj] verb
-bannen [n][objd,obja,objc,obji,s,obj] verb
-ausweisen [n][objd,obja,objc,obji,s,obj] verb
-ablaufen [g][objd,obja,objc,obji,s,obj] verb
-auslaufen [g][objd,obja,objc,obji,s,obj] verb
-vertilgen [g][objd,obja,objc,obji,s,obj] verb
-zerrinnen [g][objd,obja,objc,obji,s,obj] verb
-verklingen [g][objd,obja,objc,obji,s,obj] verb
-fehlen [g][objd,obja,objc,obji,s,obj] verb
-ausbleiben [g][objd,obja,objc,obji,s,obj] verb
-misslingen [g][objd,obja,objc,obji,s,obj] verb
-verfehlen [g][objd,obja,objc,obji,s,obj] verb
-versäumen [g][objd,obja,objc,obji,s,obj] verb
-auseinandergehen [g][objd,obja,objc,obji,s,obj] verb
-fehlschlagen [g][objd,obja,objc,obji,s,obj] verb
-untergehen [g][objd,obja,objc,obji,s,obj] verb
-zurückhalten [n][objd,obja,objc,obji,s,obj] verb
-bezwingen [g][objd,obja,objc,obji,s,obj] verb
-verpuffen [g][objd,obja,objc,obji,s,obj] verb
-sich_hinwegsetzen [g][objd,obja,objc,obji,s,obj] verb
-verfliegen [g][objd,obja,objc,obji,s,obj] verb
-sich_verkneifen [n][objd,obja,objc,obji,s,obj] verb
-untersagen [g][objd,obja,objc,obji,s,obj] verb
-kündigen [g][objd,obja,objc,obji,s,obj] verb
-vorbeugen [g][objd,obja,objc,obji,s,obj] verb
-verspielen [p][objd,obja,objc,obji,s,obj] verb
-verwirken [p][objd,obja,objc,obji,s,obj] verb
-verlieren [p][objd,obja,objc,obji,s,obj] verb
-verneinen [n][objd,obja,objc,obji,s,obj] verb
-versauen [p][objd,obja,objc,obji,s,obj] verb
-flüchten [n][objd,obja,objc,obji,s,obj,"von"] verb
-sich_losmachen [n][objd,obja,objc,obji,s,obj] verb
-sich_drücken [g][objd,obja,objc,obji,s,obj] verb
-abgewöhnen [g][objd,obja,objc,obji,s,obj] verb
-entkommen [g][objd,obja,objc,obji,s,obj] verb
-ausgehen [g][objd,obja,objc,obji,s,obj] verb
-heilen [n][objd,obja,objc,obji,s,obj] verb
-abhelfen [n][objd,obja,objc,obji,s,obj] verb
-inaktivieren [g][objd,obja,objc,obji,s,obj] verb
-übertreten [p][objd,obja,objc,obji,s,obj] verb
-zerquetschen [g][objd,obja,objc,obji,s,obj] verb
-zerdrücken [g][objd,obja,objc,obji,s,obj] verb
-sich_entledigen [n][objd,obja,objc,obji,s,obj] verb
-überspringen [g][objd,obja,objc,obji,s,obj] verb
-sich_fernhalten [n][objd,obja,objc,obji,s,obj,"von"] verb
-stornieren [g][objd,obja,objc,obji,s,obj] verb
-abwürgen [g][objd,obja,objc,obji,s,obj] verb
-auseinandernehmen [g][objd,obja,objc,obji,s,obj] verb
-verpassen [g][objd,obja,objc,obji,s,obj] verb
-liquidieren [n][objd,obja,objc,obji,s,obj] verb
-loslassen [n][objd,obja,objc,obji,s,obj] verb
-einbüßen [p][objd,obja,objc,obji,s,obj] verb
-demolieren [g][objd,obja,objc,obji,s,obj] verb
-schlichten [g][objd,obja,objc,obji,s,obj] verb
-abtöten [g][objd,obja,objc,obji,s,obj] verb
-verrotten [g][objd,obja,objc,obji,s,obj] verb
-zurückstellen [n][objd,obja,objc,obji,s,obj,"von"] verb
-vorgehen [n][objd,obja,objc,obji,s,obj] verb
-entwachsen [g][objd,obja,objc,obji,s,obj] verb
-umstoßen [n][objd,obja,objc,obji,s,obj] verb
-stürzen [n][objd,obja,objc,obji,s,obj] verb
-sich_trennen [g][objd,obja,objc,obji,s,obj] verb
-verrauchen [g][objd,obja,objc,obji,s,obj] verb
-vorübergehen [g][objd,obja,objc,obji,s,obj] verb
-stören [p][objd,obja,objc,obji,s,obj] verb
-sich_verlieren [g][objd,obja,objc,obji,s,obj] verb
-erschöpfen [g][objd,obja,objc,obji,s,obj] verb
-vertagen [g][objd,obja,objc,obji,s,obj] verb
-schützen [n][objd,obja,objc,obji,s,obj,"von"] verb
-abreißen [g][objd,obja,objc,obji,s,obj] verb
-sich_entfernen [g][objd,obja,objc,obji,s,obj] verb
-zermalmen [g][objd,obja,objc,obji,s,obj] verb
-niederschlagen [g][objd,obja,objc,obji,s,obj] verb
-nauslöschen [g][objd,obja,objc,obji,s,obj] verb
-verwesen [p][objd,obja,objc,obji,s,obj] verb
-aulöschen [n][objd,obja,objc,obji,s,obj] verb
-absehen [n][objd,obja,objc,obji,s,obj,"von"] verb
-ausschlagen [g][objd,obja,objc,obji,s,obj] verb
-ausräumen [g][objd,obja,objc,obji,s,obj] verb
-sich_widersetzen [n][objd,obja,objc,obji,s,obj] verb
-sich_legen [n][objd,obja,objc,obji,s,obj] verb
-zurücknehmen [p][objd,obja,objc,obji,s,obj] verb
-entziehen [p][objd,obja,objc,obji,s,obj] verb
-vermodern [g][objd,obja,objc,obji,s,obj] verb
-ausradieren [g][objd,obja,objc,obji,s,obj] verb
-wegwischen [g][objd,obja,objc,obji,s,obj] verb
-abhauen [n][objd,obja,objc,obji,s,obj] verb
-wegjagen [n][objd,obja,objc,obji,s,obj] verb
-sabotieren [p][objd,obja,objc,obji,s,obj] verb
-abblasen [g][objd,obja,objc,obji,s,obj] verb
-sich_lösen [g][objd,obja,objc,obji,s,obj] verb
-abschütteln [n][objd,obja,objc,obji,s,obj] verb
-abstoßen [n][objd,obja,objc,obji,s,obj] verb
-wegscheuchen [n][objd,obja,objc,obji,s,obj] verb
-abschmettern [n][objd,obja,objc,obji,s,obj] verb
-schrumpfen [n][objd,obja,objc,obji,s,obj,"von"] verb
-sich_befreien [p][objd,obja,objc,obji,s,obj] verb
-entwischen [p][objd,obja,objc,obji,s,obj] verb
-abwerfen [g][objd,obja,objc,obji,s,obj] verb
-zertrümmern [g][objd,obja,objc,obji,s,obj] verb
-ausbügeln [n][objd,obja,objc,obji,s,obj] verb
-sich_abschwächen [g][objd,obja,objc,obji,s,obj] verb
-ersparen [n][objd,obja,objc,obji,s,obj,"von"] verb
-entbehren [n][objd,obja,objc,obji,s,obj,"von"] verb
-zersplittern [g][objd,obja,objc,obji,s,obj] verb
-sich_abspalten [g][objd,obja,objc,obji,s,obj] verb
-stagnieren [p][objd,obja,objc,obji,s,obj] verb
-stillstehen [p][objd,obja,objc,obji,s,obj] verb
-abwimmeln [n][objd,obja,objc,obji,s,obj] verb
-ankämpfen [g][objd,obja,objc,obji,s,obj] verb
-nehmen [n][objd,obja,objc,obji,s,obj] verb
-ersetzen [g][objd,obja,objc,obji,s,obj] verb
-untergraben [g][objd,obja,objc,obji,s,obj] verb
-hinwegfegen [g][objd,obja,objc,obji,s,obj] verb
-tabuisieren [n][objd,obja,objc,obji,s,obj] verb
-sich_losreißen [g][objd,obja,objc,obji,s,obj] verb
-einreißen [g][objd,obja,objc,obji,s,obj] verb
-rauswerfen [n][objd,obja,objc,obji,s,obj] verb
-zertrampeln [g][objd,obja,objc,obji,s,obj] verb
-sich_abwenden [g][objd,obja,objc,obji,s,obj] verb
-sich_abgewöhnen [g][objd,obja,objc,obji,s,obj] verb
-verdampfen [g][objd,obja,objc,obji,s,obj] verb
-sich_verflüchtigen [g][objd,obja,objc,obji,s,obj] verb
-abwählen [n][objd,obja,objc,obji,s,obj] verb
-erlassen [g][objd,obja,objc,obji,s,obj] verb
-weggehen [n][objd,obja,objc,obji,s,obj,"von"] verb
-ermangeln [p][objd,obja,objc,obji,s,obj] verb
-wegspülen [g][objd,obja,objc,obji,s,obj] verb
-aussortieren [n][objd,obja,objc,obji,s,obj] verb
-aussondern [n][objd,obja,objc,obji,s,obj] verb
-abziehen [g][objd,obja,objc,obji,s,obj,"von"] verb
-verschlimmern [p][objd,obja,objc,obji,s,obj] verb
-verschlechtern [p][objd,obja,objc,obji,s,obj] verb
-sich_verschlimmern [p][objd,obja,objc,obji,s,obj] verb
-abschreiben [g][objd,obja,objc,obji,s,obj] verb
-korrigierbar [g][subj] adj
-bewältigen [g][objd,obja,objc,obji,s,obj] verb
-nie [g][m] adv
-nix [g][objp] nomen
-keinsterweise [g][m] adv
-keinerweise [g][m] adv
-niemals [g][m] adv
-nichts [g][m] nomen
-trotzen [g][objd,obja,objc,obji,s,obj] verb
-ohne [g][pp] appr
-ohne [g][pp] kon
-nicht [g][objp] adv
-kein [g][attr-rev] adj
-einzigartig [g][subj] adj
-weniger [g][attr-rev] adj
-weniger [g][m] adv
-kaum [g][m] adv
-keinesfalls [g][m] adv
-ebensowenig [g][m] adv
+%% <shifterVerb> <type>[<scope>] <pos>
+nachlassen n [objd,obja,objc,obji,s,objp-*] verb
+dämpfen n [objd,obja,objc,obji,s,objp-*] verb
+kürzen g [objd,obja,objc,obji,s,objp-*] verb
+aufgeben g [objd,obja,objc,obji,s,objp-*] verb
+verzichten g [objd,obja,objc,obji,s,objp-*] verb
+abweichen p [objd,obja,objc,obji,s,objp"von"] verb
+entsagen n [objd,obja,objc,obji,s,objp-*] verb
+abschwören n [objd,obja,objc,obji,s,objp-*] verb
+abtragen g [objd,obja,objc,obji,s,objp-*] verb
+leugnen n [objd,obja,objc,obji,s,objp-*] verb
+abschaffen g [objd,obja,objc,obji,s,objp-*] verb
+aufheben g [objd,obja,objc,obji,s,objp-*] verb
+abbrechen g [objd,obja,objc,obji,s,objp-*] verb
+kehrtmachen g [objd,obja,objc,obji,s,objp-*] verb
+abschürfen g [objd,obja,objc,obji,s,objp-*] verb
+einschränken g [objd,obja,objc,obji,s,objp-*] verb
+verlassen g [objd,obja,objc,obji,s,objp"von"] verb
+lossprechen n [objd,obja,objc,obji,s,objp"von"] verb
+sich_enthalten g [objd,obja,objc,obji,s,objp"von"] verb
+freisprechen n [objd,obja,objc,obji,s,objp"von"] verb
+verderben g [objd,obja,objc,obji,s,objp-*] verb
+aussetzen g [objd,obja,objc,obji,s,objp-*] verb
+zerstreuen g [objd,obja,objc,obji,s,objp-*] verb
+stillen g [objd,obja,objc,obji,s,objp-*] verb
+beheben n [objd,obja,objc,obji,s,objp-*] verb
+lindern n [objd,obja,objc,obji,s,objp-*] verb
+revidieren n [objd,obja,objc,obji,s,objp-*] verb
+amputieren g [objd,obja,objc,obji,s,objp-*] verb
+vernichten g [objd,obja,objc,obji,s,objp-*] verb
+zerstören g [objd,obja,objc,obji,s,objp-*] verb
+entgegenwirken g [objd,obja,objc,obji,s,objp-*] verb
+beilegen n [objd,obja,objc,obji,s,objp-*] verb
+anhalten g [objd,obja,objc,obji,s,objp-*] verb
+aufhalten g [objd,obja,objc,obji,s,objp-*] verb
+angreifen g [objd,obja,objc,obji,s,objp-*] verb
+mildern g [objd,obja,objc,obji,s,objp-*] verb
+verhindern n [objd,obja,objc,obji,s,objp-*] verb
+verhüten n [objd,obja,objc,obji,s,objp-*] verb
+vermeiden n [objd,obja,objc,obji,s,objp-*] verb
+entgehen n [objd,obja,objc,obji,s,objp-*] verb
+streichen g [objd,obja,objc,obji,s,objp-*] verb
+umkehren g [objd,obja,objc,obji,s,objp-*] verb
+zurückweichen g [objd,obja,objc,obji,s,objp"von"] verb
+sich_zurückziehen g [objd,obja,objc,obji,s,objp"von"] verb
+zurückziehen g [objd,obja,objc,obji,s,objp"von"] verb
+zurücktreten g [objd,obja,objc,obji,s,objp"von"] verb
+aussteigen g [objd,obja,objc,obji,s,objp"von"] verb
+vereiteln g [objd,obja,objc,obji,s,objp-*] verb
+erlegen g [objd,obja,objc,obji,s,objp-*] verb
+zurückschrecken n [objd,obja,objc,obji,s,objp"von"] verb
+ruinieren g [objd,obja,objc,obji,s,objp-*] verb
+verbannen n [objd,obja,objc,obji,s,objp-*] verb
+blockieren n [objd,obja,objc,obji,s,objp-*] verb
+verbieten n [objd,obja,objc,obji,s,objp-*] verb
+versperren g [objd,obja,objc,obji,s,objp-*] verb
+verringern g [objd,obja,objc,obji,s,objp-*] verb
+bekämpfen n [objd,obja,objc,obji,s,objp"von"] verb
+hindern n [objd,obja,objc,obji,s,objp"von"] verb
+durchkreuzen n [objd,obja,objc,obji,s,objp"von"] verb
+abwehren n [objd,obja,objc,obji,s,objp-*] verb
+trüben g [objd,obja,objc,obji,s,objp-*] verb
+widerlegen g [objd,obja,objc,obji,s,objp-*] verb
+schmälern p [objd,obja,objc,obji,s,objp-*] verb
+betäuben g [objd,obja,objc,obji,s,objp-*] verb
+sich_zersetzen g [objd,obja,objc,obji,s,objp-*] verb
+ausschließen n [objd,obja,objc,obji,s,objp-*] verb
+unterdrücken g [objd,obja,objc,obji,s,objp-*] verb
+auslöschen n [objd,obja,objc,obji,s,objp-*] verb
+ausstreichen n [objd,obja,objc,obji,s,objp-*] verb
+sprengen g [objd,obja,objc,obji,s,objp-*] verb
+ausschalten n [objd,obja,objc,obji,s,objp-*] verb
+abhalten n [objd,obja,objc,obji,s,objp-*] verb
+sperren n [objd,obja,objc,obji,s,objp-*] verb
+verweigern g [objd,obja,objc,obji,s,objp-*] verb
+wegreißen g [objd,obja,objc,obji,s,objp-*] verb
+verlöschen g [objd,obja,objc,obji,s,objp-*] verb
+umstürzen g [objd,obja,objc,obji,s,objp-*] verb
+vorbeigehen g [objd,obja,objc,obji,s,objp-*] verb
+explodieren g [objd,obja,objc,obji,s,objp-*] verb
+verpfuschen p [objd,obja,objc,obji,s,objp-*] verb
+vermasseln p [objd,obja,objc,obji,s,objp-*] verb
+hinauswerfen n [objd,obja,objc,obji,s,objp-*] verb
+sich_erholen n [objd,obja,objc,obji,s,objp-*] verb
+boykottieren n [objd,obja,objc,obji,s,objp-*] verb
+verletzen p [objd,obja,objc,obji,s,objp-*] verb
+unterbrechen g [objd,obja,objc,obji,s,objp-*] verb
+brechen g [objd,obja,objc,obji,s,objp-*] verb
+durchbrechen g [objd,obja,objc,obji,s,objp-*] verb
+zerbrechen g [objd,obja,objc,obji,s,objp-*] verb
+scheitern g [objd,obja,objc,obji,s,objp-*] verb
+beenden g [objd,obja,objc,obji,s,objp-*] verb
+aufkündigen g [objd,obja,objc,obji,s,objp-*] verb
+sich_lossagen g [objd,obja,objc,obji,s,objp"von"] verb
+ausbrechen g [objd,obja,objc,obji,s,objp-*] verb
+auflösen g [objd,obja,objc,obji,s,objp-*] verb
+senken g [objd,obja,objc,obji,s,objp-*] verb
+entkräften g [objd,obja,objc,obji,s,objp-*] verb
+ignorieren g [objd,obja,objc,obji,s,objp-*] verb
+zurückweisen g [objd,obja,objc,obji,s,objp-*] verb
+verscheuchen g [objd,obja,objc,obji,s,objp-*] verb
+loswerden g [objd,obja,objc,obji,s,objp-*] verb
+bewahren n [objd,obja,objc,obji,s,objp-*] verb
+auffangen n [objd,obja,objc,obji,s,objp-*] verb
+abservieren p [objd,obja,objc,obji,s,objp-*] verb
+rausschmeißen g [objd,obja,objc,obji,s,objp-*] verb
+wegschaffen n [objd,obja,objc,obji,s,objp-*] verb
+niederbrennen g [objd,obja,objc,obji,s,objp-*] verb
+verbrennen g [objd,obja,objc,obji,s,objp-*] verb
+abfackeln g [objd,obja,objc,obji,s,objp-*] verb
+platzen g [subj] verb
+krepieren g [subj] verb
+begraben n [objd,obja,objc,obji,s,objp-*] verb
+kaputtmachen g [objd,obja,objc,obji,s,objp-*] verb
+absagen g [objd,obja,objc,obji,s,objp-*] verb
+lösen g [objd,obja,objc,obji,s,objp-*] verb
+beruhigen g [objd,obja,objc,obji,s,objp-*] verb
+zunichtemachen g [objd,obja,objc,obji,s,objp-*] verb
+annullieren g [objd,obja,objc,obji,s,objp-*] verb
+widerrufen g [objd,obja,objc,obji,s,objp-*] verb
+aufhören g [objd,obja,objc,obji,s,objp-*] verb
+ablehnen g [objd,obja,objc,obji,s,objp-*] verb
+verwerfen g [objd,obja,objc,obji,s,objp-*] verb
+abstreifen n [objd,obja,objc,obji,s,objp-*] verb
+vertreiben n [objd,obja,objc,obji,s,objp-*] verb
+schwächen p [objd,obja,objc,obji,s,objp-*] verb
+einstürzen g [subj] verb
+zusammenbrechen g [objd,obja,objc,obji,s,objp-*] verb
+enden g [subj] verb
+einstellen g [objd,obja,objc,obji,s,objp-*] verb
+weichen p [objd,obja,objc,obji,s,objp-*] verb
+kneifen n [objd,obja,objc,obji,s,objp"von"] verb
+sich_abseilen n [objd,obja,objc,obji,s,objp"von"] verb
+sich_beruhigen g [objd,obja,objc,obji,s,objp-*] verb
+ersticken g [objd,obja,objc,obji,s,objp-*] verb
+stoppen g [objd,obja,objc,obji,s,objp-*] verb
+hemmen g [objd,obja,objc,obji,s,objp-*] verb
+fällen g [objd,obja,objc,obji,s,objp-*] verb
+wegwerfen n [objd,obja,objc,obji,s,objp-*] verb
+ausweichen n [objd,obja,objc,obji,s,objp-*] verb
+umgehen n [objd,obja,objc,obji,s,objp-*] verb
+verschwinden g [objd,obja,objc,obji,s,objp-*] verb
+löschen n [objd,obja,objc,obji,s,objp"von"] verb
+beseitigen n [objd,obja,objc,obji,s,objp"von"] verb
+entfernen n [objd,obja,objc,obji,s,objp"von"] verb
+verkürzen g [objd,obja,objc,obji,s,objp-*] verb
+aussperren g [objd,obja,objc,obji,s,objp-*] verb
+schließen g [objd,obja,objc,obji,s,objp-*] verb
+abschließen g [objd,obja,objc,obji,s,objp-*] verb
+stilllegen g [objd,obja,objc,obji,s,objp-*] verb
+verschleiern g [objd,obja,objc,obji,s,objp-*] verb
+auseinanderfallen g [objd,obja,objc,obji,s,objp-*] verb
+loskommen g [objd,obja,objc,obji,s,objp-*] verb
+abgehen g [objd,obja,objc,obji,s,objp-*] verb
+herausgehen g [objd,obja,objc,obji,s,objp-*] verb
+kompensieren n [objd,obja,objc,obji,s,objp-*] verb
+überwinden n [objd,obja,objc,obji,s,objp-*] verb
+verbrauchen g [objd,obja,objc,obji,s,objp-*] verb
+verstoßen p [objd,obja,objc,obji,s,obj,"gegen"] verb
+anfechten g [objd,obja,objc,obji,s,objp-*] verb
+berichtigen n [objd,obja,objc,obji,s,objp-*] verb
+abstellen n [objd,obja,objc,obji,s,objp-*] verb
+ausgleichen n [objd,obja,objc,obji,s,objp-*] verb
+neutralisieren n [objd,obja,objc,obji,s,objp-*] verb
+unterminieren p [objd,obja,objc,obji,s,objp-*] verb
+zerplatzen g [objd,obja,objc,obji,s,objp-*] verb
+kaputtgehen g [objd,obja,objc,obji,s,objp-*] verb
+lähmen p [objd,obja,objc,obji,s,objp-*] verb
+sterben g [subj] verb
+zerfallen g [subj] verb
+zugrundegehen g [subj] verb
+zerschmettern g [objd,obja,objc,obji,s,objp-*] verb
+zügeln n [objd,obja,objc,obji,s,objp-*] verb
+besiegen n [objd,obja,objc,obji,s,objp-*] verb
+abschwächen n [objd,obja,objc,obji,s,objp-*] verb
+reduzieren n [objd,obja,objc,obji,s,objp-*] verb
+unterbinden g [objd,obja,objc,obji,s,objp-*] verb
+unterlassen g [objd,obja,objc,obji,s,objp-*] verb
+fernhalten g [objd,obja,objc,obji,s,objp-*] verb
+ausfallen g [objd,obja,objc,obji,s,objp-*] verb
+auslassen g [objd,obja,objc,obji,s,objp-*] verb
+schaden g [objd,obja,objc,obji,s,objp-*] verb
+abschalten n [objd,obja,objc,obji,s,objp-*] verb
+töten g [objd,obja,objc,obji,s,objp-*] verb
+vermindern g [objd,obja,objc,obji,s,objp-*] verb
+versagen n [subj] verb
+mindern p [objd,obja,objc,obji,s,objp-*] verb
+verfallen g [subj] verb
+abnehmen g [objd,obja,objc,obji,s,objp-*] verb
+sinken g [subj] verb
+absterben g [subj] verb
+bremsen g [objd,obja,objc,obji,s,objp-*] verb
+dezimieren g [objd,obja,objc,obji,s,objp-*] verb
+sich_auflösen g [objd,obja,objc,obji,s,objp-*] verb
+zurückgehen g [objd,obja,objc,obji,s,objp-*] verb
+drosseln g [objd,obja,objc,obji,s,objp-*] verb
+zerschlagen n [objd,obja,objc,obji,s,objp-*] verb
+abweisen n [objd,obja,objc,obji,s,objp-*] verb
+verschieben g [objd,obja,objc,obji,s,objp-*] verb
+entweihen p [objd,obja,objc,obji,s,objp-*] verb
+abbringen n [objd,obja,objc,obji,s,objp-*] verb
+abwenden n [objd,obja,objc,obji,s,objp-*] verb
+berauben p [objd,obja,objc,obji,s,objp-*] verb
+sich_entziehen g [objd,obja,objc,obji,s,objp-*] verb
+verkümmern p [objd,obja,objc,obji,s,objp-*] verb
+abbauen g [objd,obja,objc,obji,s,objp-*] verb
+aufschieben g [objd,obja,objc,obji,s,objp-*] verb
+stunden g [objd,obja,objc,obji,s,objp-*] verb
+behindern g [objd,obja,objc,obji,s,objp-*] verb
+niederreißen g [objd,obja,objc,obji,s,objp-*] verb
+negieren n [objd,obja,objc,obji,s,objp-*] verb
+abschlagen n [objd,obja,objc,obji,s,objp-*] verb
+widerstehen n [objd,obja,objc,obji,s,objp-*] verb
+ablassen g [objd,obja,objc,obji,s,objp"von"] verb
+absetzen g [objd,obja,objc,obji,s,objp-*] verb
+abflauen g [objd,obja,objc,obji,s,objp-*] verb
+enziehen g [objd,obja,objc,obji,s,objp"von"] verb
+ausrotten g [objd,obja,objc,obji,s,objp-*] verb
+losmachen g [objd,obja,objc,obji,s,objp-*] verb
+abtrennen g [objd,obja,objc,obji,s,objp-*] verb
+schwinden g [objd,obja,objc,obji,s,objp-*] verb
+abklingen g [objd,obja,objc,obji,s,objp-*] verb
+aussterben g [objd,obja,objc,obji,s,objp-*] verb
+vergehen g [objd,obja,objc,obji,s,objp-*] verb
+eingehen g [objd,obja,objc,obji,s,objp-*] verb
+erlöschen g [objd,obja,objc,obji,s,objp-*] verb
+deaktivieren n [objd,obja,objc,obji,s,objp-*] verb
+befreien n [objd,obja,objc,obji,s,objp"von"] verb
+ablegen n [objd,obja,objc,obji,s,objp-*] verb
+entbinden n [objd,obja,objc,obji,s,objp"von"] verb
+entlassen n [objd,obja,objc,obji,s,objp"von"] verb
+tilgen n [objd,obja,objc,obji,s,objp"von"] verb
+verschmähen p [objd,obja,objc,obji,s,objp-*] verb
+entlasten g [objd,obja,objc,obji,s,objp"von"] verb
+zerlegen g [objd,obja,objc,obji,s,objp"von"] verb
+sich_loslösen g [objd,obja,objc,obji,s,objp-*] verb
+wegschicken g [objd,obja,objc,obji,s,objp-*] verb
+entheben g [objd,obja,objc,obji,s,objp-*] verb
+verdrängen g [objd,obja,objc,obji,s,objp-*] verb
+abraten n [objd,obja,objc,obji,s,objp"von"] verb
+entledigen p [objd,obja,objc,obji,s,objp"von"] verb
+ausscheiden p [objd,obja,objc,obji,s,objp"von"] verb
+ausmachen g [objd,obja,objc,obji,s,objp-*] verb
+niederlegen g [objd,obja,objc,obji,s,objp-*] verb
+verjagen n [objd,obja,objc,obji,s,objp-*] verb
+zurückdrängen n [objd,obja,objc,obji,s,objp-*] verb
+sich_verringern p [objd,obja,objc,obji,s,objp-*] verb
+fallen g [objd,obja,objc,obji,s,objp-*] verb
+ausstoßen n [objd,obja,objc,obji,s,objp-*] verb
+lassen n [objd,obja,objc,obji,s,objp-*] verb
+erlösen n [objd,obja,objc,obji,s,objp-*] verb
+zersetzen g [objd,obja,objc,obji,s,objp-*] verb
+zerfressen g [objd,obja,objc,obji,s,objp-*] verb
+auffressen g [objd,obja,objc,obji,s,objp-*] verb
+aufbrauchen g [objd,obja,objc,obji,s,objp-*] verb
+fressen g [objd,obja,objc,obji,s,objp-*] verb
+versiegen g [objd,obja,objc,obji,s,objp-*] verb
+übergehen g [objd,obja,objc,obji,s,objp-*] verb
+eliminieren g [objd,obja,objc,obji,s,objp-*] verb
+ausmerzen g [objd,obja,objc,obji,s,objp-*] verb
+weglassen g [objd,obja,objc,obji,s,objp-*] verb
+gefährden p [objd,obja,objc,obji,s,objp-*] verb
+beendigen g [objd,obja,objc,obji,s,objp-*] verb
+entfliehen n [objd,obja,objc,obji,s,objp"von"] verb
+entrinnen n [objd,obja,objc,obji,s,objp"von"] verb
+meiden n [objd,obja,objc,obji,s,objp-*] verb
+austreiben n [objd,obja,objc,obji,s,objp-*] verb
+bannen n [objd,obja,objc,obji,s,objp-*] verb
+ausweisen n [objd,obja,objc,obji,s,objp-*] verb
+ablaufen g [objd,obja,objc,obji,s,objp-*] verb
+auslaufen g [objd,obja,objc,obji,s,objp-*] verb
+vertilgen g [objd,obja,objc,obji,s,objp-*] verb
+zerrinnen g [objd,obja,objc,obji,s,objp-*] verb
+verklingen g [objd,obja,objc,obji,s,objp-*] verb
+fehlen g [objd,obja,objc,obji,s,objp-*] verb
+ausbleiben g [objd,obja,objc,obji,s,objp-*] verb
+misslingen g [objd,obja,objc,obji,s,objp-*] verb
+verfehlen g [objd,obja,objc,obji,s,objp-*] verb
+versäumen g [objd,obja,objc,obji,s,objp-*] verb
+auseinandergehen g [objd,obja,objc,obji,s,objp-*] verb
+fehlschlagen g [objd,obja,objc,obji,s,objp-*] verb
+untergehen g [objd,obja,objc,obji,s,objp-*] verb
+zurückhalten n [objd,obja,objc,obji,s,objp-*] verb
+bezwingen g [objd,obja,objc,obji,s,objp-*] verb
+verpuffen g [objd,obja,objc,obji,s,objp-*] verb
+sich_hinwegsetzen g [objd,obja,objc,obji,s,objp-*] verb
+verfliegen g [objd,obja,objc,obji,s,objp-*] verb
+sich_verkneifen n [objd,obja,objc,obji,s,objp-*] verb
+untersagen g [objd,obja,objc,obji,s,objp-*] verb
+kündigen g [objd,obja,objc,obji,s,objp-*] verb
+vorbeugen g [objd,obja,objc,obji,s,objp-*] verb
+verspielen p [objd,obja,objc,obji,s,objp-*] verb
+verwirken p [objd,obja,objc,obji,s,objp-*] verb
+verlieren p [objd,obja,objc,obji,s,objp-*] verb
+verneinen n [objd,obja,objc,obji,s,objp-*] verb
+versauen p [objd,obja,objc,obji,s,objp-*] verb
+flüchten n [objd,obja,objc,obji,s,objp"von"] verb
+sich_losmachen n [objd,obja,objc,obji,s,objp-*] verb
+sich_drücken g [objd,obja,objc,obji,s,objp-*] verb
+abgewöhnen g [objd,obja,objc,obji,s,objp-*] verb
+entkommen g [objd,obja,objc,obji,s,objp-*] verb
+ausgehen g [objd,obja,objc,obji,s,objp-*] verb
+heilen n [objd,obja,objc,obji,s,objp-*] verb
+abhelfen n [objd,obja,objc,obji,s,objp-*] verb
+inaktivieren g [objd,obja,objc,obji,s,objp-*] verb
+übertreten p [objd,obja,objc,obji,s,objp-*] verb
+zerquetschen g [objd,obja,objc,obji,s,objp-*] verb
+zerdrücken g [objd,obja,objc,obji,s,objp-*] verb
+sich_entledigen n [objd,obja,objc,obji,s,objp-*] verb
+überspringen g [objd,obja,objc,obji,s,objp-*] verb
+sich_fernhalten n [objd,obja,objc,obji,s,objp"von"] verb
+stornieren g [objd,obja,objc,obji,s,objp-*] verb
+abwürgen g [objd,obja,objc,obji,s,objp-*] verb
+auseinandernehmen g [objd,obja,objc,obji,s,objp-*] verb
+verpassen g [objd,obja,objc,obji,s,objp-*] verb
+liquidieren n [objd,obja,objc,obji,s,objp-*] verb
+loslassen n [objd,obja,objc,obji,s,objp-*] verb
+einbüßen p [objd,obja,objc,obji,s,objp-*] verb
+demolieren g [objd,obja,objc,obji,s,objp-*] verb
+schlichten g [objd,obja,objc,obji,s,objp-*] verb
+abtöten g [objd,obja,objc,obji,s,objp-*] verb
+verrotten g [objd,obja,objc,obji,s,objp-*] verb
+zurückstellen n [objd,obja,objc,obji,s,objp"von"] verb
+vorgehen n [objd,obja,objc,obji,s,objp-*] verb
+entwachsen g [objd,obja,objc,obji,s,objp-*] verb
+umstoßen n [objd,obja,objc,obji,s,objp-*] verb
+stürzen n [objd,obja,objc,obji,s,objp-*] verb
+sich_trennen g [objd,obja,objc,obji,s,objp-*] verb
+verrauchen g [objd,obja,objc,obji,s,objp-*] verb
+vorübergehen g [objd,obja,objc,obji,s,objp-*] verb
+stören p [objd,obja,objc,obji,s,objp-*] verb
+sich_verlieren g [objd,obja,objc,obji,s,objp-*] verb
+erschöpfen g [objd,obja,objc,obji,s,objp-*] verb
+vertagen g [objd,obja,objc,obji,s,objp-*] verb
+schützen n [objd,obja,objc,obji,s,objp"von"] verb
+abreißen g [objd,obja,objc,obji,s,objp-*] verb
+sich_entfernen g [objd,obja,objc,obji,s,objp-*] verb
+zermalmen g [objd,obja,objc,obji,s,objp-*] verb
+niederschlagen g [objd,obja,objc,obji,s,objp-*] verb
+nauslöschen g [objd,obja,objc,obji,s,objp-*] verb
+verwesen p [objd,obja,objc,obji,s,objp-*] verb
+aulöschen n [objd,obja,objc,obji,s,objp-*] verb
+absehen n [objd,obja,objc,obji,s,objp"von"] verb
+ausschlagen g [objd,obja,objc,obji,s,objp-*] verb
+ausräumen g [objd,obja,objc,obji,s,objp-*] verb
+sich_widersetzen n [objd,obja,objc,obji,s,objp-*] verb
+sich_legen n [objd,obja,objc,obji,s,objp-*] verb
+zurücknehmen p [objd,obja,objc,obji,s,objp-*] verb
+entziehen p [objd,obja,objc,obji,s,objp-*] verb
+vermodern g [objd,obja,objc,obji,s,objp-*] verb
+ausradieren g [objd,obja,objc,obji,s,objp-*] verb
+wegwischen g [objd,obja,objc,obji,s,objp-*] verb
+abhauen n [objd,obja,objc,obji,s,objp-*] verb
+wegjagen n [objd,obja,objc,obji,s,objp-*] verb
+sabotieren p [objd,obja,objc,obji,s,objp-*] verb
+abblasen g [objd,obja,objc,obji,s,objp-*] verb
+sich_lösen g [objd,obja,objc,obji,s,objp-*] verb
+abschütteln n [objd,obja,objc,obji,s,objp-*] verb
+abstoßen n [objd,obja,objc,obji,s,objp-*] verb
+wegscheuchen n [objd,obja,objc,obji,s,objp-*] verb
+abschmettern n [objd,obja,objc,obji,s,objp-*] verb
+schrumpfen n [objd,obja,objc,obji,s,objp"von"] verb
+sich_befreien p [objd,obja,objc,obji,s,objp-*] verb
+entwischen p [objd,obja,objc,obji,s,objp-*] verb
+abwerfen g [objd,obja,objc,obji,s,objp-*] verb
+zertrümmern g [objd,obja,objc,obji,s,objp-*] verb
+ausbügeln n [objd,obja,objc,obji,s,objp-*] verb
+sich_abschwächen g [objd,obja,objc,obji,s,objp-*] verb
+ersparen n [objd,obja,objc,obji,s,objp"von"] verb
+entbehren n [objd,obja,objc,obji,s,objp"von"] verb
+zersplittern g [objd,obja,objc,obji,s,objp-*] verb
+sich_abspalten g [objd,obja,objc,obji,s,objp-*] verb
+stagnieren p [objd,obja,objc,obji,s,objp-*] verb
+stillstehen p [objd,obja,objc,obji,s,objp-*] verb
+abwimmeln n [objd,obja,objc,obji,s,objp-*] verb
+ankämpfen g [objd,obja,objc,obji,s,objp-*] verb
+nehmen n [objd,obja,objc,obji,s,objp-*] verb
+ersetzen g [objd,obja,objc,obji,s,objp-*] verb
+untergraben g [objd,obja,objc,obji,s,objp-*] verb
+hinwegfegen g [objd,obja,objc,obji,s,objp-*] verb
+tabuisieren n [objd,obja,objc,obji,s,objp-*] verb
+sich_losreißen g [objd,obja,objc,obji,s,objp-*] verb
+einreißen g [objd,obja,objc,obji,s,objp-*] verb
+rauswerfen n [objd,obja,objc,obji,s,objp-*] verb
+zertrampeln g [objd,obja,objc,obji,s,objp-*] verb
+sich_abwenden g [objd,obja,objc,obji,s,objp-*] verb
+sich_abgewöhnen g [objd,obja,objc,obji,s,objp-*] verb
+verdampfen g [objd,obja,objc,obji,s,objp-*] verb
+sich_verflüchtigen g [objd,obja,objc,obji,s,objp-*] verb
+abwählen n [objd,obja,objc,obji,s,objp-*] verb
+erlassen g [objd,obja,objc,obji,s,objp-*] verb
+weggehen n [objd,obja,objc,obji,s,objp"von"] verb
+ermangeln p [objd,obja,objc,obji,s,objp-*] verb
+wegspülen g [objd,obja,objc,obji,s,objp-*] verb
+aussortieren n [objd,obja,objc,obji,s,objp-*] verb
+aussondern n [objd,obja,objc,obji,s,objp-*] verb
+abziehen g [objd,obja,objc,obji,s,objp"von"] verb
+verschlimmern p [objd,obja,objc,obji,s,objp-*] verb
+verschlechtern p [objd,obja,objc,obji,s,objp-*] verb
+sich_verschlimmern p [subj] verb
+abschreiben g [objd,obja,objc,obji,s,objp-*] verb
+korrigierbar g [subj] adj
+bewältigen g [objd,obja,objc,obji,s,objp-*] verb
+%% Einträge aus germanlex und manuelle Einträge
+nie g [clause] adv
+nix g [objp] nomen
+keinsterweise g [clause] adv
+keinerweise g [clause] adv
+niemals g [clause] adv
+nichts g [clause] nomen
+trotzen g [objd,obja,objc,obji,s,objp-*] verb
+ohne g [pp] appr
+ohne g [pp] kon
+nicht g [objp] adv
+kein g [subj, attr-rev] adj
+einzigartig g [subj, attr-rev] adj
+korrigierbar n [subj, attr-rev] adj
+weniger g [subj, attr-rev] adj
+weniger g [clause] adv
+kaum g [clause] adv
+keinesfalls g [clause] adv
+ebensowenig g [clause] adv
+Versäumnis p [gmod, objp-*] nomen
+Tod p [gmod, objp-*] nomen
+Ende g [gmod, objp-*] nomen
+Abwahl n [gmod, objp-*] nomen
+Verbesserung g [gmod, objp-*] nomen
+Zerstörung g [gmod, objp-*] nomen
+Kampf g [gmod, objp-*] nomen
+Lösung n [gmod, objp-*] nomen
+Entfernung g [gmod, objp-*] nomen
+Verhinderung g [gmod, objp-*] nomen
+Verbannung n [gmod, objp-*] nomen
