@@ -30,7 +30,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.uima.UimaContext;
@@ -44,7 +43,6 @@ import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import bachelor.polarity.types.PolarExpression;
 import bachelor.polarity.types.Shifter;
 import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
@@ -113,8 +111,8 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 				if (!(inputLine.startsWith("%%"))) {
 
 					// Ignore lines without the correct form.
-					// Correct form example: fehlschlagen NEG=0.7 verben
-					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\[\\w\\]\\[\\S+\\]\\s\\w+")) {
+					// Correct form example: Fehlschlag p [subj] nomen
+					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\s\\[[\\w+[-\\*,\"]*\\s*]+\\]\\s\\w+")) {
 
 						// The relevant part for phrases is part 0, the word itself.
 						shifterStr = inputLine.substring(0, inputLine.indexOf(" "));
@@ -122,7 +120,7 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 						phrases.addPhrase(phraseSplit);
 //						System.out.println("shifter: " + shifterStr);
 
-						shifter_type = inputLine.substring(inputLine.indexOf("[") + 1, inputLine.indexOf("]"));
+						shifter_type = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf(" ") + 2);
 //						System.out.println("shifter_type: " + shifter_type);
 
 						shifter_scope = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]"));
