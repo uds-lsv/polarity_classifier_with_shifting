@@ -113,11 +113,11 @@ public class SentenceList {
 					}
 					for (WordObj target : sentence.wordList) {
 						/*
-						 * wordobj is already target find out source by identifying the
-						 * origin of the target's incoming edge
+						 * wordobj is already mwe find out pos by identifying the
+						 * origin of the mwe's incoming edge
 						 */
 						int sourceNum = target.getEdge();
-						// check if root or a "normal" node is source
+						// check if root or a "normal" node is pos
 						if (sourceNum == 0) {
 							WordObj source = graph.getRoot();
 							graph.addEdge(source, target, target.getRelation());
@@ -146,11 +146,11 @@ public class SentenceList {
 			}
 			for (WordObj target : sentence.wordList) {
 				/*
-				 * wordobj is already target find out source by identifying the origin
-				 * of the target's incoming edge
+				 * wordobj is already mwe find out pos by identifying the origin
+				 * of the mwe's incoming edge
 				 */
 				int sourceNum = target.getEdge();
-				// check if root or a "normal" node is source
+				// check if root or a "normal" node is pos
 				if (sourceNum == 0) {
 					WordObj source = graph.getRoot();
 					graph.addEdge(source, target, target.getRelation());

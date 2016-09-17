@@ -25,7 +25,10 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import bachelor.polarity.types.PolarExpression;
+import bachelor.polarity.soPro.SalsaAPIConnective;
+import bachelor.polarity.soPro.SentenceList;
+import bachelor.polarity.soPro.SentimentLex;
+import bachelor.polarity.soPro.ShifterLex;
 
 import java.io.IOException;
 
@@ -37,12 +40,56 @@ import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDe
  * in the input text. The {@link DictionaryAnnotator} looks up names from a
  * static names file and annotates them in the documents.
  * <p>
- * The output is written to the target directory. Use
+ * The output is written to the mwe directory. Use
  * {@code NameAnnotationPipelineTest} in the test directory to check the output.
  * </p>
  */
 public class AnnotationPipelineMain {
 	public static void main(String[] args) throws IOException, UIMAException {
+
+		// *************************SoPro Classes*****************************
+		// Read in raw input text and create SentenceList based on it.
+		java.nio.file.Path fileRaw = java.nio.file.Paths.get("src", "main", "resources", "textInput",
+				"steps2016-testdaten.raw.txt");
+		System.out.println("Reading rawText from : " + fileRaw.toString());
+		SentenceList sentences = new SentenceList();
+		sentences.rawToSentenceList(fileRaw.toString());
+
+		// Read in dependency parse file and create a DependencyGraph object for
+		// each sentence.
+		java.nio.file.Path dependencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
+				"steps2016-testdaten.parzu.txt");
+		System.out.println("Reading dependency data from " + dependencyFile.toString() + "...");
+		System.out.println("Creating dependency graph...");
+		sentences.readDependencyParse(dependencyFile.toString());
+
+		// Normalize DependencyGraph objects.
+		System.out.println("Normalizing dependency graph...");
+		sentences.normalizeDependencyGraphs();
+
+		// Read in Salsa / Tiger XML file and create a ConstituencyTree object for
+		// every sentence.
+		java.nio.file.Path constituencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
+				"steps2016-testdaten.UTF8.keineAnnotation(constituency).xml");
+		System.out.println("Reading constituency data from " + constituencyFile.toString() + "...");
+		System.out.println("Creating constituency tree...");
+		SalsaAPIConnective salsa = new SalsaAPIConnective(constituencyFile.toString(), sentences);
+
+		// Read in sentiment lexicon.
+		java.nio.file.Path fileLex = java.nio.file.Paths.get("src", "main", "resources", "dictionaries", "germanlex.txt");
+		System.out.println("Reading sentiment lexicon from " + fileLex.toString() + "...");
+		SentimentLex sentimentLex = new SentimentLex(true);
+		sentimentLex.fileToLex(fileLex.toString());
+
+		// Read in shifter lexicon.
+		java.nio.file.Path shifterLexFile = java.nio.file.Paths.get("src", "main", "resources", "dictionaries",
+				"shifter_lex_german.txt");
+		System.out.println("Reading shifter lexicon from " + shifterLexFile.toString() + "...");
+		ShifterLex shifterLex = new ShifterLex(true);
+		shifterLex.fileToLex(shifterLexFile.toString());
+
+		// **************************UIMA ANNOTATIONS*************************
+		System.out.println("****************UIMA ANNOTATIONS*********************");
 		// Text reader. Reads text input.
 		CollectionReaderDescription reader = createReaderDescription(TextReader.class, TextReader.PARAM_SOURCE_LOCATION,
 				"src/main/resources/textInput", TextReader.PARAM_PATTERNS, "steps2016-testdaten.raw.txt"
@@ -63,11 +110,11 @@ public class AnnotationPipelineMain {
 		/*
 		 * AnalysisEngineDescription writer = createEngineDescription(
 		 * CasDumpWriter.class, CasDumpWriter.PARAM_TARGET_LOCATION,
-		 * "target/PolarAnnotationPipeline.txt");
+		 * "mwe/PolarAnnotationPipeline.txt");
 		 */
 
 		AnalysisEngineDescription xmiWriter = createEngineDescription(XmiWriter.class, XmiWriter.PARAM_OUTPUT_DIRECTORY,
-				"target");
+				"mwe");
 
 		SimplePipeline.runPipeline(reader, tokenizer, polarExpressionFinder, shifterFinder, xmiWriter);
 	}

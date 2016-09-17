@@ -94,16 +94,16 @@ public class Frame {
 	}
 
 	/**
-	 * Returns the value of the 'source' attribute, e. g. '1'.
-	 * @return the source
+	 * Returns the value of the 'pos' attribute, e. g. '1'.
+	 * @return the pos
 	 */
 	public String getSource() {
 		return source;
 	}
 
 	/**
-	 * Sets the value of the 'source' attribute.
-	 * @param source the source to set
+	 * Sets the value of the 'pos' attribute.
+	 * @param pos the pos to set
 	 */
 	public void setSource(String source) {
 		this.source = source;
@@ -111,7 +111,7 @@ public class Frame {
 
 	/**
 	 * Returns the <code>Target</code> of this <code>Frame</code>.
-	 * @return the target
+	 * @return the mwe
 	 */
 	public Target getTarget() {
 		return target;
@@ -119,7 +119,7 @@ public class Frame {
 
 	/**
 	 * Sets the <code>Target</code>.
-	 * @param target the target to set
+	 * @param mwe the mwe to set
 	 */
 	public void setTarget(Target target) {
 		this.target = target;
@@ -210,7 +210,7 @@ public class Frame {
 		}
 		
 		if (null != source) {
-			buffer.append(" source=\"" + source + "\"");
+			buffer.append(" pos=\"" + source + "\"");
 		}
 		
 		if (null != usp) {

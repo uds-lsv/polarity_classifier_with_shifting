@@ -4,8 +4,8 @@ package bachelor.polarity.soPro;
  * 
  * The class Edge is supposed to represent a datatype in which the edges of a
  * graph object should be saved in the corresponding HashSet edges from the
- * DependencyGraph class. An edge always consists of a WordObj source as the
- * edge's starting point, a WordObj target as the edge's ending point and a
+ * DependencyGraph class. An edge always consists of a WordObj pos as the
+ * edge's starting point, a WordObj mwe as the edge's ending point and a
  * String depRel which marks the dependency label which exists between those two
  * nodes.
  *

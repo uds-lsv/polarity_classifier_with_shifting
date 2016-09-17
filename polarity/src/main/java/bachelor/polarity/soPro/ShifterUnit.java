@@ -3,34 +3,35 @@ package bachelor.polarity.soPro;
 import java.util.Arrays;
 
 /**
- * SentimentUnit object contains the informations of one sentiment expression
+ * ShifterUnit object contains the informations of one shifter expression
  * 
- * Example: froh_gestimmt POS=1 adj
- * name = froh
- * category = POS
- * value = 1
- * pos = adj
- * mwe = true
- * collocations = [gestimmt]
+ * Example: Verbesserung g [gmod, objp-*] nomen 
+ * name = Verbesserung 
+ * shifter_type
+ * = g 
+ * shifter_scope = [gmod, objp-*] 
+ * shifter_pos = nomen 
+ * mwe = false
+ * collocations = []
  *
  */
-public class SentimentUnit {
+public class ShifterUnit {
 	String name;
-	String category;
-	String value;
-	String pos;
+	String shifter_type;
+	String[] shifter_scope;
+	String shifter_pos;
 	Boolean mwe;
 	String[] collocations;
 
 	/**
 	 * 
 	 * @param name
-	 * @param category
-	 * @param value
-	 * @param pos
+	 * @param shifter_type
+	 * @param shifter_scope
+	 * @param shifter_pos
 	 * @param mwe
 	 */
-	public SentimentUnit(String name, String category, String value, String pos, Boolean mwe) {
+	public ShifterUnit(String name, String shifter_type, String[] shifter_scope, String shifter_pos, Boolean mwe) {
 		if (mwe) {
 			String[] parts = name.split("_");
 			this.name = parts[parts.length - 1];
@@ -39,23 +40,23 @@ public class SentimentUnit {
 			this.name = name;
 			this.collocations = new String[0];
 		}
-		this.category = category;
-		this.pos = pos;
+		this.shifter_type = shifter_type;
+		this.shifter_pos = shifter_pos;
 		this.mwe = mwe;
 	}
 
 	/**
-	 * Constructs a new SentimentUnit
+	 * Constructs a new ShifterUnit
 	 * 
 	 * @param name
 	 *          {@link #name} is set
 	 */
-	public SentimentUnit(String name) {
+	public ShifterUnit(String name) {
 		this.name = name;
 
 	}
 
-	public SentimentUnit(String name, Boolean mwe) {
+	public ShifterUnit(String name, Boolean mwe) {
 		this.mwe = mwe;
 		if (mwe) {
 			String[] parts = name.split("_");
@@ -66,8 +67,8 @@ public class SentimentUnit {
 
 	/**
 	 * @param word
-	 * @return true if the {@link #name} of the SentimentUnit equals the lemma of
-	 *         a given Word Object
+	 * @return true if the {@link #name} of the ShifterUnit equals the lemma of a
+	 *         given Word Object
 	 */
 	public boolean equals(WordObj word) {
 		if (this.name.equals(word.getLemma())) {
@@ -77,10 +78,10 @@ public class SentimentUnit {
 	}
 
 	/**
-	 * @return {@link #category} of the SentimentUnit
+	 * @return {@link #shifter_type} of the ShifterUnit
 	 */
 	public String getTyp() {
-		return this.category;
+		return this.shifter_type;
 	}
 
 	/*
@@ -95,11 +96,9 @@ public class SentimentUnit {
 		for (String col : this.collocations) {
 			printer.append("_" + col);
 		}
-		printer.append(this.category);
-		printer.append("=");
-		printer.append(this.value);
-		printer.append(" ");
-		printer.append(this.pos);
+		printer.append(" " + this.shifter_type);
+		printer.append(" " + this.shifter_scope.toString());
+		printer.append(" " + this.shifter_pos);
 		return printer.toString();
 	}
 }

@@ -70,7 +70,7 @@ public class CorpusHandler extends DefaultHandler {
 	// the currently active element
 	private String activeElement;
 
-	// if the 'target' element is active, then <code>isTarget</code> is true.
+	// if the 'mwe' element is active, then <code>isTarget</code> is true.
 	private boolean isTarget;
 
 	// if 'fe' is active, the <code>isFrameElement</code> is true.
@@ -228,9 +228,7 @@ public class CorpusHandler extends DefaultHandler {
 	 * @throws SAXException
 	 *             if an error occurs, possibly wrapping another exception
 	 */
-	public void startElement(@SuppressWarnings("unused")
-	String uri, @SuppressWarnings("unused")
-	String localName, String qualName, Attributes atts) throws SAXException {
+	public void startElement(String uri, String localName, String qualName, Attributes atts) throws SAXException {
 
 		activeElement = qualName;
 
@@ -265,7 +263,7 @@ public class CorpusHandler extends DefaultHandler {
 		} else if (qualName.equalsIgnoreCase("corpus")) {
 
 			corpus = new Corpus(atts.getValue("corpusname"), atts
-					.getValue("target"));
+					.getValue("mwe"));
 
 		} else if (qualName.equalsIgnoreCase("corpus_id")) {
 
@@ -314,7 +312,7 @@ public class CorpusHandler extends DefaultHandler {
 			currentFrameElement = new FrameElement(new Id(atts.getValue("id")),
 					atts.getValue("name"));
 
-			String source = atts.getValue("source");
+			String source = atts.getValue("pos");
 
 			String usp = atts.getValue("usp");
 
@@ -355,7 +353,7 @@ public class CorpusHandler extends DefaultHandler {
 			if (null != forWhat) {
 				currentFlag.setForWhat(forWhat);
 			}
-			String source = atts.getValue("source");
+			String source = atts.getValue("pos");
 			if (null != source) {
 				currentFlag.setSource(source);
 			}
@@ -389,7 +387,7 @@ public class CorpusHandler extends DefaultHandler {
 
 			String idString = atts.getValue("id");
 
-			String source = atts.getValue("source");
+			String source = atts.getValue("pos");
 
 			String usp = atts.getValue("usp");
 
@@ -523,7 +521,7 @@ public class CorpusHandler extends DefaultHandler {
 
 			currentSentence = new Sentence(new Id(atts.getValue("id")));
 
-			String source = atts.getValue("source");
+			String source = atts.getValue("pos");
 
 			if (null != source) {
 				currentSentence.setSource(source);
@@ -579,7 +577,7 @@ public class CorpusHandler extends DefaultHandler {
 		
 			currentTerminals.addTerminal(currentTerminal);
 
-		} else if (qualName.equalsIgnoreCase("target")) {
+		} else if (qualName.equalsIgnoreCase("mwe")) {
 
 			isTarget = true;
 
@@ -713,9 +711,7 @@ public class CorpusHandler extends DefaultHandler {
 	 * @throws SAXException
 	 *             if an error occurs, possibly wrapping another exception
 	 */
-	public void endElement(@SuppressWarnings("unused")
-	String uri, @SuppressWarnings("unused")
-	String localName, String qualName) throws SAXException {
+	public void endElement(String uri, String localName, String qualName) throws SAXException {
 
 		if (qualName.equalsIgnoreCase("action")) {
 
@@ -801,7 +797,7 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("t")) {
 
-		} else if (qualName.equalsIgnoreCase("target")) {
+		} else if (qualName.equalsIgnoreCase("mwe")) {
 
 			isTarget = false;
 

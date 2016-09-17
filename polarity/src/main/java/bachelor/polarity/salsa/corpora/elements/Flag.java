@@ -84,19 +84,19 @@ public class Flag {
 	}
 
 	/**
-	 * Returns the source, e. g. '1'
+	 * Returns the pos, e. g. '1'
 	 * 
-	 * @return the source
+	 * @return the pos
 	 */
 	public String getSource() {
 		return source;
 	}
 
 	/**
-	 * Sets the source.
+	 * Sets the pos.
 	 * 
-	 * @param source
-	 *            the source to set
+	 * @param pos
+	 *            the pos to set
 	 */
 	public void setSource(String source) {
 		this.source = source;
@@ -143,7 +143,7 @@ public class Flag {
 		}
 		buffer.append(" name=\"" + name + "\"");
 		if (null != source) {
-			buffer.append(" source=\"" + source + "\"");
+			buffer.append(" pos=\"" + source + "\"");
 		}
 
 		if (null != text) {

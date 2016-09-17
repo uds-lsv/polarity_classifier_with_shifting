@@ -54,19 +54,19 @@ public class Sentence {
 	}
 
 	/**
-	 * Returns the value of 'source'.
+	 * Returns the value of 'pos'.
 	 * 
-	 * @return the source
+	 * @return the pos
 	 */
 	public String getSource() {
 		return source;
 	}
 
 	/**
-	 * Sets the value of 'source'.
+	 * Sets the value of 'pos'.
 	 * 
-	 * @param source
-	 *            the source to set
+	 * @param pos
+	 *            the pos to set
 	 */
 	public void setSource(String source) {
 		this.source = source;
@@ -147,7 +147,7 @@ public class Sentence {
 		StringBuilder buffer = new StringBuilder();
 		buffer.append("<" + xmltag + " id=\"" + id.getId() + "\"");
 		if (null != source) {
-			buffer.append(" source=\"" + source);
+			buffer.append(" pos=\"" + source);
 		}
 		buffer.append(">" + newline);
 

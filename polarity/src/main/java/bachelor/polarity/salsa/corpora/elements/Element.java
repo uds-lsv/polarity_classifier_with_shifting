@@ -21,7 +21,7 @@ public class Element {
 	 * <code>optional</code> (e. g. 'true') as attributes.
 	 * 
 	 * @param corpusname
-	 * @param target
+	 * @param mwe
 	 */
 	public Element(String name, String optional) {
 		super();

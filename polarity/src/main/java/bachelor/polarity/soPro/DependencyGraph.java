@@ -95,9 +95,9 @@ public class DependencyGraph {
 	/**
 	 * add an edge to the Hashset edges of a graph object
 	 *
-	 * @param source
+	 * @param pos
 	 *          the node where the edge starts
-	 * @param target
+	 * @param mwe
 	 *          the node where the edge terminates
 	 * @param depRel
 	 *          the dependency label which should be annotated for this edge
@@ -111,7 +111,7 @@ public class DependencyGraph {
 
 	/**
 	 *
-	 * @param target
+	 * @param mwe
 	 *          A node in the graph which is supposed to have an incoming edge
 	 *          with a certain label
 	 * @param depRel
@@ -131,7 +131,7 @@ public class DependencyGraph {
 	 * Return a node who is starting point for an edge with a specified dependency
 	 * relation to a certain child node
 	 *
-	 * @param target
+	 * @param mwe
 	 *          the node to which an edge with a dependency label should point
 	 * @param depRel
 	 *          the dependency relation for this edge
@@ -151,11 +151,11 @@ public class DependencyGraph {
 	 * Return a node to which points an edge from the parent node with a specified
 	 * dependency relation
 	 *
-	 * @param source
+	 * @param pos
 	 *          a node in the graph
 	 * @param depRel
 	 *          the dependency relation
-	 * @return the node if it has an incoming edge from the source WordObj with
+	 * @return the node if it has an incoming edge from the pos WordObj with
 	 *         the depRel indicated
 	 */
 	public WordObj getChild(WordObj source, String depRel) {
@@ -185,7 +185,7 @@ public class DependencyGraph {
 	}
 
 	/**
-	 * compute the source node of a certain WordObj in the graph
+	 * compute the pos node of a certain WordObj in the graph
 	 *
 	 * @param node
 	 *          A WordObj whose parent should be investigated
@@ -228,7 +228,7 @@ public class DependencyGraph {
 	 * check if there is a node in graph which has an incoming edge with a
 	 * specified dependency relation
 	 *
-	 * @param target
+	 * @param mwe
 	 *          The node whose incoming edges should be examined
 	 * @param depRel
 	 *          The dependency relation, annotated on an edge pointing on this
@@ -252,7 +252,7 @@ public class DependencyGraph {
 	 * there are seldom occurrences of objp/pp only, those should not be
 	 * considered
 	 *
-	 * @param source
+	 * @param pos
 	 *          WordObj which is supposed to be the parent node of the preposition
 	 * @param depRel
 	 *          either objp or pp
@@ -280,7 +280,7 @@ public class DependencyGraph {
 	 * is at the same time the head of the noun phrase in the prepositional
 	 * phrase.
 	 *
-	 * @param source
+	 * @param pos
 	 *          the WordObj from which the prepositional relation starts
 	 * @param depRel
 	 *          depending if the prepositional phrase is complement or adjunct,
@@ -303,8 +303,8 @@ public class DependencyGraph {
 	}
 
 	/**
-	 * This method returns either the corresponding source or the target
-	 * (depending if it has been called to identify source or target in
+	 * This method returns either the corresponding pos or the mwe
+	 * (depending if it has been called to identify pos or mwe in
 	 * SentimentChecker class) for a given sentiment expression.
 	 *
 	 * @param sentiment
@@ -312,8 +312,8 @@ public class DependencyGraph {
 	 *          the sentiment lexicon)
 	 * @param label
 	 *          It should be checked whether the sentiment expression has an
-	 *          outgoing node to another node (this would then be the source or
-	 *          the target) with a certain dependency relation specified in this
+	 *          outgoing node to another node (this would then be the pos or
+	 *          the mwe) with a certain dependency relation specified in this
 	 *          parameter
 	 * @param containsDeleted
 	 *          If there is a sentiment expression whose corresponding node in the
@@ -321,8 +321,8 @@ public class DependencyGraph {
 	 *          WordObj parent node (which is still in the graph, necessary to
 	 *          yield existing graph relations) will be stored in this parameter
 	 *          (empty otherwise)
-	 * @return a list in which the source or the target is stored, empty otherwise
-	 *         if no fitting source/target exists for given label and sent expr
+	 * @return a list in which the pos or the mwe is stored, empty otherwise
+	 *         if no fitting pos/mwe exists for given label and sent expr
 	 */
 	public ArrayList<WordObj> getSentimentSourceTarget(WordObj sentiment, String label, WordObj containsDeleted) {
 		// if sentiment expression in deletedNodes, find the parentNode in which
@@ -373,8 +373,8 @@ public class DependencyGraph {
 	}
 
 	/**
-	 * This method returns either the corresponding source or the target
-	 * (depending if it has been called to identify source or target in
+	 * This method returns either the corresponding pos or the mwe
+	 * (depending if it has been called to identify pos or mwe in
 	 * SentimentChecker class) for a given sentiment expression.
 	 *
 	 * @param sentiment
@@ -382,11 +382,11 @@ public class DependencyGraph {
 	 *          the sentiment lexicon)
 	 * @param label
 	 *          It should be checked whether the sentiment expression has an
-	 *          outgoing node to another node (this would then be the source or
-	 *          the target) with a certain dependency relation specified in this
+	 *          outgoing node to another node (this would then be the pos or
+	 *          the mwe) with a certain dependency relation specified in this
 	 *          parameter
-	 * @return a list in which the source or the target is stored, empty otherwise
-	 *         if no fitting source/target exists for given label and sent expr
+	 * @return a list in which the pos or the mwe is stored, empty otherwise
+	 *         if no fitting pos/mwe exists for given label and sent expr
 	 */
 	public ArrayList<WordObj> getSentimentSourceTarget(WordObj sentiment, String label) {
 		// if sentiment expression in deletedNodes, find the parentNode in which
@@ -440,8 +440,8 @@ public class DependencyGraph {
 	 * Konjunktiv II-sentences in German by boolean "habenInside": in "Er wird
 	 * gegessen haben" is no normalization needed although "werden" is contained
 	 *
-	 * @param source
-	 *          the source which is supposed to be the participle of a passive
+	 * @param pos
+	 *          the pos which is supposed to be the participle of a passive
 	 *          form (Partizip II in German)
 	 * @return true if "haben" or "werden" in DeletedWords, false otherwise
 	 */
@@ -610,7 +610,7 @@ public class DependencyGraph {
 
 			}
 		}
-		// add edges from source of the (former) predicate's / auxillary's
+		// add edges from pos of the (former) predicate's / auxillary's
 		// parent node to predicate / aux
 		for (WordObj source : parentSources) {
 			if (source.equals(graph.root)) {
@@ -677,8 +677,8 @@ public class DependencyGraph {
 	/**
 	 * normalize dependency relations for passive forms: swap dependency relations
 	 * for subj and obja/objp-von/objp-vom Example: "Der Kuchen wurde von Jan
-	 * geliebt" - "der Kuchen" must be target and therefore changed to an
-	 * obja-relation (although it is the sentence's subject) "von Jan" is source
+	 * geliebt" - "der Kuchen" must be mwe and therefore changed to an
+	 * obja-relation (although it is the sentence's subject) "von Jan" is pos
 	 * and its dependency relation must change from objp-von to subj
 	 *
 	 * @param graph
@@ -768,7 +768,7 @@ public class DependencyGraph {
 			return;
 		}
 
-		// We have a potential relation source (parent) and target (child).
+		// We have a potential relation pos (parent) and mwe (child).
 		// Verify they are of equal part of speech.
 		if (!parent.getPos().equals(child.getPos())) {
 			return;
@@ -985,8 +985,8 @@ public class DependencyGraph {
 	 * This method is similar to
 	 * {@link #getSentimentSourceTarget(WordObj, String, WordObj)} except that it
 	 * deals with multi-word expressions (MWEs). It returns either the
-	 * corresponding source or the target (depending if it has been called to
-	 * identify source or target in SentimentChecker class) for a given sentiment
+	 * corresponding pos or the mwe (depending if it has been called to
+	 * identify pos or mwe in SentimentChecker class) for a given sentiment
 	 * expression that is of the 'mwe' type.
 	 *
 	 * @param wtmp
@@ -995,8 +995,8 @@ public class DependencyGraph {
 	 *          The sentiment expression (mwe) that is matched.
 	 * @param label
 	 *          It should be checked whether the sentiment expression has an
-	 *          outgoing node to another node (this would then be the source or
-	 *          the target) with a certain dependency relation specified in this
+	 *          outgoing node to another node (this would then be the pos or
+	 *          the mwe) with a certain dependency relation specified in this
 	 *          parameter
 	 * @param containsDeleted
 	 *          If there is a sentiment expression whose corresponding node in the
@@ -1004,8 +1004,8 @@ public class DependencyGraph {
 	 *          WordObj parent node (which is still in the graph, necessary to
 	 *          yield existing graph relations) will be stored in this parameter
 	 *          (empty otherwise)
-	 * @return a list in which the source or the target is stored, empty otherwise
-	 *         if no fitting source/target exists for given label and sent expr
+	 * @return a list in which the pos or the mwe is stored, empty otherwise
+	 *         if no fitting pos/mwe exists for given label and sent expr
 	 */
 	public ArrayList<WordObj> getSentimentSourceTargetMWE(WordObj wtmp, SentimentUnit mwe, String label,
 			WordObj containsDeleted) {

@@ -21,7 +21,7 @@ public class NamedEntityList {
 	/**
 	 * Given one or more words, check whether it is about a Named Entity or not.
 	 * 
-	 * @param source
+	 * @param pos
 	 *          The word that might be a Named Entity.
 	 * @param startIndex
 	 *          The start index of the Named Entity.

@@ -21,11 +21,11 @@ public class Corpus {
 	static String newline = System.getProperty("line.separator");
 
 	/**
-	 * Default constructor that takes the name of the corpus and its target as
+	 * Default constructor that takes the name of the corpus and its mwe as
 	 * arguments.
 	 * 
 	 * @param corpusname
-	 * @param target
+	 * @param mwe
 	 */
 	public Corpus(String corpusname, String target) {
 		super();
@@ -44,7 +44,7 @@ public class Corpus {
 	}
 
 	/**
-	 * Returns the target of this <code>Corpus</code>, e. g. 'gehen'.
+	 * Returns the mwe of this <code>Corpus</code>, e. g. 'gehen'.
 	 * 
 	 * @return
 	 */
@@ -113,10 +113,10 @@ public class Corpus {
 	}
 
 	/**
-	 * Sets the target of this <code>Corpus</code>.
+	 * Sets the mwe of this <code>Corpus</code>.
 	 * 
-	 * @param target
-	 *            the target to set
+	 * @param mwe
+	 *            the mwe to set
 	 */
 	public void setTarget(String target) {
 		this.target = target;
@@ -133,7 +133,7 @@ public class Corpus {
 		buffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + newline);
 
 		buffer.append("<" + xmltag + " corpusname=\"" + corpusname
-				+ "\" target=\"" + target + "\">" + newline);
+				+ "\" mwe=\"" + target + "\">" + newline);
 
 		if (null != head) {
 			buffer.append("\t" + head.toString());

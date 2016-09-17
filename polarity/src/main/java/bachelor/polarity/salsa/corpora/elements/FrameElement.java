@@ -99,19 +99,19 @@ public class FrameElement {
 	}
 
 	/**
-	 * Returns the source of this <code>FrameElement</code>.
+	 * Returns the pos of this <code>FrameElement</code>.
 	 * 
-	 * @return the source
+	 * @return the pos
 	 */
 	public String getSource() {
 		return source;
 	}
 
 	/**
-	 * Sets the source of this <code>FrameElement</code>.
+	 * Sets the pos of this <code>FrameElement</code>.
 	 * 
-	 * @param source
-	 *            the source to set
+	 * @param pos
+	 *            the pos to set
 	 */
 	public void setSource(String source) {
 		this.source = source;
@@ -193,7 +193,7 @@ public class FrameElement {
 				+ name + "\"");
 
 		if (null != source) {
-			buffer.append(" source=\"" + source + "\"");
+			buffer.append(" pos=\"" + source + "\"");
 		}
 		if (null != usp) {
 			buffer.append(" usp=\"" + usp + "\"");

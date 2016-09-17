@@ -11,9 +11,9 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** A polar expression.
-E.g. "mögen, hassen, gut, schlecht, ..."
+E.g. "mï¿½gen, hassen, gut, schlecht, ..."
  * Updated by JCasGen Sun Sep 11 15:00:25 CEST 2016
- * XML source: C:/Users/m_s_w_000/Desktop/BachelorSystem/bachelor_sentiment_german/polarity/src/main/resources/desc/type/typeSystemDescriptor.xml
+ * XML pos: C:/Users/m_s_w_000/Desktop/BachelorSystem/bachelor_sentiment_german/polarity/src/main/resources/desc/type/typeSystemDescriptor.xml
  * @generated */
 public class PolarExpression extends Annotation {
   /** @generated

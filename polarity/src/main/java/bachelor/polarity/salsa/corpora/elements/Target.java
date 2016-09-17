@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import bachelor.polarity.salsa.corpora.noelement.Id;
 
 /**
- * Represents the 'target' section in a SalsaXML corpus.
+ * Represents the 'mwe' section in a SalsaXML corpus.
  * 
  * @author Fabian Shirokov
  * 
@@ -20,12 +20,12 @@ public class Target {
 
 	private ArrayList<Fenode> fenodes;
 
-	static String xmltag = "target";
+	static String xmltag = "mwe";
 
 	static String newline = System.getProperty("line.separator");
 
 	/**
-	 * Zero-argumented constructor. According to the SalsaXML.dtd each 'target'
+	 * Zero-argumented constructor. According to the SalsaXML.dtd each 'mwe'
 	 * element is required to have a 'lemma' attribute, but there are corpora
 	 * that do not conform to this rule.
 	 */
@@ -56,7 +56,7 @@ public class Target {
 	}
 
 	/**
-	 * Sets the <code>Id</code> of this target.
+	 * Sets the <code>Id</code> of this mwe.
 	 * 
 	 * @param id
 	 *            the id to set
@@ -121,7 +121,7 @@ public class Target {
 	}
 
 	/**
-	 * Returns the XML element name of <code>Target</code>, i. e. 'target'.
+	 * Returns the XML element name of <code>Target</code>, i. e. 'mwe'.
 	 * 
 	 * @return the xmltag
 	 */
