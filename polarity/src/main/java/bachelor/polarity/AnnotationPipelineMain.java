@@ -25,12 +25,18 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
+import bachelor.polarity.soPro.Module;
 import bachelor.polarity.soPro.SalsaAPIConnective;
 import bachelor.polarity.soPro.SentenceList;
+import bachelor.polarity.soPro.SentimentChecker;
 import bachelor.polarity.soPro.SentimentLex;
+import bachelor.polarity.soPro.SentimentModule;
 import bachelor.polarity.soPro.ShifterLex;
+import bachelor.polarity.soPro.ShifterModule;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
@@ -40,7 +46,7 @@ import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDe
  * in the input text. The {@link DictionaryAnnotator} looks up names from a
  * static names file and annotates them in the documents.
  * <p>
- * The output is written to the mwe directory. Use
+ * The output is written to the output directory. Use
  * {@code NameAnnotationPipelineTest} in the test directory to check the output.
  * </p>
  */
@@ -88,6 +94,26 @@ public class AnnotationPipelineMain {
 		ShifterLex shifterLex = new ShifterLex(true);
 		shifterLex.fileToLex(shifterLexFile.toString());
 
+		// Look for subjective expressions and shifters using the according modules.
+		final Set<Module> modules = new HashSet<Module>();
+
+		final SentimentModule sentimentModule;
+		final ShifterModule shifterModule;
+
+		sentimentModule = new SentimentModule(sentimentLex);
+		shifterModule = new ShifterModule(shifterLex);
+
+		modules.add(sentimentModule);
+		modules.add(shifterModule);
+
+		// search for sentiment expressions and write results to the output file
+		// specified in the configuration file
+		final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
+		System.out.println("Looking for sentiment expressions...");
+		String outputPath = "output";
+
+//		sentcheck.findSentiments(outputPath);
+
 		// **************************UIMA ANNOTATIONS*************************
 		System.out.println("****************UIMA ANNOTATIONS*********************");
 		// Text reader. Reads text input.
@@ -110,11 +136,11 @@ public class AnnotationPipelineMain {
 		/*
 		 * AnalysisEngineDescription writer = createEngineDescription(
 		 * CasDumpWriter.class, CasDumpWriter.PARAM_TARGET_LOCATION,
-		 * "mwe/PolarAnnotationPipeline.txt");
+		 * "output/PolarAnnotationPipeline.txt");
 		 */
 
 		AnalysisEngineDescription xmiWriter = createEngineDescription(XmiWriter.class, XmiWriter.PARAM_OUTPUT_DIRECTORY,
-				"mwe");
+				"output");
 
 		SimplePipeline.runPipeline(reader, tokenizer, polarExpressionFinder, shifterFinder, xmiWriter);
 	}
