@@ -411,7 +411,7 @@ nichts g [clause] nomen
 trotzen g [objd,obja,objc,obji,s,objp-*] verb
 ohne g [pp] appr
 ohne g [pp] kon
-nicht g [objp] adv
+nicht g [nicht] adv
 kein g [subj, attr-rev] adj
 einzigartig g [subj, attr-rev] adj
 korrigierbar n [subj, attr-rev] adj

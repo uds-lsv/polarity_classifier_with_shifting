@@ -105,68 +105,87 @@ public class SubjectiveExpressionModule implements Module {
 	}
 
 	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
-		// TODO deletedNodes?
+		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
-		System.out.println("Shifter: " + shifter.getLemma());
 		System.out.println("Scope: " + Arrays.toString(shifterUnit.shifter_scope));
+
+		// TODO deletedNodes?
+		WordObj containsDeleted = shifter.getDeleted().peekFirst();
+		if (containsDeleted != null) {
+			System.out.println("DeletedNodes != null: " + shifter.getDeleted().toString());
+			System.out.println("containsDeleted: " + containsDeleted.getLemma());
+			if (!(containsDeleted.getLemma().equals(""))) {
+				// shifter = containsDeleted;
+			}
+		}
 
 		HashSet<Edge> edges = sentence.getGraph().getEdges();
 
 		for (String scopeEntry : shifterUnit.shifter_scope) {
 			for (Edge edge : edges) {
-				if (edge.source.equals(shifter)) {
+				if (shifter.getLemma().equals("nicht")) {
+					if (edge.toString().contains("nicht")) {
+						System.out.println("edge: " + edge);
+						shifterTarget = edge.source;
+						if (sentimentList.contains(shifterTarget)) {
+							return shifterTarget;
+						}
+					}
+				}
+				// if (edge.source.equals(shifter)) {
 
-					switch (scopeEntry) {
-					case "objp-*":
-						if (edge.depRel.contains("objp")) {
-							shifterTarget = edge.target;
-							if (sentimentList.contains(shifterTarget)) {
-								return shifterTarget;
-							}
-						}
-					case "attr-rev":
-						if (edge.depRel.equals("attr")) {
-							shifterTarget = edge.source;
-							if (sentimentList.contains(shifterTarget)) {
-								return shifterTarget;
-							}
-						}
-					case "det":
-						if (edge.depRel.equals(scopeEntry)) {
-							if (edge.target.getPos().equals("PPOSAT")) {
-								shifterTarget = edge.target;
-								if (sentimentList.contains(shifterTarget)) {
-									return shifterTarget;
-								}
-							}
-						}
-						// TODO
-					case "clause":
-						final ConstituencyTree tree = sentence.getTree();
-						final Terminal wordNode = tree.getTerminal(shifter);
-						final Nonterminal containingClause;
-
-						if (tree.hasDominatingNode(wordNode, "S")) {
-							containingClause = tree.getLowestDominatingNode(wordNode, "S");
-						} else {
-							// This isn't supposed to happen except in case of parsing errors
-							containingClause = tree.getTrueRoot();
-						}
-						tree.getMainClause(containingClause);
+				switch (scopeEntry) {
+				case "objp-*":
+					if (edge.depRel.contains("objp")) {
+						System.out.println("edge.depRel hat objp!?");
 						shifterTarget = edge.target;
 						if (sentimentList.contains(shifterTarget)) {
 							return shifterTarget;
 						}
-					default:
-						if (edge.depRel.equals(scopeEntry)) {
+					}
+				case "attr-rev":
+					if (edge.depRel.equals("attr")) {
+						shifterTarget = edge.source;
+						if (sentimentList.contains(shifterTarget)) {
+							return shifterTarget;
+						}
+					}
+				case "det":
+					if (edge.depRel.equals(scopeEntry)) {
+						if (edge.target.getPos().equals("PPOSAT")) {
 							shifterTarget = edge.target;
 							if (sentimentList.contains(shifterTarget)) {
 								return shifterTarget;
 							}
 						}
 					}
+					// TODO
+				case "clause":
+					final ConstituencyTree tree = sentence.getTree();
+					final Terminal wordNode = tree.getTerminal(shifter);
+					final Nonterminal containingClause;
+
+					if (tree.hasDominatingNode(wordNode, "S")) {
+						containingClause = tree.getLowestDominatingNode(wordNode, "S");
+					} else {
+						// This isn't supposed to happen except in case of parsing errors
+						containingClause = tree.getTrueRoot();
+					}
+					tree.getMainClause(containingClause);
+					shifterTarget = edge.target;
+					if (sentimentList.contains(shifterTarget)) {
+						return shifterTarget;
+					}
+				default:
+					if (edge.depRel.equals(scopeEntry)) {
+						shifterTarget = edge.target;
+						if (sentimentList.contains(shifterTarget)) {
+							return shifterTarget;
+						}
+					}
 				}
+				// }
 			}
 		}
 		return null;
