@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import bachelor.polarity.salsa.corpora.noelement.Id;
 
 /**
- * Represents the 'mwe' section in a SalsaXML corpus.
+ * Represents the 'target' section in a SalsaXML corpus.
  * 
  * @author Fabian Shirokov
  * 
@@ -20,14 +20,14 @@ public class Target {
 
 	private ArrayList<Fenode> fenodes;
 
-	static String xmltag = "mwe";
+	static String xmltag = "target";
 
 	static String newline = System.getProperty("line.separator");
 
 	/**
-	 * Zero-argumented constructor. According to the SalsaXML.dtd each 'mwe'
-	 * element is required to have a 'lemma' attribute, but there are corpora
-	 * that do not conform to this rule.
+	 * Zero-argumented constructor. According to the SalsaXML.dtd each 'target'
+	 * element is required to have a 'lemma' attribute, but there are corpora that
+	 * do not conform to this rule.
 	 */
 	public Target() {
 		super();
@@ -56,10 +56,10 @@ public class Target {
 	}
 
 	/**
-	 * Sets the <code>Id</code> of this mwe.
+	 * Sets the <code>Id</code> of this target.
 	 * 
 	 * @param id
-	 *            the id to set
+	 *          the id to set
 	 */
 	public void setId(Id id) {
 		this.id = id;
@@ -78,7 +78,7 @@ public class Target {
 	 * Sets the lemma.
 	 * 
 	 * @param lemma
-	 *            the lemma to set
+	 *          the lemma to set
 	 */
 	public void setLemma(String lemma) {
 		this.lemma = lemma;
@@ -97,7 +97,7 @@ public class Target {
 	 * Sets the headlemma.
 	 * 
 	 * @param headlemma
-	 *            the headlemma to set
+	 *          the headlemma to set
 	 */
 	public void setHeadlemma(String headlemma) {
 		this.headlemma = headlemma;
@@ -121,7 +121,7 @@ public class Target {
 	}
 
 	/**
-	 * Returns the XML element name of <code>Target</code>, i. e. 'mwe'.
+	 * Returns the XML element name of <code>Target</code>, i. e. 'target'.
 	 * 
 	 * @return the xmltag
 	 */

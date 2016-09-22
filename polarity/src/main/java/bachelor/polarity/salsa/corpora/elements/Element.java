@@ -21,7 +21,7 @@ public class Element {
 	 * <code>optional</code> (e. g. 'true') as attributes.
 	 * 
 	 * @param corpusname
-	 * @param mwe
+	 * @param target
 	 */
 	public Element(String name, String optional) {
 		super();
@@ -42,7 +42,7 @@ public class Element {
 	 * Sets the name of this <code>Element</code>.
 	 * 
 	 * @param name
-	 *            the name to set
+	 *          the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -82,8 +82,7 @@ public class Element {
 	public String toString() {
 
 		StringBuilder buffer = new StringBuilder();
-		buffer.append("<" + xmltag + " name=\"" + name + "\" optional=\""
-				+ optional + "\"/>" + newline);
+		buffer.append("<" + xmltag + " name=\"" + name + "\" optional=\"" + optional + "\"/>" + newline);
 
 		return buffer.toString();
 	}

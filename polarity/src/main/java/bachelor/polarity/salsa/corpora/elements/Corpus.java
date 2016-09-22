@@ -21,11 +21,11 @@ public class Corpus {
 	static String newline = System.getProperty("line.separator");
 
 	/**
-	 * Default constructor that takes the name of the corpus and its mwe as
+	 * Default constructor that takes the name of the corpus and its target as
 	 * arguments.
 	 * 
 	 * @param corpusname
-	 * @param mwe
+	 * @param target
 	 */
 	public Corpus(String corpusname, String target) {
 		super();
@@ -34,8 +34,7 @@ public class Corpus {
 	}
 
 	/**
-	 * Returns the name of this <code>Corpus</code>, e. g.
-	 * 'TIGER-Gesamt-Juli03'
+	 * Returns the name of this <code>Corpus</code>, e. g. 'TIGER-Gesamt-Juli03'
 	 * 
 	 * @return
 	 */
@@ -44,7 +43,7 @@ public class Corpus {
 	}
 
 	/**
-	 * Returns the mwe of this <code>Corpus</code>, e. g. 'gehen'.
+	 * Returns the target of this <code>Corpus</code>, e. g. 'gehen'.
 	 * 
 	 * @return
 	 */
@@ -53,8 +52,8 @@ public class Corpus {
 	}
 
 	/**
-	 * Returns the <code>Head</code> of this <code>Corpus</code>. <code>null</code>
-	 * is returned if no <code>Head</code> has been set.
+	 * Returns the <code>Head</code> of this <code>Corpus</code>.
+	 * <code>null</code> is returned if no <code>Head</code> has been set.
 	 * 
 	 * @return the head
 	 */
@@ -66,15 +65,15 @@ public class Corpus {
 	 * Sets the <code>Head</code> of this <code>Corpus</code>.
 	 * 
 	 * @param head
-	 *            the head to set
+	 *          the head to set
 	 */
 	public void setHead(Head head) {
 		this.head = head;
 	}
 
 	/**
-	 * Returns the <code>Body</code> of this <code>Corpus</code>. <code>null</code>
-	 * is returned if no <code>Body</code> has been set.
+	 * Returns the <code>Body</code> of this <code>Corpus</code>.
+	 * <code>null</code> is returned if no <code>Body</code> has been set.
 	 * 
 	 * @return the body
 	 */
@@ -86,15 +85,15 @@ public class Corpus {
 	 * Sets the <code>Body</code> of this <code>Corpus</code>.
 	 * 
 	 * @param body
-	 *            the body to set
+	 *          the body to set
 	 */
 	public void setBody(Body body) {
 		this.body = body;
 	}
 
 	/**
-	 * Returns the name of the XML element of the <code>Corpus</code> class,
-	 * i. e. 'corpus'.
+	 * Returns the name of the XML element of the <code>Corpus</code> class, i. e.
+	 * 'corpus'.
 	 * 
 	 * @return the xmltag
 	 */
@@ -106,17 +105,17 @@ public class Corpus {
 	 * Sets the name of the <code>Corpus</code>.
 	 * 
 	 * @param corpusname
-	 *            the corpusname to set
+	 *          the corpusname to set
 	 */
 	public void setCorpusname(String corpusname) {
 		this.corpusname = corpusname;
 	}
 
 	/**
-	 * Sets the mwe of this <code>Corpus</code>.
+	 * Sets the target of this <code>Corpus</code>.
 	 * 
-	 * @param mwe
-	 *            the mwe to set
+	 * @param target
+	 *          the target to set
 	 */
 	public void setTarget(String target) {
 		this.target = target;
@@ -132,8 +131,7 @@ public class Corpus {
 
 		buffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + newline);
 
-		buffer.append("<" + xmltag + " corpusname=\"" + corpusname
-				+ "\" mwe=\"" + target + "\">" + newline);
+		buffer.append("<" + xmltag + " corpusname=\"" + corpusname + "\" target=\"" + target + "\">" + newline);
 
 		if (null != head) {
 			buffer.append("\t" + head.toString());

@@ -30,9 +30,8 @@ import bachelor.polarity.soPro.SalsaAPIConnective;
 import bachelor.polarity.soPro.SentenceList;
 import bachelor.polarity.soPro.SentimentChecker;
 import bachelor.polarity.soPro.SentimentLex;
-import bachelor.polarity.soPro.SentimentModule;
+import bachelor.polarity.soPro.SubjectiveExpressionModule;
 import bachelor.polarity.soPro.ShifterLex;
-import bachelor.polarity.soPro.ShifterModule;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -97,22 +96,19 @@ public class AnnotationPipelineMain {
 		// Look for subjective expressions and shifters using the according modules.
 		final Set<Module> modules = new HashSet<Module>();
 
-		final SentimentModule sentimentModule;
-		final ShifterModule shifterModule;
+		final SubjectiveExpressionModule subjectiveExpressionModule;
 
-		sentimentModule = new SentimentModule(sentimentLex);
-		shifterModule = new ShifterModule(shifterLex);
+		subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex);
 
-		modules.add(sentimentModule);
-		modules.add(shifterModule);
+		modules.add(subjectiveExpressionModule);
 
 		// search for sentiment expressions and write results to the output file
 		// specified in the configuration file
 		final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
 		System.out.println("Looking for sentiment expressions...");
-		String outputPath = "output";
+		String outputPath = "output/salsaResult.xml";
 
-//		sentcheck.findSentiments(outputPath);
+		sentcheck.findSentiments(outputPath);
 
 		// **************************UIMA ANNOTATIONS*************************
 		System.out.println("****************UIMA ANNOTATIONS*********************");

@@ -58,8 +58,8 @@ import bachelor.polarity.salsa.corpora.elements.Wordtags;
 import bachelor.polarity.salsa.corpora.noelement.Id;
 
 /**
- * This handles events of the <code>CorpusParser</code>. It tells the parser
- * how to properly read in a SalsaXML file into the <code>Corpus</code> data
+ * This handles events of the <code>CorpusParser</code>. It tells the parser how
+ * to properly read in a SalsaXML file into the <code>Corpus</code> data
  * structure.
  * 
  * @author Fabian Shirokov
@@ -70,7 +70,7 @@ public class CorpusHandler extends DefaultHandler {
 	// the currently active element
 	private String activeElement;
 
-	// if the 'mwe' element is active, then <code>isTarget</code> is true.
+	// if the 'target' element is active, then <code>isTarget</code> is true.
 	private boolean isTarget;
 
 	// if 'fe' is active, the <code>isFrameElement</code> is true.
@@ -199,8 +199,8 @@ public class CorpusHandler extends DefaultHandler {
 	}
 
 	/**
-	 * This method is called when the XML document starts. By now, nothing
-	 * happens in this method.
+	 * This method is called when the XML document starts. By now, nothing happens
+	 * in this method.
 	 */
 	public void startDocument() {
 
@@ -208,35 +208,35 @@ public class CorpusHandler extends DefaultHandler {
 
 	/**
 	 * This overrides {@link org.xml.sax.helpers.DefaultHandler#startElement}.
-	 * This method is called when the parser has found an opening element tag.
-	 * It initializes new objects and assigns them to their superordinating
-	 * elements. For example, it creates a new <code>Head</code> and assigns
-	 * it to the <code>Corpus</code>.
+	 * This method is called when the parser has found an opening element tag. It
+	 * initializes new objects and assigns them to their superordinating elements.
+	 * For example, it creates a new <code>Head</code> and assigns it to the
+	 * <code>Corpus</code>.
 	 * 
 	 * @param uri
-	 *            a <code>String</code> with the namespace URI, empty if
-	 *            parser factory is not namespace aware (default)
+	 *          a <code>String</code> with the namespace URI, empty if parser
+	 *          factory is not namespace aware (default)
 	 * @param localName
-	 *            a <code>String</code> with the local name (without prefix),
-	 *            empty if parser factory is not namespace aware (default)
+	 *          a <code>String</code> with the local name (without prefix), empty
+	 *          if parser factory is not namespace aware (default)
 	 * @param qualName
-	 *            a <code>String</code> with the qualified (with prefix) name,
-	 *            or the empty string if qualified names are not available
+	 *          a <code>String</code> with the qualified (with prefix) name, or
+	 *          the empty string if qualified names are not available
 	 * @param atts
-	 *            <code>Attributes</code> attached to the element, empty if
-	 *            there are no attributes
+	 *          <code>Attributes</code> attached to the element, empty if there
+	 *          are no attributes
 	 * @throws SAXException
-	 *             if an error occurs, possibly wrapping another exception
+	 *           if an error occurs, possibly wrapping another exception
 	 */
-	public void startElement(String uri, String localName, String qualName, Attributes atts) throws SAXException {
+	public void startElement(@SuppressWarnings("unused") String uri, @SuppressWarnings("unused") String localName,
+			String qualName, Attributes atts) throws SAXException {
 
 		activeElement = qualName;
 
 		if (qualName.equalsIgnoreCase("action")) {
 
-			currentAction = new Action(atts.getValue("date"), atts
-					.getValue("time"), atts.getValue("user"), atts
-					.getValue("type"));
+			currentAction = new Action(atts.getValue("date"), atts.getValue("time"), atts.getValue("user"),
+					atts.getValue("type"));
 
 			currentHistory.addAction(currentAction);
 
@@ -262,8 +262,7 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("corpus")) {
 
-			corpus = new Corpus(atts.getValue("corpusname"), atts
-					.getValue("mwe"));
+			corpus = new Corpus(atts.getValue("corpusname"), atts.getValue("target"));
 
 		} else if (qualName.equalsIgnoreCase("corpus_id")) {
 
@@ -285,8 +284,7 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("edge")) {
 
-			currentEdge = new Edge(new Id(atts.getValue("idref")), atts
-					.getValue("label"));
+			currentEdge = new Edge(new Id(atts.getValue("idref")), atts.getValue("label"));
 
 			currentNonterminal.addEdge(currentEdge);
 
@@ -300,8 +298,7 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("element")) {
 
-			currentElement = new Element(atts.getValue("name"), atts
-					.getValue("optional"));
+			currentElement = new Element(atts.getValue("name"), atts.getValue("optional"));
 
 			currentFrame.addElement(currentElement);
 
@@ -309,10 +306,9 @@ public class CorpusHandler extends DefaultHandler {
 
 			isFrameElement = true;
 
-			currentFrameElement = new FrameElement(new Id(atts.getValue("id")),
-					atts.getValue("name"));
+			currentFrameElement = new FrameElement(new Id(atts.getValue("id")), atts.getValue("name"));
 
-			String source = atts.getValue("pos");
+			String source = atts.getValue("source");
 
 			String usp = atts.getValue("usp");
 
@@ -329,15 +325,13 @@ public class CorpusHandler extends DefaultHandler {
 
 			isFeature = true;
 
-			currentFeature = new Feature(atts.getValue("domain"), atts
-					.getValue("name"));
+			currentFeature = new Feature(atts.getValue("domain"), atts.getValue("name"));
 
 			currentAnnotation.addFeature(currentFeature);
 
 		} else if (qualName.equalsIgnoreCase("fenode")) {
 
-			currentFenode = new Fenode(new Id(atts.getValue("idref")), atts
-					.getValue("is_split"));
+			currentFenode = new Fenode(new Id(atts.getValue("idref")), atts.getValue("is_split"));
 
 			if (isTarget) {
 				currentTarget.addFenode(currentFenode);
@@ -353,7 +347,7 @@ public class CorpusHandler extends DefaultHandler {
 			if (null != forWhat) {
 				currentFlag.setForWhat(forWhat);
 			}
-			String source = atts.getValue("pos");
+			String source = atts.getValue("source");
 			if (null != source) {
 				currentFlag.setSource(source);
 			}
@@ -387,7 +381,7 @@ public class CorpusHandler extends DefaultHandler {
 
 			String idString = atts.getValue("id");
 
-			String source = atts.getValue("pos");
+			String source = atts.getValue("source");
 
 			String usp = atts.getValue("usp");
 
@@ -505,15 +499,13 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("nt")) {
 
-			currentNonterminal = new Nonterminal(atts.getValue("cat"), new Id(
-					atts.getValue("id")));
+			currentNonterminal = new Nonterminal(atts.getValue("cat"), new Id(atts.getValue("id")));
 
 			currentNonterminals.addNonterminal(currentNonterminal);
 
 		} else if (qualName.equalsIgnoreCase("part")) {
 
-			currentPart = new Part(atts.getValue("word"), new Id(atts
-					.getValue("id")));
+			currentPart = new Part(atts.getValue("word"), new Id(atts.getValue("id")));
 
 			currentSplitword.addPart(currentPart);
 
@@ -521,7 +513,7 @@ public class CorpusHandler extends DefaultHandler {
 
 			currentSentence = new Sentence(new Id(atts.getValue("id")));
 
-			String source = atts.getValue("pos");
+			String source = atts.getValue("source");
 
 			if (null != source) {
 				currentSentence.setSource(source);
@@ -531,8 +523,7 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("secedge")) {
 
-			currentSecedge = new Secedge(new Id(atts.getValue("id")), atts
-					.getValue("label"));
+			currentSecedge = new Secedge(new Id(atts.getValue("id")), atts.getValue("label"));
 
 			currentTerminal.setSecedge(currentSecedge);
 
@@ -569,15 +560,13 @@ public class CorpusHandler extends DefaultHandler {
 			currentAction.setStep(currentStep);
 
 		} else if (qualName.equalsIgnoreCase("t")) {
-		
-			currentTerminal = new Terminal(new Id(atts.getValue("id")), atts
-					.getValue("lemma"), atts.getValue("morph"), atts
-					.getValue("pos"), atts.getValue("word"));
-			
-		
+
+			currentTerminal = new Terminal(new Id(atts.getValue("id")), atts.getValue("lemma"), atts.getValue("morph"),
+					atts.getValue("pos"), atts.getValue("word"));
+
 			currentTerminals.addTerminal(currentTerminal);
 
-		} else if (qualName.equalsIgnoreCase("mwe")) {
+		} else if (qualName.equalsIgnoreCase("target")) {
 
 			isTarget = true;
 
@@ -620,16 +609,14 @@ public class CorpusHandler extends DefaultHandler {
 				currentUnderspecificationFrames.addUspblock(currentUspblock);
 			} else {
 
-				currentUnderspecificationFrameElements
-						.addUspblock(currentUspblock);
+				currentUnderspecificationFrameElements.addUspblock(currentUspblock);
 			}
 
 		} else if (qualName.equalsIgnoreCase("uspfes")) {
 
 			currentUnderspecificationFrameElements = new UnderspecificationFrameElements();
 
-			currentUnderspecification
-					.setUspfes(currentUnderspecificationFrameElements);
+			currentUnderspecification.setUspfes(currentUnderspecificationFrameElements);
 
 		} else if (qualName.equalsIgnoreCase("uspframes")) {
 
@@ -637,8 +624,7 @@ public class CorpusHandler extends DefaultHandler {
 
 			currentUnderspecificationFrames = new UnderspecificationFrames();
 
-			currentUnderspecification
-					.setUspframes(currentUnderspecificationFrames);
+			currentUnderspecification.setUspframes(currentUnderspecificationFrames);
 
 		} else if (qualName.equalsIgnoreCase("uspitem")) {
 
@@ -658,14 +644,12 @@ public class CorpusHandler extends DefaultHandler {
 			} else if (isFeature) {
 				currentFeature.addValue(currentValue);
 			} else {
-				System.err
-						.println("parsing error: 'value' is in the wrong section");
+				System.err.println("parsing error: 'value' is in the wrong section");
 			}
 
 		} else if (qualName.equalsIgnoreCase("variable")) {
 
-			currentVariable = new Variable(atts.getValue("name"), new Id(atts
-					.getValue("idref")));
+			currentVariable = new Variable(atts.getValue("name"), new Id(atts.getValue("idref")));
 
 			currentMatch.addVariable(currentVariable);
 
@@ -696,22 +680,23 @@ public class CorpusHandler extends DefaultHandler {
 	}
 
 	/**
-	 * This overrides {@link org.xml.sax.helpers.DefaultHandler#endElement}.
-	 * This method is called when the parser has found a closing element tag.
+	 * This overrides {@link org.xml.sax.helpers.DefaultHandler#endElement}. This
+	 * method is called when the parser has found a closing element tag.
 	 * 
 	 * @param uri
-	 *            a <code>String</code> with the namespace URI, empty if
-	 *            parser factory is not namespace aware (default)
+	 *          a <code>String</code> with the namespace URI, empty if parser
+	 *          factory is not namespace aware (default)
 	 * @param localName
-	 *            a <code>String</code> with the local name (without prefix),
-	 *            empty if parser factory is not namespace aware (default)
+	 *          a <code>String</code> with the local name (without prefix), empty
+	 *          if parser factory is not namespace aware (default)
 	 * @param qualName
-	 *            a <code>String</code> with the qualified (with prefix) name,
-	 *            or the empty string if qualified names are not available
+	 *          a <code>String</code> with the qualified (with prefix) name, or
+	 *          the empty string if qualified names are not available
 	 * @throws SAXException
-	 *             if an error occurs, possibly wrapping another exception
+	 *           if an error occurs, possibly wrapping another exception
 	 */
-	public void endElement(String uri, String localName, String qualName) throws SAXException {
+	public void endElement(@SuppressWarnings("unused") String uri, @SuppressWarnings("unused") String localName,
+			String qualName) throws SAXException {
 
 		if (qualName.equalsIgnoreCase("action")) {
 
@@ -797,7 +782,7 @@ public class CorpusHandler extends DefaultHandler {
 
 		} else if (qualName.equalsIgnoreCase("t")) {
 
-		} else if (qualName.equalsIgnoreCase("mwe")) {
+		} else if (qualName.equalsIgnoreCase("target")) {
 
 			isTarget = false;
 

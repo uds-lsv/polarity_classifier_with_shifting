@@ -18,7 +18,6 @@ public class SentenceObj {
 	private DependencyGraph rawGraph;
 	boolean sourceIsAuthor = false;
 
-	// added by isha 09.06
 	public LinkedList<WordObj> getWordList() {
 		return wordList;
 	}

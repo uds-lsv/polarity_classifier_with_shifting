@@ -413,7 +413,7 @@ public class ConstituencyTree {
 	 * @param terminal
 	 *          The {@link Terminal} node towards which the descent is directed.
 	 * @param lenPath
-	 *          The distance of the mwe node from the given {@link Nonterminal}
+	 *          The distance of the target node from the given {@link Nonterminal}
 	 *          node.
 	 * @return The {@link Nonterminal} or {@link Terminal} node which is separated
 	 *         from the given {@link Nonterminal} node by a given path length and
@@ -514,7 +514,7 @@ public class ConstituencyTree {
 	 * which dominates both the predicate and argument node (here: S:
 	 * "The gardener likes his flowers"). From this node, the function will then
 	 * descend the tree for a path length of 1 in the direction of the argument.
-	 * The node retrieved in this way is our mwe node. The string corresponding
+	 * The node retrieved in this way is our target node. The string corresponding
 	 * to this node will be returned.
 	 *
 	 * @param predicate
@@ -549,7 +549,7 @@ public class ConstituencyTree {
 
 		Object phrase = descendTree(parentNode, argumentNode, 1);
 
-		// retrieve the String corresponding to the mwe node
+		// retrieve the String corresponding to the target node
 		if (phrase instanceof Nonterminal) {
 			Nonterminal nonterminalPhrase = (Nonterminal) phrase;
 			sourceTargetPhrase = getPhraseAsString(nonterminalPhrase);
@@ -578,10 +578,10 @@ public class ConstituencyTree {
 	 * which dominates both the predicate and argument node (here: S:
 	 * "The gardener likes his flowers"). From this node, the function will then
 	 * descend the tree for a path length of 1 in the direction of the argument.
-	 * The node retrieved in this way is our mwe node.
+	 * The node retrieved in this way is our target node.
 	 *
 	 * If 'depGraph' is not {@code null} the returned node may violate point a)
-	 * and b). This case occurs whenever the opinion pos is searched. For cases
+	 * and b). This case occurs whenever the opinion source is searched. For cases
 	 * such as sentences containing conjunctions of verbs, predicative and
 	 * attributive adjectives the "dominates"-relation is not always appropriate.
 	 * Consider the following example:
@@ -590,7 +590,7 @@ public class ConstituencyTree {
 	 * tree: [ S [ VP [ NP [ DET The ] [ N gardener ] ] [ V likes ] ] [ CON and ]
 	 * [ VP [ V loves ] [ NP [ PN his] [ N flowers ] ] ] ]
 	 *
-	 * Opinion pos for "loves" should be "The gardener" but with the original
+	 * Opinion source for "loves" should be "The gardener" but with the original
 	 * implementation it was "The gardener likes" (i.e. 'VP' node instead of the
 	 * 'NP' node was returned). As only the 'S' dominates the predicate 'loves'
 	 * and the argument 'gardener' the implementation chose the 'VP' node since it
@@ -833,6 +833,7 @@ public class ConstituencyTree {
 				}
 				result.removeAll(punctuation);
 			}
+
 			return result;
 		}
 	}
@@ -858,6 +859,7 @@ public class ConstituencyTree {
 				if (node instanceof Terminal) {
 					Terminal nd = (Terminal) node;
 					printer.append("(" + nd.getPos() + " " + nd.getWord() + ") ");
+
 				}
 
 				else if (node instanceof Nonterminal) {
@@ -873,9 +875,11 @@ public class ConstituencyTree {
 						agenda.add(0, ch.get(j));
 					}
 				}
+
 			}
 			return printer.toString();
 		}
 		return "";
 	}
+
 }
