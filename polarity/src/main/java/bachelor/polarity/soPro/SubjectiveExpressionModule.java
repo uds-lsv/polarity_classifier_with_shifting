@@ -1,14 +1,16 @@
 package bachelor.polarity.soPro;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
+import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Target;
+import bachelor.polarity.salsa.corpora.elements.Terminal;
 
 public class SubjectiveExpressionModule implements Module {
 
@@ -63,7 +65,7 @@ public class SubjectiveExpressionModule implements Module {
 		// Iterate over every found shifter and search for targets in their scope.
 		// Also set frames.
 		for (WordObj shifter : shifterList) {
-			WordObj shifterTarget = findShifterTarget(sentimentList);
+			WordObj shifterTarget = findShifterTarget(shifter, sentimentList, sentence);
 			if (shifterTarget != null) {
 
 				// Create Frame object
@@ -72,6 +74,7 @@ public class SubjectiveExpressionModule implements Module {
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
+				System.out.println("shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -83,7 +86,8 @@ public class SubjectiveExpressionModule implements Module {
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
 			} else {
-//				System.out.println("No shifterTarget found for " + shifter.getName());
+				// System.out.println("No shifterTarget found for " +
+				// shifter.getName());
 			}
 		}
 
@@ -100,9 +104,73 @@ public class SubjectiveExpressionModule implements Module {
 		return frames;
 	}
 
-	private WordObj findShifterTarget(ArrayList<WordObj> sentimentList) {
-		// TODO Auto-generated method stub
+	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
+		// TODO deletedNodes?
+		WordObj shifterTarget = null;
+		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
+		System.out.println("Shifter: " + shifter.getLemma());
+		System.out.println("Scope: " + Arrays.toString(shifterUnit.shifter_scope));
+
+		HashSet<Edge> edges = sentence.getGraph().getEdges();
+
+		for (String scopeEntry : shifterUnit.shifter_scope) {
+			for (Edge edge : edges) {
+				if (edge.source.equals(shifter)) {
+
+					switch (scopeEntry) {
+					case "objp-*":
+						if (edge.depRel.contains("objp")) {
+							shifterTarget = edge.target;
+							if (sentimentList.contains(shifterTarget)) {
+								return shifterTarget;
+							}
+						}
+					case "attr-rev":
+						if (edge.depRel.equals("attr")) {
+							shifterTarget = edge.source;
+							if (sentimentList.contains(shifterTarget)) {
+								return shifterTarget;
+							}
+						}
+					case "det":
+						if (edge.depRel.equals(scopeEntry)) {
+							if (edge.target.getPos().equals("PPOSAT")) {
+								shifterTarget = edge.target;
+								if (sentimentList.contains(shifterTarget)) {
+									return shifterTarget;
+								}
+							}
+						}
+						// TODO
+					case "clause":
+						final ConstituencyTree tree = sentence.getTree();
+						final Terminal wordNode = tree.getTerminal(shifter);
+						final Nonterminal containingClause;
+
+						if (tree.hasDominatingNode(wordNode, "S")) {
+							containingClause = tree.getLowestDominatingNode(wordNode, "S");
+						} else {
+							// This isn't supposed to happen except in case of parsing errors
+							containingClause = tree.getTrueRoot();
+						}
+						tree.getMainClause(containingClause);
+						shifterTarget = edge.target;
+						if (sentimentList.contains(shifterTarget)) {
+							return shifterTarget;
+						}
+					default:
+						if (edge.depRel.equals(scopeEntry)) {
+							shifterTarget = edge.target;
+							if (sentimentList.contains(shifterTarget)) {
+								return shifterTarget;
+							}
+						}
+					}
+				}
+			}
+		}
 		return null;
+
 	}
 
 	private void setFrames(SentenceObj sentence, final Collection<Frame> frames, WordObj sentiment, final Frame frame,

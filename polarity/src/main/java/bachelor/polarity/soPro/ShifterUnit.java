@@ -41,28 +41,9 @@ public class ShifterUnit {
 			this.collocations = new String[0];
 		}
 		this.shifter_type = shifter_type;
+		this.shifter_scope = shifter_scope;
 		this.shifter_pos = shifter_pos;
 		this.mwe = mwe;
-	}
-
-	/**
-	 * Constructs a new ShifterUnit
-	 * 
-	 * @param name
-	 *          {@link #name} is set
-	 */
-	public ShifterUnit(String name) {
-		this.name = name;
-
-	}
-
-	public ShifterUnit(String name, Boolean mwe) {
-		this.mwe = mwe;
-		if (mwe) {
-			String[] parts = name.split("_");
-			this.name = parts[parts.length - 1];
-			this.collocations = Arrays.copyOfRange(parts, 0, parts.length - 1);
-		}
 	}
 
 	/**
