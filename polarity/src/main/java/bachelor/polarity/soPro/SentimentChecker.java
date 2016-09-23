@@ -73,10 +73,12 @@ public class SentimentChecker {
 		f1.addElement(e1);
 		hframes.addFrame(f1);
 		Flags hflags = new Flags();
-		Flag hflag1 = new Flag("Polarity", "subjExpr");
-		Flag hflag2 = new Flag("Type", "shifter");
+		Flag hflag1 = new Flag("Polarity without shift", "subjExpr");
+		Flag hflag2 = new Flag("Polarity after shift", "subjExpr");
+		Flag hflag3 = new Flag("Type", "shifter");
 		hflags.addFlag(hflag1);
 		hflags.addFlag(hflag2);
+		hflags.addFlag(hflag3);
 		this.salsaCon.getHead().setFlags(hflags);
 		this.salsaCon.getHead().setFrames(hframes);
 

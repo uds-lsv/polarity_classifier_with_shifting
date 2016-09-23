@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
+import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
 import bachelor.polarity.salsa.corpora.elements.Nonterminal;
@@ -80,6 +81,42 @@ public class SubjectiveExpressionModule implements Module {
 				// Set FrameElement for the shifter
 				final FrameElement shifterElement = new FrameElement(feIds.next(), "Shifter");
 				shifterElement.addFenode(new Fenode(sentence.getTree().getTerminal(shifter).getId()));
+
+				// Set Frame element flag for the shifter
+				String shifterType = shifterLex.getShifter(shifter.getLemma()).shifter_type;
+				final Flag shifterFlag = new Flag(shifterType, "shifter");
+				shifterElement.addFlag(shifterFlag);
+
+				// Set Flag for the Frame stating the starting polarity value
+				String polarityValue = sentimentLex.getSentiment(shifterTarget.getLemma()).value;
+				String polarityCategory = sentimentLex.getSentiment(shifterTarget.getLemma()).category;
+				String valueAndCat = polarityCategory + " " + polarityValue;
+				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
+				frame.addFlag(polarityWithoutShift);
+				// Compute the polarity value after the shift
+				Double polarityValueD = Double.valueOf(polarityValue);
+				switch (shifterType) {
+				case "on negative":
+					polarityCategory = "POS";
+					break;
+				case "on positive":
+					polarityCategory = "NEG";
+					break;
+				// Default case = general
+				// Invert category
+				default:
+					switch (polarityCategory) {
+					case "POS" :
+						polarityCategory = "NEG";
+						break;
+					case "NEG" :
+						polarityCategory = "POS";
+					}
+				}
+				valueAndCat = polarityCategory + " " + polarityValue;
+				final Flag polarityAfterShift = new Flag("polarity after shift: " + valueAndCat, "subjExpr");
+				frame.addFlag(polarityAfterShift);
+
 				frame.addFe(shifterElement);
 
 				// Remove the shifterTarget from the sentiment list so it doesn't get
@@ -100,6 +137,13 @@ public class SubjectiveExpressionModule implements Module {
 			// Set Target for the sentiment word
 			final Target target = new Target();
 			setFrames(sentence, frames, sentiment, frame, target);
+			
+		// Set Flag for the Frame stating the starting polarity value
+			String polarityValue = sentimentLex.getSentiment(sentiment.getLemma()).value;
+			String polarityCategory = sentimentLex.getSentiment(sentiment.getLemma()).category;
+			String valueAndCat = polarityCategory + " " + polarityValue;
+			final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
+			frame.addFlag(polarityWithoutShift);
 		}
 		return frames;
 	}

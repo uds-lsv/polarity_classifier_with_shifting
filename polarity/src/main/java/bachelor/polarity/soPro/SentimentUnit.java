@@ -42,6 +42,7 @@ public class SentimentUnit {
 		this.category = category;
 		this.pos = pos;
 		this.mwe = mwe;
+		this.value = value;
 	}
 
 	/**

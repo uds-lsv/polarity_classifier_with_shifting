@@ -352,14 +352,30 @@ public class ShifterLex {
 					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\s\\[[\\w+[-\\*,\"]*\\s*]+\\]\\s\\w+")) {
 
 						shifterStr = inputLine.substring(0, inputLine.indexOf(" "));
-//						 System.out.println("shifter: " + shifterStr);
+						// System.out.println("shifter: " + shifterStr);
 
 						shifter_type = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf(" ") + 2);
 						// System.out.println("shifter_type: " + shifter_type);
+						String shifter_type_written_out = new String();
+						switch (shifter_type) {
+						case "g":
+							shifter_type_written_out = "general";
+							break;
+						case "p":
+							shifter_type_written_out = "on positive";
+							break;
+						case "n":
+							shifter_type_written_out = "on negative";
+							break;
+						default:
+							System.err.println("Warning: unknown shifter_type: " + shifter_type + " for shifter: " + shifterStr);
+							shifter_type_written_out = shifter_type;
+						}
 
 						shifter_scope_str = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]"));
 						shifter_scope = shifter_scope_str.split(",");
-						// System.out.println("shifter-scope: " + Arrays.toString(shifter_scope));
+						// System.out.println("shifter-scope: " +
+						// Arrays.toString(shifter_scope));
 
 						shifter_pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
 						// System.out.println("shifter_pos: " + shifter_pos);
@@ -367,7 +383,8 @@ public class ShifterLex {
 						mwe = shifterStr.contains("_");
 
 						if (shifter_type != null && shifter_scope != null && shifter_pos != null) {
-							ShifterUnit shifter = new ShifterUnit(shifterStr, shifter_type, shifter_scope, shifter_pos, mwe);
+							ShifterUnit shifter = new ShifterUnit(shifterStr, shifter_type_written_out, shifter_scope, shifter_pos,
+									mwe);
 							this.addShifter(shifter);
 
 						} else {
