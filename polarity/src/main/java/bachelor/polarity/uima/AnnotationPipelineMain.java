@@ -18,24 +18,13 @@
 package bachelor.polarity.uima;
 
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
-import de.tudarmstadt.ukp.dkpro.core.testing.dumper.CasDumpWriter;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import bachelor.polarity.soPro.Module;
-import bachelor.polarity.soPro.SalsaAPIConnective;
-import bachelor.polarity.soPro.SentenceList;
-import bachelor.polarity.soPro.SentimentChecker;
-import bachelor.polarity.soPro.SentimentLex;
-import bachelor.polarity.soPro.SubjectiveExpressionModule;
-import bachelor.polarity.soPro.ShifterLex;
-
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
