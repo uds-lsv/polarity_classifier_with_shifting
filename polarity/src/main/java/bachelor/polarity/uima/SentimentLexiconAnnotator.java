@@ -18,7 +18,7 @@
  * 
  * Modified by mwolf.
  */
-package bachelor.polarity;
+package bachelor.polarity.uima;
 
 import static org.apache.uima.fit.util.CasUtil.getType;
 import static org.apache.uima.fit.util.JCasUtil.select;
@@ -30,6 +30,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.uima.UimaContext;
@@ -43,7 +44,7 @@ import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import bachelor.polarity.types.Shifter;
+import bachelor.polarity.types.PolarExpression;
 import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
@@ -66,9 +67,14 @@ import de.tudarmstadt.ukp.dkpro.core.dictionaryannotator.PhraseTree;
  * </pre>
  *
  */
+
+
 @TypeCapability(inputs = { "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
 		"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence" })
-public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
+public class SentimentLexiconAnnotator extends JCasAnnotator_ImplBase {
+	
+	
+	
 	/**
 	 * The file must contain one phrase per line - phrases will be split at " "
 	 */
@@ -89,15 +95,16 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void initialize(UimaContext aContext) throws ResourceInitializationException {
+		
 		super.initialize(aContext);
 
 		phrases = new PhraseTree();
 
 		InputStream is = null;
-		String shifterStr = new String();
-		String shifter_type = new String();
-		String shifter_scope = new String();
-		String shifter_pos = new String();
+		String wordFromInput = new String();
+		String category = new String();
+		Double value = 0.0;
+		String pos = new String();
 		String mwe = "false";
 
 		// Read the lexicon.
@@ -105,46 +112,58 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 			URL phraseFileUrl = ResourceUtils.resolveLocation(phraseFile, aContext);
 			is = phraseFileUrl.openStream();
 			for (String inputLine : IOUtils.readLines(is, modelEncoding)) {
-				List<String> typeScopePosMweList = new ArrayList<String>();
+				List<String> catValuePosMweList = new ArrayList<String>();
 
 				// Ignore lines starting with "%%" (comments).
 				if (!(inputLine.startsWith("%%"))) {
 
 					// Ignore lines without the correct form.
-					// Correct form example: Fehlschlag p [subj] nomen
-					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\s\\[[\\w+[-\\*,\"]*\\s*]+\\]\\s\\w+")) {
+					// Correct form example: fehlschlagen NEG=0.7 verben
+					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\w\\w=\\d.?\\d?\\s\\w+")) {
 
 						// The relevant part for phrases is part 0, the word itself.
-						shifterStr = inputLine.substring(0, inputLine.indexOf(" "));
-						String[] phraseSplit = shifterStr.split(" ");
+						wordFromInput = inputLine.substring(0, inputLine.indexOf(" "));
+						String[] phraseSplit = wordFromInput.split(" ");
 						phrases.addPhrase(phraseSplit);
-//						System.out.println("shifter: " + shifterStr);
+//						System.out.println("word: " + wordFromInput);
 
-						shifter_type = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf(" ") + 2);
-//						System.out.println("shifter_type: " + shifter_type);
+						category = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf("="));
+//						System.out.println("category: " + category);
 
-						shifter_scope = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]"));
-//						System.out.println("shifter_scope: " + shifter_scope);
-
-						shifter_pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
-//						System.out.println("shifter_pos: " + shifter_pos);
-
-						mwe = String.valueOf(shifterStr.contains("_"));
-
-						if (shifter_type != null && shifter_scope != null && shifter_pos != null) {
-							typeScopePosMweList.add(shifter_type);
-							typeScopePosMweList.add(shifter_scope.toString());
-							typeScopePosMweList.add(shifter_pos);
-							typeScopePosMweList.add(mwe);
-
-							lexiconEntries.put(shifterStr, typeScopePosMweList);
+						// TODO make this work for "0.7" as well as "0,7".
+						// Locale original = Locale.getDefault();
+						// Locale.setDefault(new Locale("de", "DE"));
+						Scanner doubleScanner = new Scanner(inputLine.substring(inputLine.indexOf("=") + 1).replace('.', ','));
+						if (doubleScanner.hasNextDouble()) {
+							value = doubleScanner.nextDouble();
+//							System.out.println("valueToSetFeatureTo: " + value);
 						} else {
-							System.err.println("Shifter-Lexicon entry for " + shifterStr + " is incomplete!");
+							System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
+						}
+						doubleScanner.close();
+						// Locale.setDefault(original);
+
+						pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
+//						System.out.println("pos: " + pos);
+						
+						mwe = String.valueOf(wordFromInput.contains("_"));
+
+						if (category != null && value != null && pos != null) {
+							catValuePosMweList.add(category);
+							catValuePosMweList.add(value.toString());
+							catValuePosMweList.add(pos);
+							catValuePosMweList.add(mwe.toString());
+							
+
+							lexiconEntries.put(wordFromInput, catValuePosMweList);
+						} else {
+							System.err.println("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");
 						}
 
 					} else {
-						System.err.println("Line with wrong format in Shifter-Lexicon, will be ignored: ");
+						System.err.println("Line with wrong format in Sentiment-Lexicon, will be ignored: ");
 						System.err.println("\"" + inputLine + "\"");
+//						getContext().getLogger().log(Level.WARNING, "Found: " + inputLine);
 					}
 				}
 			}
@@ -179,27 +198,37 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 					Token beginToken = tokens.get(i);
 					Token endToken = tokens.get(i + longestMatch.length - 1);
 
-					String shifter_type = lexiconEntries.get(longestMatch[0]).get(0);
-					String shifter_scope = lexiconEntries.get(longestMatch[0]).get(1);
-					String shifter_pos = lexiconEntries.get(longestMatch[0]).get(2);
-					String shifter_mwe = lexiconEntries.get(longestMatch[0]).get(3);
+					String cat = lexiconEntries.get(longestMatch[0]).get(0);
+					String value = lexiconEntries.get(longestMatch[0]).get(1);
+					String pos = lexiconEntries.get(longestMatch[0]).get(2);
+					String mwe = lexiconEntries.get(longestMatch[0]).get(3);
 
-					Type type = getType(jcas.getCas(), Shifter.class.getName());
-					
-					Feature featureType = type.getFeatureByBaseName("shifter_type");
-					Feature featureScope = type.getFeatureByBaseName("shifter_scope");
-					Feature featurePos = type.getFeatureByBaseName("shifter_pos");
-					Feature featureMwe = type.getFeatureByBaseName("mwe");
+					if (!cat.equals("SHI")) {
+						Type type = getType(jcas.getCas(), PolarExpression.class.getName());
 
-					AnnotationFS newFound = jcas.getCas().createAnnotation(type, beginToken.getBegin(), endToken.getEnd());
-					
-					newFound.setFeatureValueFromString(featureType, shifter_type);
-					newFound.setFeatureValueFromString(featureScope, shifter_scope);
-					newFound.setFeatureValueFromString(featurePos, shifter_pos);
-					newFound.setFeatureValueFromString(featureMwe, shifter_mwe);
-					
-					jcas.getCas().addFsToIndexes(newFound);
+						Feature featurePos = type.getFeatureByBaseName("pos");
+						Feature featureValue = type.getFeatureByBaseName("value");
+						Feature featureCategory = type.getFeatureByBaseName("category");
+						Feature featureMwe = type.getFeatureByBaseName("mwe");
 
+						AnnotationFS newFound = jcas.getCas().createAnnotation(type, beginToken.getBegin(), endToken.getEnd());
+
+						newFound.setFeatureValueFromString(featureCategory, cat);
+						newFound.setFeatureValueFromString(featureValue, value);
+						newFound.setFeatureValueFromString(featurePos, pos);
+						newFound.setFeatureValueFromString(featureMwe, mwe);
+
+						jcas.getCas().addFsToIndexes(newFound);
+					} else {
+						// Case of shifter in the sentiment lex --> ignore those lines because
+						// shifters are read in from seperate file.
+						/*
+						Type type = getType(jcas.getCas(), Shifter.class.getName());
+
+						AnnotationFS newFound = jcas.getCas().createAnnotation(type, beginToken.getBegin(), endToken.getEnd());
+						jcas.getCas().addFsToIndexes(newFound);
+						*/
+					}
 				}
 			}
 		}

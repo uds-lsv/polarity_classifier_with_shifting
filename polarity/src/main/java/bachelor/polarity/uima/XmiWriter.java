@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package bachelor.polarity;
+package bachelor.polarity.uima;
 
 import java.io.File;
 import java.io.IOException;
