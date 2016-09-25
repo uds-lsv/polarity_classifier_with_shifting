@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** A polar expression.
-E.g. "mögen, hassen, gut, schlecht, ..."
+E.g. "moegen, hassen, gut, schlecht, ..."
  * Updated by JCasGen Sun Sep 11 15:00:25 CEST 2016
  * @generated */
 public class PolarExpression_Type extends Annotation_Type {

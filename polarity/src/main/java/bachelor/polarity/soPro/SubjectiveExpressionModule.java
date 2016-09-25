@@ -106,10 +106,10 @@ public class SubjectiveExpressionModule implements Module {
 				// Invert category
 				default:
 					switch (polarityCategory) {
-					case "POS" :
+					case "POS":
 						polarityCategory = "NEG";
 						break;
-					case "NEG" :
+					case "NEG":
 						polarityCategory = "POS";
 					}
 				}
@@ -137,8 +137,8 @@ public class SubjectiveExpressionModule implements Module {
 			// Set Target for the sentiment word
 			final Target target = new Target();
 			setFrames(sentence, frames, sentiment, frame, target);
-			
-		// Set Flag for the Frame stating the starting polarity value
+
+			// Set Flag for the Frame stating the starting polarity value
 			String polarityValue = sentimentLex.getSentiment(sentiment.getLemma()).value;
 			String polarityCategory = sentimentLex.getSentiment(sentiment.getLemma()).category;
 			String valueAndCat = polarityCategory + " " + polarityValue;
@@ -148,6 +148,20 @@ public class SubjectiveExpressionModule implements Module {
 		return frames;
 	}
 
+	/**
+	 * This method is used to look for the target of a shifter using dependency
+	 * relations. The found shifter target must be contained in the sentimentList
+	 * in order to be returned by this method.
+	 * 
+	 * @param shifter
+	 *          The shifter for which a target is searched for.
+	 * @param sentimentList
+	 *          A list of found sentiments. These are the potential shifter target
+	 *          candidates.
+	 * @param sentence
+	 *          The sentence the shifter is in.
+	 * @return The WordObj corresponding to the found shifter target, or null.
+	 */
 	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
 		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
@@ -168,6 +182,7 @@ public class SubjectiveExpressionModule implements Module {
 
 		for (String scopeEntry : shifterUnit.shifter_scope) {
 			for (Edge edge : edges) {
+				// Special case for "nicht"
 				if (shifter.getLemma().equals("nicht")) {
 					if (edge.toString().contains("nicht")) {
 						System.out.println("edge: " + edge);
@@ -178,11 +193,9 @@ public class SubjectiveExpressionModule implements Module {
 					}
 				}
 				// if (edge.source.equals(shifter)) {
-
 				switch (scopeEntry) {
 				case "objp-*":
 					if (edge.depRel.contains("objp")) {
-						System.out.println("edge.depRel hat objp!?");
 						shifterTarget = edge.target;
 						if (sentimentList.contains(shifterTarget)) {
 							return shifterTarget;
@@ -233,9 +246,22 @@ public class SubjectiveExpressionModule implements Module {
 			}
 		}
 		return null;
-
 	}
 
+	/**
+	 * Helper method used to set Salsa Frames for subjective expressions.
+	 * 
+	 * @param sentence
+	 *          The relevant sentence.
+	 * @param frames
+	 *          The Frame collection to be modified.
+	 * @param sentiment
+	 *          The relevant sentiment.
+	 * @param frame
+	 *          The Frame to be set.
+	 * @param target
+	 *          The target to set the Frame to.
+	 */
 	private void setFrames(SentenceObj sentence, final Collection<Frame> frames, WordObj sentiment, final Frame frame,
 			final Target target) {
 		target.addFenode(new Fenode(sentence.getTree().getTerminal(sentiment).getId()));
@@ -250,15 +276,12 @@ public class SubjectiveExpressionModule implements Module {
 				target.addFenode(new Fenode(sentence.getTree().getTerminal(match).getId()));
 			}
 		}
-
 		// add extra Fenode for particle of a verb if existent
 		if (sentiment.getIsParticleVerb()) {
 			WordObj particle = sentiment.getParticle();
 			target.addFenode(new Fenode(sentence.getTree().getTerminal(particle).getId()));
 		}
 		frame.setTarget(target);
-
 		frames.add(frame);
 	}
-
 }
