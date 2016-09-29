@@ -66,6 +66,7 @@ public class SubjectiveExpressionModule implements Module {
 		// Iterate over every found shifter and search for targets in their scope.
 		// Also set frames.
 		for (WordObj shifter : shifterList) {
+			// Look for the shifterTarget
 			WordObj shifterTarget = findShifterTarget(shifter, sentimentList, sentence);
 			if (shifterTarget != null) {
 
@@ -192,25 +193,27 @@ public class SubjectiveExpressionModule implements Module {
 						}
 					}
 				}
-				// if (edge.source.equals(shifter)) {
 				switch (scopeEntry) {
 				case "objp-*":
-					if (edge.depRel.contains("objp")) {
+					if (edge.depRel.contains("objp") && edge.source.equals(shifter)) {
+						System.out.println("edge: " + edge);
 						shifterTarget = edge.target;
 						if (sentimentList.contains(shifterTarget)) {
 							return shifterTarget;
 						}
 					}
 				case "attr-rev":
-					if (edge.depRel.equals("attr")) {
+					if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
+						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						if (sentimentList.contains(shifterTarget)) {
 							return shifterTarget;
 						}
 					}
 				case "det":
-					if (edge.depRel.equals(scopeEntry)) {
+					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						if (edge.target.getPos().equals("PPOSAT")) {
+							System.out.println("edge: " + edge);
 							shifterTarget = edge.target;
 							if (sentimentList.contains(shifterTarget)) {
 								return shifterTarget;
@@ -235,14 +238,14 @@ public class SubjectiveExpressionModule implements Module {
 						return shifterTarget;
 					}
 				default:
-					if (edge.depRel.equals(scopeEntry)) {
+					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
+						System.out.println("edge: " + edge);
 						if (sentimentList.contains(shifterTarget)) {
 							return shifterTarget;
 						}
 					}
 				}
-				// }
 			}
 		}
 		return null;
