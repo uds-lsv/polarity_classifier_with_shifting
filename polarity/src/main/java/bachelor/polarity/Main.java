@@ -16,16 +16,20 @@ public class Main {
 	public static void main(String[] args) {
 		// *************************SoPro Classes*****************************
 		// Read in raw input text and create SentenceList based on it.
+//		java.nio.file.Path fileRaw = java.nio.file.Paths.get("src", "main", "resources", "textInput",
+//				"steps2016-testdaten.raw.txt");
 		java.nio.file.Path fileRaw = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-				"steps2016-testdaten.raw.txt");
+				"raw_text.txt");
 		System.out.println("Reading rawText from : " + fileRaw.toString());
 		SentenceList sentences = new SentenceList();
 		sentences.rawToSentenceList(fileRaw.toString());
 
 		// Read in dependency parse file and create a DependencyGraph object for
 		// each sentence.
+//		java.nio.file.Path dependencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
+//				"steps2016-testdaten.parzu.txt");
 		java.nio.file.Path dependencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-				"steps2016-testdaten.parzu.txt");
+				"dependency_parse.txt");
 		System.out.println("Reading dependency data from " + dependencyFile.toString() + "...");
 		System.out.println("Creating dependency graph...");
 		sentences.readDependencyParse(dependencyFile.toString());
@@ -36,8 +40,10 @@ public class Main {
 
 		// Read in Salsa / Tiger XML file and create a ConstituencyTree object for
 		// every sentence.
+//		java.nio.file.Path constituencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
+//				"steps2016-testdaten.UTF8.keineAnnotation(constituency).xml");
 		java.nio.file.Path constituencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-				"steps2016-testdaten.UTF8.keineAnnotation(constituency).xml");
+				"constituency_parse.xml");
 		System.out.println("Reading constituency data from " + constituencyFile.toString() + "...");
 		System.out.println("Creating constituency tree...");
 		SalsaAPIConnective salsa = new SalsaAPIConnective(constituencyFile.toString(), sentences);
