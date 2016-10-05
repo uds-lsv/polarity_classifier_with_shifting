@@ -227,19 +227,14 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="3_se_f1">
 						<target>
-							<fenode idref="3_10"/>
-						</target>
-				<fe id="3_se_f1_e1" name="Shifter">
 							<fenode idref="3_5"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
+							<fenode idref="3_7"/>
+						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="3_se_f2">
 						<target>
-							<fenode idref="3_5"/>
-							<fenode idref="3_7"/>
+							<fenode idref="3_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
@@ -588,12 +583,7 @@
 						<target>
 							<fenode idref="8_17"/>
 						</target>
-				<fe id="8_se_f1_e1" name="Shifter">
-							<fenode idref="8_21"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -657,26 +647,21 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="9_se_f1">
 						<target>
-							<fenode idref="9_12"/>
+							<fenode idref="9_8"/>
 						</target>
-				<fe id="9_se_f1_e1" name="Shifter">
-							<fenode idref="9_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="9_se_f2">
 						<target>
-							<fenode idref="9_8"/>
+							<fenode idref="9_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="9_se_f3">
 						<target>
-							<fenode idref="9_10"/>
+							<fenode idref="9_12"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="9_se_f4">
 						<target>
@@ -740,20 +725,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="10_se_f1">
 						<target>
-							<fenode idref="10_11"/>
-						</target>
-				<fe id="10_se_f1_e1" name="Shifter">
-							<fenode idref="10_11"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="10_se_f2">
-						<target>
 							<fenode idref="10_8"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="10_se_f2">
+						<target>
+							<fenode idref="10_11"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -814,18 +794,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="11_se_f1">
 						<target>
-							<fenode idref="11_17"/>
+							<fenode idref="11_11"/>
 						</target>
-				<fe id="11_se_f1_e1" name="Shifter">
-							<fenode idref="11_19"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="11_se_f2">
 						<target>
-							<fenode idref="11_11"/>
+							<fenode idref="11_17"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
@@ -997,12 +972,7 @@
 						<target>
 							<fenode idref="14_5"/>
 						</target>
-				<fe id="14_se_f1_e1" name="Shifter">
-							<fenode idref="14_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -1169,12 +1139,7 @@
 						<target>
 							<fenode idref="17_9"/>
 						</target>
-				<fe id="17_se_f1_e1" name="Shifter">
-							<fenode idref="17_3"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -1208,12 +1173,7 @@
 						<target>
 							<fenode idref="18_3"/>
 						</target>
-				<fe id="18_se_f1_e1" name="Shifter">
-							<fenode idref="18_3"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="18_se_f2">
 						<target>
@@ -1385,12 +1345,7 @@
 						<target>
 							<fenode idref="21_5"/>
 						</target>
-				<fe id="21_se_f1_e1" name="Shifter">
-							<fenode idref="21_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -1662,12 +1617,7 @@
 						<target>
 							<fenode idref="25_15"/>
 						</target>
-				<fe id="25_se_f1_e1" name="Shifter">
-							<fenode idref="25_20"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="25_se_f2">
 						<target>
@@ -2239,20 +2189,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="34_se_f1">
 						<target>
-							<fenode idref="34_17"/>
+							<fenode idref="34_18"/>
 						</target>
 				<fe id="34_se_f1_e1" name="Shifter">
 							<fenode idref="34_4"/>
 							<flag for="shifter" name="general"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="34_se_f2">
 						<target>
-							<fenode idref="34_18"/>
+							<fenode idref="34_17"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -2302,12 +2252,7 @@
 						<target>
 							<fenode idref="35_11"/>
 						</target>
-				<fe id="35_se_f1_e1" name="Shifter">
-							<fenode idref="35_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: INT 3.0"/>
-				<flag for="subjExpr" name="polarity after shift: INT 3.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="35_se_f2">
 						<target>
@@ -2598,12 +2543,7 @@
 						<target>
 							<fenode idref="39_12"/>
 						</target>
-				<fe id="39_se_f1_e1" name="Shifter">
-							<fenode idref="39_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="39_se_f2">
 						<target>
@@ -2647,12 +2587,7 @@
 						<target>
 							<fenode idref="40_4"/>
 						</target>
-				<fe id="40_se_f1_e1" name="Shifter">
-							<fenode idref="40_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="40_se_f2">
 						<target>
@@ -2708,12 +2643,7 @@
 						<target>
 							<fenode idref="41_4"/>
 						</target>
-				<fe id="41_se_f1_e1" name="Shifter">
-							<fenode idref="41_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -3030,12 +2960,7 @@
 						<target>
 							<fenode idref="46_5"/>
 						</target>
-				<fe id="46_se_f1_e1" name="Shifter">
-							<fenode idref="46_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="46_se_f2">
 						<target>
@@ -3164,18 +3089,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="48_se_f1">
 						<target>
-							<fenode idref="48_10"/>
+							<fenode idref="48_5"/>
 						</target>
-				<fe id="48_se_f1_e1" name="Shifter">
-							<fenode idref="48_12"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="48_se_f2">
 						<target>
-							<fenode idref="48_5"/>
+							<fenode idref="48_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
@@ -3245,25 +3165,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="49_se_f1">
 						<target>
-							<fenode idref="49_13"/>
+							<fenode idref="49_11"/>
 						</target>
-				<fe id="49_se_f1_e1" name="Shifter">
-							<fenode idref="49_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="49_se_f2">
 						<target>
-							<fenode idref="49_11"/>
+							<fenode idref="49_13"/>
 						</target>
-				<fe id="49_se_f2_e1" name="Shifter">
-							<fenode idref="49_19"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -3310,12 +3220,7 @@
 						<target>
 							<fenode idref="50_11"/>
 						</target>
-				<fe id="50_se_f1_e1" name="Shifter">
-							<fenode idref="50_3"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -3440,12 +3345,7 @@
 						<target>
 							<fenode idref="52_5"/>
 						</target>
-				<fe id="52_se_f1_e1" name="Shifter">
-							<fenode idref="52_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="52_se_f2">
 						<target>
@@ -3523,20 +3423,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="53_se_f1">
 						<target>
-							<fenode idref="53_23"/>
-						</target>
-				<fe id="53_se_f1_e1" name="Shifter">
-							<fenode idref="53_23"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="53_se_f2">
-						<target>
 							<fenode idref="53_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="53_se_f2">
+						<target>
+							<fenode idref="53_23"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -3638,12 +3533,7 @@
 						<target>
 							<fenode idref="55_10"/>
 						</target>
-				<fe id="55_se_f1_e1" name="Shifter">
-							<fenode idref="55_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -3990,12 +3880,7 @@
 						<target>
 							<fenode idref="61_16"/>
 						</target>
-				<fe id="61_se_f1_e1" name="Shifter">
-							<fenode idref="61_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="61_se_f2">
 						<target>
@@ -4065,12 +3950,7 @@
 						<target>
 							<fenode idref="62_12"/>
 						</target>
-				<fe id="62_se_f1_e1" name="Shifter">
-							<fenode idref="62_19"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 2.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -4124,12 +4004,7 @@
 						<target>
 							<fenode idref="63_4"/>
 						</target>
-				<fe id="63_se_f1_e1" name="Shifter">
-							<fenode idref="63_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="63_se_f2">
 						<target>
@@ -4431,12 +4306,7 @@
 						<target>
 							<fenode idref="67_10"/>
 						</target>
-				<fe id="67_se_f1_e1" name="Shifter">
-							<fenode idref="67_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -4619,12 +4489,7 @@
 						<target>
 							<fenode idref="70_5"/>
 						</target>
-				<fe id="70_se_f1_e1" name="Shifter">
-							<fenode idref="70_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -4883,12 +4748,7 @@
 						<target>
 							<fenode idref="74_4"/>
 						</target>
-				<fe id="74_se_f1_e1" name="Shifter">
-							<fenode idref="74_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5031,35 +4891,30 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="76_se_f1">
 						<target>
-							<fenode idref="76_20"/>
-						</target>
-				<fe id="76_se_f1_e1" name="Shifter">
-							<fenode idref="76_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="76_se_f2">
-						<target>
 							<fenode idref="76_13"/>
 						</target>
-				<fe id="76_se_f2_e1" name="Shifter">
+				<fe id="76_se_f1_e1" name="Shifter">
 							<fenode idref="76_14"/>
 							<flag for="shifter" name="general"/>
 						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="76_se_f3">
+			<frame name="SubjectiveExpression" id="76_se_f2">
 						<target>
 							<fenode idref="76_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="76_se_f4">
+			<frame name="SubjectiveExpression" id="76_se_f3">
 						<target>
 							<fenode idref="76_14"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="76_se_f4">
+						<target>
+							<fenode idref="76_20"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -5317,20 +5172,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="80_se_f1">
 						<target>
-							<fenode idref="80_18"/>
-						</target>
-				<fe id="80_se_f1_e1" name="Shifter">
-							<fenode idref="80_14"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="80_se_f2">
-						<target>
 							<fenode idref="80_13"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="80_se_f2">
+						<target>
+							<fenode idref="80_18"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5372,12 +5222,7 @@
 						<target>
 							<fenode idref="81_6"/>
 						</target>
-				<fe id="81_se_f1_e1" name="Shifter">
-							<fenode idref="81_7"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5432,12 +5277,7 @@
 						<target>
 							<fenode idref="82_13"/>
 						</target>
-				<fe id="82_se_f1_e1" name="Shifter">
-							<fenode idref="82_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5496,20 +5336,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="83_se_f1">
 						<target>
-							<fenode idref="83_6"/>
-						</target>
-				<fe id="83_se_f1_e1" name="Shifter">
-							<fenode idref="83_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="83_se_f2">
-						<target>
 							<fenode idref="83_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="83_se_f2">
+						<target>
+							<fenode idref="83_6"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5680,14 +5515,14 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="86_se_f1">
 						<target>
-							<fenode idref="86_16"/>
+							<fenode idref="86_15"/>
 						</target>
 				<fe id="86_se_f1_e1" name="Shifter">
 							<fenode idref="86_16"/>
 							<flag for="shifter" name="on negative"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="86_se_f2">
 						<target>
@@ -5697,9 +5532,9 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="86_se_f3">
 						<target>
-							<fenode idref="86_15"/>
+							<fenode idref="86_16"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5749,12 +5584,7 @@
 						<target>
 							<fenode idref="87_5"/>
 						</target>
-				<fe id="87_se_f1_e1" name="Shifter">
-							<fenode idref="87_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5810,12 +5640,7 @@
 						<target>
 							<fenode idref="88_8"/>
 						</target>
-				<fe id="88_se_f1_e1" name="Shifter">
-							<fenode idref="88_10"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="88_se_f2">
 						<target>
@@ -5889,12 +5714,7 @@
 						<target>
 							<fenode idref="89_5"/>
 						</target>
-				<fe id="89_se_f1_e1" name="Shifter">
-							<fenode idref="89_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="89_se_f2">
 						<target>
@@ -6380,7 +6200,7 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="96_se_f1">
 						<target>
-							<fenode idref="96_20"/>
+							<fenode idref="96_19"/>
 						</target>
 				<fe id="96_se_f1_e1" name="Shifter">
 							<fenode idref="96_20"/>
@@ -6397,7 +6217,7 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="96_se_f3">
 						<target>
-							<fenode idref="96_19"/>
+							<fenode idref="96_20"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
@@ -6549,12 +6369,7 @@
 						<target>
 							<fenode idref="99_16"/>
 						</target>
-				<fe id="99_se_f1_e1" name="Shifter">
-							<fenode idref="99_18"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -6668,12 +6483,7 @@
 						<target>
 							<fenode idref="101_11"/>
 						</target>
-				<fe id="101_se_f1_e1" name="Shifter">
-							<fenode idref="101_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -6747,12 +6557,7 @@
 						<target>
 							<fenode idref="102_14"/>
 						</target>
-				<fe id="102_se_f1_e1" name="Shifter">
-							<fenode idref="102_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="102_se_f2">
 						<target>
@@ -6886,20 +6691,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="104_se_f1">
 						<target>
-							<fenode idref="104_21"/>
-						</target>
-				<fe id="104_se_f1_e1" name="Shifter">
-							<fenode idref="104_10"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="104_se_f2">
-						<target>
 							<fenode idref="104_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="104_se_f2">
+						<target>
+							<fenode idref="104_21"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -6952,12 +6752,7 @@
 						<target>
 							<fenode idref="105_9"/>
 						</target>
-				<fe id="105_se_f1_e1" name="Shifter">
-							<fenode idref="105_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -7022,12 +6817,7 @@
 						<target>
 							<fenode idref="106_12"/>
 						</target>
-				<fe id="106_se_f1_e1" name="Shifter">
-							<fenode idref="106_20"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -7221,20 +7011,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="109_se_f1">
 						<target>
-							<fenode idref="109_21"/>
-						</target>
-				<fe id="109_se_f1_e1" name="Shifter">
-							<fenode idref="109_5"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="109_se_f2">
-						<target>
 							<fenode idref="109_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="109_se_f2">
+						<target>
+							<fenode idref="109_21"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -7368,12 +7153,7 @@
 						<target>
 							<fenode idref="111_15"/>
 						</target>
-				<fe id="111_se_f1_e1" name="Shifter">
-							<fenode idref="111_20"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -7437,12 +7217,7 @@
 						<target>
 							<fenode idref="112_15"/>
 						</target>
-				<fe id="112_se_f1_e1" name="Shifter">
-							<fenode idref="112_12"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -7630,12 +7405,7 @@
 						<target>
 							<fenode idref="115_14"/>
 						</target>
-				<fe id="115_se_f1_e1" name="Shifter">
-							<fenode idref="115_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="115_se_f2">
 						<target>
@@ -7842,20 +7612,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="118_se_f1">
 						<target>
-							<fenode idref="118_19"/>
-						</target>
-				<fe id="118_se_f1_e1" name="Shifter">
-							<fenode idref="118_19"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="118_se_f2">
-						<target>
 							<fenode idref="118_15"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="118_se_f2">
+						<target>
+							<fenode idref="118_19"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -8043,26 +7808,21 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="121_se_f1">
 						<target>
-							<fenode idref="121_15"/>
-						</target>
-				<fe id="121_se_f1_e1" name="Shifter">
-							<fenode idref="121_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="121_se_f2">
-						<target>
 							<fenode idref="121_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="121_se_f3">
+			<frame name="SubjectiveExpression" id="121_se_f2">
 						<target>
 							<fenode idref="121_13"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="121_se_f3">
+						<target>
+							<fenode idref="121_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -8185,20 +7945,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="123_se_f1">
 						<target>
-							<fenode idref="123_15"/>
-						</target>
-				<fe id="123_se_f1_e1" name="Shifter">
-							<fenode idref="123_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="123_se_f2">
-						<target>
 							<fenode idref="123_11"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="123_se_f2">
+						<target>
+							<fenode idref="123_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="123_se_f3">
 						<target>
@@ -8332,12 +8087,7 @@
 						<target>
 							<fenode idref="125_5"/>
 						</target>
-				<fe id="125_se_f1_e1" name="Shifter">
-							<fenode idref="125_17"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="125_se_f2">
 						<target>
@@ -8705,12 +8455,7 @@
 						<target>
 							<fenode idref="131_4"/>
 						</target>
-				<fe id="131_se_f1_e1" name="Shifter">
-							<fenode idref="131_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9008,20 +8753,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="136_se_f1">
 						<target>
-							<fenode idref="136_11"/>
+							<fenode idref="136_4"/>
 						</target>
 				<fe id="136_se_f1_e1" name="Shifter">
 							<fenode idref="136_14"/>
 							<flag for="shifter" name="general"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
+				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="136_se_f2">
 						<target>
-							<fenode idref="136_4"/>
+							<fenode idref="136_11"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9085,12 +8830,7 @@
 						<target>
 							<fenode idref="137_16"/>
 						</target>
-				<fe id="137_se_f1_e1" name="Shifter">
-							<fenode idref="137_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9153,12 +8893,7 @@
 						<target>
 							<fenode idref="138_14"/>
 						</target>
-				<fe id="138_se_f1_e1" name="Shifter">
-							<fenode idref="138_19"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9284,12 +9019,7 @@
 						<target>
 							<fenode idref="140_5"/>
 						</target>
-				<fe id="140_se_f1_e1" name="Shifter">
-							<fenode idref="140_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="140_se_f2">
 						<target>
@@ -9421,21 +9151,16 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="142_se_f1">
 						<target>
-							<fenode idref="142_12"/>
-						</target>
-				<fe id="142_se_f1_e1" name="Shifter">
-							<fenode idref="142_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="142_se_f2">
-						<target>
 							<fenode idref="142_6"/>
 							<fenode idref="142_16"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="142_se_f2">
+						<target>
+							<fenode idref="142_12"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9830,20 +9555,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="148_se_f1">
 						<target>
-							<fenode idref="148_12"/>
-						</target>
-				<fe id="148_se_f1_e1" name="Shifter">
-							<fenode idref="148_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="148_se_f2">
-						<target>
 							<fenode idref="148_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="148_se_f2">
+						<target>
+							<fenode idref="148_12"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9979,25 +9699,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="150_se_f1">
 						<target>
-							<fenode idref="150_15"/>
-						</target>
-				<fe id="150_se_f1_e1" name="Shifter">
-							<fenode idref="150_4"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="150_se_f2">
-						<target>
 							<fenode idref="150_4"/>
 							<fenode idref="150_16"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="150_se_f3">
+			<frame name="SubjectiveExpression" id="150_se_f2">
 						<target>
 							<fenode idref="150_14"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="150_se_f3">
+						<target>
+							<fenode idref="150_15"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -10212,20 +9927,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="153_se_f1">
 						<target>
-							<fenode idref="153_18"/>
-						</target>
-				<fe id="153_se_f1_e1" name="Shifter">
-							<fenode idref="153_20"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="153_se_f2">
-						<target>
 							<fenode idref="153_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="153_se_f2">
+						<target>
+							<fenode idref="153_18"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -10296,12 +10006,7 @@
 						<target>
 							<fenode idref="154_18"/>
 						</target>
-				<fe id="154_se_f1_e1" name="Shifter">
-							<fenode idref="154_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="154_se_f2">
 						<target>
@@ -10365,12 +10070,7 @@
 						<target>
 							<fenode idref="155_7"/>
 						</target>
-				<fe id="155_se_f1_e1" name="Shifter">
-							<fenode idref="155_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
-				<flag for="subjExpr" name="polarity after shift: INT 2.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="155_se_f2">
 						<target>
@@ -10658,18 +10358,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="159_se_f1">
 						<target>
-							<fenode idref="159_6"/>
+							<fenode idref="159_5"/>
 						</target>
-				<fe id="159_se_f1_e1" name="Shifter">
-							<fenode idref="159_12"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="159_se_f2">
 						<target>
-							<fenode idref="159_5"/>
+							<fenode idref="159_6"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -10845,12 +10540,7 @@
 						<target>
 							<fenode idref="162_5"/>
 						</target>
-				<fe id="162_se_f1_e1" name="Shifter">
-							<fenode idref="162_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -10924,7 +10614,7 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="164_se_f1">
 						<target>
-							<fenode idref="164_9"/>
+							<fenode idref="164_11"/>
 						</target>
 				<fe id="164_se_f1_e1" name="Shifter">
 							<fenode idref="164_9"/>
@@ -10941,7 +10631,7 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="164_se_f3">
 						<target>
-							<fenode idref="164_11"/>
+							<fenode idref="164_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
@@ -11010,7 +10700,7 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="165_se_f1">
 						<target>
-							<fenode idref="165_5"/>
+							<fenode idref="165_4"/>
 						</target>
 				<fe id="165_se_f1_e1" name="Shifter">
 							<fenode idref="165_5"/>
@@ -11021,7 +10711,7 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="165_se_f2">
 						<target>
-							<fenode idref="165_4"/>
+							<fenode idref="165_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -11201,12 +10891,7 @@
 						<target>
 							<fenode idref="168_14"/>
 						</target>
-				<fe id="168_se_f1_e1" name="Shifter">
-							<fenode idref="168_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: INT 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: INT 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="168_se_f2">
 						<target>
@@ -11457,12 +11142,7 @@
 						<target>
 							<fenode idref="172_9"/>
 						</target>
-				<fe id="172_se_f1_e1" name="Shifter">
-							<fenode idref="172_5"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -12010,12 +11690,7 @@
 						<target>
 							<fenode idref="180_4"/>
 						</target>
-				<fe id="180_se_f1_e1" name="Shifter">
-							<fenode idref="180_4"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="180_se_f2">
 						<target>
@@ -12229,14 +11904,14 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="183_se_f1">
 						<target>
-							<fenode idref="183_21"/>
+							<fenode idref="183_14"/>
 						</target>
 				<fe id="183_se_f1_e1" name="Shifter">
 							<fenode idref="183_15"/>
 							<flag for="shifter" name="general"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
-				<flag for="subjExpr" name="polarity after shift: INT 2.0"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="183_se_f2">
 						<target>
@@ -12246,9 +11921,9 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="183_se_f3">
 						<target>
-							<fenode idref="183_14"/>
+							<fenode idref="183_21"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -12316,12 +11991,7 @@
 						<target>
 							<fenode idref="184_10"/>
 						</target>
-				<fe id="184_se_f1_e1" name="Shifter">
-							<fenode idref="184_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -12643,12 +12313,7 @@
 						<target>
 							<fenode idref="189_14"/>
 						</target>
-				<fe id="189_se_f1_e1" name="Shifter">
-							<fenode idref="189_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="189_se_f2">
 						<target>
@@ -12697,12 +12362,7 @@
 						<target>
 							<fenode idref="190_7"/>
 						</target>
-				<fe id="190_se_f1_e1" name="Shifter">
-							<fenode idref="190_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -12967,25 +12627,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="194_se_f1">
 						<target>
-							<fenode idref="194_9"/>
+							<fenode idref="194_4"/>
 						</target>
-				<fe id="194_se_f1_e1" name="Shifter">
-							<fenode idref="194_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="194_se_f2">
 						<target>
-							<fenode idref="194_4"/>
+							<fenode idref="194_9"/>
 						</target>
-				<fe id="194_se_f2_e1" name="Shifter">
-							<fenode idref="194_14"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -13392,20 +13042,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="201_se_f1">
 						<target>
-							<fenode idref="201_15"/>
-						</target>
-				<fe id="201_se_f1_e1" name="Shifter">
-							<fenode idref="201_18"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="201_se_f2">
-						<target>
 							<fenode idref="201_4"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="201_se_f2">
+						<target>
+							<fenode idref="201_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="201_se_f3">
 						<target>
@@ -13612,12 +13257,7 @@
 						<target>
 							<fenode idref="204_17"/>
 						</target>
-				<fe id="204_se_f1_e1" name="Shifter">
-							<fenode idref="204_22"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -13818,12 +13458,7 @@
 						<target>
 							<fenode idref="207_6"/>
 						</target>
-				<fe id="207_se_f1_e1" name="Shifter">
-							<fenode idref="207_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -14062,20 +13697,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="211_se_f1">
 						<target>
-							<fenode idref="211_19"/>
-						</target>
-				<fe id="211_se_f1_e1" name="Shifter">
-							<fenode idref="211_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
-				<flag for="subjExpr" name="polarity after shift: INT 2.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="211_se_f2">
-						<target>
 							<fenode idref="211_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="211_se_f2">
+						<target>
+							<fenode idref="211_19"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -14196,12 +13826,7 @@
 						<target>
 							<fenode idref="213_20"/>
 						</target>
-				<fe id="213_se_f1_e1" name="Shifter">
-							<fenode idref="213_21"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -14385,12 +14010,7 @@
 						<target>
 							<fenode idref="216_11"/>
 						</target>
-				<fe id="216_se_f1_e1" name="Shifter">
-							<fenode idref="216_21"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -14625,12 +14245,7 @@
 						<target>
 							<fenode idref="220_11"/>
 						</target>
-				<fe id="220_se_f1_e1" name="Shifter">
-							<fenode idref="220_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="220_se_f2">
 						<target>
@@ -14697,12 +14312,7 @@
 						<target>
 							<fenode idref="221_9"/>
 						</target>
-				<fe id="221_se_f1_e1" name="Shifter">
-							<fenode idref="221_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -14960,20 +14570,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="225_se_f1">
 						<target>
-							<fenode idref="225_18"/>
-						</target>
-				<fe id="225_se_f1_e1" name="Shifter">
-							<fenode idref="225_22"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="225_se_f2">
-						<target>
 							<fenode idref="225_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="225_se_f2">
+						<target>
+							<fenode idref="225_18"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15235,12 +14840,7 @@
 						<target>
 							<fenode idref="229_15"/>
 						</target>
-				<fe id="229_se_f1_e1" name="Shifter">
-							<fenode idref="229_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="229_se_f2">
 						<target>
@@ -15309,26 +14909,21 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="230_se_f1">
 						<target>
-							<fenode idref="230_17"/>
-						</target>
-				<fe id="230_se_f1_e1" name="Shifter">
-							<fenode idref="230_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="230_se_f2">
-						<target>
 							<fenode idref="230_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="230_se_f3">
+			<frame name="SubjectiveExpression" id="230_se_f2">
 						<target>
 							<fenode idref="230_13"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="230_se_f3">
+						<target>
+							<fenode idref="230_17"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15574,20 +15169,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="234_se_f1">
 						<target>
-							<fenode idref="234_16"/>
-						</target>
-				<fe id="234_se_f1_e1" name="Shifter">
-							<fenode idref="234_8"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="234_se_f2">
-						<target>
 							<fenode idref="234_8"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="234_se_f2">
+						<target>
+							<fenode idref="234_16"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15707,12 +15297,7 @@
 						<target>
 							<fenode idref="236_6"/>
 						</target>
-				<fe id="236_se_f1_e1" name="Shifter">
-							<fenode idref="236_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15776,12 +15361,7 @@
 						<target>
 							<fenode idref="237_13"/>
 						</target>
-				<fe id="237_se_f1_e1" name="Shifter">
-							<fenode idref="237_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15845,23 +15425,13 @@
 						<target>
 							<fenode idref="238_11"/>
 						</target>
-				<fe id="238_se_f1_e1" name="Shifter">
-							<fenode idref="238_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: INT 3.0"/>
-				<flag for="subjExpr" name="polarity after shift: INT 3.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="238_se_f2">
 						<target>
 							<fenode idref="238_12"/>
 						</target>
-				<fe id="238_se_f2_e1" name="Shifter">
-							<fenode idref="238_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15922,12 +15492,7 @@
 						<target>
 							<fenode idref="239_5"/>
 						</target>
-				<fe id="239_se_f1_e1" name="Shifter">
-							<fenode idref="239_17"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15967,12 +15532,7 @@
 						<target>
 							<fenode idref="240_4"/>
 						</target>
-				<fe id="240_se_f1_e1" name="Shifter">
-							<fenode idref="240_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="240_se_f2">
 						<target>
@@ -16039,12 +15599,7 @@
 						<target>
 							<fenode idref="241_12"/>
 						</target>
-				<fe id="241_se_f1_e1" name="Shifter">
-							<fenode idref="241_17"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -16148,18 +15703,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="243_se_f1">
 						<target>
-							<fenode idref="243_13"/>
+							<fenode idref="243_10"/>
 						</target>
-				<fe id="243_se_f1_e1" name="Shifter">
-							<fenode idref="243_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="243_se_f2">
 						<target>
-							<fenode idref="243_10"/>
+							<fenode idref="243_13"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
@@ -16537,12 +16087,7 @@
 						<target>
 							<fenode idref="249_14"/>
 						</target>
-				<fe id="249_se_f1_e1" name="Shifter">
-							<fenode idref="249_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -16671,12 +16216,7 @@
 						<target>
 							<fenode idref="251_6"/>
 						</target>
-				<fe id="251_se_f1_e1" name="Shifter">
-							<fenode idref="251_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="251_se_f2">
 						<target>
@@ -16733,18 +16273,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="252_se_f1">
 						<target>
-							<fenode idref="252_7"/>
+							<fenode idref="252_5"/>
 						</target>
-				<fe id="252_se_f1_e1" name="Shifter">
-							<fenode idref="252_7"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="252_se_f2">
 						<target>
-							<fenode idref="252_5"/>
+							<fenode idref="252_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
 			</frame>
@@ -17067,12 +16602,7 @@
 						<target>
 							<fenode idref="257_18"/>
 						</target>
-				<fe id="257_se_f1_e1" name="Shifter">
-							<fenode idref="257_19"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="257_se_f2">
 						<target>
@@ -17178,12 +16708,7 @@
 							<fenode idref="259_4"/>
 							<fenode idref="259_11"/>
 						</target>
-				<fe id="259_se_f1_e1" name="Shifter">
-							<fenode idref="259_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="259_se_f2">
 						<target>
@@ -17310,12 +16835,7 @@
 						<target>
 							<fenode idref="261_14"/>
 						</target>
-				<fe id="261_se_f1_e1" name="Shifter">
-							<fenode idref="261_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -17351,12 +16871,7 @@
 						<target>
 							<fenode idref="262_4"/>
 						</target>
-				<fe id="262_se_f1_e1" name="Shifter">
-							<fenode idref="262_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -17415,12 +16930,7 @@
 						<target>
 							<fenode idref="263_16"/>
 						</target>
-				<fe id="263_se_f1_e1" name="Shifter">
-							<fenode idref="263_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -17549,20 +17059,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="265_se_f1">
 						<target>
-							<fenode idref="265_18"/>
-						</target>
-				<fe id="265_se_f1_e1" name="Shifter">
-							<fenode idref="265_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="265_se_f2">
-						<target>
 							<fenode idref="265_12"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="265_se_f2">
+						<target>
+							<fenode idref="265_18"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -17711,12 +17216,7 @@
 						<target>
 							<fenode idref="267_24"/>
 						</target>
-				<fe id="267_se_f1_e1" name="Shifter">
-							<fenode idref="267_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -17777,20 +17277,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="268_se_f1">
 						<target>
-							<fenode idref="268_6"/>
-						</target>
-				<fe id="268_se_f1_e1" name="Shifter">
-							<fenode idref="268_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="268_se_f2">
-						<target>
 							<fenode idref="268_4"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="268_se_f2">
+						<target>
+							<fenode idref="268_6"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -17837,12 +17332,7 @@
 						<target>
 							<fenode idref="269_11"/>
 						</target>
-				<fe id="269_se_f1_e1" name="Shifter">
-							<fenode idref="269_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -18144,18 +17634,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="274_se_f1">
 						<target>
-							<fenode idref="274_5"/>
+							<fenode idref="274_4"/>
 						</target>
-				<fe id="274_se_f1_e1" name="Shifter">
-							<fenode idref="274_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="274_se_f2">
 						<target>
-							<fenode idref="274_4"/>
+							<fenode idref="274_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -18387,20 +17872,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="278_se_f1">
 						<target>
-							<fenode idref="278_10"/>
+							<fenode idref="278_6"/>
 						</target>
 				<fe id="278_se_f1_e1" name="Shifter">
 							<fenode idref="278_20"/>
 							<flag for="shifter" name="general"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
+				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="278_se_f2">
 						<target>
-							<fenode idref="278_6"/>
+							<fenode idref="278_10"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -18607,20 +18092,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="281_se_f1">
 						<target>
-							<fenode idref="281_13"/>
-						</target>
-				<fe id="281_se_f1_e1" name="Shifter">
-							<fenode idref="281_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="281_se_f2">
-						<target>
 							<fenode idref="281_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="281_se_f2">
+						<target>
+							<fenode idref="281_13"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -18732,12 +18212,7 @@
 						<target>
 							<fenode idref="283_10"/>
 						</target>
-				<fe id="283_se_f1_e1" name="Shifter">
-							<fenode idref="283_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -18894,20 +18369,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="286_se_f1">
 						<target>
-							<fenode idref="286_7"/>
+							<fenode idref="286_6"/>
 						</target>
 				<fe id="286_se_f1_e1" name="Shifter">
 							<fenode idref="286_7"/>
 							<flag for="shifter" name="on positive"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="286_se_f2">
 						<target>
-							<fenode idref="286_6"/>
+							<fenode idref="286_7"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -18955,12 +18430,7 @@
 						<target>
 							<fenode idref="287_7"/>
 						</target>
-				<fe id="287_se_f1_e1" name="Shifter">
-							<fenode idref="287_11"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -19126,12 +18596,7 @@
 						<target>
 							<fenode idref="290_7"/>
 						</target>
-				<fe id="290_se_f1_e1" name="Shifter">
-							<fenode idref="290_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="290_se_f2">
 						<target>
@@ -19188,12 +18653,7 @@
 						<target>
 							<fenode idref="291_9"/>
 						</target>
-				<fe id="291_se_f1_e1" name="Shifter">
-							<fenode idref="291_4"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -19405,12 +18865,7 @@
 						<target>
 							<fenode idref="295_6"/>
 						</target>
-				<fe id="295_se_f1_e1" name="Shifter">
-							<fenode idref="295_8"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -19868,12 +19323,7 @@
 						<target>
 							<fenode idref="302_5"/>
 						</target>
-				<fe id="302_se_f1_e1" name="Shifter">
-							<fenode idref="302_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="302_se_f2">
 						<target>
@@ -19932,20 +19382,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="303_se_f1">
 						<target>
-							<fenode idref="303_12"/>
-						</target>
-				<fe id="303_se_f1_e1" name="Shifter">
-							<fenode idref="303_12"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="303_se_f2">
-						<target>
 							<fenode idref="303_8"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="303_se_f2">
+						<target>
+							<fenode idref="303_12"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -20006,12 +19451,7 @@
 						<target>
 							<fenode idref="304_6"/>
 						</target>
-				<fe id="304_se_f1_e1" name="Shifter">
-							<fenode idref="304_6"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="304_se_f2">
 						<target>
@@ -20300,12 +19740,7 @@
 							<fenode idref="309_4"/>
 							<fenode idref="309_11"/>
 						</target>
-				<fe id="309_se_f1_e1" name="Shifter">
-							<fenode idref="309_4"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="309_se_f2">
 						<target>
@@ -20437,20 +19872,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="311_se_f1">
 						<target>
-							<fenode idref="311_7"/>
-						</target>
-				<fe id="311_se_f1_e1" name="Shifter">
-							<fenode idref="311_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="311_se_f2">
-						<target>
 							<fenode idref="311_6"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="311_se_f2">
+						<target>
+							<fenode idref="311_7"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="311_se_f3">
 						<target>
@@ -20506,12 +19936,7 @@
 						<target>
 							<fenode idref="312_6"/>
 						</target>
-				<fe id="312_se_f1_e1" name="Shifter">
-							<fenode idref="312_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -20552,20 +19977,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="313_se_f1">
 						<target>
-							<fenode idref="313_10"/>
+							<fenode idref="313_4"/>
 						</target>
 				<fe id="313_se_f1_e1" name="Shifter">
 							<fenode idref="313_6"/>
 							<flag for="shifter" name="general"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="313_se_f2">
 						<target>
-							<fenode idref="313_4"/>
+							<fenode idref="313_10"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -20621,18 +20046,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="314_se_f1">
 						<target>
-							<fenode idref="314_14"/>
+							<fenode idref="314_10"/>
 						</target>
-				<fe id="314_se_f1_e1" name="Shifter">
-							<fenode idref="314_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="314_se_f2">
 						<target>
-							<fenode idref="314_10"/>
+							<fenode idref="314_14"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
@@ -21005,12 +20425,7 @@
 						<target>
 							<fenode idref="319_8"/>
 						</target>
-				<fe id="319_se_f1_e1" name="Shifter">
-							<fenode idref="319_16"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="319_se_f2">
 						<target>
@@ -21248,26 +20663,21 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="323_se_f1">
 						<target>
-							<fenode idref="323_14"/>
+							<fenode idref="323_7"/>
 						</target>
-				<fe id="323_se_f1_e1" name="Shifter">
-							<fenode idref="323_3"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="323_se_f2">
 						<target>
-							<fenode idref="323_7"/>
+							<fenode idref="323_12"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="323_se_f3">
 						<target>
-							<fenode idref="323_12"/>
+							<fenode idref="323_14"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -21465,12 +20875,7 @@
 						<target>
 							<fenode idref="326_8"/>
 						</target>
-				<fe id="326_se_f1_e1" name="Shifter">
-							<fenode idref="326_23"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="326_se_f2">
 						<target>
@@ -21754,20 +21159,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="331_se_f1">
 						<target>
-							<fenode idref="331_14"/>
-						</target>
-				<fe id="331_se_f1_e1" name="Shifter">
-							<fenode idref="331_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEU 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEU 0.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="331_se_f2">
-						<target>
 							<fenode idref="331_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="331_se_f2">
+						<target>
+							<fenode idref="331_14"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEU 0.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -21831,12 +21231,7 @@
 						<target>
 							<fenode idref="332_5"/>
 						</target>
-				<fe id="332_se_f1_e1" name="Shifter">
-							<fenode idref="332_8"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -22173,12 +21568,7 @@
 						<target>
 							<fenode idref="337_7"/>
 						</target>
-				<fe id="337_se_f1_e1" name="Shifter">
-							<fenode idref="337_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -22234,12 +21624,7 @@
 						<target>
 							<fenode idref="338_7"/>
 						</target>
-				<fe id="338_se_f1_e1" name="Shifter">
-							<fenode idref="338_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -22327,12 +21712,7 @@
 						<target>
 							<fenode idref="340_10"/>
 						</target>
-				<fe id="340_se_f1_e1" name="Shifter">
-							<fenode idref="340_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -22392,7 +21772,7 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="341_se_f1">
 						<target>
-							<fenode idref="341_11"/>
+							<fenode idref="341_14"/>
 						</target>
 				<fe id="341_se_f1_e1" name="Shifter">
 							<fenode idref="341_17"/>
@@ -22403,7 +21783,7 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="341_se_f2">
 						<target>
-							<fenode idref="341_14"/>
+							<fenode idref="341_11"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
@@ -22806,20 +22186,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="347_se_f1">
 						<target>
-							<fenode idref="347_14"/>
-						</target>
-				<fe id="347_se_f1_e1" name="Shifter">
-							<fenode idref="347_14"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="347_se_f2">
-						<target>
 							<fenode idref="347_13"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="347_se_f2">
+						<target>
+							<fenode idref="347_14"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="347_se_f3">
 						<target>
@@ -23367,12 +22742,7 @@
 						<target>
 							<fenode idref="356_6"/>
 						</target>
-				<fe id="356_se_f1_e1" name="Shifter">
-							<fenode idref="356_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -23571,20 +22941,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="359_se_f1">
 						<target>
-							<fenode idref="359_6"/>
-						</target>
-				<fe id="359_se_f1_e1" name="Shifter">
-							<fenode idref="359_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="359_se_f2">
-						<target>
 							<fenode idref="359_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="359_se_f2">
+						<target>
+							<fenode idref="359_6"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -23704,12 +23069,7 @@
 						<target>
 							<fenode idref="361_5"/>
 						</target>
-				<fe id="361_se_f1_e1" name="Shifter">
-							<fenode idref="361_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="361_se_f2">
 						<target>
@@ -23770,27 +23130,27 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="362_se_f1">
 						<target>
-							<fenode idref="362_5"/>
+							<fenode idref="362_13"/>
 						</target>
 				<fe id="362_se_f1_e1" name="Shifter">
 							<fenode idref="362_11"/>
 							<flag for="shifter" name="general"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="362_se_f2">
+						<target>
+							<fenode idref="362_5"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="362_se_f3">
 						<target>
 							<fenode idref="362_11"/>
 							<fenode idref="362_14"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="362_se_f3">
-						<target>
-							<fenode idref="362_13"/>
-						</target>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -23847,20 +23207,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="363_se_f1">
 						<target>
-							<fenode idref="363_9"/>
-						</target>
-				<fe id="363_se_f1_e1" name="Shifter">
-							<fenode idref="363_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="363_se_f2">
-						<target>
 							<fenode idref="363_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="363_se_f2">
+						<target>
+							<fenode idref="363_9"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="363_se_f3">
 						<target>
@@ -23902,12 +23257,7 @@
 						<target>
 							<fenode idref="364_6"/>
 						</target>
-				<fe id="364_se_f1_e1" name="Shifter">
-							<fenode idref="364_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -24067,12 +23417,7 @@
 						<target>
 							<fenode idref="367_8"/>
 						</target>
-				<fe id="367_se_f1_e1" name="Shifter">
-							<fenode idref="367_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -24262,18 +23607,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="370_se_f1">
 						<target>
-							<fenode idref="370_19"/>
+							<fenode idref="370_14"/>
 						</target>
-				<fe id="370_se_f1_e1" name="Shifter">
-							<fenode idref="370_8"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="370_se_f2">
 						<target>
-							<fenode idref="370_14"/>
+							<fenode idref="370_19"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
@@ -24431,20 +23771,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="373_se_f1">
 						<target>
-							<fenode idref="373_7"/>
-						</target>
-				<fe id="373_se_f1_e1" name="Shifter">
-							<fenode idref="373_10"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="373_se_f2">
-						<target>
 							<fenode idref="373_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="373_se_f2">
+						<target>
+							<fenode idref="373_7"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -24491,12 +23826,7 @@
 						<target>
 							<fenode idref="374_6"/>
 						</target>
-				<fe id="374_se_f1_e1" name="Shifter">
-							<fenode idref="374_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -24537,12 +23867,7 @@
 						<target>
 							<fenode idref="375_5"/>
 						</target>
-				<fe id="375_se_f1_e1" name="Shifter">
-							<fenode idref="375_8"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -24694,12 +24019,7 @@
 						<target>
 							<fenode idref="378_17"/>
 						</target>
-				<fe id="378_se_f1_e1" name="Shifter">
-							<fenode idref="378_21"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -25247,20 +24567,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="387_se_f1">
 						<target>
-							<fenode idref="387_7"/>
-						</target>
-				<fe id="387_se_f1_e1" name="Shifter">
-							<fenode idref="387_4"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="387_se_f2">
-						<target>
 							<fenode idref="387_4"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="387_se_f2">
+						<target>
+							<fenode idref="387_7"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -25471,12 +24786,7 @@
 						<target>
 							<fenode idref="390_5"/>
 						</target>
-				<fe id="390_se_f1_e1" name="Shifter">
-							<fenode idref="390_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="390_se_f2">
 						<target>
@@ -25633,20 +24943,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="393_se_f1">
 						<target>
-							<fenode idref="393_15"/>
-						</target>
-				<fe id="393_se_f1_e1" name="Shifter">
-							<fenode idref="393_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="393_se_f2">
-						<target>
 							<fenode idref="393_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="393_se_f2">
+						<target>
+							<fenode idref="393_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -25853,12 +25158,7 @@
 						<target>
 							<fenode idref="396_13"/>
 						</target>
-				<fe id="396_se_f1_e1" name="Shifter">
-							<fenode idref="396_19"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="396_se_f2">
 						<target>
@@ -25980,20 +25280,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="398_se_f1">
 						<target>
-							<fenode idref="398_10"/>
-						</target>
-				<fe id="398_se_f1_e1" name="Shifter">
-							<fenode idref="398_10"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="398_se_f2">
-						<target>
 							<fenode idref="398_4"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="398_se_f2">
+						<target>
+							<fenode idref="398_10"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -26042,12 +25337,7 @@
 						<target>
 							<fenode idref="399_8"/>
 						</target>
-				<fe id="399_se_f1_e1" name="Shifter">
-							<fenode idref="399_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -26115,12 +25405,7 @@
 						<target>
 							<fenode idref="400_19"/>
 						</target>
-				<fe id="400_se_f1_e1" name="Shifter">
-							<fenode idref="400_21"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -26283,18 +25568,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="403_se_f1">
 						<target>
-							<fenode idref="403_11"/>
+							<fenode idref="403_9"/>
 						</target>
-				<fe id="403_se_f1_e1" name="Shifter">
-							<fenode idref="403_17"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="403_se_f2">
 						<target>
-							<fenode idref="403_9"/>
+							<fenode idref="403_11"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
 			</frame>
@@ -26350,12 +25630,7 @@
 						<target>
 							<fenode idref="404_14"/>
 						</target>
-				<fe id="404_se_f1_e1" name="Shifter">
-							<fenode idref="404_5"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -26473,12 +25748,7 @@
 						<target>
 							<fenode idref="406_7"/>
 						</target>
-				<fe id="406_se_f1_e1" name="Shifter">
-							<fenode idref="406_19"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -26782,20 +26052,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="411_se_f1">
 						<target>
-							<fenode idref="411_14"/>
-						</target>
-				<fe id="411_se_f1_e1" name="Shifter">
-							<fenode idref="411_5"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="411_se_f2">
-						<target>
 							<fenode idref="411_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="411_se_f2">
+						<target>
+							<fenode idref="411_14"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -26899,26 +26164,21 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="413_se_f1">
 						<target>
-							<fenode idref="413_10"/>
-						</target>
-				<fe id="413_se_f1_e1" name="Shifter">
-							<fenode idref="413_19"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="413_se_f2">
-						<target>
 							<fenode idref="413_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="413_se_f3">
+			<frame name="SubjectiveExpression" id="413_se_f2">
 						<target>
 							<fenode idref="413_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEU 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="413_se_f3">
+						<target>
+							<fenode idref="413_10"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="413_se_f4">
 						<target>
@@ -26993,12 +26253,7 @@
 						<target>
 							<fenode idref="414_15"/>
 						</target>
-				<fe id="414_se_f1_e1" name="Shifter">
-							<fenode idref="414_18"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -27048,12 +26303,7 @@
 						<target>
 							<fenode idref="415_9"/>
 						</target>
-				<fe id="415_se_f1_e1" name="Shifter">
-							<fenode idref="415_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -27103,12 +26353,7 @@
 						<target>
 							<fenode idref="416_11"/>
 						</target>
-				<fe id="416_se_f1_e1" name="Shifter">
-							<fenode idref="416_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -27146,12 +26391,7 @@
 						<target>
 							<fenode idref="417_6"/>
 						</target>
-				<fe id="417_se_f1_e1" name="Shifter">
-							<fenode idref="417_3"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -27268,12 +26508,7 @@
 						<target>
 							<fenode idref="419_14"/>
 						</target>
-				<fe id="419_se_f1_e1" name="Shifter">
-							<fenode idref="419_17"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -27455,12 +26690,7 @@
 						<target>
 							<fenode idref="422_13"/>
 						</target>
-				<fe id="422_se_f1_e1" name="Shifter">
-							<fenode idref="422_19"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="422_se_f2">
 						<target>
@@ -27597,12 +26827,7 @@
 						<target>
 							<fenode idref="424_10"/>
 						</target>
-				<fe id="424_se_f2_e1" name="Shifter">
-							<fenode idref="424_18"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="424_se_f3">
 						<target>
@@ -27903,12 +27128,7 @@
 						<target>
 							<fenode idref="429_6"/>
 						</target>
-				<fe id="429_se_f1_e1" name="Shifter">
-							<fenode idref="429_17"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -28394,12 +27614,7 @@
 							<fenode idref="437_7"/>
 							<fenode idref="437_19"/>
 						</target>
-				<fe id="437_se_f1_e1" name="Shifter">
-							<fenode idref="437_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -28455,12 +27670,7 @@
 						<target>
 							<fenode idref="438_6"/>
 						</target>
-				<fe id="438_se_f1_e1" name="Shifter">
-							<fenode idref="438_16"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="438_se_f2">
 						<target>
@@ -28641,12 +27851,7 @@
 						<target>
 							<fenode idref="441_9"/>
 						</target>
-				<fe id="441_se_f1_e1" name="Shifter">
-							<fenode idref="441_10"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -28693,20 +27898,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="442_se_f1">
 						<target>
-							<fenode idref="442_13"/>
-						</target>
-				<fe id="442_se_f1_e1" name="Shifter">
-							<fenode idref="442_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="442_se_f2">
-						<target>
 							<fenode idref="442_12"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="442_se_f2">
+						<target>
+							<fenode idref="442_13"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -28893,12 +28093,7 @@
 						<target>
 							<fenode idref="445_12"/>
 						</target>
-				<fe id="445_se_f1_e1" name="Shifter">
-							<fenode idref="445_6"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -29106,12 +28301,7 @@
 						<target>
 							<fenode idref="448_11"/>
 						</target>
-				<fe id="448_se_f1_e1" name="Shifter">
-							<fenode idref="448_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="448_se_f2">
 						<target>
@@ -29317,12 +28507,7 @@
 						<target>
 							<fenode idref="451_5"/>
 						</target>
-				<fe id="451_se_f1_e1" name="Shifter">
-							<fenode idref="451_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -29479,12 +28664,7 @@
 						<target>
 							<fenode idref="454_4"/>
 						</target>
-				<fe id="454_se_f1_e1" name="Shifter">
-							<fenode idref="454_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -29658,12 +28838,7 @@
 						<target>
 							<fenode idref="457_14"/>
 						</target>
-				<fe id="457_se_f1_e1" name="Shifter">
-							<fenode idref="457_3"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -29805,12 +28980,7 @@
 						<target>
 							<fenode idref="459_6"/>
 						</target>
-				<fe id="459_se_f1_e1" name="Shifter">
-							<fenode idref="459_22"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -29873,20 +29043,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="460_se_f1">
 						<target>
-							<fenode idref="460_19"/>
+							<fenode idref="460_3"/>
 						</target>
 				<fe id="460_se_f1_e1" name="Shifter">
 							<fenode idref="460_20"/>
 							<flag for="shifter" name="on negative"/>
 						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="460_se_f2">
 						<target>
-							<fenode idref="460_3"/>
+							<fenode idref="460_19"/>
 						</target>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="460_se_f3">
 						<target>
@@ -30013,12 +29183,7 @@
 						<target>
 							<fenode idref="462_13"/>
 						</target>
-				<fe id="462_se_f1_e1" name="Shifter">
-							<fenode idref="462_17"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="462_se_f2">
 						<target>
@@ -30208,12 +29373,7 @@
 						<target>
 							<fenode idref="466_11"/>
 						</target>
-				<fe id="466_se_f1_e1" name="Shifter">
-							<fenode idref="466_6"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -30466,12 +29626,7 @@
 						<target>
 							<fenode idref="470_8"/>
 						</target>
-				<fe id="470_se_f1_e1" name="Shifter">
-							<fenode idref="470_12"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="470_se_f2">
 						<target>
@@ -30673,12 +29828,7 @@
 						<target>
 							<fenode idref="473_7"/>
 						</target>
-				<fe id="473_se_f1_e1" name="Shifter">
-							<fenode idref="473_7"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="473_se_f2">
 						<target>
@@ -30937,12 +30087,7 @@
 						<target>
 							<fenode idref="477_8"/>
 						</target>
-				<fe id="477_se_f1_e1" name="Shifter">
-							<fenode idref="477_9"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -30999,20 +30144,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="478_se_f1">
 						<target>
-							<fenode idref="478_10"/>
-						</target>
-				<fe id="478_se_f1_e1" name="Shifter">
-							<fenode idref="478_17"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="478_se_f2">
-						<target>
 							<fenode idref="478_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="478_se_f2">
+						<target>
+							<fenode idref="478_10"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -31076,12 +30216,7 @@
 						<target>
 							<fenode idref="479_9"/>
 						</target>
-				<fe id="479_se_f1_e1" name="Shifter">
-							<fenode idref="479_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="479_se_f2">
 						<target>
@@ -31221,12 +30356,7 @@
 						<target>
 							<fenode idref="481_9"/>
 						</target>
-				<fe id="481_se_f1_e1" name="Shifter">
-							<fenode idref="481_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="481_se_f2">
 						<target>
@@ -31497,12 +30627,7 @@
 						<target>
 							<fenode idref="485_17"/>
 						</target>
-				<fe id="485_se_f1_e1" name="Shifter">
-							<fenode idref="485_21"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -31563,12 +30688,7 @@
 						<target>
 							<fenode idref="486_17"/>
 						</target>
-				<fe id="486_se_f1_e1" name="Shifter">
-							<fenode idref="486_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -31831,12 +30951,7 @@
 						<target>
 							<fenode idref="490_6"/>
 						</target>
-				<fe id="490_se_f1_e1" name="Shifter">
-							<fenode idref="490_8"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -31940,12 +31055,7 @@
 						<target>
 							<fenode idref="492_8"/>
 						</target>
-				<fe id="492_se_f1_e1" name="Shifter">
-							<fenode idref="492_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -32267,12 +31377,7 @@
 						<target>
 							<fenode idref="497_11"/>
 						</target>
-				<fe id="497_se_f1_e1" name="Shifter">
-							<fenode idref="497_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -32462,12 +31567,7 @@
 						<target>
 							<fenode idref="500_16"/>
 						</target>
-				<fe id="500_se_f1_e1" name="Shifter">
-							<fenode idref="500_17"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -32510,12 +31610,7 @@
 						<target>
 							<fenode idref="501_5"/>
 						</target>
-				<fe id="501_se_f1_e1" name="Shifter">
-							<fenode idref="501_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -32686,20 +31781,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="504_se_f1">
 						<target>
-							<fenode idref="504_10"/>
-						</target>
-				<fe id="504_se_f1_e1" name="Shifter">
-							<fenode idref="504_10"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="504_se_f2">
-						<target>
 							<fenode idref="504_6"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="504_se_f2">
+						<target>
+							<fenode idref="504_10"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -32815,12 +31905,7 @@
 						<target>
 							<fenode idref="506_15"/>
 						</target>
-				<fe id="506_se_f1_e1" name="Shifter">
-							<fenode idref="506_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -33172,26 +32257,21 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="512_se_f1">
 						<target>
-							<fenode idref="512_13"/>
-						</target>
-				<fe id="512_se_f1_e1" name="Shifter">
-							<fenode idref="512_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="512_se_f2">
-						<target>
 							<fenode idref="512_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: INT 2.0"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="512_se_f3">
+			<frame name="SubjectiveExpression" id="512_se_f2">
 						<target>
 							<fenode idref="512_8"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="512_se_f3">
+						<target>
+							<fenode idref="512_13"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -33371,12 +32451,7 @@
 						<target>
 							<fenode idref="515_19"/>
 						</target>
-				<fe id="515_se_f1_e1" name="Shifter">
-							<fenode idref="515_20"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -33428,20 +32503,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="516_se_f1">
 						<target>
-							<fenode idref="516_15"/>
-						</target>
-				<fe id="516_se_f1_e1" name="Shifter">
-							<fenode idref="516_15"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="516_se_f2">
-						<target>
 							<fenode idref="516_14"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="516_se_f2">
+						<target>
+							<fenode idref="516_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -33573,12 +32643,7 @@
 						<target>
 							<fenode idref="518_14"/>
 						</target>
-				<fe id="518_se_f1_e1" name="Shifter">
-							<fenode idref="518_15"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="518_se_f2">
 						<target>
@@ -33649,12 +32714,7 @@
 						<target>
 							<fenode idref="519_18"/>
 						</target>
-				<fe id="519_se_f1_e1" name="Shifter">
-							<fenode idref="519_7"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -33974,20 +33034,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="525_se_f1">
 						<target>
-							<fenode idref="525_7"/>
-						</target>
-				<fe id="525_se_f1_e1" name="Shifter">
-							<fenode idref="525_3"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="525_se_f2">
-						<target>
 							<fenode idref="525_3"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="525_se_f2">
+						<target>
+							<fenode idref="525_7"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -34146,12 +33201,7 @@
 						<target>
 							<fenode idref="528_6"/>
 						</target>
-				<fe id="528_se_f1_e1" name="Shifter">
-							<fenode idref="528_8"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="528_se_f2">
 						<target>
@@ -34247,12 +33297,7 @@
 						<target>
 							<fenode idref="530_5"/>
 						</target>
-				<fe id="530_se_f1_e1" name="Shifter">
-							<fenode idref="530_15"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="530_se_f2">
 						<target>
@@ -34393,18 +33438,13 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="532_se_f1">
 						<target>
-							<fenode idref="532_20"/>
+							<fenode idref="532_12"/>
 						</target>
-				<fe id="532_se_f1_e1" name="Shifter">
-							<fenode idref="532_22"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="532_se_f2">
 						<target>
-							<fenode idref="532_12"/>
+							<fenode idref="532_20"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
@@ -34792,12 +33832,7 @@
 						<target>
 							<fenode idref="538_15"/>
 						</target>
-				<fe id="538_se_f1_e1" name="Shifter">
-							<fenode idref="538_20"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -34856,12 +33891,7 @@
 						<target>
 							<fenode idref="539_16"/>
 						</target>
-				<fe id="539_se_f1_e1" name="Shifter">
-							<fenode idref="539_17"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -35021,12 +34051,7 @@
 						<target>
 							<fenode idref="542_10"/>
 						</target>
-				<fe id="542_se_f1_e1" name="Shifter">
-							<fenode idref="542_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -35169,12 +34194,7 @@
 						<target>
 							<fenode idref="544_17"/>
 						</target>
-				<fe id="544_se_f1_e1" name="Shifter">
-							<fenode idref="544_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -35292,12 +34312,7 @@
 						<target>
 							<fenode idref="546_12"/>
 						</target>
-				<fe id="546_se_f1_e1" name="Shifter">
-							<fenode idref="546_5"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -35428,12 +34443,7 @@
 						<target>
 							<fenode idref="548_5"/>
 						</target>
-				<fe id="548_se_f1_e1" name="Shifter">
-							<fenode idref="548_13"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -35992,21 +35002,16 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="557_se_f1">
 						<target>
-							<fenode idref="557_6"/>
-						</target>
-				<fe id="557_se_f1_e1" name="Shifter">
-							<fenode idref="557_4"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="557_se_f2">
-						<target>
 							<fenode idref="557_4"/>
 							<fenode idref="557_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="557_se_f2">
+						<target>
+							<fenode idref="557_6"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -36153,20 +35158,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="559_se_f1">
 						<target>
-							<fenode idref="559_17"/>
-						</target>
-				<fe id="559_se_f1_e1" name="Shifter">
-							<fenode idref="559_20"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="559_se_f2">
-						<target>
 							<fenode idref="559_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="559_se_f2">
+						<target>
+							<fenode idref="559_17"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -36779,12 +35779,7 @@
 						<target>
 							<fenode idref="569_7"/>
 						</target>
-				<fe id="569_se_f1_e1" name="Shifter">
-							<fenode idref="569_3"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -36979,12 +35974,7 @@
 						<target>
 							<fenode idref="572_15"/>
 						</target>
-				<fe id="572_se_f1_e1" name="Shifter">
-							<fenode idref="572_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -37459,12 +36449,7 @@
 						<target>
 							<fenode idref="580_12"/>
 						</target>
-				<fe id="580_se_f1_e1" name="Shifter">
-							<fenode idref="580_16"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -37577,12 +36562,7 @@
 						<target>
 							<fenode idref="582_18"/>
 						</target>
-				<fe id="582_se_f1_e1" name="Shifter">
-							<fenode idref="582_20"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -37698,12 +36678,7 @@
 						<target>
 							<fenode idref="584_12"/>
 						</target>
-				<fe id="584_se_f1_e1" name="Shifter">
-							<fenode idref="584_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -37765,12 +36740,7 @@
 						<target>
 							<fenode idref="585_13"/>
 						</target>
-				<fe id="585_se_f1_e1" name="Shifter">
-							<fenode idref="585_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -37937,12 +36907,7 @@
 						<target>
 							<fenode idref="588_9"/>
 						</target>
-				<fe id="588_se_f1_e1" name="Shifter">
-							<fenode idref="588_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -38180,20 +37145,15 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="592_se_f1">
 						<target>
-							<fenode idref="592_9"/>
-						</target>
-				<fe id="592_se_f1_e1" name="Shifter">
-							<fenode idref="592_9"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="592_se_f2">
-						<target>
 							<fenode idref="592_8"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="592_se_f2">
+						<target>
+							<fenode idref="592_9"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -38509,12 +37469,7 @@
 						<target>
 							<fenode idref="597_6"/>
 						</target>
-				<fe id="597_se_f1_e1" name="Shifter">
-							<fenode idref="597_8"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.5"/>
 			</frame>
 		</frames>
 			</sem>
@@ -38710,12 +37665,7 @@
 						<target>
 							<fenode idref="600_3"/>
 						</target>
-				<fe id="600_se_f1_e1" name="Shifter">
-							<fenode idref="600_3"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -38899,12 +37849,7 @@
 						<target>
 							<fenode idref="603_13"/>
 						</target>
-				<fe id="603_se_f1_e1" name="Shifter">
-							<fenode idref="603_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -39045,38 +37990,33 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="605_se_f1">
 						<target>
-							<fenode idref="605_20"/>
-						</target>
-				<fe id="605_se_f1_e1" name="Shifter">
-							<fenode idref="605_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.7"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="605_se_f2">
-						<target>
 							<fenode idref="605_7"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="605_se_f3">
+			<frame name="SubjectiveExpression" id="605_se_f2">
 						<target>
 							<fenode idref="605_9"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: INT 0.5"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="605_se_f4">
+			<frame name="SubjectiveExpression" id="605_se_f3">
 						<target>
 							<fenode idref="605_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="605_se_f5">
+			<frame name="SubjectiveExpression" id="605_se_f4">
 						<target>
 							<fenode idref="605_13"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="605_se_f5">
+						<target>
+							<fenode idref="605_20"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -39206,12 +38146,7 @@
 						<target>
 							<fenode idref="607_7"/>
 						</target>
-				<fe id="607_se_f1_e1" name="Shifter">
-							<fenode idref="607_3"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
@@ -173,7 +174,6 @@ public class SubjectiveExpressionModule implements Module {
 		WordObj containsDeleted = shifter.getDeleted().peekFirst();
 		if (containsDeleted != null) {
 			System.out.println("DeletedNodes != null: " + shifter.getDeleted().toString());
-			System.out.println("containsDeleted: " + containsDeleted.getLemma());
 			if (!(containsDeleted.getLemma().equals(""))) {
 				// shifter = containsDeleted;
 			}
@@ -188,7 +188,7 @@ public class SubjectiveExpressionModule implements Module {
 					if (edge.toString().contains("nicht")) {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
-						if (sentimentList.contains(shifterTarget)) {
+						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
 					}
@@ -198,7 +198,7 @@ public class SubjectiveExpressionModule implements Module {
 					if (edge.depRel.contains("objp") && edge.source.equals(shifter)) {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.target;
-						if (sentimentList.contains(shifterTarget)) {
+						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
 					}
@@ -206,7 +206,7 @@ public class SubjectiveExpressionModule implements Module {
 					if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
-						if (sentimentList.contains(shifterTarget)) {
+						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
 					}
@@ -215,7 +215,7 @@ public class SubjectiveExpressionModule implements Module {
 						if (edge.target.getPos().equals("PPOSAT")) {
 							System.out.println("edge: " + edge);
 							shifterTarget = edge.target;
-							if (sentimentList.contains(shifterTarget)) {
+							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								return shifterTarget;
 							}
 						}
@@ -232,16 +232,21 @@ public class SubjectiveExpressionModule implements Module {
 						// This isn't supposed to happen except in case of parsing errors
 						containingClause = tree.getTrueRoot();
 					}
-					tree.getMainClause(containingClause);
+					// List<Object> terminalNonterminalList =
+					// tree.getMainClause(containingClause);
 					shifterTarget = edge.target;
-					if (sentimentList.contains(shifterTarget)) {
+					if (!tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
+						continue;
+					}
+					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+						System.out.println("Found shifterTarget for Clause!: " + shifterTarget);
 						return shifterTarget;
 					}
 				default:
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
 						System.out.println("edge: " + edge);
-						if (sentimentList.contains(shifterTarget)) {
+						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
 					}
