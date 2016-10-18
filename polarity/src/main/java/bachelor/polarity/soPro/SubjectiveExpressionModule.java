@@ -18,6 +18,8 @@ public class SubjectiveExpressionModule implements Module {
 
 	private SentimentLex sentimentLex;
 	private ShifterLex shifterLex;
+	
+
 
 	/**
 	 * Constructs a new SubjectiveExpressionModule.
@@ -52,6 +54,10 @@ public class SubjectiveExpressionModule implements Module {
 
 		ArrayList<WordObj> sentimentList = new ArrayList<WordObj>();
 		ArrayList<WordObj> shifterList = new ArrayList<WordObj>();
+		
+		Double polaritySum = 0.0;
+		Double polarityOfWord = 0.0;
+
 
 		// Look up every word in the shifterLex and sentimentLex lexicons and add
 		// them to the shifterList or sentimentList.
@@ -69,6 +75,7 @@ public class SubjectiveExpressionModule implements Module {
 		for (WordObj shifter : shifterList) {
 			// Look for the shifterTarget
 			WordObj shifterTarget = findShifterTarget(shifter, sentimentList, sentence);
+
 			if (shifterTarget != null) {
 
 				// Create Frame object
@@ -81,28 +88,30 @@ public class SubjectiveExpressionModule implements Module {
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
-				final FrameElement shifterElement = new FrameElement(feIds.next(), "Shifter");
+				// TODO call it shifter after evaluation tool is not needed anymore!
+				final FrameElement shifterElement = new FrameElement(feIds.next(), "Target");
 				shifterElement.addFenode(new Fenode(sentence.getTree().getTerminal(shifter).getId()));
-
+				
 				// Set Frame element flag for the shifter
 				String shifterType = shifterLex.getShifter(shifter.getLemma()).shifter_type;
 				final Flag shifterFlag = new Flag(shifterType, "shifter");
 				shifterElement.addFlag(shifterFlag);
 
 				// Set Flag for the Frame stating the starting polarity value
-				String polarityValue = sentimentLex.getSentiment(shifterTarget.getLemma()).value;
+				String polarityValueStr = sentimentLex.getSentiment(shifterTarget.getLemma()).value;
 				String polarityCategory = sentimentLex.getSentiment(shifterTarget.getLemma()).category;
-				String valueAndCat = polarityCategory + " " + polarityValue;
+				String valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityWithoutShift);
 				// Compute the polarity value after the shift
-				Double polarityValueD = Double.valueOf(polarityValue);
+				polarityOfWord = Double.valueOf(polarityValueStr);
 				switch (shifterType) {
 				case "on negative":
 					polarityCategory = "POS";
 					break;
 				case "on positive":
 					polarityCategory = "NEG";
+					polarityOfWord = polarityOfWord * -1.0;
 					break;
 				// Default case = general
 				// Invert category
@@ -110,12 +119,15 @@ public class SubjectiveExpressionModule implements Module {
 					switch (polarityCategory) {
 					case "POS":
 						polarityCategory = "NEG";
+						polarityOfWord = polarityOfWord * -1.0;
 						break;
 					case "NEG":
 						polarityCategory = "POS";
 					}
 				}
-				valueAndCat = polarityCategory + " " + polarityValue;
+				polaritySum += polarityOfWord;
+
+				valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityAfterShift = new Flag("polarity after shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityAfterShift);
 
@@ -141,12 +153,23 @@ public class SubjectiveExpressionModule implements Module {
 			setFrames(sentence, frames, sentiment, frame, target);
 
 			// Set Flag for the Frame stating the starting polarity value
-			String polarityValue = sentimentLex.getSentiment(sentiment.getLemma()).value;
+			String polarityValueStr = sentimentLex.getSentiment(sentiment.getLemma()).value;
 			String polarityCategory = sentimentLex.getSentiment(sentiment.getLemma()).category;
-			String valueAndCat = polarityCategory + " " + polarityValue;
+			String valueAndCat = polarityCategory + " " + polarityValueStr;
+			polarityOfWord = Double.valueOf(polarityValueStr);
+			if (polarityCategory.equals("NEG")){polarityOfWord = polarityOfWord * -1.0;}
+			polaritySum += polarityOfWord;
 			final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 			frame.addFlag(polarityWithoutShift);
 		}
+		final Frame sentenceFrame = new Frame("Sentence");
+		final Flag polaritySumFlag = new Flag("Sentence polarity: " + String.format("%.2f", polaritySum), "sentence");
+		final Target sentenceTarget = new Target();
+		sentenceTarget.addFenode(new Fenode(sentence.getTree().getTrueRoot().getId()));
+		sentenceFrame.addFlag(polaritySumFlag);
+		sentenceFrame.setTarget(sentenceTarget);
+		frames.add(sentenceFrame);
+		
 		return frames;
 	}
 
