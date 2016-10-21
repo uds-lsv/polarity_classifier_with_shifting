@@ -1,6 +1,7 @@
 package bachelor.polarity.soPro;
 
 import bachelor.polarity.salsa.corpora.elements.Frame;
+import bachelor.polarity.salsa.corpora.elements.Global;
 
 import java.util.Collection;
 
@@ -9,6 +10,13 @@ import java.util.Collection;
  *
  */
 public interface Module {
+	
+	/**
+	 * Globals are sentence flags. Stores each sentence's polarity.
+	 * @return ArrayList<Global> globalsSentencePolarities
+	 */
+	 public Collection<Global> getGlobalsSentencePolarities();
+	
 	/**
 	 *
 	 * @param sentence

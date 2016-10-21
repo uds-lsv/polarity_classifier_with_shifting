@@ -46,14 +46,19 @@ public class SentimentChecker {
 		 * Frames object.
 		 */
 		final Frames frames = new Frames();
+		final Globals globals = new Globals();
 		for (Module module : modules) {
 
 			for (Frame frame : module.findFrames(sentence)) {
 				frames.addFrame(frame);
 			}
+			for (Global global : module.getGlobalsSentencePolarities()) {
+				globals.addGlobal(global);
+			}
 		}
 		final Semantics sem = new Semantics();
 		sem.addFrames(frames);
+		sem.addGlobals(globals);
 		return sem;
 	}
 
@@ -72,6 +77,7 @@ public class SentimentChecker {
 		Element e1 = new Element("Shifter", "true");
 		f1.addElement(e1);
 		hframes.addFrame(f1);
+		Global global = new Global("Polarity");
 		Flags hflags = new Flags();
 		Flag hflag1 = new Flag("Polarity without shift", "subjExpr");
 		Flag hflag2 = new Flag("Polarity after shift", "subjExpr");

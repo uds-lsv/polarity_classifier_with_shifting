@@ -10,7 +10,10 @@ import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
+import bachelor.polarity.salsa.corpora.elements.Global;
+import bachelor.polarity.salsa.corpora.elements.Globals;
 import bachelor.polarity.salsa.corpora.elements.Nonterminal;
+import bachelor.polarity.salsa.corpora.elements.Sentence;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 
@@ -18,8 +21,19 @@ public class SubjectiveExpressionModule implements Module {
 
 	private SentimentLex sentimentLex;
 	private ShifterLex shifterLex;
-	
+	/**
+	 * Stores each sentence's polarity
+	 */
+	private Collection<Global> globalsSentencePolarities = new ArrayList<Global>();
 
+	/**
+	 * Globals are sentence flags. Stores each sentence's polarity.
+	 * 
+	 * @return ArrayList<Global> globalsSentencePolarities
+	 */
+	public Collection<Global> getGlobalsSentencePolarities() {
+		return globalsSentencePolarities;
+	}
 
 	/**
 	 * Constructs a new SubjectiveExpressionModule.
@@ -51,13 +65,13 @@ public class SubjectiveExpressionModule implements Module {
 		 */
 		final Collection<Frame> frames = new ArrayList<Frame>();
 		final FrameIds frameIds = new FrameIds(sentence, "se");
+		globalsSentencePolarities.removeAll(globalsSentencePolarities);
 
 		ArrayList<WordObj> sentimentList = new ArrayList<WordObj>();
 		ArrayList<WordObj> shifterList = new ArrayList<WordObj>();
-		
+
 		Double polaritySum = 0.0;
 		Double polarityOfWord = 0.0;
-
 
 		// Look up every word in the shifterLex and sentimentLex lexicons and add
 		// them to the shifterList or sentimentList.
@@ -91,7 +105,7 @@ public class SubjectiveExpressionModule implements Module {
 				// TODO call it shifter after evaluation tool is not needed anymore!
 				final FrameElement shifterElement = new FrameElement(feIds.next(), "Target");
 				shifterElement.addFenode(new Fenode(sentence.getTree().getTerminal(shifter).getId()));
-				
+
 				// Set Frame element flag for the shifter
 				String shifterType = shifterLex.getShifter(shifter.getLemma()).shifter_type;
 				final Flag shifterFlag = new Flag(shifterType, "shifter");
@@ -157,19 +171,28 @@ public class SubjectiveExpressionModule implements Module {
 			String polarityCategory = sentimentLex.getSentiment(sentiment.getLemma()).category;
 			String valueAndCat = polarityCategory + " " + polarityValueStr;
 			polarityOfWord = Double.valueOf(polarityValueStr);
-			if (polarityCategory.equals("NEG")){polarityOfWord = polarityOfWord * -1.0;}
+			if (polarityCategory.equals("NEG")) {
+				polarityOfWord = polarityOfWord * -1.0;
+			}
 			polaritySum += polarityOfWord;
 			final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 			frame.addFlag(polarityWithoutShift);
 		}
-		final Frame sentenceFrame = new Frame("Sentence");
-		final Flag polaritySumFlag = new Flag("Sentence polarity: " + String.format("%.2f", polaritySum), "sentence");
-		final Target sentenceTarget = new Target();
-		sentenceTarget.addFenode(new Fenode(sentence.getTree().getTrueRoot().getId()));
-		sentenceFrame.addFlag(polaritySumFlag);
-		sentenceFrame.setTarget(sentenceTarget);
-		frames.add(sentenceFrame);
-		
+		// final Frame sentenceFrame = new Frame("Sentence");
+		// final Flag polaritySumFlag = new Flag("Sentence polarity: " +
+		// String.format("%.2f", polaritySum), "sentence");
+		// final Target sentenceTarget = new Target();
+		// sentenceTarget.addFenode(new
+		// Fenode(sentence.getTree().getTrueRoot().getId()));
+		// sentenceFrame.addFlag(polaritySumFlag);
+		// sentenceFrame.setTarget(sentenceTarget);
+		// frames.add(sentenceFrame);
+
+		final Global sentencePolarity = new Global("INTERESTING");
+		sentencePolarity.setParam(String.format("%.2f", polaritySum));
+		sentencePolarity.setText("The sentence polarity.");
+		globalsSentencePolarities.add(sentencePolarity);
+
 		return frames;
 	}
 
