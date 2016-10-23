@@ -228,6 +228,7 @@ public class SubjectiveExpressionModule implements Module {
 		HashSet<Edge> edges = sentence.getGraph().getEdges();
 
 		for (String scopeEntry : shifterUnit.shifter_scope) {
+			System.out.println("scopeEntry: " + scopeEntry);
 			for (Edge edge : edges) {
 				// Special case for "nicht"
 				if (shifter.getLemma().equals("nicht")) {
@@ -248,6 +249,7 @@ public class SubjectiveExpressionModule implements Module {
 							return shifterTarget;
 						}
 					}
+					break;
 				case "attr-rev":
 					if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
 						System.out.println("edge: " + edge);
@@ -256,6 +258,7 @@ public class SubjectiveExpressionModule implements Module {
 							return shifterTarget;
 						}
 					}
+					break;
 				case "det":
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						if (edge.target.getPos().equals("PPOSAT")) {
@@ -266,7 +269,8 @@ public class SubjectiveExpressionModule implements Module {
 							}
 						}
 					}
-					// TODO
+					break;
+				// TODO
 				case "clause":
 					final ConstituencyTree tree = sentence.getTree();
 					final Terminal wordNode = tree.getTerminal(shifter);
@@ -288,10 +292,11 @@ public class SubjectiveExpressionModule implements Module {
 						System.out.println("Found shifterTarget for Clause!: " + shifterTarget);
 						return shifterTarget;
 					}
+					break;
 				default:
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
-						System.out.println("edge: " + edge);
+						System.out.println("found with edge: " + edge);
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}

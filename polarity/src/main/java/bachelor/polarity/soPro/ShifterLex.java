@@ -372,7 +372,7 @@ public class ShifterLex {
 							shifter_type_written_out = shifter_type;
 						}
 
-						shifter_scope_str = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]"));
+						shifter_scope_str = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]")).replaceAll("\\s+", "");
 						shifter_scope = shifter_scope_str.split(",");
 						// System.out.println("shifter-scope: " +
 						// Arrays.toString(shifter_scope));

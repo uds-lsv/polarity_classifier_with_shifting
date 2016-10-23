@@ -416,6 +416,7 @@ kein g [subj, attr-rev] adj
 einzigartig g [subj, attr-rev] adj
 korrigierbar n [subj, attr-rev] adj
 weniger g [subj, attr-rev] adj
+gescheitert p [subj, attr-rev] adj
 weniger g [clause] adv
 kaum g [clause] adv
 keinesfalls g [clause] adv
@@ -431,3 +432,4 @@ Lösung n [gmod, objp-*] nomen
 Entfernung g [gmod, objp-*] nomen
 Verhinderung g [gmod, objp-*] nomen
 Verbannung n [gmod, objp-*] nomen
+Unrecht p [gmod, objp-*] nomen

@@ -8861,3 +8861,4 @@ kalt NEU=0 adj
 %% richtig INT=2 adj
 %% verdammt INT=2 adj
 ändern NEU=0 verben
+Verkaufsversuch NEU=0 nomen
