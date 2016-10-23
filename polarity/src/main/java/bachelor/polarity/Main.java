@@ -1,6 +1,11 @@
 package bachelor.polarity;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashSet;
+import java.util.Properties;
 import java.util.Set;
 
 import bachelor.polarity.soPro.Module;
@@ -14,68 +19,80 @@ import bachelor.polarity.soPro.SubjectiveExpressionModule;
 public class Main {
 
 	public static void main(String[] args) {
-		// *************************SoPro Classes*****************************
-		// Read in raw input text and create SentenceList based on it.
-//		java.nio.file.Path fileRaw = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-//				"steps2016-testdaten.raw.txt");
-		java.nio.file.Path fileRaw = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-				"raw_text.txt");
-		System.out.println("Reading rawText from : " + fileRaw.toString());
-		SentenceList sentences = new SentenceList();
-		sentences.rawToSentenceList(fileRaw.toString());
+		// Read config
+		Properties prop = new Properties();
+		java.nio.file.Path configPath = java.nio.file.Paths.get("config", "config.properties");
+		System.out.println("Reading config from " + configPath.toString());
+		try {
+			InputStream configInput = new FileInputStream(configPath.toString());
+			prop.load(configInput);
 
-		// Read in dependency parse file and create a DependencyGraph object for
-		// each sentence.
-//		java.nio.file.Path dependencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-//				"steps2016-testdaten.parzu.txt");
-		java.nio.file.Path dependencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-				"dependency_parse.txt");
-		System.out.println("Reading dependency data from " + dependencyFile.toString() + "...");
-		System.out.println("Creating dependency graph...");
-		sentences.readDependencyParse(dependencyFile.toString());
+			String text_input = prop.getProperty("TEXT_INPUT");
+			String dependency_input = prop.getProperty("DEPENDENCY_INPUT");
+			String constituency_input = prop.getProperty("CONSTITUENCY_INPUT");
+			String sentiment_lexicon_input = prop.getProperty("SENTIMENT_LEXICON_INPUT");
+			String shifter_lexicon_input = prop.getProperty("SHIFTER_LEXICON_INPUT");
+			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
 
-		// Normalize DependencyGraph objects.
-		System.out.println("Normalizing dependency graph...");
-		sentences.normalizeDependencyGraphs();
+			// Read in raw input text and create SentenceList based on it.
+			System.out.println("Reading rawText from : " + text_input);
+			SentenceList sentences = new SentenceList();
+			sentences.rawToSentenceList(text_input);
 
-		// Read in Salsa / Tiger XML file and create a ConstituencyTree object for
-		// every sentence.
-//		java.nio.file.Path constituencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-//				"steps2016-testdaten.UTF8.keineAnnotation(constituency).xml");
-		java.nio.file.Path constituencyFile = java.nio.file.Paths.get("src", "main", "resources", "textInput",
-				"constituency_parse.xml");
-		System.out.println("Reading constituency data from " + constituencyFile.toString() + "...");
-		System.out.println("Creating constituency tree...");
-		SalsaAPIConnective salsa = new SalsaAPIConnective(constituencyFile.toString(), sentences);
+			// Read in dependency parse file and create a DependencyGraph object for
+			// each sentence.
+			System.out.println("Reading dependency data from " + dependency_input + "...");
+			System.out.println("Creating dependency graph...");
+			sentences.readDependencyParse(dependency_input);
 
-		// Read in sentiment lexicon.
-		java.nio.file.Path fileLex = java.nio.file.Paths.get("src", "main", "resources", "dictionaries", "germanlex.txt");
-		System.out.println("Reading sentiment lexicon from " + fileLex.toString() + "...");
-		SentimentLex sentimentLex = new SentimentLex(true);
-		sentimentLex.fileToLex(fileLex.toString());
+			// Normalize DependencyGraph objects.
+			if (normalize) {
+				System.out.println("Normalizing dependency graph...");
+				sentences.normalizeDependencyGraphs();
+			} else {
+				System.out.println("Normalizing of dependency graph set to FALSE.");
+			}
 
-		// Read in shifter lexicon.
-		java.nio.file.Path shifterLexFile = java.nio.file.Paths.get("src", "main", "resources", "dictionaries",
-				"shifter_lex_german.txt");
-		System.out.println("Reading shifter lexicon from " + shifterLexFile.toString() + "...");
-		ShifterLex shifterLex = new ShifterLex(true);
-		shifterLex.fileToLex(shifterLexFile.toString());
+			// Read in Salsa / Tiger XML file and create a ConstituencyTree object for
+			// every sentence.
+			System.out.println("Reading constituency data from " + constituency_input + "...");
+			System.out.println("Creating constituency tree...");
+			SalsaAPIConnective salsa = new SalsaAPIConnective(constituency_input, sentences);
 
-		// Look for subjective expressions and shifters using the according modules.
-		final Set<Module> modules = new HashSet<Module>();
+			// Read in sentiment lexicon.
+			System.out.println("Reading sentiment lexicon from " + sentiment_lexicon_input + "...");
+			SentimentLex sentimentLex = new SentimentLex(true);
+			sentimentLex.fileToLex(sentiment_lexicon_input);
 
-		final SubjectiveExpressionModule subjectiveExpressionModule;
+			// Read in shifter lexicon.
+			System.out.println("Reading shifter lexicon from " + shifter_lexicon_input + "...");
+			ShifterLex shifterLex = new ShifterLex(true);
+			shifterLex.fileToLex(shifter_lexicon_input);
 
-		subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex);
+			// Look for subjective expressions and shifters using the according
+			// modules.
+			final Set<Module> modules = new HashSet<Module>();
 
-		modules.add(subjectiveExpressionModule);
+			final SubjectiveExpressionModule subjectiveExpressionModule;
 
-		// search for sentiment expressions and write results to the output file
-		// specified in the configuration file
-		final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
-		System.out.println("Looking for sentiment expressions...");
-		String outputPath = "output/salsaResult.xml";
+			subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex);
 
-		sentcheck.findSentiments(outputPath);
+			modules.add(subjectiveExpressionModule);
+
+			// search for sentiment expressions and write results to the output file
+			// specified in the configuration file
+			final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
+			System.out.println("Looking for sentiment expressions...");
+			String outputPath = "output/salsaResult.xml";
+
+			sentcheck.findSentiments(outputPath);
+		} catch (FileNotFoundException e) {
+			System.out.println("No config found at this config path: " + configPath);
+			return;
+		} catch (IOException e) {
+			System.out.println("Could not read config file from " + configPath);
+			return;
+		}
+
 	}
 }
