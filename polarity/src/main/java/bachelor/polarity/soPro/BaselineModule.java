@@ -4,23 +4,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
+import java.util.LinkedList;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
 import bachelor.polarity.salsa.corpora.elements.Global;
-import bachelor.polarity.salsa.corpora.elements.Globals;
 import bachelor.polarity.salsa.corpora.elements.Nonterminal;
-import bachelor.polarity.salsa.corpora.elements.Sentence;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 
-public class SubjectiveExpressionModule implements Module {
+public class BaselineModule implements Module {
 
 	private SentimentLex sentimentLex;
 	private ShifterLex shifterLex;
+	/**
+	 * Defines the scope in which shifter targets are searched for.
+	 */
+	private int scope;
+
 	/**
 	 * Stores each sentence's polarity
 	 */
@@ -36,7 +39,9 @@ public class SubjectiveExpressionModule implements Module {
 	}
 
 	/**
-	 * Constructs a new SubjectiveExpressionModule.
+	 * Constructs a new BaselineModule. Looks for shifter targets within the
+	 * specified scope to the right of the shifter. Does not use dependency
+	 * information
 	 * 
 	 * @param sentimentLex
 	 *          A SentimentLex object in which the rules for finding sentiment
@@ -44,10 +49,13 @@ public class SubjectiveExpressionModule implements Module {
 	 * @param shifterLex
 	 *          A ShifterLex object in which the rules for finding shifter targets
 	 *          are saved as ShifterUnits.
+	 * @param scope
+	 *          Defines the scope in which shifter targets are searched for.
 	 */
-	public SubjectiveExpressionModule(SentimentLex sentimentLex, ShifterLex shifterLex) {
+	public BaselineModule(SentimentLex sentimentLex, ShifterLex shifterLex, int scope) {
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
+		this.scope = scope;
 	}
 
 	/**
@@ -88,7 +96,7 @@ public class SubjectiveExpressionModule implements Module {
 		// Also set frames.
 		for (WordObj shifter : shifterList) {
 			// Look for the shifterTarget
-			WordObj shifterTarget = findShifterTarget(shifter, sentimentList, sentence);
+			WordObj shifterTarget = findShifterTargetBaseline(shifter, sentimentList, sentence, scope);
 
 			if (shifterTarget != null) {
 
@@ -98,7 +106,7 @@ public class SubjectiveExpressionModule implements Module {
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
-				System.out.println("shifterTarget: " + shifterTarget);
+//				System.out.println("shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -197,9 +205,9 @@ public class SubjectiveExpressionModule implements Module {
 	}
 
 	/**
-	 * This method is used to look for the target of a shifter using dependency
-	 * relations. The found shifter target must be contained in the sentimentList
-	 * in order to be returned by this method.
+	 * This method is used to look for the target of a shifter using a given scope
+	 * and lexicon look-up. The found shifter target must be contained in the
+	 * sentimentList in order to be returned by this method.
 	 * 
 	 * @param shifter
 	 *          The shifter for which a target is searched for.
@@ -210,92 +218,25 @@ public class SubjectiveExpressionModule implements Module {
 	 *          The sentence the shifter is in.
 	 * @return The WordObj corresponding to the found shifter target, or null.
 	 */
-	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
-		System.out.println("Shifter: " + shifter.getLemma());
+	private WordObj findShifterTargetBaseline(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence,
+			int scope) {
 		WordObj shifterTarget = null;
-		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
-		System.out.println("Scope: " + Arrays.toString(shifterUnit.shifter_scope));
+		LinkedList<WordObj> wordList = sentence.getWordList();
+		int shifterPos = sentence.getWordPosition(shifter);
 
 		// TODO deletedNodes?
 		WordObj containsDeleted = shifter.getDeleted().peekFirst();
 		if (containsDeleted != null) {
-			System.out.println("DeletedNodes != null: " + shifter.getDeleted().toString());
+//			System.out.println("DeletedNodes != null: " + shifter.getDeleted().toString());
 			if (!(containsDeleted.getLemma().equals(""))) {
 				// shifter = containsDeleted;
 			}
 		}
-
-		HashSet<Edge> edges = sentence.getGraph().getEdges();
-
-		for (String scopeEntry : shifterUnit.shifter_scope) {
-			for (Edge edge : edges) {
-				// Special case for "nicht"
-				if (shifter.getLemma().equals("nicht")) {
-					if (edge.toString().contains("nicht")) {
-						System.out.println("edge: " + edge);
-						shifterTarget = edge.source;
-						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							return shifterTarget;
-						}
-					}
-				}
-				switch (scopeEntry) {
-				case "objp-*":
-					if (edge.depRel.contains("objp") && edge.source.equals(shifter)) {
-						System.out.println("edge: " + edge);
-						shifterTarget = edge.target;
-						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							return shifterTarget;
-						}
-					}
-				case "attr-rev":
-					if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
-						System.out.println("edge: " + edge);
-						shifterTarget = edge.source;
-						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							return shifterTarget;
-						}
-					}
-				case "det":
-					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
-						if (edge.target.getPos().equals("PPOSAT")) {
-							System.out.println("edge: " + edge);
-							shifterTarget = edge.target;
-							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-								return shifterTarget;
-							}
-						}
-					}
-					// TODO
-				case "clause":
-					final ConstituencyTree tree = sentence.getTree();
-					final Terminal wordNode = tree.getTerminal(shifter);
-					final Nonterminal containingClause;
-
-					if (tree.hasDominatingNode(wordNode, "S")) {
-						containingClause = tree.getLowestDominatingNode(wordNode, "S");
-					} else {
-						// This isn't supposed to happen except in case of parsing errors
-						containingClause = tree.getTrueRoot();
-					}
-					// List<Object> terminalNonterminalList =
-					// tree.getMainClause(containingClause);
-					shifterTarget = edge.target;
-					if (!tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
-						continue;
-					}
-					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-						System.out.println("Found shifterTarget for Clause!: " + shifterTarget);
-						return shifterTarget;
-					}
-				default:
-					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
-						shifterTarget = edge.target;
-						System.out.println("edge: " + edge);
-						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							return shifterTarget;
-						}
-					}
+		for (int i = 1; i <= scope; i++) {
+			if (wordList.size() > shifterPos + i) {
+				shifterTarget = wordList.get(shifterPos + i);
+				if (sentimentList.contains(shifterTarget)) {
+					return shifterTarget;
 				}
 			}
 		}

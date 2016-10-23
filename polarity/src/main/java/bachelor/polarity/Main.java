@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
+import bachelor.polarity.soPro.BaselineModule;
 import bachelor.polarity.soPro.Module;
 import bachelor.polarity.soPro.SalsaAPIConnective;
 import bachelor.polarity.soPro.SentenceList;
@@ -35,6 +36,7 @@ public class Main {
 			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
 			Boolean subjective_expression_module = Boolean.valueOf(prop.getProperty("SUBJECTIVE_EXPRESSION_MODULE"));
 			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
+			int baseleine_scope = Integer.valueOf(prop.getProperty("BASELINE_SCOPE"));
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -82,9 +84,11 @@ public class Main {
 			} else {
 				System.err.println("Warning! Subjective Expression Module turned off!");
 			}
-			
-			if(baseline_module){
-				//TODO
+
+			if (baseline_module) {
+				final BaselineModule baselineModule;
+				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseleine_scope);
+				modules.add(baselineModule);
 			}
 
 			// search for sentiment expressions and write results to the output file
