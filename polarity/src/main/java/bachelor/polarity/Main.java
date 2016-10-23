@@ -33,6 +33,8 @@ public class Main {
 			String sentiment_lexicon_input = prop.getProperty("SENTIMENT_LEXICON_INPUT");
 			String shifter_lexicon_input = prop.getProperty("SHIFTER_LEXICON_INPUT");
 			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
+			Boolean subjective_expression_module = Boolean.valueOf(prop.getProperty("SUBJECTIVE_EXPRESSION_MODULE"));
+			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -73,11 +75,17 @@ public class Main {
 			// modules.
 			final Set<Module> modules = new HashSet<Module>();
 
-			final SubjectiveExpressionModule subjectiveExpressionModule;
-
-			subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex);
-
-			modules.add(subjectiveExpressionModule);
+			if (subjective_expression_module) {
+				final SubjectiveExpressionModule subjectiveExpressionModule;
+				subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex);
+				modules.add(subjectiveExpressionModule);
+			} else {
+				System.err.println("Warning! Subjective Expression Module turned off!");
+			}
+			
+			if(baseline_module){
+				//TODO
+			}
 
 			// search for sentiment expressions and write results to the output file
 			// specified in the configuration file
