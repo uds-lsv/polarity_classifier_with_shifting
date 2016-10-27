@@ -657,9 +657,9 @@ nichts g [clause] nomen
 trotzen g [objd,obja,objc,obji,s,objp-*] verb
 ohne g [pp] appr
 nicht g [nicht] adv
-kein g [subj, attr-rev] adj
-einzigartig g [subj, attr-rev] adj
-weniger g [subj, attr-rev] adj
+kein g [subj,attr-rev] adj
+einzigartig g [subj,attr-rev] adj
+weniger g [subj,attr-rev] adj
 kaum g [clause] adv
 keinesfalls g [clause] adv
 ebensowenig g [clause] adv
