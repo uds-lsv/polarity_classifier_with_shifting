@@ -34,10 +34,18 @@ public class Main {
 			String sentiment_lexicon_input = prop.getProperty("SENTIMENT_LEXICON_INPUT");
 			String shifter_lexicon_input = prop.getProperty("SHIFTER_LEXICON_INPUT");
 			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
-			Boolean subjective_expression_module = Boolean.valueOf(prop.getProperty("SUBJECTIVE_EXPRESSION_MODULE"));
 			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
-			int baseleine_scope = Integer.valueOf(prop.getProperty("BASELINE_SCOPE"));
+			int baseline_window = Integer.valueOf(prop.getProperty("BASELINE_WINDOW"));
+			if(baseline_window < 1){
+				System.err.println("n must be bigger than 0 for the baseline module to work!");
+				System.err.println("Entered number: n=" +  baseline_window);
+				return;
+			}
 			String output = prop.getProperty("OUTPUT");
+			
+			//If no other module is turned on, use the standard subjective_expression_module.
+			Boolean subjective_expression_module = baseline_module.equals(Boolean.FALSE);
+
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -88,7 +96,7 @@ public class Main {
 
 			if (baseline_module) {
 				final BaselineModule baselineModule;
-				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseleine_scope);
+				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window);
 				modules.add(baselineModule);
 			}
 
