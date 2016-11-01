@@ -37,6 +37,7 @@ public class Main {
 			Boolean subjective_expression_module = Boolean.valueOf(prop.getProperty("SUBJECTIVE_EXPRESSION_MODULE"));
 			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
 			int baseleine_scope = Integer.valueOf(prop.getProperty("BASELINE_SCOPE"));
+			String output = prop.getProperty("OUTPUT");
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -95,9 +96,8 @@ public class Main {
 			// specified in the configuration file
 			final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
 			System.out.println("Looking for sentiment expressions...");
-			String outputPath = "output/salsaResult.xml";
 
-			sentcheck.findSentiments(outputPath);
+			sentcheck.findSentiments(output);
 		} catch (FileNotFoundException e) {
 			System.out.println("No config found at this config path: " + configPath);
 			return;

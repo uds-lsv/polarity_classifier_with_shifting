@@ -270,7 +270,7 @@ public class SubjectiveExpressionModule implements Module {
 						}
 					}
 					break;
-				// TODO
+				// TODO ?
 				case "clause":
 					final ConstituencyTree tree = sentence.getTree();
 					final Terminal wordNode = tree.getTerminal(shifter);
