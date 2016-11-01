@@ -89,6 +89,13 @@ public class SentimentChecker {
 		hflags.addFlag(polarityFlag);
 		this.salsaCon.getHead().setFlags(hflags);
 		this.salsaCon.getHead().setFrames(hframes);
+		
+		//Set meta: corpusId is necessary for the evaluation tool
+		CorpusId corpusId = new CorpusId();
+		corpusId.setId("1");
+		Meta meta = new Meta();
+		meta.setCorpus_id(corpusId);
+		this.salsaCon.getHead().setMeta(meta);
 
 		System.out.println("Analysing...");
 

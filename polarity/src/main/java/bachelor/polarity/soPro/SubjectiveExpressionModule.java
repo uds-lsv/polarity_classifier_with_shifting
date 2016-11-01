@@ -76,10 +76,24 @@ public class SubjectiveExpressionModule implements Module {
 		// Look up every word in the shifterLex and sentimentLex lexicons and add
 		// them to the shifterList or sentimentList.
 		for (WordObj word : sentence.getWordList()) {
-			if (sentimentLex.getSentiment(word.getLemma()) != null) {
-				sentimentList.add(word);
+			SentimentUnit sentLexEntry = sentimentLex.getSentiment(word.getLemma());
+			if (sentLexEntry != null) {
+				if (word.getPos().equals(sentLexEntry.pos)) {
+					sentimentList.add(word);
+				} else if (word.getPos().startsWith("V") && sentLexEntry.pos.startsWith("V")) {
+					sentimentList.add(word);
+				} else if (word.getPos().startsWith("A") && sentLexEntry.pos.startsWith("A")) {
+					sentimentList.add(word);
+				} else {
+					System.out.println("MISMATCH!!");
+					System.out.println("word found in sentimentlex: " + word.getLemma());
+					System.out.println("word Pos found in text: " + word.getPos());
+					System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+				}
+
 			}
-			if (shifterLex.getShifter(word.getLemma()) != null) {
+			ShifterUnit shifterLexEntry = shifterLex.getShifter(word.getLemma());
+			if (shifterLexEntry != null) {
 				shifterList.add(word);
 			}
 		}
