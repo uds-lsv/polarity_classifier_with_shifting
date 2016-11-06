@@ -35,17 +35,19 @@ public class Main {
 			String shifter_lexicon_input = prop.getProperty("SHIFTER_LEXICON_INPUT");
 			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
 			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
+			Boolean pos_lookup_sentiment = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SENTIMENT"));
+			Boolean pos_lookup_shifter = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SHIFTER"));
 			int baseline_window = Integer.valueOf(prop.getProperty("BASELINE_WINDOW"));
-			if(baseline_window < 1){
+			if (baseline_window < 1) {
 				System.err.println("n must be bigger than 0 for the baseline module to work!");
-				System.err.println("Entered number: n=" +  baseline_window);
+				System.err.println("Entered number: n=" + baseline_window);
 				return;
 			}
 			String output = prop.getProperty("OUTPUT");
-			
-			//If no other module is turned on, use the standard subjective_expression_module.
-			Boolean subjective_expression_module = baseline_module.equals(Boolean.FALSE);
 
+			// If no other module is turned on, use the standard
+			// subjective_expression_module.
+			Boolean subjective_expression_module = baseline_module.equals(Boolean.FALSE);
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -88,7 +90,8 @@ public class Main {
 
 			if (subjective_expression_module) {
 				final SubjectiveExpressionModule subjectiveExpressionModule;
-				subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex);
+				subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex, pos_lookup_sentiment,
+						pos_lookup_shifter);
 				modules.add(subjectiveExpressionModule);
 			} else {
 				System.err.println("Warning! Subjective Expression Module turned off!");

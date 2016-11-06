@@ -21,6 +21,8 @@ public class SubjectiveExpressionModule implements Module {
 
 	private SentimentLex sentimentLex;
 	private ShifterLex shifterLex;
+	Boolean posLookupSentiment;
+	Boolean posLookupShifter;
 	/**
 	 * Stores each sentence's polarity
 	 */
@@ -45,9 +47,12 @@ public class SubjectiveExpressionModule implements Module {
 	 *          A ShifterLex object in which the rules for finding shifter targets
 	 *          are saved as ShifterUnits.
 	 */
-	public SubjectiveExpressionModule(SentimentLex sentimentLex, ShifterLex shifterLex) {
+	public SubjectiveExpressionModule(SentimentLex sentimentLex, ShifterLex shifterLex, Boolean pos_lookup_sentiment,
+			Boolean pos_lookup_shifter) {
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
+		this.posLookupSentiment = pos_lookup_sentiment;
+		this.posLookupShifter = pos_lookup_shifter;
 	}
 
 	/**
@@ -76,21 +81,20 @@ public class SubjectiveExpressionModule implements Module {
 		// Look up every word in the shifterLex and sentimentLex lexicons and add
 		// them to the shifterList or sentimentList.
 		for (WordObj word : sentence.getWordList()) {
-			SentimentUnit sentLexEntry = sentimentLex.getSentiment(word.getLemma());
-			if (sentLexEntry != null) {
-				if (word.getPos().equals(sentLexEntry.pos)) {
-					sentimentList.add(word);
-				} else if (word.getPos().startsWith("V") && sentLexEntry.pos.startsWith("V")) {
-					sentimentList.add(word);
-				} else if (word.getPos().startsWith("A") && sentLexEntry.pos.startsWith("A")) {
-					sentimentList.add(word);
-				} else {
-					System.out.println("MISMATCH!!");
-					System.out.println("word found in sentimentlex: " + word.getLemma());
-					System.out.println("word Pos found in text: " + word.getPos());
-					System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+			ArrayList<SentimentUnit> sentLexEntries = sentimentLex.getAllSentiments(word.getLemma());
+			// SentimentUnit sentLexEntry =
+			// sentimentLex.getSentiment(word.getLemma());
+			if (sentLexEntries != null) {
+				for (SentimentUnit sentLexEntry : sentLexEntries) {
+					if (sentLexEntry != null) {
+						if (posLookupSentiment) {
+							posLookupSentiment(sentimentList, word, sentLexEntry);
+						} else {
+							sentimentList.add(word);
+							break;
+						}
+					}
 				}
-
 			}
 			ShifterUnit shifterLexEntry = shifterLex.getShifter(word.getLemma());
 			if (shifterLexEntry != null) {
@@ -208,6 +212,29 @@ public class SubjectiveExpressionModule implements Module {
 		globalsSentencePolarities.add(sentencePolarity);
 
 		return frames;
+	}
+
+	/**
+	 * Compares pos tags of found words in a sentence with sentiment lexicon
+	 * entries.
+	 * 
+	 * @param sentimentList
+	 * @param word
+	 * @param sentLexEntry
+	 */
+	private void posLookupSentiment(ArrayList<WordObj> sentimentList, WordObj word, SentimentUnit sentLexEntry) {
+		if (word.getPos().startsWith("N") && sentLexEntry.pos.equals("nomen")) {
+			sentimentList.add(word);
+		} else if (word.getPos().startsWith("V") && sentLexEntry.pos.equals("verben")) {
+			sentimentList.add(word);
+		} else if (word.getPos().startsWith("A") && sentLexEntry.pos.equals("adj")) {
+			sentimentList.add(word);
+		} else {
+			System.out.println("MISMATCH!!");
+			System.out.println("word found in sentimentlex: " + word.getLemma());
+			System.out.println("word Pos found in text: " + word.getPos());
+			System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+		}
 	}
 
 	/**
