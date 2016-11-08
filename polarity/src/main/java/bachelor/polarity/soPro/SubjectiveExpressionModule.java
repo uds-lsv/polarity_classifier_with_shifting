@@ -233,13 +233,17 @@ public class SubjectiveExpressionModule implements Module {
 	 *          the entry for the shifter in the shifter lexicon.
 	 */
 	private void posLookupShifter(ArrayList<WordObj> shifterList, WordObj word, ShifterUnit shifterLexEntry) {
-		if (word.getPos().startsWith("N") && shifterLexEntry.shifter_pos.equals("nomen")) {
+		if ((word.getPos().startsWith("N") || word.getPos().equals("PIS")) && shifterLexEntry.shifter_pos.equals("nomen")) {
 			shifterList.add(word);
 		} else if (word.getPos().startsWith("ADJ") && shifterLexEntry.shifter_pos.equals("adj")) {
 			shifterList.add(word);
 		} else if (word.getPos().startsWith("ADV") && shifterLexEntry.shifter_pos.equals("adv")) {
 			shifterList.add(word);
 		} else if (word.getPos().startsWith("V") && shifterLexEntry.shifter_pos.equals("verb")) {
+			shifterList.add(word);
+		} else if (word.getPos().equals("PTKNEG")) {
+			shifterList.add(word);
+		} else if (word.getPos().equals("APPR") && shifterLexEntry.shifter_pos.equals("appr")) {
 			shifterList.add(word);
 		} else {
 			System.out.println("Shifter POS-MISMATCH!");
