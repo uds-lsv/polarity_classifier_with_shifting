@@ -8869,5 +8869,4 @@ Plan POS=0.5 nomen
 offensichtlich POS=0.3 adj
 behandeln POS=0.5 verben
 abweisend NEG=1.0 adj
-abweisen NEG=1.0 verben
 Langzeitarbeitslosigkeit NEG=1.0 nomen

@@ -248,9 +248,14 @@ public class SubjectiveExpressionModule implements Module {
 		} else if (word.getPos().equals("APPR") && shifterLexEntry.shifter_pos.equals("appr")) {
 			shifterList.add(word);
 		} else {
-			System.out.println("Shifter POS-MISMATCH!");
-			System.out.println("word: " + word.getName() + " pos: " + word.getPos());
-			System.out.println("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
+			ShifterUnit shifterLexEntryNew = shifterLex.getShifter(word.getName());
+			if (shifterLexEntryNew != null && shifterLexEntry != shifterLexEntryNew) {
+				posLookupShifter(shifterList, word, shifterLexEntryNew);
+			} else {
+				System.out.println("Shifter POS-MISMATCH!");
+				System.out.println("word: " + word.getName() + " pos: " + word.getPos());
+				System.out.println("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
+			}
 		}
 	}
 
@@ -273,9 +278,17 @@ public class SubjectiveExpressionModule implements Module {
 		} else if (word.getPos().startsWith("A") && sentLexEntry.pos.equals("adj")) {
 			sentimentList.add(word);
 		} else {
-			System.out.println("Sentiment POS-MISMATCH!");
-			System.out.println("word: " + word.getName() + " pos: " + word.getPos());
-			System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+			// Check for another possible sentLexEntry using the exact word instead of
+			// its Lemma
+			// Example: "abweisen" vs "abweisend" gets found this way.
+			SentimentUnit sentLexEntryNew = sentimentLex.getSentiment(word.getName());
+			if (sentLexEntryNew != null && sentLexEntry != sentLexEntryNew) {
+				posLookupSentiment(sentimentList, word, sentLexEntryNew);
+			} else {
+				System.out.println("Sentiment POS-MISMATCH!");
+				System.out.println("word: " + word.getName() + " pos: " + word.getPos());
+				System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+			}
 		}
 	}
 
