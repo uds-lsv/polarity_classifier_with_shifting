@@ -176,7 +176,8 @@ public class SubjectiveExpressionModule implements Module {
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
 				// Also remove the shifter itself from the sentimentList.
-				sentimentList.remove(shifter);
+				// Not necessary ?
+//				sentimentList.remove(shifter);
 			} else {
 				// System.out.println("No shifterTarget found for " +
 				// shifter.getName());
@@ -334,7 +335,7 @@ public class SubjectiveExpressionModule implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
-					}
+					} /*System.out.println("edge: " + edge);*/ continue; 
 				}
 				switch (scopeEntry) {
 				case "objp-*":
