@@ -667,3 +667,5 @@ Tod p [gmod,objp-*] nomen
 Verbesserung g [gmod,objp-*] nomen
 Kampf g [gmod,objp-*] nomen
 Verbannung n [gmod,objp-*] nomen
+gescheitert g [subj,attr-rev] adj
+verringern g [subj] verb

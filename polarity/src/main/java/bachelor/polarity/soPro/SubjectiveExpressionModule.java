@@ -249,7 +249,7 @@ public class SubjectiveExpressionModule implements Module {
 			shifterList.add(word);
 		} else {
 			System.out.println("Shifter POS-MISMATCH!");
-			System.out.println("word: " + word.getLemma() + " pos: " + word.getPos());
+			System.out.println("word: " + word.getName() + " pos: " + word.getPos());
 			System.out.println("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
 		}
 	}
@@ -274,7 +274,7 @@ public class SubjectiveExpressionModule implements Module {
 			sentimentList.add(word);
 		} else {
 			System.out.println("Sentiment POS-MISMATCH!");
-			System.out.println("word: " + word.getLemma() + " pos: " + word.getPos());
+			System.out.println("word: " + word.getName() + " pos: " + word.getPos());
 			System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
 		}
 	}
