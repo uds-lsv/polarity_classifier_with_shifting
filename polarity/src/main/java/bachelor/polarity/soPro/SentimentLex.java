@@ -357,8 +357,8 @@ public class SentimentLex {
 						// System.out.println("category: " + category);
 
 						// TODO make this work for "0.7" as well as "0,7".
-						 Locale original = Locale.getDefault();
-						 Locale.setDefault(new Locale("de", "DE"));
+						Locale original = Locale.getDefault();
+						Locale.setDefault(new Locale("de", "DE"));
 						Scanner doubleScanner = new Scanner(inputLine.substring(inputLine.indexOf("=") + 1).replace('.', ','));
 						if (doubleScanner.hasNextDouble()) {
 							value = doubleScanner.nextDouble();
@@ -367,7 +367,7 @@ public class SentimentLex {
 							System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
 						}
 						doubleScanner.close();
-						 Locale.setDefault(original);
+						Locale.setDefault(original);
 
 						pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
 						// System.out.println("pos: " + pos);
@@ -375,8 +375,11 @@ public class SentimentLex {
 						mwe = wordFromInput.contains("_");
 
 						if (category != null && value != null && pos != null) {
-							SentimentUnit unit = new SentimentUnit(wordFromInput, category, value.toString(), pos, mwe);
-							this.addSentiment(unit);
+							// Ignore INT (intensifier) and Shifter
+							if (!category.equals("INT") && !category.equals("SHI") && !category.equals("NEU")) {
+								SentimentUnit unit = new SentimentUnit(wordFromInput, category, value.toString(), pos, mwe);
+								this.addSentiment(unit);
+							}
 						} else {
 							System.err.println("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");
 						}
