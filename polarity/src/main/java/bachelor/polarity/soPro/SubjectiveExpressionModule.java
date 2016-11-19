@@ -78,22 +78,9 @@ public class SubjectiveExpressionModule implements Module {
 		Double polaritySum = 0.0;
 		Double polarityOfWord = 0.0;
 
-		// Look up every word in the shifterLex and sentimentLex lexicons and add
-		// them to the shifterList or sentimentList.
+		// Look up every word of the sentence in the shifterLex and sentimentLex
+		// lexicons and add them to the shifterList or sentimentList.
 		for (WordObj word : sentence.getWordList()) {
-			ArrayList<SentimentUnit> sentLexEntries = sentimentLex.getAllSentiments(word.getLemma());
-			if (sentLexEntries != null) {
-				for (SentimentUnit sentLexEntry : sentLexEntries) {
-					if (sentLexEntry != null) {
-						if (posLookupSentiment) {
-							posLookupSentiment(sentimentList, word, sentLexEntry);
-						} else {
-							sentimentList.add(word);
-							break;
-						}
-					}
-				}
-			}
 			ArrayList<ShifterUnit> shifterLexEntries = shifterLex.getAllShifters(word.getLemma());
 			if (shifterLexEntries != null) {
 				for (ShifterUnit shifterLexEntry : shifterLexEntries) {
@@ -107,8 +94,21 @@ public class SubjectiveExpressionModule implements Module {
 					}
 				}
 			}
-		}
 
+			ArrayList<SentimentUnit> sentLexEntries = sentimentLex.getAllSentiments(word.getLemma());
+			if (sentLexEntries != null) {
+				for (SentimentUnit sentLexEntry : sentLexEntries) {
+					if (sentLexEntry != null) {
+						if (posLookupSentiment) {
+							posLookupSentiment(sentimentList, word, sentLexEntry);
+						} else {
+							sentimentList.add(word);
+							break;
+						}
+					}
+				}
+			}
+		}
 		// Iterate over every found shifter and search for targets in their scope.
 		// Also set frames.
 		for (WordObj shifter : shifterList) {
@@ -175,6 +175,8 @@ public class SubjectiveExpressionModule implements Module {
 				// Remove the shifterTarget from the sentiment list so it doesn't get
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
+				// Also remove the shifter itself from the sentimentList.
+				sentimentList.remove(shifter);
 			} else {
 				// System.out.println("No shifterTarget found for " +
 				// shifter.getName());
@@ -366,8 +368,10 @@ public class SubjectiveExpressionModule implements Module {
 					// List<Object> terminalNonterminalList =
 					// tree.getMainClause(containingClause);
 					shifterTarget = edge.target;
+					// System.out.println(shifterTarget.toString());
 					if (!tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
-						continue;
+						// TODO: check conditions
+						// continue;
 					}
 					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 						System.out.println("Found shifterTarget for Clause!: " + shifterTarget);
