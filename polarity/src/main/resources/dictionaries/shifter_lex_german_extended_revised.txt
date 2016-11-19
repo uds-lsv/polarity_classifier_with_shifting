@@ -83,9 +83,9 @@ zurückschrecken n [objd,obja,objc,obji,s,objp"von"] verb
 ruinieren p [objd,obja,objc,obji,s,objp-*] verb
 Ruinierung p [gmod,objp-*] nomen
 verbannen n [objd,obja,objc,obji,s,objp-*] verb
-blockieren g [objd,obja,objc,obji,s,objp-*] verb
+blockieren g [objd,obja,objc,obji,s,objp-*,subj,attr-rev] verb
 Blockade g [gmod,objp-*] nomen
-verbieten g [objd,obja,objc,obji,s,objp-*] verb
+verbieten g [objd,obja,objc,obji,s,objp-*,subj] verb
 Verbot g [gmod,objp-*] nomen
 versperren g [objd,obja,objc,obji,s,objp-*] verb
 Versperrung g [gmod,objp-*] nomen
@@ -669,3 +669,4 @@ Kampf g [gmod,objp-*] nomen
 Verbannung n [gmod,objp-*] nomen
 gescheitert g [subj,attr-rev] adj
 verringern g [subj] verb
+verringern n [subj] verb
