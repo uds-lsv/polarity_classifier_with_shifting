@@ -113,7 +113,15 @@ public class SubjectiveExpressionModule implements Module {
 		// Also set frames.
 		for (WordObj shifter : shifterList) {
 			// Look for the shifterTarget
-			WordObj shifterTarget = findShifterTarget(shifter, sentimentList, sentence);
+			WordObj shifterTarget = findShifterTarget(shifter, sentimentList, sentence, false);
+
+			if (shifterTarget == null) {
+				// No shifter target could be found. Look once more, but this time
+				// expanded
+				// to words indirectly relating to the shifter in the dependency parse.
+				// E.g. an adj of a connected subj. "Nicht die [schlechteste] Lösung"
+				shifterTarget = findShifterTarget(shifter, sentimentList, sentence, true);
+			}
 
 			if (shifterTarget != null) {
 
@@ -123,7 +131,7 @@ public class SubjectiveExpressionModule implements Module {
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
-				System.out.println("shifterTarget: " + shifterTarget);
+				System.out.println("found shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -177,7 +185,7 @@ public class SubjectiveExpressionModule implements Module {
 				sentimentList.remove(shifterTarget);
 				// Also remove the shifter itself from the sentimentList.
 				// Not necessary ?
-//				sentimentList.remove(shifter);
+				// sentimentList.remove(shifter);
 			} else {
 				// System.out.println("No shifterTarget found for " +
 				// shifter.getName());
@@ -307,7 +315,8 @@ public class SubjectiveExpressionModule implements Module {
 	 *          The sentence the shifter is in.
 	 * @return The WordObj corresponding to the found shifter target, or null.
 	 */
-	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
+	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence,
+			Boolean secondTime) {
 		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
@@ -332,16 +341,32 @@ public class SubjectiveExpressionModule implements Module {
 					if (edge.toString().contains("nicht")) {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
+						if (secondTime) {
+							if ((shifterTarget.getPosition() - 2) >= 0) {
+								System.out.println("shifterTarget orig: " + shifterTarget);
+								// TODO how to do this better?
+								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
+								System.out.println("shifterTarget after: " + shifterTarget);
+							}
+						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
-					} /*System.out.println("edge: " + edge);*/ continue; 
+					}
+					/* System.out.println("edge: " + edge); */ continue;
 				}
 				switch (scopeEntry) {
 				case "objp-*":
 					if (edge.depRel.contains("objp") && edge.source.equals(shifter)) {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.target;
+						if (secondTime) {
+							if ((shifterTarget.getPosition() - 2) >= 0) {
+								System.out.println("shifterTarget orig: " + shifterTarget);
+								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
+								System.out.println("shifterTarget after: " + shifterTarget);
+							}
+						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
@@ -351,6 +376,13 @@ public class SubjectiveExpressionModule implements Module {
 					if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
+						if (secondTime) {
+							if ((shifterTarget.getPosition() - 2) >= 0) {
+								System.out.println("shifterTarget orig: " + shifterTarget);
+								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
+								System.out.println("shifterTarget after: " + shifterTarget);
+							}
+						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
 						}
@@ -361,6 +393,13 @@ public class SubjectiveExpressionModule implements Module {
 						if (edge.target.getPos().equals("PPOSAT")) {
 							System.out.println("edge: " + edge);
 							shifterTarget = edge.target;
+							if (secondTime) {
+								if ((shifterTarget.getPosition() - 2) >= 0) {
+									System.out.println("shifterTarget orig: " + shifterTarget);
+									shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
+									System.out.println("shifterTarget after: " + shifterTarget);
+								}
+							}
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								return shifterTarget;
 							}
@@ -382,6 +421,13 @@ public class SubjectiveExpressionModule implements Module {
 					// List<Object> terminalNonterminalList =
 					// tree.getMainClause(containingClause);
 					shifterTarget = edge.target;
+					if (secondTime) {
+						if ((shifterTarget.getPosition() - 2) >= 0) {
+							System.out.println("shifterTarget orig: " + shifterTarget);
+							shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
+							System.out.println("shifterTarget after: " + shifterTarget);
+						}
+					}
 					// System.out.println(shifterTarget.toString());
 					if (!tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
 						// TODO: check conditions
@@ -395,8 +441,16 @@ public class SubjectiveExpressionModule implements Module {
 				default:
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
+						if (secondTime) {
+							if ((shifterTarget.getPosition() - 2) >= 0) {
+								System.out.println("shifterTarget orig: " + shifterTarget);
+								shifterTarget = (WordObj) sentence.getWordList().get(shifterTarget.getPosition() - 2);
+								System.out.println("shifterTarget after: " + shifterTarget);
+							}
+						}
 						System.out.println("found with edge: " + edge);
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+							System.out.println("return: " + shifterTarget);
 							return shifterTarget;
 						}
 					}
