@@ -8548,6 +8548,7 @@ beleidigend NEG=1 adj
 illusorisch NEG=1 adj
 wahllos NEG=0.5 adj
 notwendig POS=0.7 adj
+notwendige POS=0.7 adj
 schwesterlich POS=0.7 adj
 manierlich POS=0.7 adj
 unbeschreiblich NEG=0.7 adj

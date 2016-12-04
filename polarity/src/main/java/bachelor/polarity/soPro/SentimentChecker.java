@@ -105,7 +105,7 @@ public class SentimentChecker {
 			SentenceObj stmp = list.sentenceList.get(i);
 			Semantics sem = findSentiment(stmp);
 			this.salsaCon.getSentences().get(i).setSem(sem);
-			System.out.println("Sentence " + (i + 1) + " of " + list.sentenceList.size());
+			System.out.println("Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.");
 		}
 
 		System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
