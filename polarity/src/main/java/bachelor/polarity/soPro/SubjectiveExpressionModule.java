@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
@@ -169,9 +170,12 @@ public class SubjectiveExpressionModule implements Module {
 
 			if (shifterTarget == null) {
 				// No shifter target could be found. Look once more, but this time
-				// expanded to words indirectly relating to the shifter in the dependency parse.
-				// E.g. an adj of a connected subj. "Nicht die [schlechteste] Sache" instead
+				// expanded to words indirectly relating to the shifter in the
+				// dependency parse.
+				// E.g. an adj of a connected subj. "Nicht die [schlechteste] Sache"
+				// instead
 				// of "Nicht die schlechteste [Sache]".
+				System.out.println("Second time shifter target search!");
 				shifterTarget = findShifterTarget(shifter, sentimentList, sentence, true);
 			}
 
@@ -202,7 +206,7 @@ public class SubjectiveExpressionModule implements Module {
 				String valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityWithoutShift);
-				
+
 				// Compute the polarity value after a shift
 				polarityOfWord = Double.valueOf(polarityValueStr);
 				switch (shifterType) {
@@ -544,7 +548,10 @@ public class SubjectiveExpressionModule implements Module {
 		// add extra Fenode for particle of a verb if existent
 		if (sentiment.getIsParticleVerb()) {
 			WordObj particle = sentiment.getParticle();
-			target.addFenode(new Fenode(sentence.getTree().getTerminal(particle).getId()));
+			Fenode particleFeNode = new Fenode(sentence.getTree().getTerminal(particle).getId());
+			if (!target.getFenodes().contains(particleFeNode)) {
+				target.addFenode(particleFeNode);
+			}
 		}
 		frame.setTarget(target);
 		frames.add(frame);
@@ -594,20 +601,27 @@ public class SubjectiveExpressionModule implements Module {
 		// Compare fenodeIds with terminal Ids of the tree terminals to get to the
 		// WordObjs.
 		int wordIndex = 0;
-
+		ArrayList<WordObj> particles = new ArrayList<WordObj>();
+		
 		for (Terminal terminal : presetTree.getTerminals()) {
 			wordIndex += 1;
 			String terminalId = terminal.getId().getId();
 			for (String fenodeId : fenodeIds) {
 				if (terminalId.equals(fenodeId)) {
+					WordObj wordObj = sentence.getWordList().get(wordIndex - 1);
 					// System.out.println("found preset SE: " + terminal.getWord());
 					// System.out.println("with wordIndex: " + wordIndex);
-					sentimentList.add(sentence.getWordList().get(wordIndex - 1));
-					// System.out.println("added Wordobj: " +
-					// sentence.getWordList().get(wordIndex -1));
+					sentimentList.add(wordObj);
+					// System.out.println("added given SE: " + wordObj);
+					if(wordObj.getIsParticleVerb()){
+						particles.add(wordObj.getParticle());
+					}
 				}
 			}
 		}
+		// In case of multi word expressions, things might be added twice.
+		// Remove particles of particle words as they are already accounted for.
+		sentimentList.removeAll(particles);
 
 		// Preset SEs might not have an entry as SentimentUnit in the SentimentLex,
 		// with lemma, pos, value, etc.
