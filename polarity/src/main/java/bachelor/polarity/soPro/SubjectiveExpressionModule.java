@@ -10,19 +10,30 @@ import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
+import bachelor.polarity.salsa.corpora.elements.Frames;
 import bachelor.polarity.salsa.corpora.elements.Global;
 import bachelor.polarity.salsa.corpora.elements.Globals;
+import bachelor.polarity.salsa.corpora.elements.Graph;
 import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Sentence;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 
+/**
+ * Find subjective expressions (SE) and shifter and their targets. Optionally
+ * use given SE locations. Add Frame data to Salsa XML output.
+ * 
+ * @author Maximilian
+ *
+ */
 public class SubjectiveExpressionModule implements Module {
 
+	private SalsaAPIConnective salsa;
 	private SentimentLex sentimentLex;
 	private ShifterLex shifterLex;
 	Boolean posLookupSentiment;
 	Boolean posLookupShifter;
+	Boolean usePresetSELocations = Boolean.FALSE;
 	/**
 	 * Stores each sentence's polarity
 	 */
@@ -46,6 +57,12 @@ public class SubjectiveExpressionModule implements Module {
 	 * @param shifterLex
 	 *          A ShifterLex object in which the rules for finding shifter targets
 	 *          are saved as ShifterUnits.
+	 * @param pos_lookup_sentiment
+	 *          Optionally use pos matching for subjective expressions. Compares
+	 *          lexicon entries with words found in the input.
+	 * @param pos_lookup_shifter
+	 *          Optionally use pos matching for shifters. Compares lexicon entries
+	 *          with words found in the input.
 	 */
 	public SubjectiveExpressionModule(SentimentLex sentimentLex, ShifterLex shifterLex, Boolean pos_lookup_sentiment,
 			Boolean pos_lookup_shifter) {
@@ -53,6 +70,35 @@ public class SubjectiveExpressionModule implements Module {
 		this.shifterLex = shifterLex;
 		this.posLookupSentiment = pos_lookup_sentiment;
 		this.posLookupShifter = pos_lookup_shifter;
+	}
+
+	/**
+	 * Constructs a new SubjectiveExpressionModule with given SE locations.
+	 * 
+	 * @param salsa
+	 *          A salsa API connective with information to the location of SE
+	 *          expressions in the input sentences.
+	 * @param sentimentLex
+	 *          A SentimentLex object in which the rules for finding sentiment
+	 *          sources and targets are saved as SentimentUnits.
+	 * @param shifterLex
+	 *          A ShifterLex object in which the rules for finding shifter targets
+	 *          are saved as ShifterUnits.
+	 * @param pos_lookup_sentiment
+	 *          Optionally use pos matching for subjective expressions. Compares
+	 *          lexicon entries with words found in the input.
+	 * @param pos_lookup_shifter
+	 *          Optionally use pos matching for shifters. Compares lexicon entries
+	 *          with words found in the input.
+	 */
+	public SubjectiveExpressionModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex,
+			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter) {
+		this.salsa = salsa;
+		this.sentimentLex = sentimentLex;
+		this.shifterLex = shifterLex;
+		this.posLookupSentiment = pos_lookup_sentiment;
+		this.posLookupShifter = pos_lookup_shifter;
+		this.usePresetSELocations = Boolean.TRUE;
 	}
 
 	/**
@@ -75,6 +121,10 @@ public class SubjectiveExpressionModule implements Module {
 		ArrayList<WordObj> sentimentList = new ArrayList<WordObj>();
 		ArrayList<WordObj> shifterList = new ArrayList<WordObj>();
 
+		if (usePresetSELocations) {
+			usePresetSELocations(sentence, sentimentList);
+		}
+
 		Double polaritySum = 0.0;
 		Double polarityOfWord = 0.0;
 
@@ -95,15 +145,17 @@ public class SubjectiveExpressionModule implements Module {
 				}
 			}
 
-			ArrayList<SentimentUnit> sentLexEntries = sentimentLex.getAllSentiments(word.getLemma());
-			if (sentLexEntries != null) {
-				for (SentimentUnit sentLexEntry : sentLexEntries) {
-					if (sentLexEntry != null) {
-						if (posLookupSentiment) {
-							posLookupSentiment(sentimentList, word, sentLexEntry);
-						} else {
-							sentimentList.add(word);
-							break;
+			if (!usePresetSELocations) {
+				ArrayList<SentimentUnit> sentLexEntries = sentimentLex.getAllSentiments(word.getLemma());
+				if (sentLexEntries != null) {
+					for (SentimentUnit sentLexEntry : sentLexEntries) {
+						if (sentLexEntry != null) {
+							if (posLookupSentiment) {
+								posLookupSentiment(sentimentList, word, sentLexEntry);
+							} else {
+								sentimentList.add(word);
+								break;
+							}
 						}
 					}
 				}
@@ -117,15 +169,15 @@ public class SubjectiveExpressionModule implements Module {
 
 			if (shifterTarget == null) {
 				// No shifter target could be found. Look once more, but this time
-				// expanded
-				// to words indirectly relating to the shifter in the dependency parse.
-				// E.g. an adj of a connected subj. "Nicht die [schlechteste] Lösung"
+				// expanded to words indirectly relating to the shifter in the dependency parse.
+				// E.g. an adj of a connected subj. "Nicht die [schlechteste] Sache" instead
+				// of "Nicht die schlechteste [Sache]".
 				shifterTarget = findShifterTarget(shifter, sentimentList, sentence, true);
 			}
 
 			if (shifterTarget != null) {
 
-				// Create Frame object
+				// Create Frame object for Salsa XML output
 				final Frame frame = new Frame("SubjectiveExpression", frameIds.next());
 				final FrameElementIds feIds = new FrameElementIds(frame);
 
@@ -150,13 +202,14 @@ public class SubjectiveExpressionModule implements Module {
 				String valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityWithoutShift);
-				// Compute the polarity value after the shift
+				
+				// Compute the polarity value after a shift
 				polarityOfWord = Double.valueOf(polarityValueStr);
 				switch (shifterType) {
-				case "on negative":
+				case ShifterLex.SHIFTER_TYPE_ON_NEGATIVE:
 					polarityCategory = "POS";
 					break;
-				case "on positive":
+				case ShifterLex.SHIFTER_TYPE_ON_POSITIVE:
 					polarityCategory = "NEG";
 					polarityOfWord = polarityOfWord * -1.0;
 					break;
@@ -496,4 +549,77 @@ public class SubjectiveExpressionModule implements Module {
 		frame.setTarget(target);
 		frames.add(frame);
 	}
+
+	/**
+	 * If preset SE locations are given, identifies and uses them.
+	 * 
+	 * @param sentence
+	 *          The current sentence.
+	 * @param sentimentList
+	 *          List of subjective expressions in the current sentence.
+	 */
+	private void usePresetSELocations(SentenceObj sentence, ArrayList<WordObj> sentimentList) {
+		ArrayList<Sentence> salsaSentences = salsa.getBody().getSentences();
+
+		Sentence presetSentence = null;
+		Graph presetGraph = null;
+		ConstituencyTree presetTree = null;
+
+		// Find the current sentence in the salsa corpus
+		for (int i = 0; i < salsaSentences.size(); i++) {
+			presetSentence = salsaSentences.get(i);
+			presetGraph = presetSentence.getGraph();
+			presetTree = new ConstituencyTree(presetGraph);
+			if (sentence.getTree().toString().equals(presetTree.toString())) {
+				break;
+			}
+		}
+
+		// Collect the preset SEs
+		ArrayList<Frames> presetFrames = presetSentence.getSem().getFrames();
+
+		// First collect Ids of SE fenodes
+		ArrayList<String> fenodeIds = new ArrayList<>();
+
+		for (Frames allPresetFrames : presetFrames) {
+			for (int i = 0; i < allPresetFrames.getFrames().size(); i++) {
+				Frame presetFrame = allPresetFrames.getFrames().get(i);
+				ArrayList<Fenode> fenodes = presetFrame.getTarget().getFenodes();
+				for (Fenode fe : fenodes) {
+					fenodeIds.add(fe.getIdref().getId());
+				}
+			}
+		}
+
+		// Compare fenodeIds with terminal Ids of the tree terminals to get to the
+		// WordObjs.
+		int wordIndex = 0;
+
+		for (Terminal terminal : presetTree.getTerminals()) {
+			wordIndex += 1;
+			String terminalId = terminal.getId().getId();
+			for (String fenodeId : fenodeIds) {
+				if (terminalId.equals(fenodeId)) {
+					// System.out.println("found preset SE: " + terminal.getWord());
+					// System.out.println("with wordIndex: " + wordIndex);
+					sentimentList.add(sentence.getWordList().get(wordIndex - 1));
+					// System.out.println("added Wordobj: " +
+					// sentence.getWordList().get(wordIndex -1));
+				}
+			}
+		}
+
+		// Preset SEs might not have an entry as SentimentUnit in the SentimentLex,
+		// with lemma, pos, value, etc.
+		// Create dummy entries in those cases
+		for (WordObj sentiment : sentimentList) {
+			if (sentimentLex.getAllSentiments(sentiment.getLemma()) == null) {
+				System.out.println("no entry for: " + sentiment.getLemma());
+				SentimentUnit newUnit = new SentimentUnit(sentiment.getLemma(), "UNKNOWN", "0.0", sentiment.getPos(),
+						Boolean.FALSE);
+				sentimentLex.addSentiment(newUnit);
+			}
+		}
+	}
+
 }

@@ -10,7 +10,6 @@ import java.util.Set;
 
 import bachelor.polarity.soPro.BaselineModule;
 import bachelor.polarity.soPro.Module;
-import bachelor.polarity.soPro.PresetSEModule;
 import bachelor.polarity.soPro.SalsaAPIConnective;
 import bachelor.polarity.soPro.SentenceList;
 import bachelor.polarity.soPro.SentimentChecker;
@@ -50,8 +49,7 @@ public class Main {
 
 			// If no other module is turned on, use the standard
 			// subjective_expression_module.
-			Boolean subjective_expression_module = (baseline_module.equals(Boolean.FALSE)
-					&& use_preset_se_input.equals(Boolean.FALSE));
+			Boolean subjective_expression_module = (baseline_module.equals(Boolean.FALSE));
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -89,12 +87,12 @@ public class Main {
 			shifterLex.fileToLex(shifter_lexicon_input);
 
 			// Read in preset se file
-			Boolean preset_se_module = Boolean.FALSE;
+			Boolean got_preset_se_file = Boolean.FALSE;
 			if (!preset_se_input.isEmpty()) {
 				if (use_preset_se_input) {
 					System.out.println("Reader preset se file from " + preset_se_input + "...");
 					SalsaAPIConnective salsa_preset = new SalsaAPIConnective(preset_se_input, sentences);
-					preset_se_module = Boolean.TRUE;
+					got_preset_se_file = Boolean.TRUE;
 					salsa = salsa_preset;
 				} else {
 					System.err.println("A preset se file path has been specified, but the option to use it is turned off.");
@@ -109,17 +107,17 @@ public class Main {
 			// modules.
 			final Set<Module> modules = new HashSet<Module>();
 
-			if (subjective_expression_module) {
+			if (subjective_expression_module && got_preset_se_file && use_preset_se_input) {
+				final SubjectiveExpressionModule subjectiveExpressionModule;
+				subjectiveExpressionModule = new SubjectiveExpressionModule(salsa, sentimentLex, shifterLex,
+						pos_lookup_sentiment, pos_lookup_shifter);
+				modules.add(subjectiveExpressionModule);
+			} else if (subjective_expression_module) {
 				final SubjectiveExpressionModule subjectiveExpressionModule;
 				subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex, pos_lookup_sentiment,
 						pos_lookup_shifter);
 				modules.add(subjectiveExpressionModule);
-			} else if (preset_se_module) {
-				final PresetSEModule presetSEModule;
-				presetSEModule = new PresetSEModule(salsa, sentimentLex, shifterLex, pos_lookup_sentiment, pos_lookup_shifter);
-				modules.add(presetSEModule);
-			}
-			else {
+			} else {
 				System.err.println("Warning! Subjective Expression Module turned off!");
 			}
 

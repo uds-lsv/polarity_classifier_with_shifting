@@ -15,6 +15,11 @@ import java.util.Scanner;
  *
  */
 public class ShifterLex {
+	
+	// Constants
+	public static final String SHIFTER_TYPE_GENERAL = "general";
+	public static final String SHIFTER_TYPE_ON_POSITIVE = "on positive";
+	public static final String SHIFTER_TYPE_ON_NEGATIVE = "on negative";
 
 	List<ShifterUnit> shifterList = new ArrayList<ShifterUnit>();
 	Map<String, ShifterUnit> shifterMap = new HashMap<String, ShifterUnit>();
@@ -359,13 +364,13 @@ public class ShifterLex {
 						String shifter_type_written_out = new String();
 						switch (shifter_type) {
 						case "g":
-							shifter_type_written_out = "general";
+							shifter_type_written_out = SHIFTER_TYPE_GENERAL;
 							break;
 						case "p":
-							shifter_type_written_out = "on positive";
+							shifter_type_written_out = SHIFTER_TYPE_ON_POSITIVE;
 							break;
 						case "n":
-							shifter_type_written_out = "on negative";
+							shifter_type_written_out = SHIFTER_TYPE_ON_NEGATIVE;
 							break;
 						default:
 							System.err.println("Warning: unknown shifter_type: " + shifter_type + " for shifter: " + shifterStr);
