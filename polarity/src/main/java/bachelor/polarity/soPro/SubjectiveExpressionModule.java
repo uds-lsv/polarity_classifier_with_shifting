@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.tools.ant.util.SymbolicLinkUtils;
+
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
@@ -377,7 +379,7 @@ public class SubjectiveExpressionModule implements Module {
 		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
-		System.out.println("Scope: " + Arrays.toString(shifterUnit.shifter_scope));
+//		System.out.println("Scope: " + Arrays.toString(shifterUnit.shifter_scope));
 
 		// TODO deletedNodes?
 		WordObj containsDeleted = shifter.getDeleted().peekFirst();
@@ -401,6 +403,8 @@ public class SubjectiveExpressionModule implements Module {
 						if (secondTime) {
 							if ((shifterTarget.getPosition() - 2) >= 0) {
 								System.out.println("shifterTarget orig: " + shifterTarget);
+								System.out.println("edge of shifterTarget: " + shifterTarget.getEdge());
+								System.out.println("relation: " + shifterTarget.getRelation());
 								// TODO how to do this better?
 								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
 								System.out.println("shifterTarget after: " + shifterTarget);
