@@ -121,9 +121,15 @@ public class Main {
 				System.err.println("Warning! Subjective Expression Module turned off!");
 			}
 
-			if (baseline_module) {
+			if (baseline_module && got_preset_se_file && use_preset_se_input) {
 				final BaselineModule baselineModule;
-				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window);
+				baselineModule = new BaselineModule(salsa, sentimentLex, shifterLex, baseline_window,
+						pos_lookup_sentiment, pos_lookup_shifter);
+				modules.add(baselineModule);
+			} else if (baseline_module) {
+				final BaselineModule baselineModule;
+				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window, 
+						pos_lookup_sentiment,	pos_lookup_shifter);
 				modules.add(baselineModule);
 			}
 

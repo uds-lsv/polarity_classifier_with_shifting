@@ -1,9 +1,7 @@
 package bachelor.polarity.soPro;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.LinkedList;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
@@ -11,14 +9,11 @@ import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
 import bachelor.polarity.salsa.corpora.elements.Global;
-import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Target;
-import bachelor.polarity.salsa.corpora.elements.Terminal;
 
-public class BaselineModule implements Module {
 
-	private SentimentLex sentimentLex;
-	private ShifterLex shifterLex;
+public class BaselineModule extends ModuleBasics implements Module {
+
 	/**
 	 * Defines the scope in which shifter targets are searched for.
 	 */
@@ -50,12 +45,52 @@ public class BaselineModule implements Module {
 	 *          A ShifterLex object in which the rules for finding shifter targets
 	 *          are saved as ShifterUnits.
 	 * @param scope
-	 *          Defines the scope in which shifter targets are searched for.
+	 *          Defines the scope/window in which shifter targets are searched
+	 *          for.
+	 * @param pos_lookup_sentiment
+	 *          Option to do pos lookup for SEs.
+	 * @param pos_lookup_shifter
+	 *          Option to do pos lookup for shifters.
 	 */
-	public BaselineModule(SentimentLex sentimentLex, ShifterLex shifterLex, int scope) {
+	public BaselineModule(SentimentLex sentimentLex, ShifterLex shifterLex, int scope, Boolean pos_lookup_sentiment,
+			Boolean pos_lookup_shifter) {
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
 		this.scope = scope;
+		this.posLookupSentiment = pos_lookup_sentiment;
+		this.posLookupShifter = pos_lookup_shifter;
+	}
+
+	/**
+	 * Constructs a new BaselineModule. Looks for shifter targets within the
+	 * specified scope to the right of the shifter. Does not use dependency
+	 * information. Uses preset SE locations.
+	 * 
+	 * @param salsa
+	 *          Salsa API connective containing locations of SEs.
+	 * @param sentimentLex
+	 *          A SentimentLex object in which the rules for finding sentiment
+	 *          sources and targets are saved as SentimentUnits.
+	 * @param shifterLex
+	 *          A ShifterLex object in which the rules for finding shifter targets
+	 *          are saved as ShifterUnits.
+	 * @param scope
+	 *          Defines the scope/window in which shifter targets are searched
+	 *          for.
+	 * @param pos_lookup_sentiment
+	 *          Option to do pos lookup for SEs.
+	 * @param pos_lookup_shifter
+	 *          Option to do pos lookup for shifters.
+	 */
+	public BaselineModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex, int scope,
+			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter) {
+		this.salsa = salsa;
+		this.sentimentLex = sentimentLex;
+		this.shifterLex = shifterLex;
+		this.scope = scope;
+		this.posLookupSentiment = pos_lookup_sentiment;
+		this.posLookupShifter = pos_lookup_shifter;
+		this.usePresetSELocations = Boolean.TRUE;
 	}
 
 	/**
@@ -78,31 +113,44 @@ public class BaselineModule implements Module {
 		ArrayList<WordObj> sentimentList = new ArrayList<WordObj>();
 		ArrayList<WordObj> shifterList = new ArrayList<WordObj>();
 
+		if (usePresetSELocations) {
+			usePresetSELocations(sentence, sentimentList);
+		}
+
 		Double polaritySum = 0.0;
 		Double polarityOfWord = 0.0;
 
-		// Look up every word in the shifterLex and sentimentLex lexicons and add
-		// them to the shifterList or sentimentList.
+		// Look up every word of the sentence in the shifterLex and sentimentLex
+		// lexicons and add them to the shifterList or sentimentList.
 		for (WordObj word : sentence.getWordList()) {
-			SentimentUnit sentLexEntry = sentimentLex.getSentiment(word.getLemma());
-			if (sentLexEntry != null) {
-				if (word.getPos().equals(sentLexEntry.pos)) {
-					sentimentList.add(word);
-				} else if (word.getPos().startsWith("V") && sentLexEntry.pos.startsWith("V")) {
-					sentimentList.add(word);
-				} else if (word.getPos().startsWith("A") && sentLexEntry.pos.startsWith("A")) {
-					sentimentList.add(word);
-				} else {
-					System.out.println("MISMATCH!!");
-					System.out.println("word found in sentimentlex: " + word.getLemma());
-					System.out.println("word Pos found in text: " + word.getPos());
-					System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+			ArrayList<ShifterUnit> shifterLexEntries = shifterLex.getAllShifters(word.getLemma());
+			if (shifterLexEntries != null) {
+				for (ShifterUnit shifterLexEntry : shifterLexEntries) {
+					if (shifterLexEntry != null) {
+						if (posLookupShifter) {
+							posLookupShifter(shifterList, word, shifterLexEntry);
+						} else {
+							shifterList.add(word);
+							break;
+						}
+					}
 				}
-
 			}
-			ShifterUnit shifterLexEntry = shifterLex.getShifter(word.getLemma());
-			if (shifterLexEntry != null) {
-				shifterList.add(word);
+
+			if (!usePresetSELocations) {
+				ArrayList<SentimentUnit> sentLexEntries = sentimentLex.getAllSentiments(word.getLemma());
+				if (sentLexEntries != null) {
+					for (SentimentUnit sentLexEntry : sentLexEntries) {
+						if (sentLexEntry != null) {
+							if (posLookupSentiment) {
+								posLookupSentiment(sentimentList, word, sentLexEntry);
+							} else {
+								sentimentList.add(word);
+								break;
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -120,7 +168,7 @@ public class BaselineModule implements Module {
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
-//				System.out.println("shifterTarget: " + shifterTarget);
+				// System.out.println("shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -241,7 +289,8 @@ public class BaselineModule implements Module {
 		// TODO deletedNodes?
 		WordObj containsDeleted = shifter.getDeleted().peekFirst();
 		if (containsDeleted != null) {
-//			System.out.println("DeletedNodes != null: " + shifter.getDeleted().toString());
+			// System.out.println("DeletedNodes != null: " +
+			// shifter.getDeleted().toString());
 			if (!(containsDeleted.getLemma().equals(""))) {
 				// shifter = containsDeleted;
 			}
@@ -255,42 +304,5 @@ public class BaselineModule implements Module {
 			}
 		}
 		return null;
-	}
-
-	/**
-	 * Helper method used to set Salsa Frames for subjective expressions.
-	 * 
-	 * @param sentence
-	 *          The relevant sentence.
-	 * @param frames
-	 *          The Frame collection to be modified.
-	 * @param sentiment
-	 *          The relevant sentiment.
-	 * @param frame
-	 *          The Frame to be set.
-	 * @param target
-	 *          The target to set the Frame to.
-	 */
-	private void setFrames(SentenceObj sentence, final Collection<Frame> frames, WordObj sentiment, final Frame frame,
-			final Target target) {
-		target.addFenode(new Fenode(sentence.getTree().getTerminal(sentiment).getId()));
-
-		// In case of mwe: add all collocations to the subjective expression
-		// xml/frame
-		SentimentUnit unit = sentimentLex.getSentiment(sentiment.getLemma());
-		if (unit.mwe) {
-			ArrayList<WordObj> matches = sentence.getGraph().getMweMatches(sentiment,
-					new ArrayList<String>(Arrays.asList(unit.collocations)), true);
-			for (WordObj match : matches) {
-				target.addFenode(new Fenode(sentence.getTree().getTerminal(match).getId()));
-			}
-		}
-		// add extra Fenode for particle of a verb if existent
-		if (sentiment.getIsParticleVerb()) {
-			WordObj particle = sentiment.getParticle();
-			target.addFenode(new Fenode(sentence.getTree().getTerminal(particle).getId()));
-		}
-		frame.setTarget(target);
-		frames.add(frame);
 	}
 }
