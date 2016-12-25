@@ -36,7 +36,7 @@ public class MyFileWriter {
 	public void writeToFile(String text) throws IOException {
 
 		File outputFile = new File(fileName);
-		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile)));
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"));
 
 		out.write(text);
 
