@@ -5889,7 +5889,7 @@
 6	Krieg	Krieg	N	NN	Masc|Dat|Sg	4	pn	_	_
 7	oder	oder	KON	KON	_	4	kon	_	_
 8	erst	erst	ADV	ADV	_	7	cj	_	_
-9	danach	danach	PTKVZ	PTKVZ	_	1	avz	_	_
+9	danach	danach	PTKVZ	PTKVZ	_	1	pp	_	_
 10	?	?	$.	$.	_	0	root	_	_
 
 1	In	in	PREP	APPR	Dat	4	pp	_	_
