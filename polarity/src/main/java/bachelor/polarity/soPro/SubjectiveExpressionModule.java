@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
-
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
@@ -260,8 +259,8 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 		sentencePolarity.setText("The sentence polarity.");
 		globalsSentencePolarities.add(sentencePolarity);
 
-//		System.out.println("MISSING:");
-//		System.out.println(missingInGermanLex.toString());
+		// System.out.println("MISSING:");
+		// System.out.println(missingInGermanLex.toString());
 		return frames;
 	}
 
@@ -284,7 +283,8 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
-//		System.out.println("Scope: " + Arrays.toString(shifterUnit.shifter_scope));
+		// System.out.println("Scope: " +
+		// Arrays.toString(shifterUnit.shifter_scope));
 
 		// TODO deletedNodes?
 		WordObj containsDeleted = shifter.getDeleted().peekFirst();
@@ -306,16 +306,15 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						if (secondTime) {
-							WordObj node = sentence.getGraph().getChild(shifterTarget, "attr");
-							System.out.println("NODE: " + node);
-							if ((shifterTarget.getPosition() - 2) >= 0) {
-								System.out.println("shifterTarget orig: " + shifterTarget);
-								System.out.println("edge of shifterTarget: " + shifterTarget.getEdge());
-								System.out.println("relation: " + shifterTarget.getRelation());
-								// TODO how to do this better?
-								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
-								System.out.println("shifterTarget after: " + shifterTarget);
-							}
+							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
+							// old way
+							/*
+							 * if ((shifterTarget.getPosition() - 2) >= 0) {
+							 * System.out.println("shifterTarget orig: " + shifterTarget);
+							 * shifterTarget =
+							 * sentence.getWordList().get(shifterTarget.getPosition() - 2);
+							 * System.out.println("shifterTarget after: " + shifterTarget); }
+							 */
 						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
@@ -329,11 +328,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.target;
 						if (secondTime) {
-							if ((shifterTarget.getPosition() - 2) >= 0) {
-								System.out.println("shifterTarget orig: " + shifterTarget);
-								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
-								System.out.println("shifterTarget after: " + shifterTarget);
-							}
+							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
@@ -345,11 +340,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						if (secondTime) {
-							if ((shifterTarget.getPosition() - 2) >= 0) {
-								System.out.println("shifterTarget orig: " + shifterTarget);
-								shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
-								System.out.println("shifterTarget after: " + shifterTarget);
-							}
+							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							return shifterTarget;
@@ -362,11 +353,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							System.out.println("edge: " + edge);
 							shifterTarget = edge.target;
 							if (secondTime) {
-								if ((shifterTarget.getPosition() - 2) >= 0) {
-									System.out.println("shifterTarget orig: " + shifterTarget);
-									shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
-									System.out.println("shifterTarget after: " + shifterTarget);
-								}
+								shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							}
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								return shifterTarget;
@@ -390,14 +377,10 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					// tree.getMainClause(containingClause);
 					shifterTarget = edge.target;
 					if (secondTime) {
-						if ((shifterTarget.getPosition() - 2) >= 0) {
-							System.out.println("shifterTarget orig: " + shifterTarget);
-							shifterTarget = sentence.getWordList().get(shifterTarget.getPosition() - 2);
-							System.out.println("shifterTarget after: " + shifterTarget);
-						}
+						shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 					}
 					// System.out.println(shifterTarget.toString());
-					if (!tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
+					if (shifterTarget != null && !tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
 						// TODO: check conditions
 						// continue;
 					}
@@ -410,13 +393,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
 						if (secondTime) {
-							WordObj node = sentence.getGraph().getChild(shifterTarget, "attr");
-							System.out.println("NODE: " + node);
-							if ((shifterTarget.getPosition() - 2) >= 0) {
-								System.out.println("shifterTarget orig: " + shifterTarget);
-								shifterTarget = (WordObj) sentence.getWordList().get(shifterTarget.getPosition() - 2);
-								System.out.println("shifterTarget after: " + shifterTarget);
-							}
+							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 						}
 						System.out.println("found with edge: " + edge);
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
