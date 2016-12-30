@@ -185,8 +185,8 @@ public class ModuleBasics {
 			for (int i = 0; i < allPresetFrames.getFrames().size(); i++) {
 				Frame presetFrame = allPresetFrames.getFrames().get(i);
 				ArrayList<Fenode> fenodes = presetFrame.getTarget().getFenodes();
-				if (fenodes.size() > 1) {
-					System.out.println("MWE!!!");
+				if (fenodes.size() == 2) {
+					System.out.println("Particle MWE!!!");
 					for (Fenode fe : fenodes) {
 						fenodeIdsMWE.add(fe.getIdref().getId());
 					}
@@ -223,7 +223,7 @@ public class ModuleBasics {
 		// Remove particles of particle words as they are already accounted for.
 		sentimentList.removeAll(particles);
 
-		// *****************************CASE MWE***********************************
+		// **************************CASE Particle MWE******************************
 		// Compare fenodeIds with terminal Ids of the tree terminals to get to the
 		// WordObjs.
 		if (fenodeIdsMWE.size() == 2) {
@@ -231,7 +231,6 @@ public class ModuleBasics {
 			int index = 0;
 			WordObj wordObjFirst = null;
 			WordObj wordObjSecond = null;
-			particles = new ArrayList<WordObj>();
 
 			for (Terminal terminal : presetTree.getTerminals()) {
 				wordIndex += 1;
@@ -250,15 +249,6 @@ public class ModuleBasics {
 								wordObjSecond.setIsParticleVerb(true);
 								System.out.println("wordObjSecond: " + wordObjSecond);
 							}
-						} else {
-							WordObj wordObj = sentence.getWordList().get(wordIndex - 1);
-							// System.out.println("found preset SE: " + terminal.getWord());
-							// System.out.println("with wordIndex: " + wordIndex);
-							sentimentList.add(wordObj);
-							// System.out.println("added given SE: " + wordObj);
-							if (wordObj.getIsParticleVerb()) {
-								particles.add(wordObj.getParticle());
-							}
 						}
 					}
 				}
@@ -266,21 +256,9 @@ public class ModuleBasics {
 					System.out.println("added " + wordObjFirst + " with particle: " + wordObjSecond);
 					wordObjFirst.setParticle(wordObjSecond);
 					sentimentList.add(wordObjFirst);
-
-					if (sentimentLex.getSentiment(wordObjFirst.getLemma()) == null) {
-						System.out.println("no entry for: " + wordObjFirst.getLemma() + "_" + wordObjSecond);
-						SentimentUnit newUnit = new SentimentUnit(wordObjFirst.getLemma() + "_" + wordObjSecond, "UNKNOWN", "0.0",
-								wordObjFirst.getPos(), Boolean.TRUE);
-						sentimentLex.addSentiment(newUnit);
-					}
-					System.out.println(sentimentLex.getSentiment(wordObjFirst.getLemma()));
-					System.out.println(sentimentLex.getSentiment(wordObjFirst.getLemma() + "_" + wordObjSecond));
 				}
 			}
 		}
-		// In case of multi word expressions, things might be added twice.
-		// Remove particles of particle words as they are already accounted for.
-		sentimentList.removeAll(particles);
 
 		// Preset SEs might not have an entry as SentimentUnit in the SentimentLex,
 		// with lemma, pos, value, etc.
