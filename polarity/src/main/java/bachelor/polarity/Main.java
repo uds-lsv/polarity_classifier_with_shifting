@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import bachelor.polarity.soPro.BaselineModule;
+import bachelor.polarity.soPro.BaselineRuleModule;
 import bachelor.polarity.soPro.Module;
 import bachelor.polarity.soPro.SalsaAPIConnective;
 import bachelor.polarity.soPro.SentenceList;
@@ -37,6 +38,7 @@ public class Main {
 			Boolean use_preset_se_input = Boolean.valueOf(prop.getProperty("USE_PRESET_SE_INPUT"));
 			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
 			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
+			Boolean baseline_rule_module = Boolean.valueOf(prop.getProperty("BASELINE_RULE_MODULE"));
 			Boolean pos_lookup_sentiment = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SENTIMENT"));
 			Boolean pos_lookup_shifter = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SHIFTER"));
 			int baseline_window = Integer.valueOf(prop.getProperty("BASELINE_WINDOW"));
@@ -49,7 +51,14 @@ public class Main {
 
 			// If no other module is turned on, use the standard
 			// subjective_expression_module.
-			Boolean subjective_expression_module = (baseline_module.equals(Boolean.FALSE));
+			Boolean subjective_expression_module = (baseline_module.equals(Boolean.FALSE)
+					&& baseline_rule_module.equals(Boolean.FALSE));
+			
+			// Only one module should be turned on at the same time.
+			if (baseline_module && baseline_rule_module){
+				System.err.println("WARNING: Both Baseline Modules are turned on!");
+				System.err.println("Check the config file!");
+			}
 
 			// Read in raw input text and create SentenceList based on it.
 			System.out.println("Reading rawText from : " + text_input);
@@ -107,6 +116,7 @@ public class Main {
 			// modules.
 			final Set<Module> modules = new HashSet<Module>();
 
+			// Standard Module
 			if (subjective_expression_module && got_preset_se_file && use_preset_se_input) {
 				final SubjectiveExpressionModule subjectiveExpressionModule;
 				subjectiveExpressionModule = new SubjectiveExpressionModule(salsa, sentimentLex, shifterLex,
@@ -121,18 +131,32 @@ public class Main {
 				System.err.println("Warning! Subjective Expression Module turned off!");
 			}
 
+			// Baseline Module
 			if (baseline_module && got_preset_se_file && use_preset_se_input) {
 				final BaselineModule baselineModule;
-				baselineModule = new BaselineModule(salsa, sentimentLex, shifterLex, baseline_window,
-						pos_lookup_sentiment, pos_lookup_shifter);
+				baselineModule = new BaselineModule(salsa, sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+						pos_lookup_shifter);
 				modules.add(baselineModule);
 			} else if (baseline_module) {
 				final BaselineModule baselineModule;
-				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window, 
-						pos_lookup_sentiment,	pos_lookup_shifter);
+				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+						pos_lookup_shifter);
 				modules.add(baselineModule);
 			}
 
+			// Baseline Rule Module
+			if (baseline_rule_module && got_preset_se_file && use_preset_se_input) {
+				final BaselineRuleModule baselineRuleModule;
+				baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+						pos_lookup_shifter);
+				modules.add(baselineRuleModule);
+			} else if (baseline_rule_module) {
+				final BaselineRuleModule baselineRuleModule;
+				baselineRuleModule = new BaselineRuleModule(sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+						pos_lookup_shifter);
+				modules.add(baselineRuleModule);
+			}
+			
 			// search for sentiment expressions and write results to the output file
 			// specified in the configuration file
 			final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);

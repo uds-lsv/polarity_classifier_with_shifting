@@ -262,7 +262,7 @@ public class ModuleBasics {
 		// Create dummy entries in those cases
 		for (WordObj sentiment : sentimentList) {
 			if (sentimentLex.getSentiment(sentiment.getLemma()) == null) {
-				System.out.println("no entry for: " + sentiment.getLemma());
+//				System.out.println("no entry for: " + sentiment.getLemma());
 				missingInGermanLex.add(sentiment.getLemma());
 				SentimentUnit newUnit = new SentimentUnit(sentiment.getLemma(), "UNKNOWN", "0.0", sentiment.getPos(),
 						Boolean.FALSE);
