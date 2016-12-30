@@ -306,6 +306,8 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						if (secondTime) {
+							WordObj node = sentence.getGraph().getChild(shifterTarget, "attr");
+							System.out.println("NODE: " + node);
 							if ((shifterTarget.getPosition() - 2) >= 0) {
 								System.out.println("shifterTarget orig: " + shifterTarget);
 								System.out.println("edge of shifterTarget: " + shifterTarget.getEdge());
@@ -408,6 +410,8 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
 						if (secondTime) {
+							WordObj node = sentence.getGraph().getChild(shifterTarget, "attr");
+							System.out.println("NODE: " + node);
 							if ((shifterTarget.getPosition() - 2) >= 0) {
 								System.out.println("shifterTarget orig: " + shifterTarget);
 								shifterTarget = (WordObj) sentence.getWordList().get(shifterTarget.getPosition() - 2);

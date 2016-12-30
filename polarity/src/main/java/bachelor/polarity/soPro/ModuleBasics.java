@@ -186,7 +186,6 @@ public class ModuleBasics {
 				Frame presetFrame = allPresetFrames.getFrames().get(i);
 				ArrayList<Fenode> fenodes = presetFrame.getTarget().getFenodes();
 				if (fenodes.size() == 2) {
-					System.out.println("Particle MWE!!!");
 					for (Fenode fe : fenodes) {
 						fenodeIdsMWE.add(fe.getIdref().getId());
 					}
@@ -212,7 +211,7 @@ public class ModuleBasics {
 					// System.out.println("found preset SE: " + terminal.getWord());
 					// System.out.println("with wordIndex: " + wordIndex);
 					sentimentList.add(wordObj);
-					System.out.println("added given SE: " + wordObj);
+//					System.out.println("added given SE: " + wordObj);
 					if (wordObj.getIsParticleVerb()) {
 						particles.add(wordObj.getParticle());
 					}
@@ -242,18 +241,16 @@ public class ModuleBasics {
 							if (index == 1) {
 								wordObjFirst = sentence.getWordList().get(wordIndex - 1);
 								wordObjFirst.setIsParticleVerb(true);
-								System.out.println("wordObjFirst: " + wordObjFirst);
 							}
 							if (index == 2) {
 								wordObjSecond = sentence.getWordList().get(wordIndex - 1);
 								wordObjSecond.setIsParticleVerb(true);
-								System.out.println("wordObjSecond: " + wordObjSecond);
 							}
 						}
 					}
 				}
 				if (wordObjFirst != null && wordObjSecond != null && !sentimentList.contains(wordObjFirst)) {
-					System.out.println("added " + wordObjFirst + " with particle: " + wordObjSecond);
+//					System.out.println("added " + wordObjFirst + " with particle: " + wordObjSecond);
 					wordObjFirst.setParticle(wordObjSecond);
 					sentimentList.add(wordObjFirst);
 				}
@@ -264,8 +261,6 @@ public class ModuleBasics {
 		// with lemma, pos, value, etc.
 		// Create dummy entries in those cases
 		for (WordObj sentiment : sentimentList) {
-			System.out.println("check sentiment: " + sentiment);
-			System.out.println("lemma: " + sentiment.getLemma());
 			if (sentimentLex.getSentiment(sentiment.getLemma()) == null) {
 				System.out.println("no entry for: " + sentiment.getLemma());
 				missingInGermanLex.add(sentiment.getLemma());
