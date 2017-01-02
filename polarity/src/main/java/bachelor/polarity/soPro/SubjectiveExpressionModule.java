@@ -370,7 +370,6 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						}
 					}
 					break;
-				// TODO ?
 				case "clause":
 					final ConstituencyTree tree = sentence.getTree();
 					final Terminal wordNode = tree.getTerminal(shifter);
@@ -382,20 +381,42 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						// This isn't supposed to happen except in case of parsing errors
 						containingClause = tree.getTrueRoot();
 					}
-					// List<Object> terminalNonterminalList =
-					// tree.getMainClause(containingClause);
 					shifterTarget = edge.target;
-					// System.out.println(shifterTarget.toString());
-					if (shifterTarget != null && !tree.getChildren(containingClause).contains(tree.getTerminal(shifterTarget))) {
-						// TODO: check conditions
-						// continue;
+					ArrayList<Object> children = tree.getChildren(containingClause);
+					if (shifterTarget != null && !children.contains(tree.getTerminal(shifterTarget))) {
+						// System.err.println("shifterTarget not in containingClause?");
+						// System.err.println("Children: " + children);
+						for (Object child : children) {
+							// System.out.println("child: " + child.toString());
+							if (child instanceof Nonterminal) {
+								ArrayList<Object> children2 = tree.getChildren((Nonterminal) child);
+								if (children2.contains(tree.getTerminal(shifterTarget))) {
+									break;
+								}
+							}
+						}
 					}
+					// At this point we either have found a shifterTarget within the
+					// containing clause or there isn't one.
 					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 						System.out.println("Found shifterTarget for Clause!: " + shifterTarget);
 						return shifterTarget;
 					} else {
+						// Do it once more with deep search
 						shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
+						ArrayList<Object> childrenDeep = tree.getChildren(containingClause);
+						if (shifterTarget != null && !childrenDeep.contains(tree.getTerminal(shifterTarget))) {
+							for (Object child : childrenDeep) {
+								if (child instanceof Nonterminal) {
+									ArrayList<Object> childrenDeep2 = tree.getChildren((Nonterminal) child);
+									if (childrenDeep2.contains(tree.getTerminal(shifterTarget))) {
+										break;
+									}
+								}
+							}
+						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+							System.out.println("Found shifterTarget for Clause in deep search!: " + shifterTarget);
 							return shifterTarget;
 						}
 					}
