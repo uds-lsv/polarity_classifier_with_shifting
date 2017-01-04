@@ -161,13 +161,13 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 
 			if (shifterTarget != null) {
 
-				// Create Frame object
+				// Create Frame object for Salsa XML output
 				final Frame frame = new Frame("SubjectiveExpression", frameIds.next());
 				final FrameElementIds feIds = new FrameElementIds(frame);
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
-				// System.out.println("shifterTarget: " + shifterTarget);
+				System.out.println("found shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -186,29 +186,35 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 				String valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityWithoutShift);
-				// Compute the polarity value after the shift
+
+				final double SHIFT_AMOUNT = 1.3;
+
+				// Compute the polarity value after a shift and invert the category.
 				polarityOfWord = Double.valueOf(polarityValueStr);
-				switch (shifterType) {
-				case "on negative":
-					polarityCategory = "POS";
-					break;
-				case "on positive":
-					polarityCategory = "NEG";
-					polarityOfWord = polarityOfWord * -1.0;
-					break;
-				// Default case = general
-				// Invert category
-				default:
-					switch (polarityCategory) {
-					case "POS":
-						polarityCategory = "NEG";
-						polarityOfWord = polarityOfWord * -1.0;
-						break;
-					case "NEG":
+				if (!polarityCategory.equals("UNKNOWN")) {
+					switch (shifterType) {
+					case ShifterLex.SHIFTER_TYPE_ON_NEGATIVE:
 						polarityCategory = "POS";
+						polarityOfWord = polarityOfWord * -1.0 + SHIFT_AMOUNT;
+						break;
+					case ShifterLex.SHIFTER_TYPE_ON_POSITIVE:
+						polarityCategory = "NEG";
+						polarityOfWord = polarityOfWord - SHIFT_AMOUNT;
+						break;
+					case ShifterLex.SHIFTER_TYPE_GENERAL:
+						switch (polarityCategory) {
+						case "POS":
+							polarityCategory = "NEG";
+							polarityOfWord = polarityOfWord - SHIFT_AMOUNT;
+							break;
+						case "NEG":
+							polarityCategory = "POS";
+							polarityOfWord = polarityOfWord * -1.0 + SHIFT_AMOUNT;
+						}
 					}
 				}
 				polaritySum += polarityOfWord;
+				polarityValueStr = Double.toString(Math.abs(polarityOfWord));
 
 				valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityAfterShift = new Flag("polarity after shift: " + valueAndCat, "subjExpr");
@@ -219,6 +225,9 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 				// Remove the shifterTarget from the sentiment list so it doesn't get
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
+				// Also remove the shifter itself from the sentimentList.
+				// Not necessary ?
+				// sentimentList.remove(shifter);
 			} else {
 				// System.out.println("No shifterTarget found for " +
 				// shifter.getName());

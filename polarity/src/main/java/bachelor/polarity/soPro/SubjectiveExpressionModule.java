@@ -181,29 +181,34 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityWithoutShift);
 
-				// Compute the polarity value after a shift
+				final double SHIFT_AMOUNT = 1.3;
+
+				// Compute the polarity value after a shift and invert the category.
 				polarityOfWord = Double.valueOf(polarityValueStr);
-				switch (shifterType) {
-				case ShifterLex.SHIFTER_TYPE_ON_NEGATIVE:
-					polarityCategory = "POS";
-					break;
-				case ShifterLex.SHIFTER_TYPE_ON_POSITIVE:
-					polarityCategory = "NEG";
-					polarityOfWord = polarityOfWord * -1.0;
-					break;
-				// Default case = general
-				// Invert category
-				default:
-					switch (polarityCategory) {
-					case "POS":
-						polarityCategory = "NEG";
-						polarityOfWord = polarityOfWord * -1.0;
-						break;
-					case "NEG":
+				if (!polarityCategory.equals("UNKNOWN")) {
+					switch (shifterType) {
+					case ShifterLex.SHIFTER_TYPE_ON_NEGATIVE:
 						polarityCategory = "POS";
+						polarityOfWord = polarityOfWord * -1.0 + SHIFT_AMOUNT;
+						break;
+					case ShifterLex.SHIFTER_TYPE_ON_POSITIVE:
+						polarityCategory = "NEG";
+						polarityOfWord = polarityOfWord - SHIFT_AMOUNT;
+						break;
+					case ShifterLex.SHIFTER_TYPE_GENERAL:
+						switch (polarityCategory) {
+						case "POS":
+							polarityCategory = "NEG";
+							polarityOfWord = polarityOfWord - SHIFT_AMOUNT;
+							break;
+						case "NEG":
+							polarityCategory = "POS";
+							polarityOfWord = polarityOfWord * -1.0 + SHIFT_AMOUNT;
+						}
 					}
 				}
 				polaritySum += polarityOfWord;
+				polarityValueStr = Double.toString(Math.abs(polarityOfWord));
 
 				valueAndCat = polarityCategory + " " + polarityValueStr;
 				final Flag polarityAfterShift = new Flag("polarity after shift: " + valueAndCat, "subjExpr");
