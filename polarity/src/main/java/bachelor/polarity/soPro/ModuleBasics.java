@@ -13,7 +13,7 @@ import bachelor.polarity.salsa.corpora.elements.Sentence;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 
-public class ModuleBasics {
+public abstract class ModuleBasics {
 
 	protected SalsaAPIConnective salsa;
 	protected SentimentLex sentimentLex;

@@ -181,6 +181,9 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				final Flag polarityWithoutShift = new Flag("polarity without shift: " + valueAndCat, "subjExpr");
 				frame.addFlag(polarityWithoutShift);
 
+				/**
+				 * Specifies the amount a polarity value is changed after shifting.
+				 */
 				final double SHIFT_AMOUNT = 1.3;
 
 				// Compute the polarity value after a shift and invert the category.
@@ -219,9 +222,6 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				// Remove the shifterTarget from the sentiment list so it doesn't get
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
-				// Also remove the shifter itself from the sentimentList.
-				// Not necessary ?
-				// sentimentList.remove(shifter);
 			} else {
 				// System.out.println("No shifterTarget found for " +
 				// shifter.getName());
