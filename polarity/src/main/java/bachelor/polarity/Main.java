@@ -51,8 +51,8 @@ public class Main {
 
 			// If no other module is turned on, use the standard
 			// subjective_expression_module.
-			Boolean subjective_expression_module = (baseline_module.equals(Boolean.FALSE)
-					&& baseline_rule_module.equals(Boolean.FALSE));
+			Boolean subjective_expression_module = (baseline_module.equals(false)
+					&& baseline_rule_module.equals(false));
 			
 			// Only one module should be turned on at the same time.
 			if (baseline_module && baseline_rule_module){
@@ -96,12 +96,12 @@ public class Main {
 			shifterLex.fileToLex(shifter_lexicon_input);
 
 			// Read in preset se file
-			Boolean got_preset_se_file = Boolean.FALSE;
+			Boolean got_preset_se_file = false;
 			if (!preset_se_input.isEmpty()) {
 				if (use_preset_se_input) {
 					System.out.println("Reader preset se file from " + preset_se_input + "...");
 					SalsaAPIConnective salsa_preset = new SalsaAPIConnective(preset_se_input, sentences);
-					got_preset_se_file = Boolean.TRUE;
+					got_preset_se_file = true;
 					salsa = salsa_preset;
 				} else {
 					System.err.println("A preset se file path has been specified, but the option to use it is turned off.");
