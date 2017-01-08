@@ -1,0 +1,232 @@
+===========================================================
+
+   Documentation for German Sentiment Corpus:
+   Fine-Grained Annotation Layer (Layer 3)
+   (Version 1.0)
+
+===========================================================
+
+
+In this layer, we model the entities involved in expressing sentiment
+analogous to semantic roles in FrameNet:
+framenet.icsi.berkeley.edu
+(We encourage potential users of this corpus to familiarize themselves with the
+basic concepts of that resource as they are required for understanding the
+annotation scheme employed for this annotation layer.) 
+The lexical units that convey sentiment are labeled as frame evoking
+elements (FEEs) of a particular frame. The entities that provide
+further information that is relevant to the event that the frame evokes, such
+as its source or its target, are labeled as frame elements (FEs).
+The linguistic units that are tagged as FEEs or FEs can be either words or
+phrases.
+This layer is built on top of the output of a constituency parse. 
+
+
+Frames
+	Direct Subjective Elements (DSEs):
+	We follow the definition of DSEs by the MPQA project
+	(Wiebe et al., 2005):  DSEs mark direct mentions of private states and speech
+	events (spoken or written) expressing private states.
+	A typical example of a DSE is:
+	"Peter <DSE>schimpfte</DSE> über das Wetter."
+	("Peter <DSE>complained</DSE> about the weather.")
+
+
+	Expressive Subjectivity Elements (ESEs):
+	We follow the definition of ESEs by the MPQA project (Wiebe et
+	al., 2005): ESEs mark expressive-subjective elements, words and phrases 
+	that indirectly express a private state.
+	A typical example of an ESE is:
+	"Peter trägt eine <ESE>furchtbare</ESE> Jacke."
+	("Peter wears a <ESE>terrible</ESE> jacket.")	
+
+
+	Objective Speech Events (OSEs):
+	We adhere to the definition of OSEs by the MPQA project (Wiebe et
+	al., 2005) in that OSEs mark speech events that do not express private states.
+	A typical example of an OSE is:
+	"Peter <OSE>sagte</OSE>, dass es regnete."
+	("Peter <OSE>said</OSE> it was raining.")
+	Note that it is not the lexical unit per se which decides whether an
+	OSE or a DSE is evoked. For instance, the verb "say" may also evoke a
+	DSE in case the speech event that it introduces conveys a sentiment:
+	"Peter <DSE>sagte</DSE>: 'Um Himmels Willen!'"
+	("Peter <DSE>said</DSE> 'Good heavens!'");
+
+
+Frame Flags
+	Backgrounded Subjectivity:
+	The flag "Backgrounded" is assigned to those FEEs that entail sentiment
+	information but their primary meaning conveys something else.
+	For example, the verb "ermorden" ("to murder") means "to kill another
+	being" but this usually entails that the perpetrator has a negative
+	sentiment towards its victim.
+	As a consequence of this flag, unlike the MPQA project, we always
+	annotate diseases/illnesses as sentiment-bearing units
+	(i.e. "backgrounded" DSEs).
+
+	Polarity:
+	There are three different polarity types: "Positive", "Negative" and
+	"Both".
+	Note that the polarity type that the frame flag indicates is not the
+	contextual polarity but the polarity conveyed by the FEE. In other
+	words: if a FEE conveys a positive polarity but it occurs in a
+	context in which this FEE is negated, then the polarity flag is still
+	positive despite of the contextual polarity being negative.
+
+Frame Elements (FEs)
+      Source
+      A constituent being labeled as a source is the entity that possesses a
+      private state.
+      Note that (per definition) only DSEs can be assigned this FE.
+      A typical example of a Source is:
+      "<SOURCE>Peter</SOURCE> <DSE>schimpft</DSE> über das Wetter."
+      ("<SOURCE>Peter</SOURCE> <DSE>complain</DSE> about the weather.")
+
+
+      Target
+      A constituent being labeled as a target is the entity towards which the
+      sentiment is directed.
+      A typical example of a Target is:
+       "Peter <DSE>schimpft</DSE> <TARGET>über das Wetter</TARGET>."
+      ("Peter  <DSE>complain</DSE> <TARGET>about the weather</TARGET>.")
+
+
+      Polarity
+      The FE "Polarity" denotes markers that indicate the polarity towards the
+      target. Note that this is different from the frame flag "Polarity" which
+      indicates the prior polarity of the lexical unit evoking the pertaining
+      frame. For example, the verb "kritisieren" ("criticize") evokes a DSE
+      with a negative polarity frame flag. The noun "Kampagne" ("campaign"),
+      by contrast, evokes a DSE without a polarity flag since "Kampagne" is
+      underspecified for polarity towards its target.
+      Prepositional markers that appear on the dependents of such a predicate,
+      for example "für/gegen" ("for/against") in "Kampagne für/gegen höhere
+      Steuern" ("campaign for/against higher taxes"), are considered a marker
+      indicating the contextual polarity towards the target (as it has not
+      been specified by the target itself). Those markers are assigned the
+      FE "Polarity".
+      
+      Modulation
+      The FE "Modulation" essentially marks any diminisher or intensifier if
+      they modify a FEE. An example of a diminished FEE is:
+      "<MODULATION>weniger</MODULATION> <ESE>gut</ESE>"
+      ("<MODULATION>less</MODULATION> <ESE>good</ESE>")
+      while an example of an intensified FEE is:
+      "<MODULATION>wirklich</MODULATION> <ESE>gut</ESE>"
+      ("<MODULATION>really</MODULATION> <ESE>good</ESE>"). 
+      
+      Operator
+      Markers that bring about a context modification of the FEE, are assigned
+      the FE "Operator". The most common form of context modification are
+      negation:
+      "<OPERATOR>nicht</OPERATOR> <ESE>überzeugend</ESE>"
+      ("<OPERATOR>not</OPERATOR> <ESE>convincing</ESE>") 
+      and modal embedding:
+      "<OPERATOR>mögliche</OPERATOR> soziale <ESE>Spannungen</ESE>"
+      ("<OPERATOR>potential</OPERATOR> social <ESE>tensions</ESE>").
+      Note that by negation we also consider polarity shifters:
+      "<OPERATOR>gestörtes</OPERATOR> <DSE>Vertrauen</DSE>"
+      ("<OPERATOR>disrupted</OPERATOR> <DSE>confidence</DSE>)"
+
+      Support
+      If a FEE is part of a support construction, the lexical units involved
+      carrying no semantics (and thus having exclusively a syntactic function)
+      are assigned the FE "Support":
+      "Diese <TARGET>Ermittlung</TARGET> <SUPPORT>bereitet</SUPPORT>
+      häufig <ESE>Schwierigkeiten</ESE>."
+       "This <TARGET>identification</TARGET> <SUPPORT>is</SUPPORT>
+      often <ESE>a problem</ESE>."
+	   
+
+
+
+Frame Element Flags
+
+      Subtract Predicate:
+      There are cases in which the scope of a FE 
+      of a frame is an entire clause or even sentence, so that
+      the FEE is also contained in that constituent.
+      In those cases the entire clause/sentence is marked as the
+      FE but the FE is given a flag "SubtractPredicate" indicating that the
+      predicate, i.e the FEE, should be excluded from this sequence of words.
+      A typical example of the usage of this FE flag is given in the following
+      sentence:
+      <TARGET flag="SubtractPredicate">Du <ESE>solltest</ESE> nach Hause
+      gehen.</TARGET>
+      <TARGET flag="SubtractPredicate">You <ESE>should</ESE> go home.</TARGET>
+
+File Formats
+
+     The representation format of this layer is Tiger/SALSA XML.
+     This graph-based format allows the same word or, more
+     general, the same constituent being labeled with several functions.
+     For instance, it may evoke several frames, or it may be an FEE and a FE of
+     another frame at the same time.
+
+     This format also includes the syntactic information of a constituency
+     parse. The parse was generated by the Berkeley parser.
+     The annotators primarily tagged units that correspond to some
+     linguistically meaningful constituent(s) of the parse. Since the parse,
+     however, has been automatically generated, occasional errors occur.
+     In those cases, where these errors affect the constituents involved in
+     the sentiment frames and the spans of the automatically generated
+     constituents do not correspond to the correct spans of the FEs (or FEEs),
+     the annotators tag the correct span (even though this may mean that
+     no meaningful constituents -- according to the incorrect parse -- are
+     tagged).
+  
+     We refer the reader to Erk & Padó (2004) for more
+     details on Tiger/SALSA XML.
+
+     There already exists software to process and visualize
+     those data. Our annotation files can be read (and modified) by SALTO
+     (Burchardt et al., 2006) which is a publicly available annotation tool
+     for the Tiger/SALSA XML format.
+     A Java-API supporting automatic processing of the format is also
+     available. All this software can be downloaded from:
+     http://www.coli.uni-saarland.de/projects/salsa/page.php?id=software
+     
+	
+     The annotation of this layer comes in three files:
+     layer3.annotation.ann1.xml:
+	this file exclusively contains the annotation from annotator 1.
+     layer3.annotation.ann2.xml:
+        this file exclusively contains the annotation from annotator 2.
+     layer3.annotation.merged.xml:
+	this file contains the merged annotation (result of the
+     	adjudication). Note that this file also contains cases in which the 
+     	annotators failed to reach an agreement. 
+
+
+     
+
+References
+
+A. Burchardt, K. Erk, A. Frank, A. Kowalski, and S. Padó
+  SALTO -- A Versatile Multi-Level Annotation Tool.
+  Proceedings of LREC 2006, Genoa, Italy.
+
+K. Erk and S. Padó
+  A powerful and versatile XML Format for representing role-semantic annotation
+  Proceedings of LREC 2004, Lisbon, Portugal. 
+
+S. Petrov, L. Barrett, R. Thibaux, and D. Klein. 
+  Learning Accurate, Compact, and Interpretable Tree Annotation
+  Proceedings of COLING-ACL 2006, Sydney, Australia.
+
+J. Wiebe, T. Wilson, and  C. Cardie
+  Annotating expressions of opinions and emotions in language
+  Language Resources and Evaluation, volume 39, issue 2-3,  pp. 165-210, 2005.
+
+
+
+
+
+-----------------------------------------------------------
+
+Josef Ruppenhofer
+Michael Wiegand
+
+Version 1.0  
+last modified 11/14/11
