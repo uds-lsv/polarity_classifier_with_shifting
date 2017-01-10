@@ -20,7 +20,7 @@ public abstract class ModuleBasics {
 	protected ShifterLex shifterLex;
 	protected Boolean posLookupSentiment;
 	protected Boolean posLookupShifter;
-	protected Boolean usePresetSELocations = Boolean.FALSE;
+	protected Boolean usePresetSELocations = false;
 	protected ArrayList<String> missingInGermanLex = new ArrayList<String>();
 	/**
 	 * Stores each sentence's polarity
