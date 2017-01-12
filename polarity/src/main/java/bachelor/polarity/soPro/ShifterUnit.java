@@ -5,13 +5,8 @@ import java.util.Arrays;
 /**
  * ShifterUnit object contains the informations of one shifter expression
  * 
- * Example: Verbesserung g [gmod, objp-*] nomen 
- * name = Verbesserung 
- * shifter_type
- * = g 
- * shifter_scope = [gmod, objp-*] 
- * shifter_pos = nomen 
- * mwe = false
+ * Example: Verbesserung g [gmod, objp-*] nomen name = Verbesserung shifter_type
+ * = g shifter_scope = [gmod, objp-*] shifter_pos = nomen mwe = false
  * collocations = []
  *
  */
@@ -26,10 +21,16 @@ public class ShifterUnit {
 	/**
 	 * 
 	 * @param name
+	 *          Name of the Shifter.
 	 * @param shifter_type
+	 *          Either SHIFTER_TYPE_GENERAL, SHIFTER_TYPE_ON_POSITIVE or
+	 *          SHIFTER_TYPE_ON_NEGATIVE (g, p, n).
 	 * @param shifter_scope
+	 *          The dependency relations used to find the shifter target.
 	 * @param shifter_pos
+	 *          POS-Tag.
 	 * @param mwe
+	 *          True if the shifter is a multi-word-expression.
 	 */
 	public ShifterUnit(String name, String shifter_type, String[] shifter_scope, String shifter_pos, Boolean mwe) {
 		if (mwe) {

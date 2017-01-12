@@ -288,6 +288,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
+		SentimentUnit shifterTargetUnit = null;
 		// System.out.println("Scope: " +
 		// Arrays.toString(shifterUnit.shifter_scope));
 
@@ -336,11 +337,19 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.target;
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							return shifterTarget;
+							// TODO: check if the shifter orientation matches the SE
+							// orientation
+							shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
+
+							if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								return shifterTarget;
+							}
 						} else {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-								return shifterTarget;
+								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									return shifterTarget;
+								}
 							}
 						}
 					}
@@ -350,11 +359,15 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							return shifterTarget;
+							if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								return shifterTarget;
+							}
 						} else {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-								return shifterTarget;
+								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									return shifterTarget;
+								}
 							}
 						}
 					}
@@ -365,11 +378,15 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							System.out.println("edge: " + edge);
 							shifterTarget = edge.target;
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-								return shifterTarget;
+								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									return shifterTarget;
+								}
 							} else {
 								shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 								if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-									return shifterTarget;
+									if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+										return shifterTarget;
+									}
 								}
 							}
 						}
@@ -404,8 +421,9 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					// At this point we either have found a shifterTarget within the
 					// containing clause or there isn't one.
 					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-						System.out.println("Found shifterTarget for Clause!: " + shifterTarget);
-						return shifterTarget;
+						if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+							return shifterTarget;
+						}
 					} else {
 						// Do it once more with deep search
 						shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
@@ -421,8 +439,9 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							}
 						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							System.out.println("Found shifterTarget for Clause in deep search!: " + shifterTarget);
-							return shifterTarget;
+							if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								return shifterTarget;
+							}
 						}
 					}
 					break;
@@ -432,11 +451,15 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						System.out.println("found with edge: " + edge);
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							System.out.println("return: " + shifterTarget);
-							return shifterTarget;
+							if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								return shifterTarget;
+							}
 						} else {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-								return shifterTarget;
+								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									return shifterTarget;
+								}
 							}
 						}
 					}

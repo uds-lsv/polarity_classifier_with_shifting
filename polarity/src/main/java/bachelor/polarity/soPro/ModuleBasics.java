@@ -110,6 +110,48 @@ public abstract class ModuleBasics {
 	}
 
 	/**
+	 * Checks whether the shifter orientation (on general/positive/negative)
+	 * matches the sentiment orientation (POS/NEG).
+	 * 
+	 * @param shifter
+	 * @param shifterUnit
+	 * @param shifterTarget
+	 * @param shifterTargetUnit
+	 * @return true if the orientations match or there is no lexicon entry for the
+	 *         sentiment expression.
+	 */
+	public Boolean orientationCheck(WordObj shifter, ShifterUnit shifterUnit, WordObj shifterTarget,
+			SentimentUnit shifterTargetUnit) {
+		String shifterType = shifterUnit.getTyp(); // g,n,p
+
+		// Can't compare the orientation if the sentiment expression does not have a lexicon entry.
+		if (shifterTargetUnit == null) {
+			return true;
+		}
+		String sentimentType = shifterTargetUnit.getTyp(); // POS, NEG
+
+		switch (shifterType) {
+		case ShifterLex.SHIFTER_TYPE_GENERAL:
+			return true;
+
+		case ShifterLex.SHIFTER_TYPE_ON_NEGATIVE:
+			if (sentimentType.equals("NEG")) {
+				return true;
+			} else {
+				return false;
+			}
+
+		case ShifterLex.SHIFTER_TYPE_ON_POSITIVE:
+			if (sentimentType.equals("POS")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+
+	/**
 	 * Helper method used to set Salsa Frames for subjective expressions.
 	 * 
 	 * @param sentence
@@ -211,7 +253,7 @@ public abstract class ModuleBasics {
 					// System.out.println("found preset SE: " + terminal.getWord());
 					// System.out.println("with wordIndex: " + wordIndex);
 					sentimentList.add(wordObj);
-//					System.out.println("added given SE: " + wordObj);
+					// System.out.println("added given SE: " + wordObj);
 					if (wordObj.getIsParticleVerb()) {
 						particles.add(wordObj.getParticle());
 					}
@@ -250,7 +292,8 @@ public abstract class ModuleBasics {
 					}
 				}
 				if (wordObjFirst != null && wordObjSecond != null && !sentimentList.contains(wordObjFirst)) {
-//					System.out.println("added " + wordObjFirst + " with particle: " + wordObjSecond);
+					// System.out.println("added " + wordObjFirst + " with particle: " +
+					// wordObjSecond);
 					wordObjFirst.setParticle(wordObjSecond);
 					sentimentList.add(wordObjFirst);
 				}
@@ -262,7 +305,7 @@ public abstract class ModuleBasics {
 		// Create dummy entries in those cases
 		for (WordObj sentiment : sentimentList) {
 			if (sentimentLex.getSentiment(sentiment.getLemma()) == null) {
-//				System.out.println("no entry for: " + sentiment.getLemma());
+				// System.out.println("no entry for: " + sentiment.getLemma());
 				missingInGermanLex.add(sentiment.getLemma());
 				SentimentUnit newUnit = new SentimentUnit(sentiment.getLemma(), "UNKNOWN", "0.0", sentiment.getPos(),
 						Boolean.FALSE);
