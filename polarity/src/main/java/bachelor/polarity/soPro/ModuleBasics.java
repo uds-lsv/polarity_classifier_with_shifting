@@ -20,6 +20,7 @@ public abstract class ModuleBasics {
 	protected ShifterLex shifterLex;
 	protected Boolean posLookupSentiment;
 	protected Boolean posLookupShifter;
+	protected Boolean shifter_orientation_check;
 	protected Boolean usePresetSELocations = false;
 	protected ArrayList<String> missingInGermanLex = new ArrayList<String>();
 	/**
@@ -126,6 +127,7 @@ public abstract class ModuleBasics {
 
 		// Can't compare the orientation if the sentiment expression does not have a lexicon entry.
 		if (shifterTargetUnit == null) {
+			System.err.println("zonk: " + shifterTarget);
 			return true;
 		}
 		String sentimentType = shifterTargetUnit.getTyp(); // POS, NEG

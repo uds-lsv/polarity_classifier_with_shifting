@@ -11,7 +11,6 @@ import bachelor.polarity.salsa.corpora.elements.FrameElement;
 import bachelor.polarity.salsa.corpora.elements.Global;
 import bachelor.polarity.salsa.corpora.elements.Target;
 
-
 public class BaselineModule extends ModuleBasics implements Module {
 
 	/**
@@ -53,12 +52,13 @@ public class BaselineModule extends ModuleBasics implements Module {
 	 *          Option to do pos lookup for shifters.
 	 */
 	public BaselineModule(SentimentLex sentimentLex, ShifterLex shifterLex, int scope, Boolean pos_lookup_sentiment,
-			Boolean pos_lookup_shifter) {
+			Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
 		this.scope = scope;
 		this.posLookupSentiment = pos_lookup_sentiment;
 		this.posLookupShifter = pos_lookup_shifter;
+		this.shifter_orientation_check = shifter_orientation_check;
 	}
 
 	/**
@@ -83,14 +83,15 @@ public class BaselineModule extends ModuleBasics implements Module {
 	 *          Option to do pos lookup for shifters.
 	 */
 	public BaselineModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex, int scope,
-			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter) {
+			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
 		this.salsa = salsa;
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
 		this.scope = scope;
 		this.posLookupSentiment = pos_lookup_sentiment;
 		this.posLookupShifter = pos_lookup_shifter;
-		this.usePresetSELocations = Boolean.TRUE;
+		this.shifter_orientation_check = shifter_orientation_check;
+		this.usePresetSELocations = true;
 	}
 
 	/**
@@ -308,7 +309,15 @@ public class BaselineModule extends ModuleBasics implements Module {
 			if (wordList.size() > shifterPos + i) {
 				shifterTarget = wordList.get(shifterPos + i);
 				if (sentimentList.contains(shifterTarget)) {
-					return shifterTarget;
+					if (shifter_orientation_check) {
+						SentimentUnit shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
+						ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
+						if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+							return shifterTarget;
+						}
+					} else {
+						return shifterTarget;
+					}
 				}
 			}
 		}

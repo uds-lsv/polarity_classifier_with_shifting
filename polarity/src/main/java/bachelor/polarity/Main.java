@@ -41,6 +41,7 @@ public class Main {
 			Boolean baseline_rule_module = Boolean.valueOf(prop.getProperty("BASELINE_RULE_MODULE"));
 			Boolean pos_lookup_sentiment = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SENTIMENT"));
 			Boolean pos_lookup_shifter = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SHIFTER"));
+			Boolean shifter_orientation_check = Boolean.valueOf(prop.getProperty("SHIFTER_ORIENTATION_CHECK"));
 			int baseline_window = Integer.valueOf(prop.getProperty("BASELINE_WINDOW"));
 			if (baseline_window < 1) {
 				System.err.println("n must be bigger than 0 for the baseline module to work!");
@@ -120,12 +121,12 @@ public class Main {
 			if (subjective_expression_module && got_preset_se_file && use_preset_se_input) {
 				final SubjectiveExpressionModule subjectiveExpressionModule;
 				subjectiveExpressionModule = new SubjectiveExpressionModule(salsa, sentimentLex, shifterLex,
-						pos_lookup_sentiment, pos_lookup_shifter);
+						pos_lookup_sentiment, pos_lookup_shifter, shifter_orientation_check);
 				modules.add(subjectiveExpressionModule);
 			} else if (subjective_expression_module) {
 				final SubjectiveExpressionModule subjectiveExpressionModule;
 				subjectiveExpressionModule = new SubjectiveExpressionModule(sentimentLex, shifterLex, pos_lookup_sentiment,
-						pos_lookup_shifter);
+						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(subjectiveExpressionModule);
 			} else {
 				System.err.println("Warning! Subjective Expression Module turned off!");
@@ -135,12 +136,12 @@ public class Main {
 			if (baseline_module && got_preset_se_file && use_preset_se_input) {
 				final BaselineModule baselineModule;
 				baselineModule = new BaselineModule(salsa, sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
-						pos_lookup_shifter);
+						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineModule);
 			} else if (baseline_module) {
 				final BaselineModule baselineModule;
 				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
-						pos_lookup_shifter);
+						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineModule);
 			}
 
@@ -148,12 +149,12 @@ public class Main {
 			if (baseline_rule_module && got_preset_se_file && use_preset_se_input) {
 				final BaselineRuleModule baselineRuleModule;
 				baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
-						pos_lookup_shifter);
+						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineRuleModule);
 			} else if (baseline_rule_module) {
 				final BaselineRuleModule baselineRuleModule;
 				baselineRuleModule = new BaselineRuleModule(sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
-						pos_lookup_shifter);
+						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineRuleModule);
 			}
 			

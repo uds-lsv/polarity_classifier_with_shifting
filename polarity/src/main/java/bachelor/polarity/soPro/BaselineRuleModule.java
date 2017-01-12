@@ -52,12 +52,13 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 	 *          Option to do pos lookup for shifters.
 	 */
 	public BaselineRuleModule(SentimentLex sentimentLex, ShifterLex shifterLex, int scope, Boolean pos_lookup_sentiment,
-			Boolean pos_lookup_shifter) {
+			Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
 		this.scope = scope;
 		this.posLookupSentiment = pos_lookup_sentiment;
 		this.posLookupShifter = pos_lookup_shifter;
+		this.shifter_orientation_check = shifter_orientation_check;
 	}
 
 	/**
@@ -82,14 +83,15 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 	 *          Option to do pos lookup for shifters.
 	 */
 	public BaselineRuleModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex, int scope,
-			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter) {
+			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
 		this.salsa = salsa;
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
 		this.scope = scope;
 		this.posLookupSentiment = pos_lookup_sentiment;
 		this.posLookupShifter = pos_lookup_shifter;
-		this.usePresetSELocations = Boolean.TRUE;
+		this.shifter_orientation_check = shifter_orientation_check;
+		this.usePresetSELocations = true;
 	}
 
 	/**
