@@ -121,13 +121,13 @@ public abstract class ModuleBasics {
 	 * @return true if the orientations match or there is no lexicon entry for the
 	 *         sentiment expression.
 	 */
-	public Boolean orientationCheck(WordObj shifter, ShifterUnit shifterUnit, WordObj shifterTarget,
-			SentimentUnit shifterTargetUnit) {
+	public Boolean orientationCheck(WordObj shifter, WordObj shifterTarget) {
+		SentimentUnit shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
+		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
 		String shifterType = shifterUnit.getTyp(); // g,n,p
 
 		// Can't compare the orientation if the sentiment expression does not have a lexicon entry.
 		if (shifterTargetUnit == null) {
-			System.err.println("zonk: " + shifterTarget);
 			return true;
 		}
 		String sentimentType = shifterTargetUnit.getTyp(); // POS, NEG

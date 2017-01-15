@@ -301,7 +301,24 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 			System.out.println("edge: " + edge);
 			shifterTarget = edge.source;
 			if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-				return shifterTarget;
+				if (shifter_orientation_check) {
+					if (orientationCheck(shifter, shifterTarget)) {
+						return shifterTarget;
+					}
+				} else {
+					return shifterTarget;
+				}
+			} else {
+				shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
+				if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+					if (shifter_orientation_check) {
+						if (orientationCheck(shifter, shifterTarget)) {
+							return shifterTarget;
+						}
+					} else {
+						return shifterTarget;
+					}
+				}
 			}
 		}
 		return null;

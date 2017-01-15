@@ -290,23 +290,12 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
-		SentimentUnit shifterTargetUnit = null;
 		// System.out.println("Scope: " +
 		// Arrays.toString(shifterUnit.shifter_scope));
-
-		// TODO deletedNodes?
-		WordObj containsDeleted = shifter.getDeleted().peekFirst();
-		if (containsDeleted != null) {
-			System.out.println("DeletedNodes != null: " + shifter.getDeleted().toString());
-			if (!(containsDeleted.getLemma().equals(""))) {
-				// shifter = containsDeleted;
-			}
-		}
 
 		HashSet<Edge> edges = sentence.getGraph().getEdges();
 
 		for (String scopeEntry : shifterUnit.shifter_scope) {
-			System.out.println("scopeEntry: " + scopeEntry);
 			for (Edge edge : edges) {
 				// Special case for "nicht"
 				if (shifter.getLemma().equals("nicht")) {
@@ -331,20 +320,15 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							}
 						}
 					}
-					/* System.out.println("edge: " + edge); */ continue;
+					continue;
 				}
 				switch (scopeEntry) {
 				case "objp-*":
 					if (edge.depRel.contains("objp") && edge.source.equals(shifter)) {
-						System.out.println("edge: " + edge);
 						shifterTarget = edge.target;
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
-								System.err.println("orientation_check is true");
-
-								shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
-									System.err.println("winner: " + shifterTarget);
+								if (orientationCheck(shifter, shifterTarget)) {
 									return shifterTarget;
 								}
 							} else {
@@ -354,8 +338,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
-									shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-									if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									if (orientationCheck(shifter, shifterTarget)) {
 										return shifterTarget;
 									}
 								} else {
@@ -367,12 +350,10 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					break;
 				case "attr-rev":
 					if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
-						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
-								shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								if (orientationCheck(shifter, shifterTarget)) {
 									return shifterTarget;
 								}
 							} else {
@@ -382,8 +363,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
-									shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-									if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									if (orientationCheck(shifter, shifterTarget)) {
 										return shifterTarget;
 									}
 								} else {
@@ -396,12 +376,10 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				case "det":
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						if (edge.target.getPos().equals("PPOSAT")) {
-							System.out.println("edge: " + edge);
 							shifterTarget = edge.target;
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
-									shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-									if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									if (orientationCheck(shifter, shifterTarget)) {
 										return shifterTarget;
 									}
 								} else {
@@ -411,8 +389,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 								shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 								if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 									if (shifter_orientation_check) {
-										shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-										if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+										if (orientationCheck(shifter, shifterTarget)) {
 											return shifterTarget;
 										}
 									} else {
@@ -453,8 +430,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					// containing clause or there isn't one.
 					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 						if (shifter_orientation_check) {
-							shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-							if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+							if (orientationCheck(shifter, shifterTarget)) {
 								return shifterTarget;
 							}
 						} else {
@@ -476,8 +452,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						}
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
-								shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								if (orientationCheck(shifter, shifterTarget)) {
 									return shifterTarget;
 								}
 							} else {
@@ -489,12 +464,9 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				default:
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						shifterTarget = edge.target;
-						System.out.println("found with edge: " + edge);
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-							System.out.println("return: " + shifterTarget);
 							if (shifter_orientation_check) {
-								shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-								if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+								if (orientationCheck(shifter, shifterTarget)) {
 									return shifterTarget;
 								}
 							} else {
@@ -504,8 +476,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
-									shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
-									if (orientationCheck(shifter, shifterUnit, shifterTarget, shifterTargetUnit)) {
+									if (orientationCheck(shifter, shifterTarget)) {
 										return shifterTarget;
 									}
 								} else {

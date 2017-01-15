@@ -29,12 +29,14 @@ public class Main {
 			InputStream configInput = new FileInputStream(configPath.toString());
 			prop.load(configInput);
 
+			String output = prop.getProperty("OUTPUT");
 			String text_input = prop.getProperty("TEXT_INPUT");
 			String dependency_input = prop.getProperty("DEPENDENCY_INPUT");
 			String constituency_input = prop.getProperty("CONSTITUENCY_INPUT");
 			String sentiment_lexicon_input = prop.getProperty("SENTIMENT_LEXICON_INPUT");
 			String shifter_lexicon_input = prop.getProperty("SHIFTER_LEXICON_INPUT");
 			String preset_se_input = prop.getProperty("PRESET_SE_INPUT");
+			String baseline_direction = prop.getProperty("BASELINE_DIRECTION");
 			Boolean use_preset_se_input = Boolean.valueOf(prop.getProperty("USE_PRESET_SE_INPUT"));
 			Boolean normalize = Boolean.valueOf(prop.getProperty("NORMALIZE"));
 			Boolean baseline_module = Boolean.valueOf(prop.getProperty("BASELINE_MODULE"));
@@ -43,26 +45,35 @@ public class Main {
 			Boolean pos_lookup_shifter = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SHIFTER"));
 			Boolean shifter_orientation_check = Boolean.valueOf(prop.getProperty("SHIFTER_ORIENTATION_CHECK"));
 			int baseline_window = Integer.valueOf(prop.getProperty("BASELINE_WINDOW"));
-			if (baseline_window < 1) {
-				System.err.println("n must be bigger than 0 for the baseline module to work!");
-				System.err.println("Entered number: n=" + baseline_window);
-				return;
+
+			// Make sure that correct properties are set in case of baseline module.
+			if (baseline_module) {
+				if (baseline_window < 1) {
+					System.err.println("n must be bigger than 0 for the baseline module to work!");
+					System.err.println("Entered number: n=" + baseline_window);
+					return;
+				}
+				if (!(baseline_direction.equals("RIGHT") || baseline_direction.equals("LEFT")
+						|| baseline_direction.equals("BOTH"))) {
+					System.err.println("baseline direction must either be \"LEFT\", \"RIGHT\", or \"BOTH\".");
+					System.err.println("Given direction: " + baseline_direction);
+					return;
+				}
 			}
-			String output = prop.getProperty("OUTPUT");
+
 
 			// If no other module is turned on, use the standard
-			// subjective_expression_module.
-			Boolean subjective_expression_module = (baseline_module.equals(false)
-					&& baseline_rule_module.equals(false));
-			
+			// subjective expression module.
+			Boolean subjective_expression_module = (baseline_module.equals(false) && baseline_rule_module.equals(false));
+
 			// Only one module should be turned on at the same time.
-			if (baseline_module && baseline_rule_module){
+			if (baseline_module && baseline_rule_module) {
 				System.err.println("WARNING: Both Baseline Modules are turned on!");
 				System.err.println("Check the config file!");
 			}
 
 			// Read in raw input text and create SentenceList based on it.
-			System.out.println("Reading rawText from : " + text_input);
+			System.out.println("Reading raw text from : " + text_input);
 			SentenceList sentences = new SentenceList();
 			sentences.rawToSentenceList(text_input);
 
@@ -135,12 +146,12 @@ public class Main {
 			// Baseline Module
 			if (baseline_module && got_preset_se_file && use_preset_se_input) {
 				final BaselineModule baselineModule;
-				baselineModule = new BaselineModule(salsa, sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+				baselineModule = new BaselineModule(salsa, sentimentLex, shifterLex, baseline_window, baseline_direction, pos_lookup_sentiment,
 						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineModule);
 			} else if (baseline_module) {
 				final BaselineModule baselineModule;
-				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+				baselineModule = new BaselineModule(sentimentLex, shifterLex, baseline_window, baseline_direction, pos_lookup_sentiment,
 						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineModule);
 			}
@@ -148,8 +159,8 @@ public class Main {
 			// Baseline Rule Module
 			if (baseline_rule_module && got_preset_se_file && use_preset_se_input) {
 				final BaselineRuleModule baselineRuleModule;
-				baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
-						pos_lookup_shifter, shifter_orientation_check);
+				baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex, baseline_window,
+						pos_lookup_sentiment, pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineRuleModule);
 			} else if (baseline_rule_module) {
 				final BaselineRuleModule baselineRuleModule;
@@ -157,7 +168,7 @@ public class Main {
 						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(baselineRuleModule);
 			}
-			
+
 			// search for sentiment expressions and write results to the output file
 			// specified in the configuration file
 			final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);

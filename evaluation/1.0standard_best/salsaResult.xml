@@ -2374,12 +2374,7 @@
 						<target>
 							<fenode idref="39_7"/>
 						</target>
-				<fe id="34_se_f1_e1" name="Target">
-							<fenode idref="39_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="34_se_f2">
 						<target>
@@ -5062,19 +5057,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="72_se_f1">
 						<target>
 							<fenode idref="83_5"/>
 						</target>
-				<fe id="72_se_f1_e1" name="Target">
-							<fenode idref="83_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.30000000000000004"/>
 			</frame>
 		</frames>
 			</sem>
@@ -5382,19 +5372,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="77_se_f1">
 						<target>
 							<fenode idref="88_9"/>
 						</target>
-				<fe id="77_se_f1_e1" name="Target">
-							<fenode idref="88_10"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
 			</frame>
 		</frames>
 			</sem>
@@ -7064,31 +7049,26 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,60">The sentence polarity.</global>
+					<global type="INTERESTING" param="0,70">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="100_se_f1">
-						<target>
-							<fenode idref="112_15"/>
-						</target>
-				<fe id="100_se_f1_e1" name="Target">
-							<fenode idref="112_12"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.6000000000000001"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="100_se_f2">
 						<target>
 							<fenode idref="112_4"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="100_se_f3">
+			<frame name="SubjectiveExpression" id="100_se_f2">
 						<target>
 							<fenode idref="112_12"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="100_se_f3">
+						<target>
+							<fenode idref="112_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -8018,7 +7998,7 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,10">The sentence polarity.</global>
+					<global type="INTERESTING" param="0,60">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="112_se_f1">
@@ -8034,20 +8014,15 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="112_se_f2">
 						<target>
-							<fenode idref="125_6"/>
-						</target>
-				<fe id="112_se_f2_e1" name="Target">
-							<fenode idref="125_17"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="112_se_f3">
-						<target>
 							<fenode idref="125_5"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="112_se_f3">
+						<target>
+							<fenode idref="125_6"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -9673,23 +9648,18 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,70">The sentence polarity.</global>
+					<global type="INTERESTING" param="-2,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="134_se_f1">
 						<target>
-							<fenode idref="150_15"/>
+							<fenode idref="150_14"/>
 						</target>
-				<fe id="134_se_f1_e1" name="Target">
-							<fenode idref="150_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="134_se_f2">
 						<target>
-							<fenode idref="150_14"/>
+							<fenode idref="150_15"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -10308,23 +10278,18 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-1,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="-2,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="142_se_f1">
 						<target>
-							<fenode idref="159_6"/>
+							<fenode idref="159_5"/>
 						</target>
-				<fe id="142_se_f1_e1" name="Target">
-							<fenode idref="159_12"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.30000000000000004"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="142_se_f2">
 						<target>
-							<fenode idref="159_5"/>
+							<fenode idref="159_6"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
@@ -10655,19 +10620,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="-1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="147_se_f1">
 						<target>
 							<fenode idref="165_4"/>
 						</target>
-				<fe id="147_se_f1_e1" name="Target">
-							<fenode idref="165_5"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.30000000000000004"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="147_se_f2">
 						<target>
@@ -12500,19 +12460,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,70">The sentence polarity.</global>
+					<global type="INTERESTING" param="-2,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="173_se_f1">
 						<target>
 							<fenode idref="194_4"/>
 						</target>
-				<fe id="173_se_f1_e1" name="Target">
-							<fenode idref="194_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="173_se_f2">
 						<target>
@@ -12957,25 +12912,20 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,40">The sentence polarity.</global>
+					<global type="INTERESTING" param="-1,70">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="180_se_f1">
 						<target>
-							<fenode idref="201_15"/>
-						</target>
-				<fe id="180_se_f1_e1" name="Target">
-							<fenode idref="201_18"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="180_se_f2">
-						<target>
 							<fenode idref="201_4"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="180_se_f2">
+						<target>
+							<fenode idref="201_15"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="180_se_f3">
 						<target>
@@ -13424,31 +13374,26 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,60">The sentence polarity.</global>
+					<global type="INTERESTING" param="-0,70">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="186_se_f1">
 						<target>
-							<fenode idref="207_6"/>
-						</target>
-				<fe id="186_se_f1_e1" name="Target">
-							<fenode idref="207_11"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.6000000000000001"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="186_se_f2">
-						<target>
 							<fenode idref="207_11"/>
 							<fenode idref="207_13"/>
 						</target>
-				<fe id="186_se_f2_e1" name="Target">
+				<fe id="186_se_f1_e1" name="Target">
 							<fenode idref="207_12"/>
 							<flag for="shifter" name="general"/>
 						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
 				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="186_se_f2">
+						<target>
+							<fenode idref="207_6"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
 			</frame>
 		</frames>
 			</sem>
@@ -15130,12 +15075,7 @@
 						<target>
 							<fenode idref="236_5"/>
 						</target>
-				<fe id="210_se_f1_e1" name="Target">
-							<fenode idref="236_6"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="210_se_f2">
 						<target>
@@ -15987,19 +15927,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,80">The sentence polarity.</global>
+					<global type="INTERESTING" param="0,50">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="222_se_f1">
 						<target>
 							<fenode idref="252_5"/>
 						</target>
-				<fe id="222_se_f1_e1" name="Target">
-							<fenode idref="252_7"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.8"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="222_se_f2">
 						<target>
@@ -19037,12 +18972,7 @@
 						<target>
 							<fenode idref="303_9"/>
 						</target>
-				<fe id="266_se_f1_e1" name="Target">
-							<fenode idref="303_12"/>
-							<flag for="shifter" name="on positive"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="266_se_f2">
 						<target>
@@ -20739,19 +20669,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="289_se_f1">
 						<target>
 							<fenode idref="331_5"/>
 						</target>
-				<fe id="289_se_f1_e1" name="Target">
-							<fenode idref="331_16"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: NEG 0.30000000000000004"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="289_se_f2">
 						<target>
@@ -22281,19 +22206,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="-1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="310_se_f1">
 						<target>
 							<fenode idref="356_6"/>
 						</target>
-				<fe id="310_se_f1_e1" name="Target">
-							<fenode idref="356_10"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
 			</frame>
 		</frames>
 			</sem>
@@ -22926,19 +22846,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,60">The sentence polarity.</global>
+					<global type="INTERESTING" param="-0,70">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="319_se_f1">
 						<target>
 							<fenode idref="365_4"/>
 						</target>
-				<fe id="319_se_f1_e1" name="Target">
-							<fenode idref="365_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.7"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.6000000000000001"/>
 			</frame>
 		</frames>
 			</sem>
@@ -23152,25 +23067,20 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="322_se_f1">
 						<target>
-							<fenode idref="370_7"/>
+							<fenode idref="370_8"/>
 						</target>
 				<fe id="322_se_f1_e1" name="Target">
-							<fenode idref="370_8"/>
-							<flag for="shifter" name="on positive"/>
+							<fenode idref="370_13"/>
+							<flag for="shifter" name="general"/>
 						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
 				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="322_se_f2">
 						<target>
-							<fenode idref="370_8"/>
+							<fenode idref="370_7"/>
 						</target>
-				<fe id="322_se_f2_e1" name="Target">
-							<fenode idref="370_13"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="322_se_f3">
 						<target>
@@ -27527,12 +27437,7 @@
 						<target>
 							<fenode idref="442_8"/>
 						</target>
-				<fe id="382_se_f1_e1" name="Target">
-							<fenode idref="442_13"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="382_se_f2">
 						<target>
@@ -27780,25 +27685,20 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="-1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="385_se_f1">
 						<target>
-							<fenode idref="445_12"/>
-						</target>
-				<fe id="385_se_f1_e1" name="Target">
-							<fenode idref="445_6"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="385_se_f2">
-						<target>
 							<fenode idref="445_6"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="385_se_f2">
+						<target>
+							<fenode idref="445_12"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
@@ -29765,19 +29665,14 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,80">The sentence polarity.</global>
+					<global type="INTERESTING" param="-0,50">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="412_se_f1">
 						<target>
 							<fenode idref="477_8"/>
 						</target>
-				<fe id="412_se_f1_e1" name="Target">
-							<fenode idref="477_9"/>
-							<flag for="shifter" name="on negative"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: NEG 0.5"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.8"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="412_se_f2">
 						<target>
@@ -30418,12 +30313,7 @@
 						<target>
 							<fenode idref="486_8"/>
 						</target>
-				<fe id="420_se_f1_e1" name="Target">
-							<fenode idref="486_18"/>
-							<flag for="shifter" name="general"/>
-						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
-				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="420_se_f2">
 						<target>
@@ -30775,30 +30665,25 @@
 			</matches>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="0,30">The sentence polarity.</global>
+					<global type="INTERESTING" param="-1,00">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="425_se_f1">
 						<target>
-							<fenode idref="492_8"/>
+							<fenode idref="492_4"/>
 						</target>
 				<fe id="425_se_f1_e1" name="Target">
-							<fenode idref="492_4"/>
-							<flag for="shifter" name="general"/>
-						</fe>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-				<flag for="subjExpr" name="polarity after shift: POS 0.30000000000000004"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="425_se_f2">
-						<target>
-							<fenode idref="492_4"/>
-						</target>
-				<fe id="425_se_f2_e1" name="Target">
 							<fenode idref="492_10"/>
 							<flag for="shifter" name="general"/>
 						</fe>
 				<flag for="subjExpr" name="polarity without shift: UNKNOWN 0.0"/>
 				<flag for="subjExpr" name="polarity after shift: UNKNOWN 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="425_se_f2">
+						<target>
+							<fenode idref="492_8"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 		</frames>
 			</sem>
