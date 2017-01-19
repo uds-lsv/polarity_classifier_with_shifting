@@ -1,4 +1,4 @@
-LOGFILE_constituency_parse.annotated_extended.only_polar.wrongsubcorpusRemoved_a1_gold standard_a2_system_2017-01-16_191108.txt;gold standard + system
+LOGFILE_constituency_parse.annotated_extended.only_polar.wrongsubcorpusRemoved_a1_gold standard_a2_system_2017-01-14_153839.txt;gold standard + system
 SE__avg_TP_dice;1.0
 SE__avg_dice;1.0
 SE__cum_dice;979.0
