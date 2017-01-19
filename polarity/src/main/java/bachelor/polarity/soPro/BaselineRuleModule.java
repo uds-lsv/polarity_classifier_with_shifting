@@ -1,6 +1,7 @@
 package bachelor.polarity.soPro;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -9,7 +10,9 @@ import bachelor.polarity.salsa.corpora.elements.Flag;
 import bachelor.polarity.salsa.corpora.elements.Frame;
 import bachelor.polarity.salsa.corpora.elements.FrameElement;
 import bachelor.polarity.salsa.corpora.elements.Global;
+import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Target;
+import bachelor.polarity.salsa.corpora.elements.Terminal;
 
 public class BaselineRuleModule extends ModuleBasics implements Module {
 
@@ -169,7 +172,6 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
-				System.out.println("found shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -227,12 +229,6 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 				// Remove the shifterTarget from the sentiment list so it doesn't get
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
-				// Also remove the shifter itself from the sentimentList.
-				// Not necessary ?
-				// sentimentList.remove(shifter);
-			} else {
-				// System.out.println("No shifterTarget found for " +
-				// shifter.getName());
 			}
 		}
 
@@ -292,13 +288,77 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 	 */
 	private WordObj findShifterTargetBaselineRule(WordObj shifter, ArrayList<WordObj> sentimentList,
 			SentenceObj sentence) {
-		System.out.println("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
+		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
 
 		HashSet<Edge> edges = sentence.getGraph().getEdges();
 
+		String[] scopeEntry = shifterUnit.shifter_scope;
 		for (Edge edge : edges) {
-			System.out.println("edge: " + edge);
+			if (Arrays.asList(scopeEntry).contains("clause")) {
+				System.out.println("clause case for " + shifter);
+				final ConstituencyTree tree = sentence.getTree();
+				final Terminal wordNode = tree.getTerminal(shifter);
+				final Nonterminal containingClause;
+
+				if (tree.hasDominatingNode(wordNode, "S")) {
+					containingClause = tree.getLowestDominatingNode(wordNode, "S");
+				} else {
+					// This isn't supposed to happen except in case of parsing errors
+					containingClause = tree.getTrueRoot();
+				}
+				shifterTarget = edge.target;
+				ArrayList<Object> children = tree.getChildren(containingClause);
+				if (shifterTarget != null && !children.contains(tree.getTerminal(shifterTarget))) {
+					// System.err.println("shifterTarget not in containingClause?");
+					// System.err.println("Children: " + children);
+					for (Object child : children) {
+						// System.out.println("child: " + child.toString());
+						if (child instanceof Nonterminal) {
+							ArrayList<Object> children2 = tree.getChildren((Nonterminal) child);
+							if (children2.contains(tree.getTerminal(shifterTarget))) {
+								break;
+							}
+						}
+					}
+				}
+				// At this point we either have found a shifterTarget within the
+				// containing clause or there isn't one.
+				if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+					if (shifter_orientation_check) {
+						if (orientationCheck(shifter, shifterTarget)) {
+							return shifterTarget;
+						}
+					} else {
+						return shifterTarget;
+					}
+				} else {
+					// Do it once more with deep search
+					shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
+					ArrayList<Object> childrenDeep = tree.getChildren(containingClause);
+					if (shifterTarget != null && !childrenDeep.contains(tree.getTerminal(shifterTarget))) {
+						for (Object child : childrenDeep) {
+							if (child instanceof Nonterminal) {
+								ArrayList<Object> childrenDeep2 = tree.getChildren((Nonterminal) child);
+								if (childrenDeep2.contains(tree.getTerminal(shifterTarget))) {
+									break;
+								}
+							}
+						}
+					}
+					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+						if (shifter_orientation_check) {
+							if (orientationCheck(shifter, shifterTarget)) {
+								return shifterTarget;
+							}
+						} else {
+							return shifterTarget;
+						}
+					}
+				}
+				break;
+			}
+			// +++++++++++++++++++++
 			shifterTarget = edge.source;
 			if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 				if (shifter_orientation_check) {
