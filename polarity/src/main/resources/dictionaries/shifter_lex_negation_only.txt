@@ -1,5 +1,5 @@
 %% <shifterVerb> <type> [<scope>] <pos>
-kein g [subj,attr-rev] adj
+kein g [clause] adj
 keinesfalls g [clause] adv
 ebensowenig g [clause] adv
 aufhören g [obja,objd,objc,obji,s,objp-*,subj] verb
@@ -15,7 +15,7 @@ niemals g [clause] adv
 nichts g [clause] nomen
 trotzen g [obja,objd,objc,obji,s,objp-*,subj] verb
 ohne g [objp-ohne] appr
-nicht g [nicht] adv
+nicht g [dependent] adv
 einzigartig g [subj,attr-rev] adj
 weniger g [subj,attr-rev] adj
 kaum g [clause] adv

@@ -656,8 +656,8 @@ niemals g [clause] adv
 nichts g [clause] nomen
 trotzen g [obja,objd,objc,obji,s,objp-*,subj] verb
 ohne g [objp-ohne] appr
-nicht g [nicht] adv
-kein g [subj,attr-rev] adj
+nicht g [dependent] adv
+kein g [clause] adj
 einzigartig g [subj,attr-rev] adj
 weniger g [subj,attr-rev] adj
 kaum g [clause] adv
