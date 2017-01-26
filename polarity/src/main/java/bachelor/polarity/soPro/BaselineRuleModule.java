@@ -296,7 +296,7 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 
 		String[] scopeEntry = shifterUnit.shifter_scope;
 	// "Clause" case
-				if (scopeEntry.equals("clause")) {
+				if (Arrays.asList(scopeEntry).contains("clause")) {
 					final ConstituencyTree tree = sentence.getTree();
 					final Terminal shifterNode = tree.getTerminal(shifter);
 					final Nonterminal containingClause;

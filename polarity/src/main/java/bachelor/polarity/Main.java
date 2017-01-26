@@ -111,7 +111,7 @@ public class Main {
 			Boolean got_preset_se_file = false;
 			if (!preset_se_input.isEmpty()) {
 				if (use_preset_se_input) {
-					System.out.println("Reader preset se file from " + preset_se_input + "...");
+					System.out.println("Reading preset se file from " + preset_se_input + "...");
 					SalsaAPIConnective salsa_preset = new SalsaAPIConnective(preset_se_input, sentences);
 					got_preset_se_file = true;
 					salsa = salsa_preset;
