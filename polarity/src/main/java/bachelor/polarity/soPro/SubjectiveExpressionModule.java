@@ -355,7 +355,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					}
 				}
 				// Find the closest shifterTarget from the list
-				System.err.println("potential targets: " + shifterTargets.keySet().toString());
+//				System.err.println("potential targets: " + shifterTargets.keySet().toString());
 				int bestDistance = Integer.MAX_VALUE;
 				if(!shifterTargets.isEmpty()){
 					for (WordObj shifterCandidate : shifterTargets.keySet()){
@@ -363,11 +363,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if(distance < bestDistance){
 							bestDistance = distance;
 							shifterTarget = shifterCandidate;
-							System.err.println("current candidate: " + shifterTarget);
+//							System.err.println("current candidate: " + shifterTarget);
 						}
 					}
 				}
-				System.err.println("final candidate: " + shifterTarget);
+//				System.err.println("final candidate: " + shifterTarget);
 
 				if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 					if (shifter_orientation_check) {

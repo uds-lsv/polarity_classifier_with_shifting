@@ -3,6 +3,7 @@ package bachelor.polarity.soPro;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
@@ -294,58 +295,78 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 		HashSet<Edge> edges = sentence.getGraph().getEdges();
 
 		String[] scopeEntry = shifterUnit.shifter_scope;
-		for (Edge edge : edges) {
-			if (Arrays.asList(scopeEntry).contains("clause")) {
-				System.out.println("clause case for " + shifter);
-				final ConstituencyTree tree = sentence.getTree();
-				final Terminal wordNode = tree.getTerminal(shifter);
-				final Nonterminal containingClause;
+	// "Clause" case
+				if (scopeEntry.equals("clause")) {
+					final ConstituencyTree tree = sentence.getTree();
+					final Terminal shifterNode = tree.getTerminal(shifter);
+					final Nonterminal containingClause;
 
-				if (tree.hasDominatingNode(wordNode, "S")) {
-					containingClause = tree.getLowestDominatingNode(wordNode, "S");
-				} else {
-					// This isn't supposed to happen except in case of parsing errors
-					containingClause = tree.getTrueRoot();
-				}
-				shifterTarget = edge.target;
-				ArrayList<Object> children = tree.getChildren(containingClause);
-				if (shifterTarget != null && !children.contains(tree.getTerminal(shifterTarget))) {
-					// System.err.println("shifterTarget not in containingClause?");
-					// System.err.println("Children: " + children);
-					for (Object child : children) {
+					int shifterPos = sentence.getWordPosition(shifter);
+
+					if (tree.hasDominatingNode(shifterNode, "S")) {
+						containingClause = tree.getLowestDominatingNode(shifterNode, "S");
+					} else {
+						// This shouldn't happen except in case of parsing errors
+						containingClause = tree.getTrueRoot();
+					}
+
+					// First collect all terminals in the containing clause (childrenT)
+					ArrayList<Object> children = tree.getChildren(containingClause);
+					ArrayList<Object> childrenT = new ArrayList<>();
+					for (int i = 0; i < children.size(); i++) {
+						Object child = children.get(i);
 						// System.out.println("child: " + child.toString());
-						if (child instanceof Nonterminal) {
-							ArrayList<Object> children2 = tree.getChildren((Nonterminal) child);
-							if (children2.contains(tree.getTerminal(shifterTarget))) {
-								break;
+						if (child instanceof Terminal) {
+							childrenT.add(child);
+						} else if (child instanceof Nonterminal) {
+							children.add(tree.getChildren((Nonterminal) child));
+						} else {
+							for (Object part : (ArrayList<Object>) child) {
+								children.add(part);
 							}
 						}
 					}
-				}
-				// At this point we either have found a shifterTarget within the
-				// containing clause or there isn't one.
-				if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-					if (shifter_orientation_check) {
-						if (orientationCheck(shifter, shifterTarget)) {
-							return shifterTarget;
-						}
-					} else {
-						return shifterTarget;
-					}
-				} else {
-					// Do it once more with deep search
-					shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
-					ArrayList<Object> childrenDeep = tree.getChildren(containingClause);
-					if (shifterTarget != null && !childrenDeep.contains(tree.getTerminal(shifterTarget))) {
-						for (Object child : childrenDeep) {
-							if (child instanceof Nonterminal) {
-								ArrayList<Object> childrenDeep2 = tree.getChildren((Nonterminal) child);
-								if (childrenDeep2.contains(tree.getTerminal(shifterTarget))) {
-									break;
+					// System.err.println("Children expanded: " + childrenNT);
+
+					// Now consider all SE-terminals to be potential shifterTargets.
+					HashMap<WordObj, Integer> shifterTargets = new HashMap<>();
+					for (Object c : childrenT) {
+						Terminal childT = null;
+						if (c instanceof Terminal) {
+							childT = (Terminal) c;
+							// Compare Id with terminal Ids of the tree terminals to get to the
+							// WordObjs.
+							int wordIndex = 0;
+							for (Terminal terminal : tree.getTerminals()) {
+								wordIndex += 1;
+								String terminalId = terminal.getId().getId();
+								if (terminalId.equals(childT.getId().getId())) {
+									WordObj wordObj = sentence.getWordList().get(wordIndex - 1);
+									// Check if the word is a SE in the current sentence.
+									if (sentimentList.contains(wordObj)) {
+										shifterTargets.put(wordObj,wordIndex-1);
+									}
 								}
 							}
+						} else {
+							System.err.println("WARNING, Terminal expected for: " + c.toString());
 						}
 					}
+					// Find the closest shifterTarget from the list
+//					System.err.println("potential targets: " + shifterTargets.keySet().toString());
+					int bestDistance = Integer.MAX_VALUE;
+					if(!shifterTargets.isEmpty()){
+						for (WordObj shifterCandidate : shifterTargets.keySet()){
+							int distance = Math.abs(shifterPos - shifterTargets.get(shifterCandidate));
+							if(distance < bestDistance){
+								bestDistance = distance;
+								shifterTarget = shifterCandidate;
+//								System.err.println("current candidate: " + shifterTarget);
+							}
+						}
+					}
+//					System.err.println("final candidate: " + shifterTarget);
+
 					if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 						if (shifter_orientation_check) {
 							if (orientationCheck(shifter, shifterTarget)) {
@@ -356,9 +377,7 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
 						}
 					}
 				}
-				break;
-			}
-			// +++++++++++++++++++++
+		for (Edge edge : edges) {
 			shifterTarget = edge.source;
 			if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 				if (shifter_orientation_check) {
