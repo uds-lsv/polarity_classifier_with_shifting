@@ -14,21 +14,23 @@ dsys4 = read.table('1.0-scores.txt', header=FALSE) # system standard, count 0.3 
 # Change negative numbers to "-", positive to "+", keep 0s.
 # First change factors to be numbers
 #dsys[, 1] = as.numberic(dsys[, 1])
+dsys[dsys > -0.4 & dsys < 0.4] = "0"
 dsys[dsys < 0]= '-' 
 dsys[dsys > 0]= '+' 
 
+dsys2[dsys2 > -0.4 & dsys2 < 0.4] = "0"
 dsys2[dsys2 < 0]= "-" 
 dsys2[dsys2 > 0]= "+" 
 
+dsys3[dsys3 > -0.4 & dsys3 < 0.4] = "0"
 dsys3[dsys3 < 0]= "-" 
 dsys3[dsys3 > 0]= "+" 
 
-dsys4[dsys4 == -0.3] = "0"
-dsys4[dsys4 == 0.3] = "0"
+dsys4[dsys4 > -0.4 & dsys4 < 0.4] = "0"
 dsys4[dsys4 < 0] = "-"
 dsys4[dsys4 > 0] = "+"
 
-write.table(dsys4$V1, "4.0-dsys4.txt", row.names=FALSE)
+#write.table(dsys4$V1, "1.1-dsys.txt", row.names=FALSE)
 
 #summary(dsys)
 #count(dsys == "-")
