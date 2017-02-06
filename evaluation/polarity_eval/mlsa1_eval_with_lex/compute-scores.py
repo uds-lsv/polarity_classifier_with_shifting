@@ -7,7 +7,7 @@ Created on Thu Jan  5 20:03:02 2017
 
 goldDict = dict()
 inDict = dict()
-with open('gold.txt', 'r') as gold, open('A.dsys.txt', 'r') as infile:
+with open('gold.txt', 'r') as gold, open('A.dsys_t07.txt', 'r') as infile:
     gold = [line.strip() for line in gold]
     infile = [line.strip() for line in infile]
     counti = 0
