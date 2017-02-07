@@ -7,7 +7,7 @@ Created on Thu Jan  5 20:03:02 2017
 
 goldDict = dict()
 inDict = dict()
-with open('gold.txt', 'r') as gold, open('A.dsys_t07.txt', 'r') as infile:
+with open('gold_only_polar.txt', 'r') as gold, open('D.dsys_only_polar.txt', 'r') as infile:
     gold = [line.strip() for line in gold]
     infile = [line.strip() for line in infile]
     counti = 0
@@ -51,9 +51,10 @@ def compute_scores(d1, d2, c):
     recall_p = tp / (tp + fn)
     f_p = 2* (precision_p*recall_p / (precision_p + recall_p))
             
-    return "P = {}, R = {}, F = {}".format(precision_p, recall_p, f_p)
+    #return "P = {}, R = {}, F = {}".format(precision_p, recall_p, f_p)
+    return "{} P, R, F: {}, {}, {} ".format(c, precision_p, recall_p, f_p)
 
         
 print(compute_scores(inDict, goldDict, "+"))
 print(compute_scores(inDict, goldDict, "-"))
-print(compute_scores(inDict, goldDict, "0"))
+#print(compute_scores(inDict, goldDict, "0"))
