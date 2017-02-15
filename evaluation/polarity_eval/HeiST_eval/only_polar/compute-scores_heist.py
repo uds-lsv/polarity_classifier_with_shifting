@@ -7,7 +7,7 @@ Created on Thu Jan  5 20:03:02 2017
 
 goldDict = dict()
 inDict = dict()
-with open('gold_scores_total.txt', 'r') as gold, open('C.dsys.txt', 'r') as infile:
+with open('gold_scores.txt', 'r') as gold, open('C.dsys.txt', 'r') as infile:
     gold = [line.strip() for line in gold]
     infile = [line.strip() for line in infile]
     counti = 0
@@ -57,4 +57,4 @@ def compute_scores(d1, d2, c):
         
 print(compute_scores(inDict, goldDict, "+"))
 print(compute_scores(inDict, goldDict, "-"))
-print(compute_scores(inDict, goldDict, "0"))
+#print(compute_scores(inDict, goldDict, "0"))
