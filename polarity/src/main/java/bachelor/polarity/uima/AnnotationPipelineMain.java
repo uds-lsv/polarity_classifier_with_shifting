@@ -45,7 +45,7 @@ public class AnnotationPipelineMain {
 		System.out.println("****************UIMA ANNOTATIONS*********************");
 		// Text reader. Reads text input.
 		CollectionReaderDescription reader = createReaderDescription(TextReader.class, TextReader.PARAM_SOURCE_LOCATION,
-				"src/main/resources/textInput", TextReader.PARAM_PATTERNS, "steps2016-testdaten.raw.txt"
+				"src/main/resources/Input", TextReader.PARAM_PATTERNS, "raw_text_mlsa1.txt"
 		// TextReader.PARAM_PATTERNS, "[+]*.txt"
 		);
 
@@ -58,7 +58,7 @@ public class AnnotationPipelineMain {
 
 		// Shifter annotator
 		AnalysisEngineDescription shifterFinder = createEngineDescription(ShifterLexiconAnnotator.class,
-				ShifterLexiconAnnotator.PARAM_MODEL_LOCATION, "src/main/resources/dictionaries/shifter_lex_german.txt");
+				ShifterLexiconAnnotator.PARAM_MODEL_LOCATION, "src/main/resources/dictionaries/shifter_lex_german_extended_revised_fixed.txt");
 
 		/*
 		 * AnalysisEngineDescription writer = createEngineDescription(

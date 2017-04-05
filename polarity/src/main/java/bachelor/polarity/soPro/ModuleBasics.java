@@ -70,9 +70,9 @@ public abstract class ModuleBasics {
 			if (shifterLexEntryNew != null && shifterLexEntry != shifterLexEntryNew) {
 				posLookupShifter(shifterList, word, shifterLexEntryNew);
 			} else {
-//				System.out.println("Shifter POS-MISMATCH!");
-//				System.out.println("word: " + word.getName() + " pos: " + word.getPos());
-//				System.out.println("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
+				System.out.println("Shifter POS-MISMATCH!");
+				System.out.println("word: " + word.getName() + " pos: " + word.getPos());
+				System.out.println("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
 			}
 		}
 	}

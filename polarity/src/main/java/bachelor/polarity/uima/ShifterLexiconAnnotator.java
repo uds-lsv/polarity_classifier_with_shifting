@@ -174,7 +174,7 @@ public class ShifterLexiconAnnotator extends JCasAnnotator_ImplBase {
 				String[] longestMatch = phrases.getLongestMatch(sentenceToEnd);
 
 				if (longestMatch != null) {
-//					System.out.println("match: " + longestMatch[0]);
+					System.out.println("match: " + longestMatch[0]);
 
 					Token beginToken = tokens.get(i);
 					Token endToken = tokens.get(i + longestMatch.length - 1);

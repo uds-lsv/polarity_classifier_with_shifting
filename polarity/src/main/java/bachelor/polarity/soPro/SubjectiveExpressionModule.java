@@ -24,7 +24,16 @@ import bachelor.polarity.salsa.corpora.elements.Terminal;
  *
  */
 public class SubjectiveExpressionModule extends ModuleBasics implements Module {
-
+	public int clause = 0;
+	public int governor = 0;
+	public int dependent = 0;
+	public int subj = 0;
+	public int obja = 0;
+	public int objp = 0;
+	public int attr_rev = 0;
+	public int ohne = 0;
+	public int gmod = 0;
+	
 	/**
 	 * Constructs a new SubjectiveExpressionModule.
 	 *
@@ -372,9 +381,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 					if (shifter_orientation_check) {
 						if (orientationCheck(shifter, shifterTarget)) {
+							clause += 1;
 							return shifterTarget;
 						}
 					} else {
+						clause += 1;
 						return shifterTarget;
 					}
 				}
@@ -384,7 +395,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				// Special case for "nicht"
 				if (shifter.getLemma().equals("nicht")) {
 					if (edge.toString().contains("nicht")) {
-						System.out.println("edge: " + edge);
+//						System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						// if (secondTime) {
 						// old way
@@ -396,10 +407,12 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						 */
 						// }
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+							governor += 1;
 							return shifterTarget;
 						} else {
 							shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
+								governor += 1;
 								return shifterTarget;
 							}
 						}
@@ -413,9 +426,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
 								if (orientationCheck(shifter, shifterTarget)) {
+									objp += 1;
 									return shifterTarget;
 								}
 							} else {
+								objp += 1;
 								return shifterTarget;
 							}
 						} else {
@@ -423,9 +438,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
 									if (orientationCheck(shifter, shifterTarget)) {
+										objp += 1;
 										return shifterTarget;
 									}
 								} else {
+									objp += 1;
 									return shifterTarget;
 								}
 							}
@@ -438,9 +455,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
 								if (orientationCheck(shifter, shifterTarget)) {
+									 attr_rev += 1;
 									return shifterTarget;
 								}
 							} else {
+								 attr_rev += 1;
 								return shifterTarget;
 							}
 						} else {
@@ -448,9 +467,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
 									if (orientationCheck(shifter, shifterTarget)) {
+										attr_rev += 1;
 										return shifterTarget;
 									}
 								} else {
+									attr_rev += 1;
 									return shifterTarget;
 								}
 							}
@@ -458,6 +479,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					}
 					break;
 				case "det":
+					System.err.println("det?");
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						if (edge.target.getPos().equals("PPOSAT")) {
 							shifterTarget = edge.target;
@@ -490,9 +512,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
 								if (orientationCheck(shifter, shifterTarget)) {
+									ohne += 1;
 									return shifterTarget;
 								}
 							} else {
+								ohne += 1;
 								return shifterTarget;
 							}
 						}
@@ -503,9 +527,35 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
 								if (orientationCheck(shifter, shifterTarget)) {
+									switch (scopeEntry){
+									case "obja":
+										obja += 1;
+										break;
+									case "subj":
+										subj += 1;
+										break;
+									case "gmod":
+										gmod += 1;
+										break;
+										default:
+											System.err.println("new:" + scopeEntry);
+									}
 									return shifterTarget;
 								}
 							} else {
+								switch (scopeEntry){
+								case "obja":
+									obja += 1;
+									break;
+								case "subj":
+									subj += 1;
+									break;
+								case "gmod":
+									gmod += 1;
+									break;
+									default:
+										System.err.println("new:" + scopeEntry);
+								}
 								return shifterTarget;
 							}
 						} else {
@@ -513,9 +563,35 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
 									if (orientationCheck(shifter, shifterTarget)) {
+										switch (scopeEntry){
+										case "obja":
+											obja += 1;
+											break;
+										case "subj":
+											subj += 1;
+											break;
+										case "gmod":
+											gmod += 1;
+											break;
+											default:
+												System.err.println("new:" + scopeEntry);
+										}
 										return shifterTarget;
 									}
 								} else {
+									switch (scopeEntry){
+									case "obja":
+										obja += 1;
+										break;
+									case "subj":
+										subj += 1;
+										break;
+									case "gmod":
+										gmod += 1;
+										break;
+										default:
+											System.err.println("new:" + scopeEntry);
+									}
 									return shifterTarget;
 								}
 							}

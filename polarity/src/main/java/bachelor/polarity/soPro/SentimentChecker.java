@@ -109,6 +109,12 @@ public class SentimentChecker {
 		}
 
 		System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
+		SubjectiveExpressionModule m = ((SubjectiveExpressionModule) modules.toArray()[0]);
+		String result = String.format("clause: %d,  attr-rev: %d, dependent: %d, "
+				+ "gmod: %d, governor: %d, obja: %d, objp: %d, ohne: %d, subj: %d", 
+				m.clause, m.attr_rev, m.dependent, m.gmod, m.governor, m.obja, m.objp, m.ohne, m.subj);
+		System.out.println(result);
+
 		MyFileWriter writer = new MyFileWriter(filename);
 		try {
 			writer.writeToFile(this.salsaCon.getCorpus().toString());
