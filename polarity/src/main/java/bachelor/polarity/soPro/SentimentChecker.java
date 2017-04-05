@@ -4,6 +4,8 @@ import bachelor.polarity.salsa.corpora.elements.*;
 
 import java.io.IOException;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Looks for sentiment expressions in every {@link SentenceObj} and adds the
@@ -11,6 +13,7 @@ import java.util.Set;
  *
  */
 public class SentimentChecker {
+	private final static Logger log = Logger.getLogger(SentimentChecker.class.getName());
 	private final SalsaAPIConnective salsaCon;
 	private final SentenceList list;
 	private final Set<Module> modules;
@@ -26,6 +29,7 @@ public class SentimentChecker {
 	 *          <!--TODO-->
 	 */
 	public SentimentChecker(SalsaAPIConnective salsaCon, SentenceList list, Set<Module> modules) {
+		log.setLevel(Level.FINE);
 		this.salsaCon = salsaCon;
 		this.list = list;
 		this.modules = modules;
@@ -89,15 +93,16 @@ public class SentimentChecker {
 		hflags.addFlag(polarityFlag);
 		this.salsaCon.getHead().setFlags(hflags);
 		this.salsaCon.getHead().setFrames(hframes);
-		
-		//Set meta: corpusId is necessary for the evaluation tool
+
+		// Set meta: corpusId is necessary for the evaluation tool
 		CorpusId corpusId = new CorpusId();
 		corpusId.setId("1");
 		Meta meta = new Meta();
 		meta.setCorpus_id(corpusId);
 		this.salsaCon.getHead().setMeta(meta);
 
-		System.out.println("Analysing...");
+		// System.out.println("Analysing...");
+		log.info("Analysing...");
 
 		int listSize = list.sentenceList.size();
 
@@ -105,15 +110,18 @@ public class SentimentChecker {
 			SentenceObj stmp = list.sentenceList.get(i);
 			Semantics sem = findSentiment(stmp);
 			this.salsaCon.getSentences().get(i).setSem(sem);
-			System.out.println("Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.");
+			//System.out.println("Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.");
+			String msg = "Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.";
+			log.info(msg);
 		}
 
 		System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
 		SubjectiveExpressionModule m = ((SubjectiveExpressionModule) modules.toArray()[0]);
-		String result = String.format("clause: %d,  attr-rev: %d, dependent: %d, "
-				+ "gmod: %d, governor: %d, obja: %d, objp: %d, ohne: %d, subj: %d", 
+		String result = String.format(
+				"clause: %d,  attr-rev: %d, dependent: %d, " + "gmod: %d, governor: %d, obja: %d, objp: %d, ohne: %d, subj: %d",
 				m.clause, m.attr_rev, m.dependent, m.gmod, m.governor, m.obja, m.objp, m.ohne, m.subj);
-		System.out.println(result);
+		//System.out.println(result);
+		log.fine(result);
 
 		MyFileWriter writer = new MyFileWriter(filename);
 		try {

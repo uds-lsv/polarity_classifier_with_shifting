@@ -9,12 +9,16 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
+import bachelor.polarity.Main;
 
 /**
  * ShifterLex object contains all informations from a given shifter lexicon
  *
  */
 public class ShifterLex {
+	private final static Logger log = Logger.getLogger(ShifterLex.class.getName());
 	
 	// Constants
 	public static final String SHIFTER_TYPE_GENERAL = "general";
@@ -373,7 +377,8 @@ public class ShifterLex {
 							shifter_type_written_out = SHIFTER_TYPE_ON_NEGATIVE;
 							break;
 						default:
-							System.err.println("Warning: unknown shifter_type: " + shifter_type + " for shifter: " + shifterStr);
+							//System.err.println("Warning: unknown shifter_type: " + shifter_type + " for shifter: " + shifterStr);
+							log.warning("Warning: unknown shifter_type: " + shifter_type + " for shifter: " + shifterStr);
 							shifter_type_written_out = shifter_type;
 						}
 
@@ -393,12 +398,14 @@ public class ShifterLex {
 							this.addShifter(shifter);
 
 						} else {
-							System.err.println("Shifter-Lexicon entry for " + shifterStr + " is incomplete!");
+							//System.err.println("Shifter-Lexicon entry for " + shifterStr + " is incomplete!");
+							log.warning("Shifter-Lexicon entry for " + shifterStr + " is incomplete!");
 						}
 
 					} else {
-						System.err.println("Line with wrong format in Shifter-Lexicon, will be ignored: ");
-						System.err.println("\"" + inputLine + "\"");
+						//System.err.println("Line with wrong format in Shifter-Lexicon, will be ignored: ");
+						//System.err.println("\"" + inputLine + "\"");
+						log.warning("Line with wrong format in Shifter-Lexicon, will be ignored:\n\""+ inputLine + "\"");
 					}
 				}
 			}

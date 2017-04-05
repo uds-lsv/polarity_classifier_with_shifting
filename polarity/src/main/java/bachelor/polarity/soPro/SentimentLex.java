@@ -9,12 +9,15 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * SentimentLex object contains all informations from a given sentiment lexicon
  *
  */
 public class SentimentLex {
+	private final static Logger log = Logger.getLogger(SentimentLex.class.getName());
 
 	List<SentimentUnit> sentimentList = new ArrayList<SentimentUnit>();
 	Map<String, SentimentUnit> sentimentMap = new HashMap<String, SentimentUnit>();
@@ -30,6 +33,7 @@ public class SentimentLex {
 	 *          {@link #mweFlexibility(SentimentUnit)}).
 	 */
 	public SentimentLex(boolean flexMWE) {
+		log.setLevel(Level.FINE);
 		this.flexibleMWEs = flexMWE;
 	}
 
@@ -364,7 +368,8 @@ public class SentimentLex {
 							value = doubleScanner.nextDouble();
 							// System.out.println("valueToSetFeatureTo: " + value);
 						} else {
-							System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
+							//System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
+							log.fine("no valueToSetFeatureTo has been found for: " + wordFromInput);
 						}
 						doubleScanner.close();
 						Locale.setDefault(original);
@@ -381,14 +386,14 @@ public class SentimentLex {
 								this.addSentiment(unit);
 							}
 						} else {
-							System.err.println("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");
+							//System.err.println("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");
+							log.warning("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");
 						}
 
 					} else {
-						System.err.println("Line with wrong format in Sentiment-Lexicon, will be ignored: ");
-						System.err.println("\"" + inputLine + "\"");
-						// getContext().getLogger().log(Level.WARNING, "Found: " +
-						// inputLine);
+						//System.err.println("Line with wrong format in Sentiment-Lexicon, will be ignored: ");
+						//System.err.println("\"" + inputLine + "\"");
+						log.warning("Line with wrong format in Sentiment-Lexicon, will be ignored:\n\""+ inputLine + "\"");
 					}
 				}
 			}
