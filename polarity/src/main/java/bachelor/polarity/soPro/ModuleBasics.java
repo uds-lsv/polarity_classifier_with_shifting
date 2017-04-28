@@ -3,6 +3,8 @@ package bachelor.polarity.soPro;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Frame;
@@ -14,7 +16,7 @@ import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 
 public abstract class ModuleBasics {
-
+	private final static Logger log = Logger.getLogger(ModuleBasics.class.getName());
 	protected SalsaAPIConnective salsa;
 	protected SentimentLex sentimentLex;
 	protected ShifterLex shifterLex;
@@ -30,6 +32,7 @@ public abstract class ModuleBasics {
 
 	public ModuleBasics() {
 		super();
+		log.setLevel(Level.ALL);
 	}
 
 	/**
@@ -70,9 +73,9 @@ public abstract class ModuleBasics {
 			if (shifterLexEntryNew != null && shifterLexEntry != shifterLexEntryNew) {
 				posLookupShifter(shifterList, word, shifterLexEntryNew);
 			} else {
-				System.out.println("Shifter POS-MISMATCH!");
-				System.out.println("word: " + word.getName() + " pos: " + word.getPos());
-				System.out.println("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
+				log.fine("Shifter POS-MISMATCH!");
+				log.fine("word: " + word.getName() + " pos: " + word.getPos());
+				log.fine("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
 			}
 		}
 	}
@@ -103,9 +106,9 @@ public abstract class ModuleBasics {
 			if (sentLexEntryNew != null && sentLexEntry != sentLexEntryNew) {
 				posLookupSentiment(sentimentList, word, sentLexEntryNew);
 			} else {
-				System.out.println("Sentiment POS-MISMATCH!");
-				System.out.println("word: " + word.getName() + " pos: " + word.getPos());
-				System.out.println("sentimentLex entry pos: " + sentLexEntry.pos);
+				log.fine("Sentiment POS-MISMATCH!");
+				log.fine("word: " + word.getName() + " pos: " + word.getPos());
+				log.fine("sentimentLex entry pos: " + sentLexEntry.pos);
 			}
 		}
 	}
@@ -126,7 +129,8 @@ public abstract class ModuleBasics {
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
 		String shifterType = shifterUnit.getTyp(); // g,n,p
 
-		// Can't compare the orientation if the sentiment expression does not have a lexicon entry.
+		// Can't compare the orientation if the sentiment expression does not have a
+		// lexicon entry.
 		if (shifterTargetUnit == null) {
 			return true;
 		}

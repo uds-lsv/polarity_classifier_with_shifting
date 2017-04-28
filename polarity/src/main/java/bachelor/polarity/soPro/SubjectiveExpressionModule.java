@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import bachelor.polarity.salsa.corpora.elements.Fenode;
 import bachelor.polarity.salsa.corpora.elements.Flag;
@@ -24,16 +26,19 @@ import bachelor.polarity.salsa.corpora.elements.Terminal;
  *
  */
 public class SubjectiveExpressionModule extends ModuleBasics implements Module {
-	public int clause = 0;
-	public int governor = 0;
-	public int dependent = 0;
-	public int subj = 0;
-	public int obja = 0;
-	public int objp = 0;
-	public int attr_rev = 0;
-	public int ohne = 0;
-	public int gmod = 0;
-	
+	private final static Logger log = Logger.getLogger(SubjectiveExpressionModule.class.getName());
+	int clause = 0;
+	int governor = 0;
+	int dependent = 0;
+	int subj = 0;
+	int obja = 0;
+	int objp = 0;
+	int attr_rev = 0;
+	int ohne = 0;
+	int gmod = 0;
+	int objd = 0;
+	int obji = 0;
+
 	/**
 	 * Constructs a new SubjectiveExpressionModule.
 	 *
@@ -52,6 +57,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 	 */
 	public SubjectiveExpressionModule(SentimentLex sentimentLex, ShifterLex shifterLex, Boolean pos_lookup_sentiment,
 			Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
+		log.setLevel(Level.ALL);
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
 		this.posLookupSentiment = pos_lookup_sentiment;
@@ -80,6 +86,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 	 */
 	public SubjectiveExpressionModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex,
 			Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
+		log.setLevel(Level.ALL);
 		this.salsa = salsa;
 		this.sentimentLex = sentimentLex;
 		this.shifterLex = shifterLex;
@@ -174,7 +181,8 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 
 				// Set Frames for the sentiment word
 				final Target target = new Target();
-				System.out.println("found shifterTarget: " + shifterTarget);
+				// System.out.println("found shifterTarget: " + shifterTarget);
+				log.fine("found shifterTarget: " + shifterTarget);
 				setFrames(sentence, frames, shifterTarget, frame, target);
 
 				// Set FrameElement for the shifter
@@ -236,8 +244,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				// another frame when iterating over the remaining sentiments.
 				sentimentList.remove(shifterTarget);
 			} else {
-				// System.out.println("No shifterTarget found for " +
-				// shifter.getName());
+				// log.fine("No shifterTarget found for " + shifter.getLemma());
 			}
 		}
 
@@ -278,8 +285,6 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 		sentencePolarity.setText("The sentence polarity.");
 		globalsSentencePolarities.add(sentencePolarity);
 
-		// System.out.println("MISSING:");
-		// System.out.println(missingInGermanLex.toString());
 		return frames;
 	}
 
@@ -299,7 +304,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 	 */
 	@SuppressWarnings("unchecked")
 	private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
-		System.out.println("Shifter: " + shifter.getLemma());
+		log.fine("Shifter: " + shifter.getLemma());
 		WordObj shifterTarget = null;
 		ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
 
@@ -355,28 +360,28 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 								WordObj wordObj = sentence.getWordList().get(wordIndex - 1);
 								// Check if the word is a SE in the current sentence.
 								if (sentimentList.contains(wordObj)) {
-									shifterTargets.put(wordObj,wordIndex-1);
+									shifterTargets.put(wordObj, wordIndex - 1);
 								}
 							}
 						}
 					} else {
-						System.err.println("WARNING, Terminal expected for: " + c.toString());
+						log.severe("Terminal expected for: " + c.toString());
 					}
 				}
 				// Find the closest shifterTarget from the list
-//				System.err.println("potential targets: " + shifterTargets.keySet().toString());
+				log.fine("Potential targets in clause case: " + shifterTargets.keySet().toString());
 				int bestDistance = Integer.MAX_VALUE;
-				if(!shifterTargets.isEmpty()){
-					for (WordObj shifterCandidate : shifterTargets.keySet()){
+				if (!shifterTargets.isEmpty()) {
+					for (WordObj shifterCandidate : shifterTargets.keySet()) {
 						int distance = Math.abs(shifterPos - shifterTargets.get(shifterCandidate));
-						if(distance < bestDistance){
+						if (distance < bestDistance) {
 							bestDistance = distance;
 							shifterTarget = shifterCandidate;
-//							System.err.println("current candidate: " + shifterTarget);
+							log.fine("current candidate: " + shifterTarget);
 						}
 					}
 				}
-//				System.err.println("final candidate: " + shifterTarget);
+				log.fine("final candidate: " + shifterTarget);
 
 				if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 					if (shifter_orientation_check) {
@@ -395,7 +400,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 				// Special case for "nicht"
 				if (shifter.getLemma().equals("nicht")) {
 					if (edge.toString().contains("nicht")) {
-//						System.out.println("edge: " + edge);
+						// System.out.println("edge: " + edge);
 						shifterTarget = edge.source;
 						// if (secondTime) {
 						// old way
@@ -455,11 +460,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
 								if (orientationCheck(shifter, shifterTarget)) {
-									 attr_rev += 1;
+									attr_rev += 1;
 									return shifterTarget;
 								}
 							} else {
-								 attr_rev += 1;
+								attr_rev += 1;
 								return shifterTarget;
 							}
 						} else {
@@ -479,7 +484,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 					}
 					break;
 				case "det":
-					System.err.println("det?");
+					log.severe("det case!");
 					if (edge.depRel.equals(scopeEntry) && edge.source.equals(shifter)) {
 						if (edge.target.getPos().equals("PPOSAT")) {
 							shifterTarget = edge.target;
@@ -527,35 +532,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 						if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 							if (shifter_orientation_check) {
 								if (orientationCheck(shifter, shifterTarget)) {
-									switch (scopeEntry){
-									case "obja":
-										obja += 1;
-										break;
-									case "subj":
-										subj += 1;
-										break;
-									case "gmod":
-										gmod += 1;
-										break;
-										default:
-											System.err.println("new:" + scopeEntry);
-									}
+									countDepRels(scopeEntry);
 									return shifterTarget;
 								}
 							} else {
-								switch (scopeEntry){
-								case "obja":
-									obja += 1;
-									break;
-								case "subj":
-									subj += 1;
-									break;
-								case "gmod":
-									gmod += 1;
-									break;
-									default:
-										System.err.println("new:" + scopeEntry);
-								}
+								countDepRels(scopeEntry);
 								return shifterTarget;
 							}
 						} else {
@@ -563,35 +544,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 							if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
 								if (shifter_orientation_check) {
 									if (orientationCheck(shifter, shifterTarget)) {
-										switch (scopeEntry){
-										case "obja":
-											obja += 1;
-											break;
-										case "subj":
-											subj += 1;
-											break;
-										case "gmod":
-											gmod += 1;
-											break;
-											default:
-												System.err.println("new:" + scopeEntry);
-										}
+										countDepRels(scopeEntry);
 										return shifterTarget;
 									}
 								} else {
-									switch (scopeEntry){
-									case "obja":
-										obja += 1;
-										break;
-									case "subj":
-										subj += 1;
-										break;
-									case "gmod":
-										gmod += 1;
-										break;
-										default:
-											System.err.println("new:" + scopeEntry);
-									}
+									countDepRels(scopeEntry);
 									return shifterTarget;
 								}
 							}
@@ -601,5 +558,32 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Makes a count of dependency relation occurences for the log file.
+	 * 
+	 * @param scopeEntry
+	 */
+	private void countDepRels(String scopeEntry) {
+		switch (scopeEntry) {
+		case "obja":
+			obja += 1;
+			break;
+		case "subj":
+			subj += 1;
+			break;
+		case "gmod":
+			gmod += 1;
+			break;
+		case "objd":
+			objd += 1;
+			break;
+		case "obji":
+			obji += 1;
+			break;
+		default:
+			log.severe("DepRel not counted: " + scopeEntry);
+		}
 	}
 }

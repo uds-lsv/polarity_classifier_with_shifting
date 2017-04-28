@@ -24,8 +24,8 @@ public class Main {
 	private final static Logger log = Logger.getLogger(Main.class.getName());
 
 	public static void main(String[] args) {
-		//System.setProperty("src.main.resources", "logging.properties");
-		System.setProperty( "java.util.logging.config.file", "src/main/resources/logging.properties" );
+		// System.setProperty("src.main.resources", "logging.properties");
+		System.setProperty("java.util.logging.config.file", "src/main/resources/logging.properties");
 		try {
 			LogManager.getLogManager().readConfiguration();
 		} catch (Exception e) {
@@ -35,7 +35,7 @@ public class Main {
 		// Read config
 		Properties prop = new Properties();
 		java.nio.file.Path configPath = java.nio.file.Paths.get("config", "config.properties");
-		// System.out.println("Reading config from " + configPath.toString());
+		System.out.println("Reading config from " + configPath.toString());
 		log.info("Reading config from " + configPath.toString());
 		try {
 			InputStream configInput = new FileInputStream(configPath.toString());
@@ -61,16 +61,16 @@ public class Main {
 			// Make sure that correct properties are set in case of baseline module.
 			if (baseline_module) {
 				if (baseline_window < 1) {
-					//System.err.println("n must be bigger than 0 for the baseline module to work!");
-					//System.err.println("Entered number: n=" + baseline_window);
+					System.err.println("n must be bigger than 0 for the baseline module to work!");
+					System.err.println("Entered number: n=" + baseline_window);
 					log.severe("n must be bigger than 0 for the baseline module to work!");
 					log.severe("Entered number: n=" + baseline_window);
 					return;
 				}
 				if (!(baseline_direction.equals("RIGHT") || baseline_direction.equals("LEFT")
 						|| baseline_direction.equals("BOTH"))) {
-					//System.err.println("baseline direction must either be \"LEFT\", \"RIGHT\", or \"BOTH\".");
-					//System.err.println("Given direction: " + baseline_direction);
+					System.err.println("baseline direction must either be \"LEFT\", \"RIGHT\", or \"BOTH\".");
+					System.err.println("Given direction: " + baseline_direction);
 					log.severe("Baseline direction must either be \"LEFT\", \"RIGHT\", or \"BOTH\".");
 					log.severe("Given direction: " + baseline_direction);
 					return;
@@ -83,52 +83,52 @@ public class Main {
 
 			// Only one module should be turned on at the same time.
 			if (baseline_module && baseline_rule_module) {
-				//System.err.println("WARNING: Both Baseline Modules are turned on!");
-				//System.err.println("Check the config file!");
+				System.err.println("WARNING: Both Baseline Modules are turned on!");
+				System.err.println("Check the config file!");
 				log.warning("WARNING: Both Baseline Modules are turned on!");
 				log.warning("Check the config file!");
 			}
 
 			// Read in raw input text and create SentenceList based on it.
-			//System.out.println("Reading raw text from : " + text_input);
+			System.out.println("Reading raw text from : " + text_input);
 			log.info("Reading raw text from : " + text_input);
 			SentenceList sentences = new SentenceList();
 			sentences.rawToSentenceList(text_input);
 
 			// Read in dependency parse file and create a DependencyGraph object for
 			// each sentence.
-			//System.out.println("Reading dependency data from " + dependency_input + "...");
-			//System.out.println("Creating dependency graph...");
+			System.out.println("Reading dependency data from " + dependency_input + "...");
+			System.out.println("Creating dependency graph...");
 			log.info("Reading dependency data from " + dependency_input + "...");
 			log.info("Creating dependency graph...");
 			sentences.readDependencyParse(dependency_input);
 
 			// Normalize DependencyGraph objects.
 			if (normalize) {
-				//System.out.println("Normalizing dependency graph...");
+				System.out.println("Normalizing dependency graph...");
 				log.info("Normalizing dependency graph...");
 				sentences.normalizeDependencyGraphs();
 			} else {
-				//System.out.println("Normalizing of dependency graph set to FALSE.");
+				System.out.println("Normalizing of dependency graph set to FALSE.");
 				log.info("Normalizing of dependency graph set to FALSE.");
 			}
 
 			// Read in Salsa / Tiger XML file and create a ConstituencyTree object for
 			// every sentence.
-			//System.out.println("Reading constituency data from " + constituency_input + "...");
-			//System.out.println("Creating constituency tree...");
+			System.out.println("Reading constituency data from " + constituency_input + "...");
+			System.out.println("Creating constituency tree...");
 			log.info("Reading constituency data from " + constituency_input + "...");
 			log.info("Creating constituency tree...");
 			SalsaAPIConnective salsa = new SalsaAPIConnective(constituency_input, sentences);
 
 			// Read in sentiment lexicon.
-			//System.out.println("Reading sentiment lexicon from " + sentiment_lexicon_input + "...");
+			System.out.println("Reading sentiment lexicon from " + sentiment_lexicon_input + "...");
 			log.info("Reading sentiment lexicon from " + sentiment_lexicon_input + "...");
 			SentimentLex sentimentLex = new SentimentLex(true);
 			sentimentLex.fileToLex(sentiment_lexicon_input);
 
 			// Read in shifter lexicon.
-			//System.out.println("Reading shifter lexicon from " + shifter_lexicon_input + "...");
+			System.out.println("Reading shifter lexicon from " + shifter_lexicon_input + "...");
 			log.info("Reading shifter lexicon from " + shifter_lexicon_input + "...");
 			ShifterLex shifterLex = new ShifterLex(true);
 			shifterLex.fileToLex(shifter_lexicon_input);
@@ -137,19 +137,19 @@ public class Main {
 			Boolean got_preset_se_file = false;
 			if (!preset_se_input.isEmpty()) {
 				if (use_preset_se_input) {
-					//System.out.println("Reading preset se file from " + preset_se_input + "...");
+					System.out.println("Reading preset se file from " + preset_se_input + "...");
 					log.info("Reading preset se file from " + preset_se_input + "...");
 					SalsaAPIConnective salsa_preset = new SalsaAPIConnective(preset_se_input, sentences);
 					got_preset_se_file = true;
 					salsa = salsa_preset;
 				} else {
-					//System.err.println("A preset se file path has been specified, but the option to use it is turned off.");
-					//System.err.println("See USE_PRESET_SE_INPUT in the configuration file.");
+					System.err.println("A preset se file path has been specified, but the option to use it is turned off.");
+					System.err.println("See USE_PRESET_SE_INPUT in the configuration file.");
 					log.severe("A preset se file path has been specified, but the option to use it is turned off.");
 					log.severe("See USE_PRESET_SE_INPUT in the configuration file.");
 				}
 			} else if (use_preset_se_input) {
-				//System.err.println("USE_PRESET_SE_INPUT is set to TRUE but no preset-se-file-path was specified!");
+				System.err.println("USE_PRESET_SE_INPUT is set to TRUE but no preset-se-file-path was specified!");
 				log.severe("USE_PRESET_SE_INPUT is set to TRUE but no preset-se-file-path was specified!");
 				return;
 			}
@@ -170,7 +170,7 @@ public class Main {
 						pos_lookup_shifter, shifter_orientation_check);
 				modules.add(subjectiveExpressionModule);
 			} else {
-				//System.err.println("Warning! Subjective Expression Module turned off!");
+				System.err.println("Warning! Subjective Expression Module turned off!");
 				log.severe("Warning! Subjective Expression Module turned off!");
 			}
 
@@ -203,16 +203,16 @@ public class Main {
 			// search for sentiment expressions and write results to the output file
 			// specified in the configuration file
 			final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
-			//System.out.println("Looking for sentiment expressions...");
+			System.out.println("Looking for sentiment expressions...");
 			log.info("Looking for sentiment expressions...");
 
 			sentcheck.findSentiments(output);
 		} catch (FileNotFoundException e) {
-			//System.out.println("No config found at this config path: " + configPath);
+			System.out.println("No config found at this config path: " + configPath);
 			log.severe("No config found at this config path: " + configPath);
 			return;
 		} catch (IOException e) {
-			//System.out.println("Could not read config file from " + configPath);
+			System.out.println("Could not read config file from " + configPath);
 			log.severe("Could not read config file from " + configPath);
 			return;
 		}

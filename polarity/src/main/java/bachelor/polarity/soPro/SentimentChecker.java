@@ -29,7 +29,7 @@ public class SentimentChecker {
 	 *          <!--TODO-->
 	 */
 	public SentimentChecker(SalsaAPIConnective salsaCon, SentenceList list, Set<Module> modules) {
-		log.setLevel(Level.FINE);
+		log.setLevel(Level.ALL);
 		this.salsaCon = salsaCon;
 		this.list = list;
 		this.modules = modules;
@@ -110,17 +110,17 @@ public class SentimentChecker {
 			SentenceObj stmp = list.sentenceList.get(i);
 			Semantics sem = findSentiment(stmp);
 			this.salsaCon.getSentences().get(i).setSem(sem);
-			//System.out.println("Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.");
 			String msg = "Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.";
+			System.out.println(msg);
 			log.info(msg);
 		}
 
 		System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
 		SubjectiveExpressionModule m = ((SubjectiveExpressionModule) modules.toArray()[0]);
 		String result = String.format(
-				"clause: %d,  attr-rev: %d, dependent: %d, " + "gmod: %d, governor: %d, obja: %d, objp: %d, ohne: %d, subj: %d",
-				m.clause, m.attr_rev, m.dependent, m.gmod, m.governor, m.obja, m.objp, m.ohne, m.subj);
-		//System.out.println(result);
+				"clause: %d,  attr-rev: %d, dependent: %d, "
+						+ "gmod: %d, governor: %d, obja: %d, objp: %d, objd: %d, obji: %d, ohne: %d, subj: %d",
+				m.clause, m.attr_rev, m.dependent, m.gmod, m.governor, m.obja, m.objp, m.objd, m.obji, m.ohne, m.subj);
 		log.fine(result);
 
 		MyFileWriter writer = new MyFileWriter(filename);
