@@ -37,6 +37,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
   int gmod = 0;
   int objd = 0;
   int obji = 0;
+  int objg = 0;
 
   /**
    * Constructs a new SubjectiveExpressionModule.
@@ -597,6 +598,9 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
         break;
       case "obji":
         obji += 1;
+        break;
+      case "objg":
+        objg += 1;
         break;
       default:
         log.log(Level.SEVERE, "DepRel not counted: {0}", scopeEntry);
