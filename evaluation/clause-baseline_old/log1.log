@@ -1,0 +1,510 @@
+16:36:36 INFORMATION bachelor.polarity.Main main Reading config from config\config.properties
+16:36:36 INFORMATION bachelor.polarity.Main main Reading raw text from : src/main/resources/Input/raw_text.wrongsubcorpusRemoved.txt
+16:36:36 INFORMATION bachelor.polarity.Main main Reading dependency data from src/main/resources/Input/dependency_parse.wrongsubcorpusRemoved.txt...
+16:36:36 INFORMATION bachelor.polarity.Main main Creating dependency graph...
+16:36:36 INFORMATION bachelor.polarity.Main main Normalizing dependency graph...
+16:36:36 INFORMATION bachelor.polarity.Main main Reading constituency data from src/main/resources/Input/constituency_parse.wrongsubcorpusRemoved.xml...
+16:36:36 INFORMATION bachelor.polarity.Main main Creating constituency tree...
+16:36:36 INFORMATION bachelor.polarity.Main main Reading sentiment lexicon from src/main/resources/dictionaries/germanlex.txt...
+16:36:37 WARNUNG bachelor.polarity.soPro.SentimentLex fileToLex Line with wrong format in Sentiment-Lexicon, will be ignored:
+"süsslich POS 0=5 adj"
+16:36:37 WARNUNG bachelor.polarity.soPro.SentimentLex fileToLex Line with wrong format in Sentiment-Lexicon, will be ignored:
+"stöhnen NEG=0.7+B6085 verben"
+16:36:37 WARNUNG bachelor.polarity.soPro.SentimentLex fileToLex Line with wrong format in Sentiment-Lexicon, will be ignored:
+"dickhäutig POS=0.0.5 adj"
+16:36:37 INFORMATION bachelor.polarity.Main main Reading shifter lexicon from src/main/resources/dictionaries/shifter_lex_new.txt...
+16:36:37 INFORMATION bachelor.polarity.Main main Reading preset se file from src/main/resources/Input/constituency_parse.annotated_extended.only_polar.wrongsubcorpusRemoved.xml...
+16:36:37 SCHWERWIEGEND bachelor.polarity.Main main Warning! Subjective Expression Module turned off!
+16:36:37 INFORMATION bachelor.polarity.Main main Looking for sentiment expressions...
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Analysing...
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 1 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 2 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 3 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 4 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 5 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 6 of 433 done.
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [verrät, Bombe, Terroristin]
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: verrät
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: verrät
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 7 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 8 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 9 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 10 of 433 done.
+16:36:37 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:37 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: abweisend pos: ADJD
+16:36:37 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: verb
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 11 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 12 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 13 of 433 done.
+16:36:37 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:37 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: weniger pos: ADV
+16:36:37 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: adj
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 14 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 15 of 433 done.
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [zufrieden]
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: zufrieden
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: zufrieden
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 16 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 17 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 18 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 19 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 20 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 21 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 22 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 23 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 24 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 25 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 26 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 27 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 28 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 29 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 30 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 31 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 32 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 33 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 34 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 35 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 36 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 37 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 38 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 39 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 40 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 41 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 42 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 43 of 433 done.
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [dürfen, Schuldenschraube]
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: dürfen
+16:36:37 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: dürfen
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 44 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 45 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 46 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 47 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 48 of 433 done.
+16:36:37 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 49 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 50 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 51 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 52 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 53 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 54 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 55 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 56 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 57 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 58 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 59 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [Hoffnung]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: Hoffnung
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: Hoffnung
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 60 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [Wut]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: Wut
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: Wut
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 61 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 62 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 63 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 64 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 65 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 66 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 67 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 68 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 69 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 70 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 71 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 72 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 73 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 74 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 75 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 76 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 77 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 78 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 79 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 80 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 81 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 82 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 83 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 84 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 85 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 86 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: störend pos: ADJD
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: verb
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 87 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 88 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 89 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 90 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 91 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 92 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 93 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 94 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 95 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 96 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 97 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 98 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 99 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 100 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 101 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 102 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 103 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 104 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 105 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 106 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 107 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 108 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 109 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 110 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 111 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 112 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 113 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 114 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 115 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 116 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 117 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 118 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 119 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 120 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 121 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 122 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 123 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 124 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 125 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 126 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 127 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 128 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 129 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 130 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 131 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 132 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 133 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 134 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 135 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 136 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 137 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 138 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 139 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 140 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 141 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 142 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 143 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 144 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 145 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 146 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 147 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 148 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: weniger pos: ADV
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: adj
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 149 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 150 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 151 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 152 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 153 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 154 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 155 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 156 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 157 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 158 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 159 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 160 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 161 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 162 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 163 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 164 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 165 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 166 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 167 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 168 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 169 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 170 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 171 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 172 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 173 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 174 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 175 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 176 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 177 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 178 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 179 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 180 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 181 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 182 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 183 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 184 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: []
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: null
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 185 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 186 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 187 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 188 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 189 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 190 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 191 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 192 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 193 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 194 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 195 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 196 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 197 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 198 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 199 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 200 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 201 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 202 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 203 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 204 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 205 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 206 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 207 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 208 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 209 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 210 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 211 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [unterlassen]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: unterlassen
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: unterlassen
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 212 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 213 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 214 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 215 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 216 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 217 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 218 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 219 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 220 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 221 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 222 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 223 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 224 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 225 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 226 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 227 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 228 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 229 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 230 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 231 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 232 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 233 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 234 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 235 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 236 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 237 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 238 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 239 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 240 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 241 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 242 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 243 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 244 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 245 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 246 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 247 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 248 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 249 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 250 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 251 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 252 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 253 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 254 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 255 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 256 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 257 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 258 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 259 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 260 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 261 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 262 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 263 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 264 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 265 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 266 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 267 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 268 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 269 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 270 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 271 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 272 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [wollte, Beruhigung]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: wollte
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: wollte
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 273 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 274 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 275 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 276 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 277 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 278 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 279 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 280 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 281 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 282 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 283 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 284 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 285 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 286 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 287 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 288 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 289 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 290 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: weniger pos: ADV
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: adj
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 291 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 292 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 293 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 294 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 295 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 296 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 297 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 298 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 299 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 300 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 301 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 302 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 303 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 304 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 305 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 306 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: weniger pos: ADV
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: adj
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 307 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 308 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 309 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 310 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 311 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 312 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 313 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 314 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 315 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 316 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 317 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 318 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 319 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 320 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 321 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 322 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [verhohlen, Rückzug, droht]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: verhohlen
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: verhohlen
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 323 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 324 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 325 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 326 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 327 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 328 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 329 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 330 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 331 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 332 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 333 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 334 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 335 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 336 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 337 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 338 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 339 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 340 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 341 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 342 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 343 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 344 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 345 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 346 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 347 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 348 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 349 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 350 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 351 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 352 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: []
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: null
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 353 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 354 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 355 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 356 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 357 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 358 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 359 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 360 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 361 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 362 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 363 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 364 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 365 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 366 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 367 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 368 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 369 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 370 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 371 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 372 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 373 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 374 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 375 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 376 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 377 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 378 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 379 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 380 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 381 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 382 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: ohne pos: KOUI
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: appr
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 383 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 384 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 385 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 386 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 387 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 388 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 389 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 390 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 391 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 392 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [Kontrolle]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: Kontrolle
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: Kontrolle
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 393 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 394 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 395 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 396 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 397 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter Shifter POS-MISMATCH!
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter word: abstoßend pos: ADJD
+16:36:38 FEIN bachelor.polarity.soPro.ModuleBasics posLookupShifter shifterLex entry pos: verb
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 398 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 399 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 400 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 401 of 433 done.
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule Potential targets in clause case: [Milderung]
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule current candidate: Milderung
+16:36:38 FEIN bachelor.polarity.soPro.BaselineRuleModule findShifterTargetBaselineRule final candidate: Milderung
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 402 of 433 done.
+16:36:38 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 403 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 404 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 405 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 406 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 407 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 408 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 409 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 410 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 411 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 412 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 413 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 414 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 415 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 416 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 417 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 418 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 419 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 420 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 421 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 422 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 423 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 424 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 425 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 426 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 427 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 428 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 429 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 430 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 431 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 432 of 433 done.
+16:36:39 INFORMATION bachelor.polarity.soPro.SentimentChecker findSentiments Sentence 433 of 433 done.

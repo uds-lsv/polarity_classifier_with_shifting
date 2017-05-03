@@ -113,11 +113,16 @@ public class SentimentChecker {
     }
 
     System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
-    SubjectiveExpressionModule m = ((SubjectiveExpressionModule) modules.toArray()[0]);
-    String result = String.format(
-            "obja: %d, objp: %d, subj: %d, gmod: %d, governor: %d, objd: %d, clause: %d, ohne: %d, attr-rev: %d, objg: %d, obji: %d, dependent: %d",
-            m.obja, m.objp, m.subj, m.gmod, m.governor, m.objd, m.clause, m.ohne, m.attr_rev, m.objg, m.obji, m.dependent);
-    log.fine(result);
+    // Statistics for logging.
+    try {
+      SubjectiveExpressionModule m = ((SubjectiveExpressionModule) modules.toArray()[0]);
+      String result = String.format(
+              "obja: %d, objp: %d, subj: %d, gmod: %d, governor: %d, objd: %d, clause: %d, ohne: %d, attr-rev: %d, objg: %d, obji: %d, dependent: %d",
+              m.obja, m.objp, m.subj, m.gmod, m.governor, m.objd, m.clause, m.ohne, m.attr_rev, m.objg, m.obji, m.dependent);
+      log.fine(result);
+    } catch (ClassCastException e) {
+
+    }
 
     MyFileWriter writer = new MyFileWriter(filename);
     try {
