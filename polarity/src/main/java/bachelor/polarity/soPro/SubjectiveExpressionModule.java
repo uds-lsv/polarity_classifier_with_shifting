@@ -38,6 +38,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
   int objd = 0;
   int obji = 0;
   int objg = 0;
+  String scopeEntryHit = new String();
 
   /**
    * Constructs a new SubjectiveExpressionModule.
@@ -178,7 +179,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
         // Set Frames for the sentiment word
         final Target target = new Target();
         // System.out.println("found shifterTarget: " + shifterTarget);
-        log.log(Level.FINE, "found shifterTarget: {0}", shifterTarget);
+        log.log(Level.FINE, "found shifterTarget: {0}, with ScopeEntry: {1}", new String[]{shifterTarget.toString(), scopeEntryHit});
         setFrames(sentence, frames, shifterTarget, frame, target);
 
         // Set FrameElement for the shifter
@@ -297,6 +298,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
    */
   @SuppressWarnings("unchecked")
   private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
+    scopeEntryHit = new String();
     log.log(Level.FINE, "Shifter: {0}", shifter.getLemma());
     WordObj shifterTarget = null;
     ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
@@ -304,6 +306,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
     HashSet<Edge> edges = sentence.getGraph().getEdges();
 
     for (String scopeEntry : shifterUnit.shifter_scope) {
+      scopeEntryHit = scopeEntry;
       // "Clause" case
       if (scopeEntry.equals("clause")) {
         final ConstituencyTree tree = sentence.getTree();
@@ -335,7 +338,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
             }
           }
         }
-				// System.err.println("Children expanded: " + childrenNT);
+        // System.err.println("Children expanded: " + childrenNT);
 
         // Now consider all SE-terminals to be potential shifterTargets.
         HashMap<WordObj, Integer> shifterTargets = new HashMap<>();
@@ -379,12 +382,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
         if (sentimentList != null && shifterTarget != null
                 && sentimentList.contains(shifterTarget)
                 && !shifterTarget.equals(shifter)) {
-          if (shifter_orientation_check) {
-            if (orientationCheck(shifter, shifterTarget)) {
-              clause += 1;
-              return shifterTarget;
-            }
-          } else {
+          if (orientationCheck(shifter, shifterTarget)) {
             clause += 1;
             return shifterTarget;
           }
@@ -397,19 +395,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
           if (edge.toString().contains("nicht")) {
             // System.out.println("edge: " + edge);
             shifterTarget = edge.source;
-						// if (secondTime) {
-            // old way
-						/*
-             * if ((shifterTarget.getPosition() - 2) >= 0) { System.out.println(
-             * "shifterTarget orig: " + shifterTarget); shifterTarget =
-             * sentence.getWordList().get(shifterTarget.getPosition() - 2);
-             * System.out.println("shifterTarget after: " + shifterTarget); }
-             */
-            // }
             if (shifterTarget != null && sentimentList != null
                     && sentimentList.contains(shifterTarget)
                     && !shifterTarget.equals(shifter)) {
               governor += 1;
+              log.log(Level.FINE, "Found shifterTarget with scopeEntry: {0}", scopeEntry);
               return shifterTarget;
             } else {
               shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
@@ -417,6 +407,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                       && sentimentList.contains(shifterTarget)
                       && !shifterTarget.equals(shifter)) {
                 governor += 1;
+                log.log(Level.FINE, "Found shifterTarget with scopeEntry: {0}", scopeEntry);
                 return shifterTarget;
               }
             }
@@ -430,12 +421,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
               if (shifterTarget != null && sentimentList != null
                       && sentimentList.contains(shifterTarget)
                       && !shifterTarget.equals(shifter)) {
-                if (shifter_orientation_check) {
-                  if (orientationCheck(shifter, shifterTarget)) {
-                    objp += 1;
-                    return shifterTarget;
-                  }
-                } else {
+                if (orientationCheck(shifter, shifterTarget)) {
                   objp += 1;
                   return shifterTarget;
                 }
@@ -444,12 +430,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                 if (shifterTarget != null && sentimentList != null
                         && sentimentList.contains(shifterTarget)
                         && !shifterTarget.equals(shifter)) {
-                  if (shifter_orientation_check) {
-                    if (orientationCheck(shifter, shifterTarget)) {
-                      objp += 1;
-                      return shifterTarget;
-                    }
-                  } else {
+                  if (orientationCheck(shifter, shifterTarget)) {
                     objp += 1;
                     return shifterTarget;
                   }
@@ -463,12 +444,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
               if (shifterTarget != null && sentimentList != null
                       && sentimentList.contains(shifterTarget)
                       && !shifterTarget.equals(shifter)) {
-                if (shifter_orientation_check) {
-                  if (orientationCheck(shifter, shifterTarget)) {
-                    attr_rev += 1;
-                    return shifterTarget;
-                  }
-                } else {
+                if (orientationCheck(shifter, shifterTarget)) {
                   attr_rev += 1;
                   return shifterTarget;
                 }
@@ -477,12 +453,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                 if (shifterTarget != null && sentimentList != null
                         && sentimentList.contains(shifterTarget)
                         && !shifterTarget.equals(shifter)) {
-                  if (shifter_orientation_check) {
-                    if (orientationCheck(shifter, shifterTarget)) {
-                      attr_rev += 1;
-                      return shifterTarget;
-                    }
-                  } else {
+                  if (orientationCheck(shifter, shifterTarget)) {
                     attr_rev += 1;
                     return shifterTarget;
                   }
@@ -498,11 +469,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                 if (shifterTarget != null && sentimentList != null
                         && sentimentList.contains(shifterTarget)
                         && !shifterTarget.equals(shifter)) {
-                  if (shifter_orientation_check) {
-                    if (orientationCheck(shifter, shifterTarget)) {
-                      return shifterTarget;
-                    }
-                  } else {
+                  if (orientationCheck(shifter, shifterTarget)) {
                     return shifterTarget;
                   }
                 } else {
@@ -510,11 +477,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                   if (shifterTarget != null && sentimentList != null
                           && sentimentList.contains(shifterTarget)
                           && !shifterTarget.equals(shifter)) {
-                    if (shifter_orientation_check) {
-                      if (orientationCheck(shifter, shifterTarget)) {
-                        return shifterTarget;
-                      }
-                    } else {
+                    if (orientationCheck(shifter, shifterTarget)) {
                       return shifterTarget;
                     }
                   }
@@ -528,12 +491,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
               if (shifterTarget != null && sentimentList != null
                       && sentimentList.contains(shifterTarget)
                       && !shifterTarget.equals(shifter)) {
-                if (shifter_orientation_check) {
-                  if (orientationCheck(shifter, shifterTarget)) {
-                    ohne += 1;
-                    return shifterTarget;
-                  }
-                } else {
+                if (orientationCheck(shifter, shifterTarget)) {
                   ohne += 1;
                   return shifterTarget;
                 }
@@ -545,12 +503,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
               if (shifterTarget != null && sentimentList != null
                       && sentimentList.contains(shifterTarget)
                       && !shifterTarget.equals(shifter)) {
-                if (shifter_orientation_check) {
-                  if (orientationCheck(shifter, shifterTarget)) {
-                    countDepRels(scopeEntry);
-                    return shifterTarget;
-                  }
-                } else {
+                if (orientationCheck(shifter, shifterTarget)) {
                   countDepRels(scopeEntry);
                   return shifterTarget;
                 }
@@ -559,12 +512,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                 if (shifterTarget != null && sentimentList != null
                         && sentimentList.contains(shifterTarget)
                         && !shifterTarget.equals(shifter)) {
-                  if (shifter_orientation_check) {
-                    if (orientationCheck(shifter, shifterTarget)) {
-                      countDepRels(scopeEntry);
-                      return shifterTarget;
-                    }
-                  } else {
+                  if (orientationCheck(shifter, shifterTarget)) {
                     countDepRels(scopeEntry);
                     return shifterTarget;
                   }

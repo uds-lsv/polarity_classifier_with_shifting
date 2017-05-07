@@ -109,7 +109,7 @@ public class SentimentChecker {
       this.salsaCon.getSentences().get(i).setSem(sem);
       String msg = "Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.";
       System.out.println(msg);
-      log.info(msg);
+      log.info(msg +"\n");
     }
 
     System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
