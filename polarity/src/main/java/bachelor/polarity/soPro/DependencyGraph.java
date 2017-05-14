@@ -3,7 +3,6 @@ package bachelor.polarity.soPro;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
@@ -20,7 +19,7 @@ import java.util.List;
 public class DependencyGraph {
 
   private final WordObj root;
-  private final LinkedHashSet<Edge> edges;
+  private final HashSet<Edge> edges;
   private HashSet<WordObj> nodes;
   private final List<WordObj> wordList;
 
@@ -30,14 +29,14 @@ public class DependencyGraph {
 
   public DependencyGraph(List<WordObj> wl) {
     this.root = new WordObj("root");
-    this.edges = new LinkedHashSet<Edge>();
+    this.edges = new HashSet<Edge>();
     this.nodes = new HashSet<WordObj>();
     wordList = wl;
   }
 
   public DependencyGraph(DependencyGraph old) {
     this.root = new WordObj("root");
-    this.edges = new LinkedHashSet<Edge>(old.edges);
+    this.edges = new HashSet<Edge>(old.edges);
     this.nodes = new HashSet<WordObj>(old.nodes);
     this.wordList = old.wordList;
     this.ap = old.ap;
@@ -156,6 +155,25 @@ public class DependencyGraph {
       }
     }
     return null;
+  }
+  
+  /**
+   * Return a node to which points an edge from the parent node with a specified
+   * dependency relation
+   *
+   * @param source a node in the graph
+   * @param depRel the dependency relation
+   * @return the node if it has an incoming edge from the source WordObj with
+   * the depRel indicated
+   */
+  public List<WordObj> getChildren(WordObj source) {
+    List<WordObj> children = new ArrayList<>();
+    for (Edge edge : this.edges) {
+      if (source.equals(edge.source)) {
+        children.add(edge.target);
+      }
+    }
+    return children;
   }
 
   /**

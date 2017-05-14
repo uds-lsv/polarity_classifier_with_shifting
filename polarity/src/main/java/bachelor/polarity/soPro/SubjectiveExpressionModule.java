@@ -16,6 +16,7 @@ import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 import java.util.Iterator;
+import java.util.List;
 import java.util.ListIterator;
 
 /**
@@ -427,11 +428,14 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                       && !shifterTarget.equals(shifter)) {
                 if (orientationCheck(shifter, shifterTarget)) {
                   objp += 1;
-//                  System.out.println("edges: " + edges);
                   return shifterTarget;
                 }
               } else {
+//                log.log(Level.FINE, "nodes: {0}", sentence.getGraph().getChildren(shifterTarget).toString());
                 shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
+                if (shifterTarget != null) {
+//                  log.log(Level.FINE, "Expansion: attr: {0}", shifterTarget);
+                }
                 if (shifterTarget != null && sentimentList != null
                         && sentimentList.contains(shifterTarget)
                         && !shifterTarget.equals(shifter)) {
@@ -440,9 +444,21 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                     return shifterTarget;
                   }
                 }
+                // new case get all edges not just attr
+                /**
+                 * List<WordObj> shifterTargets =
+                 * sentence.getGraph().getChildren(edge.target); for (WordObj
+                 * shi : shifterTargets) { if (shi != null && sentimentList !=
+                 * null && sentimentList.contains(shi) && !shi.equals(shifter))
+                 * { if (orientationCheck(shifter, shi)) { objp += 1;
+                 * System.out.println("MIRACLE!: " + shi.toString()); return
+                 * shi; } } }
+                 *
+                 */
               }
             }
             break;
+
           case "attr-rev":
             if (edge.depRel.equals("attr") && edge.target.equals(shifter)) {
               shifterTarget = edge.source;
