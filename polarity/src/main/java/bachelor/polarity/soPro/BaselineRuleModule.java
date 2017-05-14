@@ -34,9 +34,8 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
   }
 
   /**
-   * Constructs a new BaselineModule. Looks for shifter targets within the
-   * specified scope to the right of the shifter. Does not use dependency
-   * information
+   * Constructs a new BaselineModule. Looks for shifter targets within the same
+   * clause as the shifter.
    *
    * @param sentimentLex A SentimentLex object in which the rules for finding
    * sentiment sources and targets are saved as SentimentUnits.
@@ -47,7 +46,7 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
    * @param shifter_orientation_check Option to do orientation check for
    * shifters.
    */
-  public BaselineRuleModule(SentimentLex sentimentLex, ShifterLex shifterLex, int scope, Boolean pos_lookup_sentiment,
+  public BaselineRuleModule(SentimentLex sentimentLex, ShifterLex shifterLex, Boolean pos_lookup_sentiment,
           Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
     this.globalsSentencePolaritiesB = new ArrayList<Global>();
     log.setLevel(Level.ALL);
@@ -59,9 +58,8 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
   }
 
   /**
-   * Constructs a new BaselineModule. Looks for shifter targets within the
-   * specified scope to the right of the shifter. Does not use dependency
-   * information. Uses preset SE locations.
+   * Constructs a new BaselineModule. Looks for shifter targets within the same
+   * clause as the shifter.
    *
    * @param salsa Salsa API connective containing locations of SEs.
    * @param sentimentLex A SentimentLex object in which the rules for finding
@@ -73,7 +71,7 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
    * @param shifter_orientation_check Option to do orientation check for
    * shifters.
    */
-  public BaselineRuleModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex, int scope,
+  public BaselineRuleModule(SalsaAPIConnective salsa, SentimentLex sentimentLex, ShifterLex shifterLex,
           Boolean pos_lookup_sentiment, Boolean pos_lookup_shifter, Boolean shifter_orientation_check) {
     this.globalsSentencePolaritiesB = new ArrayList<Global>();
     log.setLevel(Level.ALL);
@@ -152,6 +150,7 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
     // Also set frames.
     for (WordObj shifter : shifterList) {
       // Look for the shifterTarget
+      log.log(Level.FINE, "Shifter: {0}", shifter.toString());
       WordObj shifterTarget = findShifterTargetBaselineRule(shifter, sentimentList, sentence);
 
       if (shifterTarget != null) {
@@ -344,7 +343,7 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
       if (!shifterTargets.isEmpty()) {
         for (WordObj shifterCandidate : shifterTargets.keySet()) {
           int distance = Math.abs(shifterPos - shifterTargets.get(shifterCandidate));
-          if (distance < bestDistance) {
+          if (distance < bestDistance && distance != 0) {
             bestDistance = distance;
             shifterTarget = shifterCandidate;
             log.log(Level.FINE, "current candidate: {0}", shifterTarget);
@@ -360,29 +359,6 @@ public class BaselineRuleModule extends ModuleBasics implements Module {
           }
         } else {
           return shifterTarget;
-        }
-      }
-    }
-    for (Edge edge : edges) {
-      shifterTarget = edge.source;
-      if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-        if (shifter_orientation_check) {
-          if (orientationCheck(shifter, shifterTarget)) {
-            return shifterTarget;
-          }
-        } else {
-          return shifterTarget;
-        }
-      } else {
-        shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
-        if (sentimentList.contains(shifterTarget) && !shifterTarget.equals(shifter)) {
-          if (shifter_orientation_check) {
-            if (orientationCheck(shifter, shifterTarget)) {
-              return shifterTarget;
-            }
-          } else {
-            return shifterTarget;
-          }
         }
       }
     }

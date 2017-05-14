@@ -191,13 +191,13 @@ public class Main {
 
       // Baseline Rule Module
       if (baseline_rule_module && got_preset_se_file && use_preset_se_input) {
-        final BaselineRuleModule baselineRuleModule;
-        baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex, baseline_window,
+        final BaselineRuleModule baselineRuleModule; 
+        baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex,
                 pos_lookup_sentiment, pos_lookup_shifter, shifter_orientation_check);
         modules.add(baselineRuleModule);
       } else if (baseline_rule_module) {
         final BaselineRuleModule baselineRuleModule;
-        baselineRuleModule = new BaselineRuleModule(sentimentLex, shifterLex, baseline_window, pos_lookup_sentiment,
+        baselineRuleModule = new BaselineRuleModule(sentimentLex, shifterLex, pos_lookup_sentiment,
                 pos_lookup_shifter, shifter_orientation_check);
         modules.add(baselineRuleModule);
       }
@@ -206,7 +206,7 @@ public class Main {
       // specified in the configuration file
       final SentimentChecker sentcheck = new SentimentChecker(salsa, sentences, modules);
       System.out.println("Looking for sentiment expressions...");
-      log.info("Looking for sentiment expressions...");
+      log.info("Looking for sentiment expressions...\n");
 
       sentcheck.findSentiments(output);
     } catch (FileNotFoundException e) {

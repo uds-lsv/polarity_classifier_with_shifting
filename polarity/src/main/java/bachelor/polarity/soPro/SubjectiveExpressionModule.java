@@ -15,6 +15,8 @@ import bachelor.polarity.salsa.corpora.elements.Global;
 import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
+import java.util.Iterator;
+import java.util.ListIterator;
 
 /**
  * Find subjective expressions (SE) and shifter and their targets. Optionally
@@ -296,7 +298,6 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
    * @param sentence The sentence the shifter is in.
    * @return The WordObj corresponding to the found shifter target, or null.
    */
-  @SuppressWarnings("unchecked")
   private WordObj findShifterTarget(WordObj shifter, ArrayList<WordObj> sentimentList, SentenceObj sentence) {
     scopeEntryHit = new String();
     log.log(Level.FINE, "Shifter: {0}", shifter.getLemma());
@@ -304,6 +305,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
     ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
 
     HashSet<Edge> edges = sentence.getGraph().getEdges();
+    log.log(Level.FINE, "Edges: {0}", edges);
 
     for (String scopeEntry : shifterUnit.shifter_scope) {
       scopeEntryHit = scopeEntry;
@@ -377,7 +379,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
             }
           }
         }
-        log.log(Level.FINE, "final candidate: {0}", shifterTarget);
+        log.log(Level.FINE, "closest candidate: {0}", shifterTarget);
 
         if (sentimentList != null && shifterTarget != null
                 && sentimentList.contains(shifterTarget)
@@ -389,7 +391,11 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
         }
       }
       // Other cases than "clause"
-      for (Edge edge : edges) {
+      Iterator<Edge> it = edges.iterator();
+      while (it.hasNext()) {
+        Edge edge = it.next();
+//        Edge edge_plus_one = it.hasNext() ? it.next() : null;
+//        Edge edge_plus_two = it.hasNext() ? it.next() : null;
         // Special case for "nicht"
         if (shifter.getLemma().equals("nicht")) {
           if (edge.toString().contains("nicht")) {
@@ -399,7 +405,6 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                     && sentimentList.contains(shifterTarget)
                     && !shifterTarget.equals(shifter)) {
               governor += 1;
-              log.log(Level.FINE, "Found shifterTarget with scopeEntry: {0}", scopeEntry);
               return shifterTarget;
             } else {
               shifterTarget = sentence.getGraph().getChild(shifterTarget, "attr");
@@ -407,7 +412,6 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                       && sentimentList.contains(shifterTarget)
                       && !shifterTarget.equals(shifter)) {
                 governor += 1;
-                log.log(Level.FINE, "Found shifterTarget with scopeEntry: {0}", scopeEntry);
                 return shifterTarget;
               }
             }
@@ -423,6 +427,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
                       && !shifterTarget.equals(shifter)) {
                 if (orientationCheck(shifter, shifterTarget)) {
                   objp += 1;
+//                  System.out.println("edges: " + edges);
                   return shifterTarget;
                 }
               } else {

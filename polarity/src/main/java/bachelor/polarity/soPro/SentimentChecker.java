@@ -98,18 +98,16 @@ public class SentimentChecker {
     meta.setCorpus_id(corpusId);
     this.salsaCon.getHead().setMeta(meta);
 
-    // System.out.println("Analysing...");
-    log.info("Analysing...");
-
     int listSize = list.sentenceList.size();
 
     for (int i = 0; i < listSize; i++) {
-      SentenceObj stmp = list.sentenceList.get(i);
-      Semantics sem = findSentiment(stmp);
+      SentenceObj sentence = list.sentenceList.get(i);
+      log.log(Level.INFO, sentence.toString());
+      Semantics sem = findSentiment(sentence);
       this.salsaCon.getSentences().get(i).setSem(sem);
       String msg = "Sentence " + (i + 1) + " of " + list.sentenceList.size() + " done.";
       System.out.println(msg);
-      log.info(msg +"\n");
+      log.log(Level.INFO, "{0}\n", msg);
     }
 
     System.out.println((list.sentenceList.size()) + " sentences have been analysed successfully.");
