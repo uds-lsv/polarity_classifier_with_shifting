@@ -72,8 +72,8 @@ public abstract class ModuleBasics {
         posLookupShifter(shifterList, word, shifterLexEntryNew);
       } else {
         log.fine("Shifter POS-MISMATCH!");
-        log.fine("word: " + word.getName() + " pos: " + word.getPos());
-        log.fine("shifterLex entry pos: " + shifterLexEntry.shifter_pos);
+        log.log(Level.FINE, "word: {0} pos: {1}", new Object[]{word.getName(), word.getPos()});
+        log.log(Level.FINE, "shifterLex entry pos: {0}", shifterLexEntry.shifter_pos);
       }
     }
   }
@@ -95,7 +95,7 @@ public abstract class ModuleBasics {
     } else if (word.getPos().startsWith("A") && sentLexEntry.pos.equals("adj")) {
       sentimentList.add(word);
     } else {
-			// Check for another possible sentLexEntry using the exact word instead of
+      // Check for another possible sentLexEntry using the exact word instead of
       // its Lemma
       // Example: "abweisen" vs "abweisend" gets found this way.
       SentimentUnit sentLexEntryNew = sentimentLex.getSentiment(word.getName());
@@ -103,8 +103,8 @@ public abstract class ModuleBasics {
         posLookupSentiment(sentimentList, word, sentLexEntryNew);
       } else {
         log.fine("Sentiment POS-MISMATCH!");
-        log.fine("word: " + word.getName() + " pos: " + word.getPos());
-        log.fine("sentimentLex entry pos: " + sentLexEntry.pos);
+        log.log(Level.FINE, "word: {0} pos: {1}", new Object[]{word.getName(), word.getPos()});
+        log.log(Level.FINE, "sentimentLex entry pos: {0}", sentLexEntry.pos);
       }
     }
   }
@@ -114,9 +114,7 @@ public abstract class ModuleBasics {
    * matches the sentiment orientation (POS/NEG).
    *
    * @param shifter
-   * @param shifterUnit
    * @param shifterTarget
-   * @param shifterTargetUnit
    * @return true if the orientations match or there is no lexicon entry for the
    * sentiment expression.
    */
@@ -128,7 +126,7 @@ public abstract class ModuleBasics {
     ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
     String shifterType = shifterUnit.getTyp(); // g,n,p
 
-		// Can't compare the orientation if the sentiment expression does not have a
+    // Can't compare the orientation if the sentiment expression does not have a
     // lexicon entry.
     if (shifterTargetUnit == null) {
       return true;
@@ -169,7 +167,7 @@ public abstract class ModuleBasics {
           final Target target) {
     target.addFenode(new Fenode(sentence.getTree().getTerminal(sentiment).getId()));
 
-		// In case of mwe: add all collocations to the subjective expression
+    // In case of mwe: add all collocations to the subjective expression
     // xml/frame
     SentimentUnit unit = sentimentLex.getSentiment(sentiment.getLemma());
     if (unit.mwe) {
@@ -238,7 +236,7 @@ public abstract class ModuleBasics {
       }
     }
 
-		// Compare fenodeIds with terminal Ids of the tree terminals to get to the
+    // Compare fenodeIds with terminal Ids of the tree terminals to get to the
     // WordObjs.
     int wordIndex = 0;
     ArrayList<WordObj> particles = new ArrayList<WordObj>();
@@ -249,7 +247,7 @@ public abstract class ModuleBasics {
       for (String fenodeId : fenodeIds) {
         if (terminalId.equals(fenodeId)) {
           WordObj wordObj = sentence.getWordList().get(wordIndex - 1);
-					// System.out.println("found preset SE: " + terminal.getWord());
+          // System.out.println("found preset SE: " + terminal.getWord());
           // System.out.println("with wordIndex: " + wordIndex);
           sentimentList.add(wordObj);
           // System.out.println("added given SE: " + wordObj);
@@ -259,11 +257,11 @@ public abstract class ModuleBasics {
         }
       }
     }
-		// In case of multi word expressions, things might be added twice.
+    // In case of multi word expressions, things might be added twice.
     // Remove particles of particle words as they are already accounted for.
     sentimentList.removeAll(particles);
 
-		// **************************CASE Particle MWE******************************
+    // **************************CASE Particle MWE******************************
     // Compare fenodeIds with terminal Ids of the tree terminals to get to the
     // WordObjs.
     if (fenodeIdsMWE.size() == 2) {
@@ -291,7 +289,7 @@ public abstract class ModuleBasics {
           }
         }
         if (wordObjFirst != null && wordObjSecond != null && !sentimentList.contains(wordObjFirst)) {
-					// System.out.println("added " + wordObjFirst + " with particle: " +
+          // System.out.println("added " + wordObjFirst + " with particle: " +
           // wordObjSecond);
           wordObjFirst.setParticle(wordObjSecond);
           sentimentList.add(wordObjFirst);
@@ -299,7 +297,7 @@ public abstract class ModuleBasics {
       }
     }
 
-		// Preset SEs might not have an entry as SentimentUnit in the SentimentLex,
+    // Preset SEs might not have an entry as SentimentUnit in the SentimentLex,
     // with lemma, pos, value, etc.
     // Create dummy entries in those cases
     for (WordObj sentiment : sentimentList) {
@@ -312,5 +310,4 @@ public abstract class ModuleBasics {
       }
     }
   }
-
 }
