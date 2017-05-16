@@ -15,6 +15,12 @@ import bachelor.polarity.salsa.corpora.elements.Sentence;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 
+/**
+ * ModuleBasics provides helper methods that can be used by all Modules. E.g.
+ * POS look-up, shifter orientation check, frame setting.
+ *
+ * @author Max
+ */
 public abstract class ModuleBasics {
 
   private final static Logger log = Logger.getLogger(ModuleBasics.class.getName());
