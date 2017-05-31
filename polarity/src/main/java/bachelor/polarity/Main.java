@@ -18,6 +18,7 @@ import bachelor.polarity.soPro.SentenceList;
 import bachelor.polarity.soPro.SentimentChecker;
 import bachelor.polarity.soPro.SentimentLex;
 import bachelor.polarity.soPro.ShifterLex;
+import bachelor.polarity.soPro.IntensifierLex;
 import bachelor.polarity.soPro.SubjectiveExpressionModule;
 import java.util.logging.Level;
 
@@ -49,6 +50,7 @@ public class Main {
       String constituency_input = prop.getProperty("CONSTITUENCY_INPUT");
       String sentiment_lexicon_input = prop.getProperty("SENTIMENT_LEXICON_INPUT");
       String shifter_lexicon_input = prop.getProperty("SHIFTER_LEXICON_INPUT");
+      String intensifier_lexicon_input = prop.getProperty("INTENSIFIER_LEXICON_INPUT");
       String preset_se_input = prop.getProperty("PRESET_SE_INPUT");
       String baseline_direction = prop.getProperty("BASELINE_DIRECTION");
       Boolean use_preset_se_input = Boolean.valueOf(prop.getProperty("USE_PRESET_SE_INPUT"));
@@ -135,6 +137,14 @@ public class Main {
       ShifterLex shifterLex = new ShifterLex(true);
       shifterLex.fileToLex(shifter_lexicon_input);
 
+      // Read in intensifier lexicon.
+      if (!intensifier_lexicon_input.isEmpty()) {
+        System.out.println("Reading intensifier lexicon from " + shifter_lexicon_input + "...");
+        log.log(Level.INFO, "Reading intensifier lexicon from {0}...", shifter_lexicon_input);
+        IntensifierLex intensifierLex = new IntensifierLex(true);
+        intensifierLex.fileToLex(intensifier_lexicon_input);
+      }
+
       // Read in preset se file
       Boolean got_preset_se_file = false;
       if (!preset_se_input.isEmpty()) {
@@ -191,7 +201,7 @@ public class Main {
 
       // Baseline Rule Module
       if (baseline_rule_module && got_preset_se_file && use_preset_se_input) {
-        final BaselineRuleModule baselineRuleModule; 
+        final BaselineRuleModule baselineRuleModule;
         baselineRuleModule = new BaselineRuleModule(salsa, sentimentLex, shifterLex,
                 pos_lookup_sentiment, pos_lookup_shifter, shifter_orientation_check);
         modules.add(baselineRuleModule);
