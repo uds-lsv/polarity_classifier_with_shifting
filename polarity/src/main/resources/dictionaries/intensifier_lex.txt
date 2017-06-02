@@ -1,7 +1,7 @@
 %% Word {NEG|POS|NEU|SHI|INT}=PolarityStrength PoS
 %% INT for Intensifiers
 %% INT < 1, e.g. 0.5 is a reduction factor, > 1, e.g. 2 is a gain factor 
-%vermindern INT=0.5 verben
+%%vermindern INT=0.5 verben
 besonders INT=2 adj
 ständig INT=2 adj
 völlig INT=2 adj
@@ -14,7 +14,7 @@ steigern INT=2 verben
 sehr INT=2 adj
 äusserst INT=2 adj
 äußerst INT=2 adj
-%mehrheitlich INT=0.5 adj
+%%mehrheitlich INT=0.5 adj
 enorm INT=2 adj
 erheblich INT=2 adj
 bleiben INT=2 verben
