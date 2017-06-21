@@ -211,7 +211,7 @@ public class DescriptiveStatistics {
 											n_shifter_unknown += 1;
 										} else {
 											ShifterUnit shifterUnit = shifterLex.getShifter(shifterWordObj.getLemma());
-											String shifterType = shifterUnit.getTyp();
+											String shifterType = shifterUnit.getType();
 											switch (shifterType) {
 											case ShifterLex.SHIFTER_TYPE_GENERAL:
 												n_shifter_g += 1;
@@ -320,7 +320,7 @@ public class DescriptiveStatistics {
 												n_shifter_unknown += 1;
 											} else {
 												ShifterUnit shifterUnit = shifterLex.getShifter(shifterWordObj.getLemma());
-												String shifterType = shifterUnit.getTyp();
+												String shifterType = shifterUnit.getType();
 												switch (shifterType) {
 												case ShifterLex.SHIFTER_TYPE_GENERAL:
 													n_shifter_g += 1;

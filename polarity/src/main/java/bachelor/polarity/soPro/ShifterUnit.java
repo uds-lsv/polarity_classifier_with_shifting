@@ -62,7 +62,7 @@ public class ShifterUnit {
 	/**
 	 * @return {@link #shifter_type} of the ShifterUnit
 	 */
-	public String getTyp() {
+	public String getType() {
 		return this.shifter_type;
 	}
 
@@ -72,15 +72,16 @@ public class ShifterUnit {
 	 * @see java.lang.Object#toString()
 	 */
 
+        @Override
 	public String toString() {
-		StringBuffer printer = new StringBuffer();
+		StringBuilder printer = new StringBuilder();
 		printer.append(this.name);
 		for (String col : this.collocations) {
-			printer.append("_" + col);
+			printer.append("_").append(col);
 		}
-		printer.append(" " + this.shifter_type);
-		printer.append(" " + this.shifter_scope.toString());
-		printer.append(" " + this.shifter_pos);
+		printer.append(" ").append(this.shifter_type);
+		printer.append(" ").append(Arrays.toString(this.shifter_scope));
+		printer.append(" ").append(this.shifter_pos);
 		return printer.toString();
 	}
 }

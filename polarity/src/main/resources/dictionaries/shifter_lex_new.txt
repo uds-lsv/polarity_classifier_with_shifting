@@ -1,4 +1,4 @@
-%% <shifterVerb> <type> [<scope>] <pos>
+%% <shifter> <type> [<scope>] <pos>
 nachlassen n [subj] verb
 dämpfen g [objg,obja,objd,objc,obji,s,objp-*,subj] verb
 Dämpfung g [gmod,objp-*] nomen

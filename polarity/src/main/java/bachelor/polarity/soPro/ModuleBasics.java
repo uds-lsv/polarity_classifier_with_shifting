@@ -130,7 +130,7 @@ public abstract class ModuleBasics {
     }
     SentimentUnit shifterTargetUnit = sentimentLex.getSentiment(shifterTarget.getLemma());
     ShifterUnit shifterUnit = shifterLex.getShifter(shifter.getLemma());
-    String shifterType = shifterUnit.getTyp(); // g,n,p
+    String shifterType = shifterUnit.getType(); // g,n,p
 
     // Can't compare the orientation if the sentiment expression does not have a
     // lexicon entry.

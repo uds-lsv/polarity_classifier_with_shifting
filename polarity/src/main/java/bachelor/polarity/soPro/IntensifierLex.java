@@ -20,6 +20,11 @@ import java.util.logging.Logger;
 public class IntensifierLex {
 
   private final static Logger log = Logger.getLogger(IntensifierLex.class.getName());
+  
+  // Constants
+  public static final String INTENSIFIER_TYPE_GENERAL = "general";
+  public static final String INTENSIFIER_TYPE_ON_POSITIVE = "on positive";
+  public static final String INTENSIFIER_TYPE_ON_NEGATIVE = "on negative";
 
   List<IntensifierUnit> intensifierList = new ArrayList<IntensifierUnit>();
   Map<String, IntensifierUnit> intensifierMap = new HashMap<String, IntensifierUnit>();
@@ -103,7 +108,7 @@ public class IntensifierLex {
    */
   @Override
   public String toString() {
-    String printer = "Name[Category][Value][Pos]";
+    String printer = "Name[Type][Scope][Pos]";
     for (IntensifierUnit intensifierList1 : intensifierList) {
       printer = printer + "\n";
       printer = printer + intensifierList1;
@@ -117,73 +122,74 @@ public class IntensifierLex {
    * @param filename
    */
   public void fileToLex(String filename) {
-    String wordFromInput = new String();
-    String category = new String();
-    Double value = 0.0;
-    String pos = new String();
-//    Boolean mwe = Boolean.FALSE;
-    Scanner scanner;
 
-    try {
-      scanner = new Scanner(new File(filename), "UTF-8");
-      scanner.useLocale(Locale.GERMANY);
-      String inputLine;
+		String intensifierStr = new String();
+		String intensifier_type = new String();
+		String intensifier_scope_str = new String();
+		String[] intensifier_scope;
+		String intensifier_pos = new String();
+		Boolean mwe = Boolean.FALSE;
+		Scanner scanner;
 
-      while (scanner.hasNext()) {
-        inputLine = scanner.nextLine();
+		try {
+			scanner = new Scanner(new File(filename), "UTF-8");
+			scanner.useLocale(Locale.GERMANY);
+			String inputLine;
 
-        // Ignore lines starting with "%%" (comments).
-        if (!(inputLine.startsWith("%%"))) {
+			while (scanner.hasNext()) {
+				inputLine = scanner.nextLine();
 
-          // Ignore lines without the correct form.
-          // Correct form example: fehlschlagen NEG=0.7 verben
-          if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\w\\w=\\d.?\\d?\\s\\w+")) {
+				// Ignore lines starting with "%%" (comments).
+				if (!(inputLine.startsWith("%%"))) {
 
-            wordFromInput = inputLine.substring(0, inputLine.indexOf(" "));
+					// Ignore lines without the correct form.
+					// Correct form example: Fehlschlag p [subj,attr-rev] nomen
+					if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\s\\[[\\w+[-\\*,\"]*\\s*]+\\]\\s\\w+")) {
 
-            category = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf("="));
+						intensifierStr = inputLine.substring(0, inputLine.indexOf(" "));
 
-            Locale original = Locale.getDefault();
-            Locale.setDefault(new Locale("de", "DE"));
-            try (Scanner doubleScanner = new Scanner(inputLine.substring(inputLine.indexOf("=") + 1).replace('.', ','))) {
-              if (doubleScanner.hasNextDouble()) {
-                value = doubleScanner.nextDouble();
-                // System.out.println("valueToSetFeatureTo: " + value);
-              } else {
-                //System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
-                log.log(Level.FINE, "no valueToSetFeatureTo has been found for: {0}", wordFromInput);
-              }
-            } finally {
-              Locale.setDefault(original);
-            }
+						intensifier_type = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf(" ") + 2);
+						String intensifier_type_written_out = new String();
+						switch (intensifier_type) {
+						case "g":
+							intensifier_type_written_out = INTENSIFIER_TYPE_GENERAL;
+							break;
+						case "p":
+							intensifier_type_written_out = INTENSIFIER_TYPE_ON_POSITIVE;
+							break;
+						case "n":
+							intensifier_type_written_out = INTENSIFIER_TYPE_ON_NEGATIVE;
+							break;
+						default:
+							log.log(Level.WARNING, "Warning: unknown intensifier_type: {0} for intensifier: {1}", new Object[]{intensifier_type, intensifierStr});
+							intensifier_type_written_out = intensifier_type;
+						}
 
-            pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
-            // System.out.println("pos: " + pos);
+						intensifier_scope_str = inputLine.substring(inputLine.lastIndexOf("[") + 1, inputLine.lastIndexOf("]")).replaceAll("\\s+", "");
+						intensifier_scope = intensifier_scope_str.split(",");
 
-//            mwe = wordFromInput.contains("_");
+						intensifier_pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
 
-            if (category != null && pos != null) {
-              // Ignore INT (intensifier) and Shifter
-              if (category.equals("INT")) {
-                IntensifierUnit unit = new IntensifierUnit(wordFromInput, category, value.toString(), pos);
-                this.addIntensifier(unit);
-              }
-            } else {
-              System.err.println("Intensifier-Lexicon entry for " + wordFromInput + " is incomplete!");
-              log.log(Level.WARNING, "Intensifier-Lexicon entry for {0} is incomplete!", wordFromInput);
-            }
+						mwe = intensifierStr.contains("_");
 
-          } else {
-            System.err.println("Line with wrong format in Intensifier-Lexicon, will be ignored: ");
-            System.err.println("\"" + inputLine + "\"");
-            log.log(Level.WARNING, "Line with wrong format in Intensifier-Lexicon, will be ignored:\n\"{0}\"", inputLine);
-          }
-        }
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
+						if (intensifier_type != null && intensifier_scope != null && intensifier_pos != null) {
+							IntensifierUnit intensifier = new IntensifierUnit(intensifierStr, intensifier_type_written_out, intensifier_scope, intensifier_pos,
+									mwe);
+							this.addIntensifier(intensifier);
+
+						} else {
+							log.log(Level.WARNING, "Intensifier-Lexicon entry for {0} is incomplete!", intensifierStr);
+						}
+
+					} else {
+						log.log(Level.WARNING, "Line with wrong format in Intensifier-Lexicon, will be ignored:\n\"{0}\"", inputLine);
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
   /**
    * Builds a {@link #intensifierMap} from a given {@link #intensifierList}
