@@ -16,8 +16,6 @@ import bachelor.polarity.salsa.corpora.elements.Nonterminal;
 import bachelor.polarity.salsa.corpora.elements.Target;
 import bachelor.polarity.salsa.corpora.elements.Terminal;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Find subjective expressions (SE) and shifter and their targets. Optionally
@@ -29,6 +27,7 @@ import java.util.ListIterator;
 public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 
   private final static Logger log = Logger.getLogger(SubjectiveExpressionModule.class.getName());
+  // For logging purposes
   int clause = 0;
   int governor = 0;
   int dependent = 0;
@@ -178,10 +177,12 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
         // Create Frame object for Salsa XML output
         final Frame frame = new Frame("SubjectiveExpression", frameIds.next());
         final FrameElementIds feIds = new FrameElementIds(frame);
+        if (sentimentLex.getSentiment(shifterTarget.getLemma()).category.equals("NEU")) {
+          log.log(Level.FINE, "Shifting of a neutral polar expression: {}", shifterTarget.toString());
+        }
 
         // Set Frames for the sentiment word
         final Target target = new Target();
-        // System.out.println("found shifterTarget: " + shifterTarget);
         log.log(Level.FINE, "found shifterTarget: {0}, with ScopeEntry: {1}", new String[]{shifterTarget.toString(), scopeEntryHit});
         setFrames(sentence, frames, shifterTarget, frame, target);
 
@@ -209,7 +210,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
 
         // Compute the polarity value after a shift and invert the category.
         polarityOfWord = Double.valueOf(polarityValueStr);
-        if (!polarityCategory.equals("UNKNOWN")) {
+        if (!polarityCategory.equals("UNKNOWN") && !polarityCategory.equals("NEU")) {
           switch (shifterType) {
             case ShifterLex.SHIFTER_TYPE_ON_NEGATIVE:
               polarityCategory = "POS";
@@ -289,9 +290,9 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
   }
 
   /**
-   * This method is used to look for the target of a shifter using dependency
-   * relations. The found shifter target must be contained in the sentimentList
-   * in order to be returned by this method.
+   * Look for the target of a shifter using dependency relations. The found
+   * shifter target must be contained in the sentimentList in order to be
+   * returned by this method.
    *
    * @param shifter The shifter for which a target is searched for.
    * @param sentimentList A list of found sentiments in the current sentence.
@@ -358,7 +359,7 @@ public class SubjectiveExpressionModule extends ModuleBasics implements Module {
               if (terminalId.equals(childT.getId().getId())) {
                 WordObj wordObj = sentence.getWordList().get(wordIndex - 1);
                 // Check if the word is a SE in the current sentence.
-                if (sentimentList.contains(wordObj)) {
+                if (sentimentList != null && sentimentList.contains(wordObj)) {
                   shifterTargets.put(wordObj, wordIndex - 1);
                 }
               }

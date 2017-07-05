@@ -88,7 +88,8 @@ public abstract class ModuleBasics {
    * Compares pos tags of found words in a sentence with sentiment lexicon
    * entries.
    *
-   * @param sentimentList the list of found sentiments in the current sentence.
+   * @param sentimentList the list to which of found sentiments in the current
+   * sentence are being added.
    * @param word the current word's WordObj.
    * @param sentLexEntry the entry for the sentiment word in the sentiment
    * lexicon.
@@ -137,7 +138,7 @@ public abstract class ModuleBasics {
     if (shifterTargetUnit == null) {
       return true;
     }
-    String sentimentType = shifterTargetUnit.getTyp(); // POS, NEG
+    String sentimentType = shifterTargetUnit.getType(); // POS, NEG
 
     switch (shifterType) {
       case ShifterLex.SHIFTER_TYPE_GENERAL:
@@ -196,7 +197,8 @@ public abstract class ModuleBasics {
   }
 
   /**
-   * If preset SE locations are given, identifies and uses them.
+   * If preset SE locations are given, identifies and uses them. Adds sentiments
+   * to the sentimentList.
    *
    * @param sentence The current sentence.
    * @param sentimentList List of subjective expressions in the current

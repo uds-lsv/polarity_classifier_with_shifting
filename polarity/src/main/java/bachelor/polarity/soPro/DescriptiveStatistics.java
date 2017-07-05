@@ -40,7 +40,7 @@ public class DescriptiveStatistics {
 		SalsaAPIConnective salsa = new SalsaAPIConnective(preset_se_input, sentences);
 
 		// Read in sentiment lexicon.
-		SentimentLex sentimentLex = new SentimentLex(true);
+		SentimentLex sentimentLex = new SentimentLex(true, false);
 		sentimentLex
 				.fileToLex(java.nio.file.Paths.get("src", "main", "resources", "dictionaries", "germanlex.txt").toString());
 
@@ -168,9 +168,9 @@ public class DescriptiveStatistics {
 						// check se type
 						SentimentUnit sentimentUnit = sentimentLex.getSentiment(wordObj.getLemma());
 						if (sentimentUnit != null) {
-							if (sentimentUnit.getTyp().equals("POS")) {
+							if (sentimentUnit.getType().equals("POS")) {
 								n_se_pos += 1;
-							} else if (sentimentUnit.getTyp().equals("NEG")) {
+							} else if (sentimentUnit.getType().equals("NEG")) {
 								n_se_neg += 1;
 							} else {
 								n_se_unknown += 1;
@@ -278,9 +278,9 @@ public class DescriptiveStatistics {
 							// check se type
 							SentimentUnit sentimentUnit = sentimentLex.getSentiment(wordObjFirst.getLemma());
 							if (sentimentUnit != null) {
-								if (sentimentUnit.getTyp().equals("POS")) {
+								if (sentimentUnit.getType().equals("POS")) {
 									n_se_pos += 1;
-								} else if (sentimentUnit.getTyp().equals("NEG")) {
+								} else if (sentimentUnit.getType().equals("NEG")) {
 									n_se_neg += 1;
 								} else {
 									n_se_unknown += 1;

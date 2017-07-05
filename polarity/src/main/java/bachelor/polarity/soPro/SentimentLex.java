@@ -21,9 +21,11 @@ public class SentimentLex {
   private final static Logger log = Logger.getLogger(SentimentLex.class.getName());
 
   List<SentimentUnit> sentimentList = new ArrayList<SentimentUnit>();
+
   Map<String, SentimentUnit> sentimentMap = new HashMap<String, SentimentUnit>();
   boolean flexibleMWEs = false;
   String[] collectSubjectiveExpressions = {""};
+  private final boolean include_neutral;
 
   /**
    * Constructs a new SentimentLex
@@ -31,10 +33,13 @@ public class SentimentLex {
    * @param flexMWE indicates if the multi word expressions in the lexicon
    * should be interpreted in a flexible way (more info see
    * {@link #mweFlexibility(SentimentUnit)}).
+   * @param include_neutral If true, neutral expressions of german lex will be
+   * taken into account too.
    */
-  public SentimentLex(boolean flexMWE) {
+  public SentimentLex(boolean flexMWE, boolean include_neutral) {
     log.setLevel(Level.FINE);
     this.flexibleMWEs = flexMWE;
+    this.include_neutral = include_neutral;
   }
 
   // Lists containing words for flexible mwe interpretations.
@@ -44,7 +49,7 @@ public class SentimentLex {
    * contains "sich". "mich", "Mich", "dich", "Dich", "ihn", "Ihn", "es", "Es",
    * "euch", "Euch", "Sie"
    */
-  private List<String> sichAlternatives = Arrays.asList("mich", "Mich", "dich", "Dich", "ihn", "Ihn", "es", "Es",
+  private final List<String> sichAlternatives = Arrays.asList("mich", "Mich", "dich", "Dich", "ihn", "Ihn", "es", "Es",
           "euch", "Euch", "Sie");
 
   /**
@@ -52,32 +57,32 @@ public class SentimentLex {
    * contains "seinen" or "seinem". "meine", "Meine", "deine", "Deine", "ihre",
    * "eure", "Ihre", "unsere", "Unsere"
    */
-  private List<String> seinenAlternatives = Arrays.asList("meine", "Meine", "deine", "Deine", "ihre", "eure", "Ihre",
+  private final List<String> seinenAlternatives = Arrays.asList("meine", "Meine", "deine", "Deine", "ihre", "eure", "Ihre",
           "unsere", "Unsere");
 
   /**
    * List containing words for flexible interpretations. If mwe contains "den".
    * "einen", "dem"
    */
-  private List<String> denAlternatives = Arrays.asList("einen", "dem");
+  private final List<String> denAlternatives = Arrays.asList("einen", "dem");
 
   /**
    * List containing words for flexible interpretations. If mwe contains "ein".
    * "kein"
    */
-  private List<String> einAlternatives = Arrays.asList("kein");
+  private final List<String> einAlternatives = Arrays.asList("kein");
 
   /**
    * List containing words for flexible interpretations. If mwe contains
    * "einen". "keinen"
    */
-  private List<String> einenAlternatives = Arrays.asList("keinen");
+  private final List<String> einenAlternatives = Arrays.asList("keinen");
 
   /**
    * List containing words for flexible interpretations. If mwe contains "sein".
    * "werden"
    */
-  private List<String> seinAlternatives = Arrays.asList("werden");
+  private final List<String> seinAlternatives = Arrays.asList("werden");
 
   /**
    * Returns the SentimentUnit corresponding to the given name or null.
@@ -149,15 +154,20 @@ public class SentimentLex {
    * @param sentiment is added to SentimentLex
    */
   public void addSentiment(SentimentUnit sentiment) {
-    sentimentList.add(sentiment);
-    addToMap(sentiment.name, sentiment);
+    if (!sentimentList.contains(sentiment)) {
+      sentimentList.add(sentiment);
+      addToMap(sentiment.name, sentiment);
 
-    if (sentiment.mwe && this.flexibleMWEs) {
-      for (SentimentUnit flex : mweFlexibility(sentiment)) {
-        sentimentList.add(flex);
-        addToMap(flex.name, flex);
+      if (sentiment.mwe && this.flexibleMWEs) {
+        for (SentimentUnit flex : mweFlexibility(sentiment)) {
+          sentimentList.add(flex);
+          addToMap(flex.name, flex);
 
+        }
       }
+    } else {
+      System.err.println("Double entry in sentiment lexicon!: " + sentiment.name);
+      log.log(Level.WARNING, "Double entry in sentiment lexicon!: {0}", sentiment.name);
     }
   }
 
@@ -306,6 +316,20 @@ public class SentimentLex {
     sentimentList.remove(sentiment);
   }
 
+  /**
+   * Removes a sentiment from the SentimentLex based on the sentiment's name.
+   *
+   * @param wordFromInput
+   */
+  public void removeSentimentBasedOnWord(String wordFromInput) {
+    for (SentimentUnit u : sentimentList) {
+      if (u.name.equals(wordFromInput)) {
+        this.removeSentiment(u);
+        break;
+      }
+    }
+  }
+
   /*
    * (non-Javadoc)
    * 
@@ -333,6 +357,8 @@ public class SentimentLex {
     String pos = new String();
     Boolean mwe = Boolean.FALSE;
     Scanner scanner;
+    List<String> checkForMultiEntry = new ArrayList<>();
+    List<String> neutralWords = new ArrayList<>();
 
     try {
       scanner = new Scanner(new File(filename), "UTF-8");
@@ -350,35 +376,55 @@ public class SentimentLex {
           if (inputLine.matches("[\\w+[-_äöüÄÖÜß]*\\w*]+\\s\\w\\w\\w=\\d.?\\d?\\s\\w+")) {
 
             wordFromInput = inputLine.substring(0, inputLine.indexOf(" "));
-            // System.out.println("word: " + wordFromInput);
+            if (checkForMultiEntry.contains(wordFromInput)) {
+              System.err.println("More than one (conflicting) entry in sentiment lexicon for: " + wordFromInput + ".\nNeutral versions will be ignored. Otherwise, the first entry from the top is used.");
+              log.log(Level.WARNING, "More than one (conflicting) entry in sentiment lexicon for: {0}", wordFromInput);
+
+              if (neutralWords.contains(wordFromInput)) {
+                // A neutral sentiment unit is in the sentiment list. 
+                // Overwrite it with the non-neutral version.
+                neutralWords.remove(wordFromInput);
+                this.removeSentimentBasedOnWord(wordFromInput);
+                log.log(Level.FINE, "Removed neutral entry: {}", wordFromInput);
+              } else { // Use the first encountered entry that's not neutral. Ignore the rest.
+                continue;
+              }
+            }
+            checkForMultiEntry.add(wordFromInput);
 
             category = inputLine.substring(inputLine.indexOf(" ") + 1, inputLine.indexOf("="));
-						// System.out.println("category: " + category);
 
-            // TODO make this work for "0.7" as well as "0,7".
             Locale original = Locale.getDefault();
             Locale.setDefault(new Locale("de", "DE"));
-            Scanner doubleScanner = new Scanner(inputLine.substring(inputLine.indexOf("=") + 1).replace('.', ','));
-            if (doubleScanner.hasNextDouble()) {
-              value = doubleScanner.nextDouble();
-              // System.out.println("valueToSetFeatureTo: " + value);
-            } else {
-              //System.out.println("no valueToSetFeatureTo has been found for: " + wordFromInput);
-              log.log(Level.FINE, "no valueToSetFeatureTo has been found for: {0}", wordFromInput);
+            try (Scanner doubleScanner = new Scanner(inputLine.substring(inputLine.indexOf("=") + 1).replace('.', ','))) {
+              if (doubleScanner.hasNextDouble()) {
+                value = doubleScanner.nextDouble();
+              } else {
+                log.log(Level.FINE, "no valueToSetFeatureTo has been found for: {0}", wordFromInput);
+              }
+            } finally {
+              Locale.setDefault(original);
             }
-            doubleScanner.close();
-            Locale.setDefault(original);
 
             pos = inputLine.substring(inputLine.lastIndexOf(" ") + 1, inputLine.length());
-            // System.out.println("pos: " + pos);
 
             mwe = wordFromInput.contains("_");
 
-            if (category != null && value != null && pos != null) {
-              // Ignore INT (intensifier) and Shifter
-              if (!category.equals("INT") && !category.equals("SHI") && !category.equals("NEU")) {
+            if (category != null && pos != null) {
+              // Ignore Shifter
+              if ((category.equals("NEG") || category.equals("POS"))) {
                 SentimentUnit unit = new SentimentUnit(wordFromInput, category, value.toString(), pos, mwe);
                 this.addSentiment(unit);
+              } else if ((include_neutral && category.equals("NEU") && value == 0.0)) {
+                SentimentUnit unit = new SentimentUnit(wordFromInput, category, value.toString(), pos, mwe);
+                neutralWords.add(wordFromInput);
+                this.addSentiment(unit);
+
+              } // Faulty Lexicon entry cases
+              else if (include_neutral && category.equals("NEU") && value != 0.0) {
+                String message = String.format("Sentiment-Lexicon entry for %s %s %s %s %s is in a wrong format! ", wordFromInput, category, value.toString(), pos, mwe);
+                System.err.println(message);
+                log.log(Level.WARNING, message);
               }
             } else {
               System.err.println("Sentiment-Lexicon entry for " + wordFromInput + " is incomplete!");

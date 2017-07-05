@@ -13174,6 +13174,12 @@
 				<frames>
 			<frame name="SubjectiveExpression" id="194_se_f1">
 						<target>
+							<fenode idref="215_7"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEU 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="194_se_f2">
+						<target>
 							<fenode idref="215_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
@@ -19409,6 +19415,12 @@
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 				<flag for="subjExpr" name="polarity after shift: NEG 0.30000000000000004"/>
 			</frame>
+			<frame name="SubjectiveExpression" id="289_se_f2">
+						<target>
+							<fenode idref="331_14"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEU 0.0"/>
+			</frame>
 		</frames>
 			</sem>
 		</s>
@@ -23970,11 +23982,17 @@
 			</frame>
 			<frame name="SubjectiveExpression" id="359_se_f3">
 						<target>
+							<fenode idref="413_9"/>
+						</target>
+				<flag for="subjExpr" name="polarity without shift: NEU 0.0"/>
+			</frame>
+			<frame name="SubjectiveExpression" id="359_se_f4">
+						<target>
 							<fenode idref="413_10"/>
 						</target>
 				<flag for="subjExpr" name="polarity without shift: POS 1.0"/>
 			</frame>
-			<frame name="SubjectiveExpression" id="359_se_f4">
+			<frame name="SubjectiveExpression" id="359_se_f5">
 						<target>
 							<fenode idref="413_19"/>
 						</target>
@@ -28378,7 +28396,7 @@
 			</graph>
 			<sem>
 				<globals>
-					<global type="INTERESTING" param="-1,50">The sentence polarity.</global>
+					<global type="INTERESTING" param="-0,50">The sentence polarity.</global>
 				</globals>
 				<frames>
 			<frame name="SubjectiveExpression" id="426_se_f1">
@@ -28388,12 +28406,6 @@
 				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
 			</frame>
 			<frame name="SubjectiveExpression" id="426_se_f2">
-						<target>
-							<fenode idref="493_8"/>
-						</target>
-				<flag for="subjExpr" name="polarity without shift: NEG 1.0"/>
-			</frame>
-			<frame name="SubjectiveExpression" id="426_se_f3">
 						<target>
 							<fenode idref="493_15"/>
 						</target>

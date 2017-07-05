@@ -60,6 +60,7 @@ public class Main {
       Boolean pos_lookup_sentiment = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SENTIMENT"));
       Boolean pos_lookup_shifter = Boolean.valueOf(prop.getProperty("POS_LOOKUP_SHIFTER"));
       Boolean shifter_orientation_check = Boolean.valueOf(prop.getProperty("SHIFTER_ORIENTATION_CHECK"));
+      Boolean include_neutral_expressions = Boolean.valueOf(prop.getProperty("INCLUDE_NEUTRAL_EXPRESSIONS"));
       int baseline_window = Integer.valueOf(prop.getProperty("BASELINE_WINDOW"));
 
       // Make sure that correct properties are set in case of baseline module.
@@ -128,7 +129,7 @@ public class Main {
       // Read in sentiment lexicon.
       System.out.println("Reading sentiment lexicon from " + sentiment_lexicon_input + "...");
       log.log(Level.INFO, "Reading sentiment lexicon from {0}...", sentiment_lexicon_input);
-      SentimentLex sentimentLex = new SentimentLex(true);
+      SentimentLex sentimentLex = new SentimentLex(true, include_neutral_expressions);
       sentimentLex.fileToLex(sentiment_lexicon_input);
 
       // Read in shifter lexicon.

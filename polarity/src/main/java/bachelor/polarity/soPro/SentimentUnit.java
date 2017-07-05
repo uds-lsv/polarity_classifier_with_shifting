@@ -80,7 +80,7 @@ public class SentimentUnit {
 	/**
 	 * @return {@link #category} of the SentimentUnit
 	 */
-	public String getTyp() {
+	public String getType() {
 		return this.category;
 	}
 
