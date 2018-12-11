@@ -1,6 +1,3 @@
-# polarity_classifier_with_shifting
-A polarity classifier incorporating polarity shifting. For German.
-
 <h1> Polcla - A Polarity Classifier Incorporating Polarity Shifting for German</h1>
 
 ## Usage
